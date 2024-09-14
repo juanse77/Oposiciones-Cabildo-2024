@@ -1,0 +1,219 @@
+Tema 19. Redes de comunicaciones II.
+
+19.1. Segmentación en redes.
+
+	La segmentación en redes es un proceso fundamental en la administración de redes de computadoras que implica dividir una red grande en subredes más pequeñas o segmentos. Esta práctica permite mejorar la eficiencia, seguridad y gestión de la red al controlar el tráfico, limitar el alcance de los problemas de red, y aislar recursos o usuarios según sea necesario.
+
+	¿Qué es la Segmentación de Redes?
+
+		La segmentación de redes divide una red grande en subredes más pequeñas, cada una de las cuales se considera una "red" independiente. Esto se hace utilizando técnicas como el uso de VLANs (Virtual Local Area Networks), subredes IP y listas de control de acceso (ACLs).
+
+	Beneficios de la Segmentación de Redes
+
+		- Mejora del rendimiento de la red: Al dividir la red en segmentos más pequeños, se reduce el tráfico de broadcast (difusión) y se mejora la eficiencia del enrutamiento, lo que reduce la congestión y mejora el rendimiento general de la red.
+
+		- Mejora de la seguridad: La segmentación permite aislar diferentes partes de la red, limitando el alcance de potenciales amenazas. Por ejemplo, si un segmento de red se ve comprometido, el acceso a otros segmentos puede estar restringido, evitando así que un atacante acceda a toda la red.
+
+		- Facilidad de gestión: Permite a los administradores de red gestionar cada segmento por separado, aplicar políticas de seguridad específicas y optimizar el tráfico según las necesidades del segmento.
+
+		- Control de acceso: La segmentación facilita la implementación de controles de acceso, permitiendo que solo ciertos usuarios o dispositivos tengan acceso a recursos específicos dentro de la red.
+
+	Tipos de Segmentación de Redes
+
+		- Segmentación Física: Implica la división de la red utilizando hardware físico, como switches, routers y firewalls. Cada segmento es una red independiente con su propio equipo y cables.
+
+		- Segmentación Lógica: Utiliza técnicas como las VLANs para dividir una red física en múltiples subredes lógicas. Esto permite agrupar dispositivos que están en diferentes ubicaciones físicas pero que deben estar en la misma red lógica.
+
+		- Segmentación por Microsegmentación: Este enfoque más moderno implica la creación de segmentos aún más pequeños (microsegmentos) dentro de una red para ofrecer un control de acceso más granular y mejorar la seguridad, especialmente en entornos de centro de datos.
+
+	Técnicas Comunes de Segmentación
+
+		- VLANs (Virtual LANs): Permiten dividir una red física en múltiples subredes lógicas. Por ejemplo, una VLAN puede agrupar todos los dispositivos de una red de oficinas específicas, mientras que otra VLAN agrupa los dispositivos de una red de almacenamiento.
+
+		- Subredes IP: Involucra dividir una red en subredes más pequeñas utilizando máscaras de subred. Esto ayuda a gestionar el tráfico de manera más eficiente y aplicar políticas de seguridad específicas.
+
+		- Listas de Control de Acceso (ACLs): Son reglas que se aplican en routers y switches para controlar el tráfico entre subredes y permitir o denegar el acceso a ciertos recursos.
+
+	Aplicaciones de la Segmentación de Redes
+
+		- Entornos empresariales: Donde se requiere separar las redes de usuarios internos de las redes de invitados para mejorar la seguridad.
+
+		- Centros de datos: Donde se necesita microsegmentación para proteger aplicaciones críticas y datos sensibles.
+
+		- Entornos industriales y de IoT: Donde se necesitan segmentaciones para proteger dispositivos y sistemas críticos de amenazas externas.
+
+	Desafíos de la Segmentación de Redes
+
+		- Complejidad de gestión: La segmentación puede complicar la administración de la red, especialmente en redes grandes con muchos segmentos.
+
+		- Configuración incorrecta: Una configuración incorrecta de la segmentación puede llevar a problemas de conectividad o vulnerabilidades de seguridad.
+
+		- Requiere una planificación cuidadosa: La segmentación efectiva de la red requiere una buena comprensión de la topología de la red y las necesidades de tráfico.
+
+19.2. Redes locales virtuales (VLAN).
+
+	Las Redes Locales Virtuales (VLANs) son una técnica clave de segmentación de red que permite agrupar dispositivos en una o más redes lógicas, independientemente de su ubicación física dentro de una red física más grande. Las VLANs mejoran la eficiencia, seguridad y administración de la red al segmentar y aislar el tráfico de red en diferentes grupos lógicos.
+
+	¿Qué es una VLAN?
+
+		Una VLAN (Virtual Local Area Network) es una subred lógica que se crea dentro de un switch o una serie de switches. Al permitir que un grupo de dispositivos en diferentes segmentos de red física actúe como si estuvieran en la misma red lógica, las VLANs permiten una mayor flexibilidad y control en la administración de la red. Por ejemplo, se pueden crear VLANs para separar el tráfico de la red de la oficina administrativa del tráfico de la red de invitados.
+
+	Características de las VLANs
+
+		- Separación lógica del tráfico: Las VLANs separan el tráfico de red en diferentes dominios de broadcast. Esto significa que el tráfico broadcast de una VLAN no se propaga a otras VLANs, lo que ayuda a reducir la congestión de la red.
+
+		- Independencia física: Los dispositivos de diferentes ubicaciones físicas pueden agruparse en la misma VLAN. Por ejemplo, los empleados de diferentes departamentos que se encuentran en distintos pisos de un edificio pueden estar en la misma VLAN de “Administración”.
+
+		- Mejora de la seguridad: Al separar el tráfico en diferentes VLANs, se puede controlar el acceso a recursos específicos. Por ejemplo, el tráfico de los usuarios de invitados puede estar aislado del tráfico de los usuarios internos.
+
+		- Facilidad de administración: La administración de la red se vuelve más flexible y eficiente. Se pueden crear, eliminar o modificar las VLANs sin necesidad de hacer cambios físicos en la infraestructura de red.
+
+	Tipos de VLANs
+
+		- VLAN de Datos: Se utiliza para transportar datos de los usuarios de la red. Cada departamento, como ventas, finanzas o recursos humanos, puede tener su propia VLAN para separar y organizar el tráfico.
+
+		- VLAN de Voz: Optimizada para tráfico de voz sobre IP (VoIP), con prioridad para este tipo de tráfico para reducir la latencia y mejorar la calidad de las llamadas.
+
+		- VLAN de Administración: Se reserva para el acceso a los dispositivos de administración de la red, como switches, routers y servidores. Esto proporciona una capa adicional de seguridad al limitar el acceso administrativo a una VLAN específica.
+
+		- VLAN de Seguridad o Cuarentena: Utilizada para aislar dispositivos no confiables o que necesiten ser revisados antes de acceder a la red principal.
+
+		- VLAN de Invitados: Se utiliza para permitir a los invitados acceder a la red de manera restringida, separándolos del tráfico interno de la red.
+
+	Funcionamiento de las VLANs
+
+		Las VLANs se configuran principalmente en switches administrados. El tráfico de red se asigna a diferentes VLANs utilizando un número de identificación llamado ID de VLAN. Existen dos tipos de puertos en los switches en relación con VLANs:
+
+			- Puertos de Acceso (Access Ports): Están asignados a una única VLAN. Los dispositivos conectados a estos puertos solo pueden comunicarse dentro de su propia VLAN. Este es el tipo de puerto que se utiliza para conectar PCs y otros dispositivos finales.
+
+			- Puertos de Troncal (Trunk Ports): Son capaces de transportar tráfico de múltiples VLANs. Los puertos de troncal generalmente se utilizan para conectar switches entre sí o para conectar un switch a un router. El tráfico de diferentes VLANs se identifica mediante un método de etiquetado, como 802.1Q.
+
+	Etiquetado de VLANs: IEEE 802.1Q
+
+		El estándar IEEE 802.1Q es el método más utilizado para el etiquetado de tráfico de VLANs. Este protocolo de red añade una etiqueta (tag) de 4 bytes al encabezado del marco Ethernet original para identificar a qué VLAN pertenece un paquete. Los switches pueden leer esta etiqueta para dirigir correctamente el tráfico a la VLAN correspondiente.
+
+	Configuración de VLANs
+
+		La configuración de VLANs varía según el fabricante del switch (por ejemplo, Cisco, HP, Juniper), pero generalmente implica los siguientes pasos básicos:
+
+			- Crear la VLAN: Definir una VLAN específica en el switch y asignarle un número de identificación único (ID de VLAN).
+
+			- Asignar puertos a la VLAN: Configurar los puertos del switch para que sean puertos de acceso o de troncal y asignarlos a la VLAN correspondiente.
+
+			- Configurar el router (enrutamiento entre VLANs): Si se necesita comunicación entre diferentes VLANs, es necesario un dispositivo de capa 3 como un router o un switch capa 3 para realizar el enrutamiento entre VLANs.
+
+			- Etiquetado de puertos de troncal: Configurar los puertos de troncal para etiquetar el tráfico de múltiples VLANs utilizando 802.1Q.
+
+	Beneficios de Utilizar VLANs
+
+		- Aislamiento de tráfico: Mejora la seguridad y reduce la congestión en la red.
+
+		- Mejor administración de la red: Simplifica la administración al permitir a los administradores aplicar políticas de red más fácilmente.
+
+		- Mayor flexibilidad: Permite cambios rápidos en la red sin necesidad de modificar físicamente la infraestructura.
+
+		- Calidad de servicio (QoS): Facilita la priorización de ciertos tipos de tráfico, como VoIP o video, en redes convergentes.
+
+	Desafíos de las VLANs
+
+		- Configuración y mantenimiento: Requiere conocimientos técnicos avanzados y una configuración cuidadosa.
+
+		- Riesgos de seguridad: Si no se configuran correctamente, las VLANs pueden ser vulnerables a ataques como VLAN hopping, donde un atacante intenta acceder a VLANs no autorizadas.
+
+		- Compatibilidad y escalabilidad: La administración de VLANs en entornos grandes y complejos puede volverse complicada y requerir herramientas de administración avanzadas.
+
+	Aplicaciones de VLANs
+
+		Las VLANs son ampliamente utilizadas en entornos corporativos, centros de datos, instituciones educativas y redes empresariales donde se necesita segmentar el tráfico para mejorar la seguridad, el rendimiento y la administración de la red.
+
+19.3. Control de acceso a la red (NAC).
+
+	El Control de Acceso a la Red (Network Access Control, NAC) es una solución de seguridad que gestiona y controla el acceso a los recursos de una red, garantizando que solo los usuarios y dispositivos autorizados y que cumplan con las políticas de seguridad establecidas puedan conectarse y acceder a la red.
+
+	¿Qué es el Control de Acceso a la Red (NAC)?
+
+		El Control de Acceso a la Red (NAC) es un conjunto de tecnologías y políticas que definen quién puede acceder a una red, cómo pueden acceder y qué recursos pueden utilizar. Las soluciones NAC verifican la identidad de los usuarios y dispositivos, validan su conformidad con las políticas de seguridad de la organización, y permiten o deniegan el acceso a la red en función de esta validación.
+
+	Objetivos del NAC
+
+		- Garantizar la seguridad de la red: Impedir el acceso de dispositivos no autorizados o comprometidos que puedan representar una amenaza.
+
+		- Cumplimiento de políticas: Asegurar que los dispositivos que se conectan a la red cumplan con las políticas de seguridad, como actualizaciones de software, antivirus habilitado, configuración correcta, etc.
+
+		- Control de acceso basado en roles: Permitir acceso diferenciado a los recursos de la red según el perfil del usuario o el tipo de dispositivo.
+
+		- Visibilidad y gestión de dispositivos: Proporcionar visibilidad de todos los dispositivos conectados a la red, facilitando su administración.
+
+	Componentes de una Solución NAC
+
+		Una solución NAC típica consta de varios componentes que trabajan juntos para proporcionar un control de acceso efectivo:
+
+			- Política de control de acceso: Define las reglas que determinan quién puede acceder a la red, cómo pueden acceder y qué recursos pueden utilizar. Estas políticas pueden basarse en la identidad del usuario, el tipo de dispositivo, la ubicación, la hora del día, etc.
+
+			- Autenticación y Autorización: Verifica la identidad del usuario y del dispositivo (autenticación) y determina qué nivel de acceso tiene permitido (autorización). Esto se logra a través de métodos como 802.1X, RADIUS, LDAP, Active Directory, etc.
+
+			- Evaluación de la Conformidad del Endpoint: Antes de permitir el acceso, se evalúa el dispositivo para asegurarse de que cumple con las políticas de seguridad establecidas, como tener un antivirus actualizado, parches aplicados, configuración adecuada, etc.
+
+			- Remediación y Cuarentena: Si un dispositivo no cumple con las políticas de seguridad, el NAC puede colocar el dispositivo en una red de cuarentena donde solo tiene acceso limitado para remediación (por ejemplo, descargar actualizaciones o software de seguridad).
+
+			- Gestión de Acceso y Aplicación de Políticas: Basado en la evaluación, el NAC puede permitir, denegar o restringir el acceso a la red. También puede aplicar políticas específicas, como permitir solo acceso a ciertos recursos o imponer limitaciones de ancho de banda.
+
+	Métodos de Implementación de NAC
+
+		Existen varias maneras de implementar NAC en una red:
+
+			- Basado en Agente: Requiere que los dispositivos tengan un software o agente instalado que informe sobre el estado del dispositivo al sistema NAC. Este método proporciona un control y visibilidad más detallados sobre el dispositivo.
+
+			- Sin Agente (Agentless): No requiere la instalación de software en los dispositivos. Utiliza técnicas como escaneos de red, análisis de tráfico y autenticación a través de portales cautivos para evaluar la conformidad del dispositivo.
+
+			- Basado en Red (Network-based): Se integra con la infraestructura de red, como switches, routers y puntos de acceso inalámbricos, para controlar el acceso. Utiliza protocolos como 802.1X para autenticar y autorizar dispositivos en la red.
+
+			- Basado en Host (Host-based): Utiliza software en el host o dispositivo final para realizar la autenticación y control de acceso. Este método es útil para la administración de acceso remoto y dispositivos móviles.
+
+	Beneficios del Control de Acceso a la Red (NAC)
+
+		- Mayor Seguridad: Protege la red contra dispositivos no autorizados, malware y ataques internos.
+
+		- Cumplimiento Normativo: Ayuda a cumplir con regulaciones y estándares de seguridad al imponer políticas de acceso y de seguridad.
+
+		- Control Granular de la Red: Proporciona controles granulares basados en el rol del usuario, el tipo de dispositivo y el estado del dispositivo.
+
+		- Visibilidad de la Red: Ofrece una visibilidad completa de los dispositivos conectados a la red, permitiendo una mejor gestión y respuesta a incidentes.
+
+		- Acceso Remoto Seguro: Garantiza que los empleados y usuarios remotos cumplan con las políticas de seguridad antes de acceder a los recursos corporativos.
+
+	Desafíos de la Implementación de NAC
+
+		- Complejidad de Implementación: Integrar NAC en una red existente puede ser complejo, especialmente en entornos grandes o heterogéneos.
+
+		- Compatibilidad de Dispositivos: Es posible que algunos dispositivos no sean compatibles con ciertos métodos de autenticación o evaluación de conformidad.
+
+		- Requerimientos de Infraestructura: Puede requerir actualizaciones o cambios en la infraestructura de red existente, como switches y puntos de acceso.
+
+		- Gestión Continua: Requiere una gestión y mantenimiento continuos para adaptar las políticas de seguridad y responder a nuevas amenazas.
+
+	Protocolos y Tecnologías Asociadas con NAC
+
+		- 802.1X: Un estándar de IEEE para el control de acceso a redes basado en puertos. Es uno de los métodos más comunes utilizados en NAC para autenticar dispositivos que se conectan a una red.
+
+		- RADIUS (Remote Authentication Dial-In User Service): Protocolo ampliamente utilizado para autenticación, autorización y contabilización de usuarios que se conectan a la red. Es un componente central en muchas soluciones NAC.
+
+		- TACACS+ (Terminal Access Controller Access-Control System Plus): Similar a RADIUS, pero ofrece un control de acceso más granular y es comúnmente utilizado en entornos de red empresarial.
+
+		- LDAP (Lightweight Directory Access Protocol) y Active Directory (AD): Utilizados para autenticar y autorizar usuarios basándose en directorios centralizados de la organización.
+
+	Aplicaciones del NAC
+
+		- Empresas y organizaciones: Aseguran que solo los empleados y dispositivos autorizados tengan acceso a la red corporativa.
+
+		- Instituciones educativas: Controlan el acceso de estudiantes, profesores y dispositivos de invitados a la red.
+
+		- Redes de acceso público: Proveen acceso seguro y controlado en hoteles, aeropuertos, y otros lugares públicos.
+
+		- Entornos de salud y hospitales: Aseguran que solo dispositivos médicos y personales autorizados tengan acceso a redes críticas.
+
+	Conclusión
+
+		El Control de Acceso a la Red (NAC) es una herramienta esencial para proteger redes modernas y complejas. Garantiza que solo los dispositivos y usuarios autorizados y seguros puedan acceder a la red, cumpliendo así con las políticas de seguridad y regulaciones de la organización. La correcta implementación de una solución NAC puede proporcionar una fuerte defensa contra amenazas internas y externas.
+
+

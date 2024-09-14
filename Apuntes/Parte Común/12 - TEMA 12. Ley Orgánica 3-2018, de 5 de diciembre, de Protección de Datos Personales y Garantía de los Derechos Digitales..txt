@@ -1,0 +1,109 @@
+TEMA 12. Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y Garantía de los Derechos Digitales.
+
+12.1. Principios de la protección de datos.
+
+	1. Principio de licitud, lealtad y transparencia:
+
+		Los datos personales deben ser tratados de manera lícita, leal y transparente en relación con el interesado. Esto implica que el tratamiento de datos debe estar basado en una base legal (como el consentimiento del interesado) y que los interesados deben ser informados de manera clara y accesible sobre cómo se tratarán sus datos.
+
+	2. Principio de limitación de la finalidad:
+
+		Los datos personales deben ser recogidos con fines determinados, explícitos y legítimos, y no deben ser tratados ulteriormente de manera incompatible con dichos fines. Cualquier tratamiento posterior que no sea compatible con los fines iniciales requiere una nueva base legal.
+
+	3. Principio de minimización de datos:
+
+		Los datos personales deben ser adecuados, pertinentes y limitados a lo necesario en relación con los fines para los que son tratados. Es decir, solo se deben recoger y tratar los datos que sean estrictamente necesarios.
+
+	4. Principio de exactitud:
+
+		Los datos personales deben ser exactos y, si fuera necesario, actualizados. Se deben tomar todas las medidas razonables para que los datos inexactos se supriman o rectifiquen sin dilación.
+
+	5. Principio de limitación del plazo de conservación:
+
+		Los datos personales deben ser mantenidos de forma que se permita la identificación de los interesados durante no más tiempo del necesario para los fines del tratamiento de los datos personales. Se deben establecer plazos para la supresión o revisión periódica de los datos.
+
+	6. Principio de integridad y confidencialidad:
+
+		Los datos personales deben ser tratados de manera que se garantice una seguridad adecuada de los datos, incluida la protección contra el tratamiento no autorizado o ilícito y contra su pérdida, destrucción o daño accidental, mediante la aplicación de medidas técnicas u organizativas apropiadas.
+
+	7. Principio de responsabilidad proactiva:
+
+		El responsable del tratamiento debe ser capaz de demostrar el cumplimiento de los principios de protección de datos. Esto implica adoptar una serie de medidas que demuestren que se está cumpliendo con la normativa, como mantener registros de las actividades de tratamiento, realizar evaluaciones de impacto y aplicar políticas de protección de datos.
+
+	Estos principios forman el núcleo de la legislación de protección de datos y son esenciales para garantizar que el tratamiento de los datos personales se realice de manera que respete los derechos y libertades de los individuos.
+
+12.2. Derechos de las personas.
+
+	1. Derecho de acceso:
+
+		Las personas tienen derecho a obtener confirmación sobre si se están tratando o no datos personales que les conciernen y, en tal caso, acceder a los mismos y recibir información detallada sobre los fines del tratamiento, las categorías de datos tratados, los destinatarios, el plazo de conservación, y la existencia de derechos como la rectificación, supresión, limitación del tratamiento y oposición, entre otros.
+
+	2. Derecho de rectificación:
+
+		Este derecho permite a las personas solicitar la corrección de datos personales inexactos o incompletos que les conciernan. El responsable del tratamiento debe atender esta solicitud sin dilación indebida.
+
+	3. Derecho de supresión (derecho al olvido):
+
+		Las personas pueden solicitar la eliminación de sus datos personales cuando, entre otros motivos, los datos ya no sean necesarios para los fines para los que fueron recogidos, se retire el consentimiento en el que se basaba el tratamiento, se opongan al tratamiento o los datos hayan sido tratados ilícitamente.
+
+	4. Derecho a la limitación del tratamiento:
+
+		Este derecho permite a las personas solicitar que sus datos no sean tratados más allá de su mera conservación, en ciertos casos, como cuando impugnan la exactitud de los datos, el tratamiento es ilícito y el interesado se opone a su supresión, el responsable ya no necesita los datos para los fines del tratamiento pero el interesado los necesita para la formulación, el ejercicio o la defensa de reclamaciones, o el interesado se ha opuesto al tratamiento.
+
+	5. Derecho a la portabilidad de los datos:
+
+		Los individuos tienen derecho a recibir los datos personales que les incumban, que hayan proporcionado a un responsable del tratamiento, en un formato estructurado, de uso común y lectura mecánica, y a transmitirlos a otro responsable del tratamiento sin impedimentos, siempre que el tratamiento se base en el consentimiento o en un contrato y se efectúe por medios automatizados.
+
+	6. Derecho de oposición:
+
+		Las personas pueden oponerse, en cualquier momento, por motivos relacionados con su situación particular, a que sus datos personales sean objeto de un tratamiento basado en el interés público, el ejercicio de poderes públicos o el interés legítimo del responsable. En tal caso, el responsable debe dejar de tratar los datos, salvo que demuestre motivos legítimos imperiosos que prevalezcan sobre los intereses, derechos y libertades del interesado o para la formulación, el ejercicio o la defensa de reclamaciones.
+
+	7. Derecho a no ser objeto de decisiones individualizadas automatizadas:
+
+		Este derecho protege a las personas contra decisiones basadas únicamente en el tratamiento automatizado de datos, incluida la elaboración de perfiles, que produzcan efectos jurídicos sobre ellas o les afecten significativamente de manera similar. Existen excepciones cuando la decisión es necesaria para la celebración o ejecución de un contrato, está autorizada por el derecho de la Unión o del Estado miembro aplicable, o se basa en el consentimiento explícito del interesado.
+
+	8. Derecho a la información:
+
+		Este derecho garantiza que las personas sean informadas, de manera concisa, transparente, inteligible y de fácil acceso, sobre los aspectos relevantes del tratamiento de sus datos personales, tanto si los datos se recogen directamente del interesado como si se obtienen de otras fuentes.
+
+	Estos derechos permiten a los individuos mantener un control efectivo sobre sus datos personales y exigen que los responsables del tratamiento sean transparentes y responsables en la gestión de dichos datos. La LOPDGDD refuerza estos derechos y establece mecanismos para su protección y ejercicio, contribuyendo a una mayor protección de la privacidad y los datos personales en el entorno digital.
+
+12.3. Disposiciones aplicables a tratamientos concretos.
+
+	1. Tratamientos con fines de videovigilancia:
+
+		La videovigilancia debe cumplir con el principio de proporcionalidad y ser necesaria para la finalidad perseguida. Se debe informar de manera visible y clara sobre la existencia de cámaras de videovigilancia, y los datos solo podrán ser conservados por un plazo máximo de un mes, salvo que deban ser conservados para acreditar la comisión de actos que atenten contra la integridad de personas, bienes o instalaciones.
+
+	2. Tratamiento de datos en el ámbito de la publicidad y prospección comercial:
+
+		El tratamiento de datos con fines de publicidad o prospección comercial debe basarse en el consentimiento del interesado o en otra base legal legítima. Se garantiza el derecho del interesado a oponerse al tratamiento de sus datos para dichos fines, y las entidades deben proporcionar mecanismos fáciles y gratuitos para ejercer este derecho.
+
+	3. Tratamiento de datos en el ámbito de la función estadística pública:
+
+		Este tipo de tratamiento debe cumplir con los principios de confidencialidad y secreto estadístico. Los datos personales utilizados para fines estadísticos deben estar disociados de manera que no permitan la identificación de los interesados.
+
+	4. Tratamiento de datos con fines de archivo en interés público, investigación científica e histórica o fines estadísticos:
+
+		Los tratamientos realizados con estos fines deben adoptar medidas adecuadas para proteger los derechos y libertades de los interesados, como la seudonimización y otras técnicas de minimización de datos. Además, se permite la conservación de los datos personales durante períodos prolongados en función de la finalidad del archivo o investigación.
+
+	5. Tratamiento de datos en el ámbito de la sanidad:
+
+		Los datos de salud son especialmente protegidos y su tratamiento requiere medidas de seguridad reforzadas. Los datos pueden ser tratados para fines de atención sanitaria, gestión de servicios sanitarios, investigación biomédica, y en situaciones de emergencia sanitaria, siempre respetando la confidencialidad y derechos del paciente.
+
+	6. Tratamiento de datos de menores de edad:
+
+		Se establece que el tratamiento de datos de menores de 14 años debe contar con el consentimiento de los padres o tutores. Además, se deben adoptar medidas especiales para asegurar que la información dirigida a los menores sea comprensible y adecuada a su edad.
+
+	7. Tratamiento de datos en el ámbito laboral:
+
+		Los empleadores pueden tratar datos personales de sus empleados en el marco de la relación laboral, siempre que respeten los derechos y libertades fundamentales. Se establecen normas específicas sobre el uso de sistemas de geolocalización, la videovigilancia en el lugar de trabajo y el control de los dispositivos digitales proporcionados por la empresa.
+
+	8. Tratamiento de datos por parte de partidos políticos:
+
+		Los partidos políticos pueden recopilar datos personales en el contexto de sus actividades, siempre que respeten los derechos de los interesados y cumplan con las normas de protección de datos. Se les permite la elaboración de perfiles basados en la información obtenida de fuentes accesibles al público, pero deben garantizar la transparencia y el derecho de oposición de los interesados.
+
+	9. Tratamiento de datos en el ámbito de la prestación de servicios de comunicaciones electrónicas:
+
+		Los proveedores de servicios de comunicaciones electrónicas deben garantizar la confidencialidad de las comunicaciones y adoptar medidas para proteger los datos personales contra accesos no autorizados. Además, se regulan aspectos específicos como la conservación de datos para fines de seguridad pública y la obligación de informar a los usuarios sobre las condiciones de tratamiento de sus datos.
+
+		Estas disposiciones específicas reflejan la necesidad de adaptar las obligaciones y garantías de protección de datos a las particularidades de cada contexto, asegurando que los derechos de los interesados sean debidamente protegidos en todos los ámbitos en los que se realiza el tratamiento de datos personales.

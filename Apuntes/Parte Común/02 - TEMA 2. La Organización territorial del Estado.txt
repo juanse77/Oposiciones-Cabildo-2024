@@ -1,0 +1,132 @@
+TEMA 2. La Organización territorial del Estado.
+
+2.1-Formas de acceso a la autonomía en la Constitución Española:
+
+	Acceso Inmediato a la Autonomía (Artículo 151)
+		Este artículo prevé un procedimiento especial y rápido para las regiones que habían plebiscitado afirmativamente proyectos de Estatuto de Autonomía en el pasado, durante la Segunda República, como es el caso del País Vasco, Cataluña y Galicia. Este proceso también fue utilizado por Andalucía tras un referéndum específico en 1980.
+
+	Procedimiento del Artículo 151:
+		Iniciativa Autonómica: Debe ser adoptada por las tres cuartas partes de los municipios de cada provincia afectada, que representen al menos la mayoría del censo electoral de cada una de ellas.
+
+		Referéndum: La iniciativa debe ser ratificada en un referéndum por el voto afirmativo de la mayoría absoluta de los electores de cada provincia.
+
+		Cortes Generales: Una vez cumplidos los requisitos anteriores, se elabora un proyecto de Estatuto de Autonomía que debe ser aprobado por las Cortes Generales mediante ley orgánica.
+
+	Acceso Gradual a la Autonomía (Artículo 143)
+		El artículo 143 prevé un proceso más lento y gradual para el acceso a la autonomía, aplicable a aquellas regiones que no cumplieron con los requisitos del artículo 151 o que decidieron optar por este procedimiento.
+
+	Procedimiento del Artículo 143:
+		Iniciativa Autonómica: Debe ser promovida por las Diputaciones Provinciales interesadas o por el correspondiente órgano interinsular, y por dos tercios de los municipios cuya población represente al menos la mayoría del censo electoral de cada provincia o isla.
+
+		Ratificación Parlamentaria: La iniciativa debe ser ratificada por las Cortes Generales, que autoriza la elaboración de un Estatuto de Autonomía.
+
+		Estatuto de Autonomía: Una vez autorizado, se elabora un proyecto de Estatuto de Autonomía que debe ser aprobado por las Cortes Generales mediante ley orgánica.
+
+	Otros Mecanismos:
+		Además de estos dos procedimientos principales, existen otras disposiciones y mecanismos que facilitan y regulan el acceso a la autonomía, incluyendo:
+
+		Artículo 144: Permite que las Cortes Generales puedan, por razones de interés nacional, crear comunidades autónomas incluso en territorios que no hayan cumplido todos los requisitos del artículo 143.
+
+		Artículo 146: Establece que los proyectos de Estatuto deben ser redactados por una Asamblea compuesta por miembros de las Diputaciones Provinciales o de los órganos interinsulares y de los diputados y senadores elegidos en las provincias del ámbito territorial que pretenda acceder a la autonomía.
+
+2.2-Competencias de las Comunidades Autónomas y competencias exclusivas del Estado.
+
+	Competencias de las Comunidades Autónomas:
+		Las Comunidades Autónomas tienen la capacidad de asumir competencias en diversas áreas, siempre dentro del marco de la Constitución. Las competencias que pueden asumir se dividen en:
+
+			Competencias Exclusivas:
+				Cada Comunidad Autónoma puede tener competencias exclusivas sobre diversas materias, es decir, competencias que gestionan y regulan de manera autónoma sin intervención directa del Estado. Ejemplos de estas competencias pueden incluir:
+
+					- Organización de sus instituciones de autogobierno.
+					- Urbanismo y vivienda.
+					- Agricultura y ganadería.
+					- Protección del medio ambiente.
+					- Cultura y patrimonio histórico-artístico.
+					- Turismo.
+					- Deporte y ocio.
+					- Asistencia social.
+					- Transporte dentro de la Comunidad Autónoma.
+
+			Competencias Compartidas:
+				Algunas materias pueden ser reguladas tanto por el Estado como por las Comunidades Autónomas, de modo que se comparten competencias en su gestión. Ejemplos incluyen:
+
+					- Sanidad.
+					- Educación.
+					- Ordenación del territorio y urbanismo.
+					- Protección civil.
+					- Política forestal.
+
+			Competencias Ejecutivas:
+				Las Comunidades Autónomas pueden tener competencias ejecutivas en algunas materias, significando que aunque la regulación general puede corresponder al Estado, la implementación y gestión puede ser autonómica. Ejemplos incluyen:
+
+					- Gestión de servicios sanitarios y educativos.
+					- Policía autonómica (en aquellas comunidades que la tienen).
+					- Gestión de la administración de justicia dentro de la comunidad.
+
+			Competencias Exclusivas del Estado:
+				La Constitución Española reserva al Estado ciertas competencias exclusivas, las cuales no pueden ser asumidas por las Comunidades Autónomas. Estas competencias están recogidas principalmente en el artículo 149.1 de la Constitución y abarcan áreas de importancia estratégica y soberanía nacional. Algunas de las competencias exclusivas del Estado son:
+
+					- Defensa y Fuerzas Armadas.
+					- Relaciones internacionales.
+					- Administración de Justicia.
+					- Legislación laboral.
+					- Sistema monetario: moneda, cambio y convertibilidad; bases de la regulación de las instituciones de crédito y banca.
+					- Legislación sobre propiedad intelectual e industrial.
+					- Legislación sobre contratos y obligaciones.
+					- Legislación sobre pesas y medidas.
+					- Legislación mercantil, penal y penitenciaria.
+					- Aguas, costas y medio ambiente cuando afecten a más de una Comunidad Autónoma.
+					- Pesca marítima.
+					- Aviación civil y comunicaciones.
+					- Ferrocarriles y transportes terrestres que transcurran por el territorio de más de una Comunidad Autónoma.
+					- Tráfico y circulación de vehículos a motor.
+					- Correos y telecomunicaciones.
+					- Estadísticas para fines estatales.
+					- Bases y coordinación de la planificación general de la actividad económica.
+
+		Distribución de Competencias
+			La distribución de competencias entre el Estado y las Comunidades Autónomas está diseñada para garantizar una cohesión y uniformidad en aspectos esenciales para la nación, al tiempo que permite a las comunidades adaptar y gestionar muchos aspectos de la vida diaria de acuerdo con sus propias características y necesidades.
+
+			Esta distribución puede ser fuente de conflictos, los cuales son resueltos por el Tribunal Constitucional, encargado de interpretar la Constitución y garantizar el respeto a la distribución de competencias establecida en ella.
+
+2.3-El proceso estatuyente: los Estatutos de Autonomía. Reforma de los Estatutos.
+
+	Los Estatutos de Autonomía:
+		Los Estatutos de Autonomía son las normas institucionales básicas de cada Comunidad Autónoma en España. Estos estatutos determinan la estructura, competencias y funcionamiento de las instituciones de autogobierno de cada Comunidad Autónoma.
+
+		Proceso de Elaboración de los Estatutos de Autonomía:
+			El proceso para la elaboración de los Estatutos de Autonomía puede variar dependiendo del procedimiento que se siga, pero en general incluye los siguientes pasos:
+
+				Iniciativa: La iniciativa para la elaboración de un Estatuto puede provenir de las Diputaciones Provinciales interesadas o de los órganos interinsulares y de los dos tercios de los municipios cuya población represente al menos la mayoría del censo electoral de cada provincia o isla.
+
+				Asamblea Constituyente: Una vez iniciada la propuesta, se constituye una asamblea integrada por los miembros de las Diputaciones Provinciales o de los órganos interinsulares y los diputados y senadores elegidos en las provincias del ámbito territorial que pretende acceder a la autonomía.
+
+				Proyecto de Estatuto: La asamblea elabora un proyecto de Estatuto de Autonomía, que debe ser aprobado por mayoría absoluta.
+
+				Aprobación por las Cortes Generales: El proyecto de Estatuto debe ser sometido a la aprobación de las Cortes Generales (Congreso de los Diputados y Senado). En este punto, se puede introducir modificaciones al proyecto.
+
+				Ratificación en Referéndum: Una vez aprobado por las Cortes Generales, el proyecto de Estatuto es sometido a referéndum en la Comunidad Autónoma correspondiente, donde debe ser ratificado por mayoría simple de los votos emitidos.
+
+				Promulgación: Finalmente, el Estatuto es sancionado y promulgado por el Rey, y se publica en el Boletín Oficial del Estado, entrando en vigor.
+
+		Reforma de los Estatutos de Autonomía:
+			Los Estatutos de Autonomía pueden ser reformados para adaptarse a nuevas necesidades y circunstancias. La Constitución establece un proceso para la reforma que puede ser específico de cada Estatuto, pero generalmente sigue estos pasos:
+
+				Iniciativa de Reforma: La iniciativa para la reforma del Estatuto puede provenir del Gobierno de la Comunidad Autónoma, del Parlamento autonómico o mediante otras formas específicas establecidas en el propio Estatuto.
+
+				Proyecto de Reforma: Se elabora un proyecto de reforma que debe ser aprobado por el Parlamento de la Comunidad Autónoma, generalmente por una mayoría cualificada (por ejemplo, dos tercios de los miembros del Parlamento autonómico).
+
+				Aprobación por las Cortes Generales: El proyecto de reforma se remite a las Cortes Generales para su aprobación mediante ley orgánica. Durante este proceso, las Cortes pueden introducir modificaciones al proyecto de reforma.
+
+				Ratificación en Referéndum (si procede): Dependiendo de lo que establezca el Estatuto de Autonomía, la reforma puede ser sometida a referéndum en la Comunidad Autónoma correspondiente.
+
+				Promulgación: La reforma es sancionada y promulgada por el Rey, y se publica en el Boletín Oficial del Estado, entrando en vigor.
+
+		Ejemplos de Reformas:
+			Desde la aprobación de la Constitución de 1978, varias Comunidades Autónomas han reformado sus Estatutos de Autonomía. Por ejemplo:
+
+				Cataluña: Reformó su Estatuto en 2006 para ampliar competencias y mejorar el autogobierno.
+				Andalucía: Reformó su Estatuto en 2007, también con un enfoque en la ampliación de competencias.
+				Valencia: Reformó su Estatuto en 2006, siguiendo un proceso similar.
+			
+			Estos procesos de reforma son importantes para adaptar los marcos de autogobierno a las cambiantes necesidades sociales, económicas y políticas de las Comunidades Autónomas.

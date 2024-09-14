@@ -1,0 +1,70 @@
+Tema 14. Infraestructuras físicas de servidores.
+
+14.1. Arquitectura física de un servidor.
+
+	La arquitectura física de un servidor se refiere a la disposición y organización de los componentes de hardware que conforman un servidor. Un servidor es una computadora diseñada para procesar y gestionar datos y aplicaciones en una red, y su arquitectura física está diseñada para ser eficiente, escalable y confiable. Aquí te explico los principales componentes y conceptos:
+
+		1. Chasis o Carcasa
+	
+			- Tamaño y formato: Los servidores pueden venir en varios formatos, como rack (montados en un bastidor estándar), torre (similar a una computadora de escritorio) o blade (modular y compacto para montarse en un chasis específico).
+			- Gestión térmica: Incluye sistemas de ventilación y disipación de calor como ventiladores, disipadores y, en algunos casos, sistemas de refrigeración líquida.
+
+		2. Fuente de Alimentación
+
+			- Redundancia: Los servidores suelen tener fuentes de alimentación redundantes para asegurar la continuidad operativa en caso de fallo de una fuente.
+			- Eficiencia: Las fuentes de alimentación suelen ser de alta eficiencia, como certificaciones 80 PLUS, para reducir el consumo energético y el calor generado.
+
+		3. Placa Base (Motherboard)
+
+			- Socket para CPU: Es donde se alojan uno o varios procesadores (CPUs). Los servidores a menudo tienen soporte para múltiples CPUs.
+			- Ranuras de Memoria RAM: Las placas base de servidores tienen múltiples ranuras DIMM para soportar grandes cantidades de RAM, usualmente con soporte para ECC (Error-Correcting Code) para detectar y corregir errores de memoria.
+			- Ranuras de Expansión: Incluyen PCIe para tarjetas adicionales como controladoras RAID, tarjetas de red adicionales o GPUs.
+			- Conectores de Almacenamiento: Para discos duros (HDD), unidades de estado sólido (SSD) y conexiones NVMe para almacenamiento de alto rendimiento.
+
+		4. Procesador (CPU)
+
+			- Arquitectura Multinúcleo: Los procesadores de servidores suelen tener múltiples núcleos y hilos de procesamiento para manejar cargas de trabajo intensivas.
+			- Tecnología de Virtualización: Soporte para virtualización por hardware para ejecutar múltiples sistemas operativos o entornos de trabajo en una sola máquina física.
+
+		5. Memoria RAM
+
+			- Alta Capacidad: Los servidores requieren grandes cantidades de RAM para manejar múltiples usuarios y aplicaciones simultáneamente.
+			- ECC: Uso de memoria ECC para detectar y corregir errores de datos, lo cual es crítico en ambientes donde la confiabilidad es clave.
+
+		6. Almacenamiento
+			
+			- Configuración RAID: Uso de configuraciones RAID para mejorar la redundancia y el rendimiento del almacenamiento.
+			- Tipos de Unidades: Incorporación de HDDs para almacenamiento masivo y SSDs para almacenamiento de alta velocidad. Las unidades NVMe se utilizan para aplicaciones de alto rendimiento.
+
+		7. Conectividad de Red
+
+			- Tarjetas de Red (NIC): Tarjetas de red de alta velocidad, como 10GbE o incluso 40GbE, para manejar grandes volúmenes de tráfico de red.
+			- Redundancia de Conexiones: Implementación de múltiples interfaces de red para redundancia y balanceo de carga.
+
+		8. Sistemas de Almacenamiento Externo
+
+			- SAN y NAS: Muchos servidores se conectan a sistemas de almacenamiento en red, como SAN (Storage Area Network) o NAS (Network Attached Storage), para acceder a grandes cantidades de datos compartidos.
+
+		9. Sistemas de Enfriamiento
+		
+			- Ventiladores y Refrigeración Líquida: Para mantener las temperaturas operativas dentro de rangos seguros.
+			- Control de Temperatura: Sensores para monitorizar la temperatura y ajustar dinámicamente el sistema de enfriamiento.
+
+		10. Controladores y Tarjetas de Expansión
+
+			- Controladores RAID: Para gestionar arreglos de discos y mejorar la redundancia de datos.
+			- Tarjetas de Expansión: Tarjetas adicionales que pueden mejorar la funcionalidad del servidor, como aceleradoras de IA o tarjetas de red adicionales.
+
+		11. Sistema de Gestión
+			
+			- BMC (Baseboard Management Controller): Permite la administración remota del servidor, incluyendo la monitorización del hardware, la gestión del encendido/apagado y el acceso remoto a la consola.
+
+		12. Sistemas de Backup y Recuperación
+
+			- Sistemas de Copia de Seguridad: Unidades dedicadas para backup, como cintas o discos dedicados.
+			- Software de Recuperación: Implementación de sistemas que permiten la restauración de datos en caso de fallo.
+
+		13. Seguridad Física
+
+			- Cerraduras y Seguridad: Los servidores a menudo se almacenan en racks con cerraduras y se encuentran en salas con acceso controlado para prevenir accesos no autorizados.
+La arquitectura física de un servidor está diseñada para maximizar la eficiencia, confiabilidad y disponibilidad, permitiendo que las organizaciones gestionen grandes volúmenes de datos y aplicaciones de manera segura y eficaz.

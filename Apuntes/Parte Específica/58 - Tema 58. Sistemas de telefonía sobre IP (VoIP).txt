@@ -1,0 +1,266 @@
+Tema 58. Sistemas de telefonía sobre IP (VoIP).
+
+58.1. Características principales del estándar H.323.
+
+	El estándar H.323 es un conjunto de protocolos para la transmisión de voz, vídeo y datos a través de redes de paquetes, como las redes IP (Internet Protocol). Este estándar, desarrollado por la ITU-T (International Telecommunication Union - Telecommunication Standardization Sector), es ampliamente utilizado en aplicaciones de videoconferencia, VoIP (Voz sobre IP), y otras formas de comunicación multimedia en tiempo real. Las principales características del estándar H.323 son:
+
+	Características Principales del Estándar H.323
+
+		Arquitectura Modular:
+
+			H.323 define una arquitectura modular que incluye varios componentes, como terminales, gateways (puertas de enlace), gatekeepers (controladores), y Multipoint Control Units (MCUs). Cada uno de estos componentes desempeña un papel específico en la entrega de servicios de comunicación multimedia.
+
+		Protocolos de Transporte y Control:
+
+			Utiliza varios protocolos para diferentes funciones, como el protocolo H.225 para el control de llamadas y señalización, el protocolo H.245 para la negociación de capacidades y el control de flujo de medios, y RTP/RTCP (Real-time Transport Protocol / Real-time Control Protocol) para el transporte de datos de audio y vídeo en tiempo real.
+
+		Compatibilidad y Convergencia:
+
+			Proporciona compatibilidad con otros sistemas y redes de comunicación como las redes de telefonía conmutada (PSTN), a través de gateways, que permiten la interconexión entre diferentes tipos de redes. Esto facilita la convergencia de voz y datos en una sola red.
+
+		Calidad de Servicio (QoS):
+
+			H.323 incluye mecanismos para garantizar la calidad de servicio (QoS), necesarios para aplicaciones de tiempo real, como la transmisión de voz y vídeo. Esto se puede implementar a través de diferentes técnicas, como la priorización de paquetes y la gestión del ancho de banda.
+
+		Seguridad y Autenticación:
+
+			El estándar soporta características de seguridad como autenticación, autorización y encriptación, para proteger las comunicaciones y asegurar la privacidad y la integridad de los datos. Utiliza protocolos como H.235 para proveer seguridad a nivel de señalización y de medios.
+
+		Soporte para Comunicaciones Punto a Punto y Multipunto:
+
+			Soporta tanto comunicaciones punto a punto (entre dos terminales) como comunicaciones multipunto, que permiten la participación de más de dos terminales en una conferencia. Para la comunicación multipunto, H.323 utiliza las MCUs que gestionan el control y la mezcla de los medios.
+
+		Negociación de Capacidades:
+
+			Utiliza el protocolo H.245 para negociar las capacidades de los terminales, como el códec de audio y vídeo, antes de establecer una llamada. Esto permite a los terminales seleccionar los formatos de medios más adecuados según sus capacidades.
+
+		Flexibilidad en la Implementación:
+
+			Permite la implementación flexible en diversos tipos de redes IP, como LANs, WANs, e Internet. H.323 es agnóstico al hardware y puede ser utilizado en una variedad de dispositivos, desde teléfonos IP hasta sistemas de videoconferencia de alta definición.
+
+		Integración de Servicios de Datos:
+
+			H.323 también proporciona mecanismos para integrar servicios de datos (como chat o transferencia de archivos) junto con la voz y el vídeo, permitiendo una experiencia de comunicación multimedia más rica.
+
+		Estándar de Códecs de Audio y Vídeo:
+
+			Utiliza varios códecs estándar para la compresión de audio y vídeo, como G.711, G.722, G.728, H.261, y H.263. Esto garantiza una interoperabilidad entre diferentes dispositivos y sistemas que cumplen con H.323.
+
+		Ventajas del Estándar H.323
+
+			Interoperabilidad: Su amplio uso y la compatibilidad con otros estándares y sistemas aseguran una gran interoperabilidad.
+
+			Escalabilidad: Se adapta fácilmente a diferentes tamaños de red, desde pequeñas oficinas hasta grandes redes empresariales.
+
+			Madurez y Estabilidad: Al ser uno de los estándares más antiguos para comunicaciones multimedia sobre IP, H.323 es una tecnología madura y estable.
+
+			H.323 ha sido un estándar fundamental en el desarrollo de las comunicaciones VoIP y videoconferencias. Sin embargo, con el tiempo, protocolos más modernos como SIP (Session Initiation Protocol) han ganado popularidad debido a su simplicidad y facilidad de integración con aplicaciones web y móviles.
+
+58.2. Funcionamiento del Protocolo de Inicio de Sesión (SIP).
+
+	El Protocolo de Inicio de Sesión (SIP, por sus siglas en inglés: Session Initiation Protocol) es un protocolo de señalización utilizado principalmente para iniciar, mantener, modificar y finalizar sesiones de comunicación multimedia, como llamadas de voz, videoconferencias, mensajería instantánea y juegos en línea. 
+	
+	SIP es un protocolo de la capa de aplicación definido por la IETF (Internet Engineering Task Force) en el RFC 3261 y es ampliamente utilizado en sistemas de Voz sobre IP (VoIP) debido a su simplicidad, flexibilidad y capacidad de integración con otros protocolos de Internet.
+
+	Funcionamiento del Protocolo SIP
+
+		El protocolo SIP funciona mediante la utilización de mensajes de texto para realizar diferentes funciones de señalización en una red de comunicaciones. A continuación, se describen los aspectos fundamentales de su funcionamiento:
+
+	1. Arquitectura de SIP
+
+		SIP sigue un modelo cliente-servidor y utiliza una arquitectura distribuida. Sus componentes principales son:
+
+			- User Agents (UA): Son los clientes y servidores finales que inician o reciben las sesiones SIP. Cada UA tiene dos componentes:
+
+			- User Agent Client (UAC): Inicia una solicitud de SIP.
+
+			- User Agent Server (UAS): Responde a las solicitudes SIP.
+
+			- Proxy Servers: Actúan como intermediarios para enrutar solicitudes y respuestas entre los User Agents. También pueden aplicar políticas de autenticación y autorización.
+
+			- Registrar Servers: Mantienen un registro de las ubicaciones de los User Agents y asocian sus direcciones SIP con sus direcciones IP actuales.
+
+			- Redirect Servers: Redirigen las solicitudes a otro servidor o UA si el destinatario ha cambiado de ubicación.
+
+	2. Mensajes SIP y su Estructura
+
+		SIP utiliza mensajes de texto estructurados similares a HTTP para realizar la señalización. Los mensajes SIP se dividen en dos tipos:
+
+			- Mensajes de Solicitud: Seis métodos básicos de solicitud son utilizados para establecer y gestionar sesiones:
+
+				* INVITE: Inicia una llamada o sesión e invita al receptor a participar.
+				* ACK: Confirma que el receptor ha recibido la solicitud INVITE.
+				* BYE: Termina una llamada o sesión activa.
+				* CANCEL: Cancela una solicitud en curso.
+				* REGISTER: Registra la dirección SIP de un UA con un servidor de registro.
+				* OPTIONS: Consulta las capacidades del servidor.
+
+			- Mensajes de Respuesta: Las respuestas SIP indican el resultado de la solicitud e incluyen un código de estado y una descripción. Los códigos de estado se dividen en seis clases:
+
+				* 1xx: Informativas (por ejemplo, "100 Trying", "180 Ringing").
+				* 2xx: Éxito (por ejemplo, "200 OK").
+				* 3xx: Redirección (por ejemplo, "301 Moved Permanently").
+				* 4xx: Error del cliente (por ejemplo, "404 Not Found").
+				* 5xx: Error del servidor (por ejemplo, "500 Server Internal Error").
+				* 6xx: Error global (por ejemplo, "600 Busy Everywhere").
+
+	3. Proceso de Establecimiento de Llamadas SIP
+
+		El establecimiento de una sesión SIP típica (como una llamada de voz o videoconferencia) implica los siguientes pasos:
+
+		- Registro del UA:
+
+			El UA envía un mensaje REGISTER al servidor de registro para registrarse y asociar su dirección IP con su dirección SIP. Esto permite que otros usuarios SIP lo localicen.
+
+		- Inicio de Llamada (INVITE):
+
+			El UA que inicia la llamada (UAC) envía un mensaje INVITE al proxy server o directamente al UA receptor. El mensaje INVITE contiene la información de la sesión, como el tipo de medios, códecs y otros parámetros.
+
+		- Respuesta Provisional (1xx):
+
+			El UA receptor (UAS) responde con un mensaje provisional como 100 Trying (indicando que está tratando de establecer la llamada) o 180 Ringing (indicando que el teléfono está sonando).
+
+		- Establecimiento de Sesión (200 OK y ACK):
+
+			Una vez que el receptor acepta la llamada, envía una respuesta 200 OK al iniciador. El iniciador confirma la recepción de la respuesta con un mensaje ACK. En este punto, la sesión está establecida y se pueden transmitir datos de audio, vídeo u otros medios utilizando RTP (Real-time Transport Protocol).
+
+		- Terminación de la Llamada (BYE):
+
+			Cuando cualquiera de los participantes desea finalizar la llamada, envía un mensaje BYE. El otro participante responde con un mensaje 200 OK, confirmando la terminación de la sesión.
+
+	4. Negociación de Capacidades (SDP)
+
+		SIP utiliza el protocolo SDP (Session Description Protocol) para describir las características de la sesión, como los códecs de audio y vídeo, el formato de los medios y los puertos de transporte. La negociación de capacidades ocurre durante el intercambio de mensajes INVITE y 200 OK.
+
+	5. Compatibilidad con Otros Protocolos
+
+		SIP se integra con otros protocolos de red y transporte para manejar diferentes aspectos de las comunicaciones multimedia:
+
+			- RTP (Real-time Transport Protocol): Para el transporte de datos de audio y vídeo en tiempo real.
+
+			- RTCP (Real-time Control Protocol): Para el control de calidad de servicio y la sincronización de medios.
+
+			- STUN, TURN, y ICE: Para la transversalidad de NAT (Network Address Translation) y la conectividad en redes con restricciones.
+
+	6. Escalabilidad y Flexibilidad
+
+		Escalabilidad: SIP es altamente escalable y puede implementarse en diferentes tamaños de red, desde pequeñas oficinas hasta grandes proveedores de servicios.
+
+		Flexibilidad: SIP es un protocolo independiente de los medios y puede usarse para establecer cualquier tipo de sesión multimedia. Esto permite una gran flexibilidad en el desarrollo de aplicaciones de comunicación.
+
+	Ventajas de SIP
+
+		Simplicidad y Basado en Texto: SIP utiliza un formato de texto claro y fácil de entender, lo que simplifica la implementación y el diagnóstico de problemas.
+
+		Independiente de los Medios: SIP es agnóstico al tipo de medios, lo que permite usarlo para voz, vídeo, mensajería instantánea y otras formas de comunicación.
+
+		Interoperabilidad: SIP es un estándar abierto y ampliamente adoptado, lo que facilita la interoperabilidad entre diferentes dispositivos y proveedores.
+
+		Facilidad de Integración: Compatible con otros protocolos de Internet y sistemas, lo que permite integraciones sencillas con aplicaciones web, móviles y sistemas de comunicación empresarial.
+En resumen, SIP es un protocolo poderoso y flexible que ha revolucionado la forma en que se manejan las comunicaciones en redes IP, gracias a su capacidad para gestionar sesiones multimedia de manera eficiente y su integración con otros servicios de red.
+
+58.3. Gestión del ancho de banda Códecs y calidad del servicio en redes.
+
+	La gestión del ancho de banda, los códecs y la calidad del servicio (QoS) son conceptos fundamentales en redes, especialmente en aquellas que manejan comunicaciones multimedia en tiempo real, como Voz sobre IP (VoIP), videoconferencias, streaming, y otros servicios que requieren un uso intensivo de datos. Estos tres elementos están interrelacionados para garantizar que las comunicaciones sean claras, fluidas y sin interrupciones.
+
+	1. Gestión del Ancho de Banda
+
+		La gestión del ancho de banda es el proceso de controlar y optimizar la asignación de ancho de banda en una red para asegurar que las aplicaciones críticas, como las llamadas de voz y vídeo, tengan el suficiente ancho de banda disponible para funcionar correctamente.
+
+		Técnicas Comunes de Gestión del Ancho de Banda
+
+			- Control de Tráfico (Traffic Shaping):
+
+				Es una técnica que regula el flujo de tráfico de red para reducir la congestión y mejorar el rendimiento general. Se puede implementar mediante la priorización del tráfico basado en el tipo de aplicación o protocolo.
+
+			- Priorización de Tráfico (Quality of Service, QoS):
+
+				La priorización de tráfico utiliza QoS para clasificar y gestionar el tráfico en función de diferentes criterios, como el tipo de tráfico (voz, vídeo, datos), el nivel de servicio requerido, y la política de la red. Por ejemplo, el tráfico de voz y vídeo puede priorizarse sobre el tráfico de datos para reducir la latencia y la pérdida de paquetes.
+
+			- Limitación de Ancho de Banda (Bandwidth Throttling):
+
+				La limitación de ancho de banda es una técnica que restringe el ancho de banda disponible para ciertos tipos de tráfico o usuarios para evitar la congestión de la red. Esto puede ser útil para evitar que un solo usuario o aplicación consuma todo el ancho de banda disponible.
+Asignación de Ancho de Banda Garantizado:
+
+				Algunas redes pueden ofrecer un ancho de banda garantizado para ciertos tipos de tráfico (por ejemplo, voz o videoconferencia), lo que asegura que este tráfico siempre tenga suficiente ancho de banda disponible, independientemente de las condiciones de la red.
+
+			- Compresión y Optimización de Tráfico:
+
+				La compresión de tráfico y la optimización de aplicaciones son técnicas que pueden utilizarse para reducir el uso de ancho de banda sin sacrificar la calidad del servicio. Esto es particularmente útil en redes de baja capacidad o donde el ancho de banda es limitado.
+
+	2. Códecs en Redes de Comunicación
+
+		Los códecs (codificadores y decodificadores) son algoritmos utilizados para comprimir y descomprimir señales de audio y vídeo. Los códecs desempeñan un papel crucial en la eficiencia del uso del ancho de banda y la calidad del servicio en redes de comunicación.
+
+		Tipos de Códecs
+
+			- Códecs de Voz:
+
+				Los códecs de voz son utilizados para la compresión y transmisión de señales de voz en aplicaciones de VoIP. Algunos de los códecs de voz más comunes son:
+
+					* G.711: Proporciona una calidad de voz alta pero requiere un ancho de banda relativamente alto (alrededor de 64 kbps).
+
+					* G.729: Ofrece una buena calidad de voz con una tasa de compresión mucho mayor (alrededor de 8 kbps), lo que lo hace ideal para redes con ancho de banda limitado.
+
+					* G.722: Códec de banda ancha que proporciona una calidad de voz superior (similar a HD) y se utiliza en aplicaciones de VoIP avanzadas.
+
+					* Opus: Códec de audio versátil utilizado en VoIP y aplicaciones de transmisión multimedia que ofrece alta calidad a tasas de bits variables.
+
+			- Códecs de Vídeo:
+
+				Los códecs de vídeo comprimen señales de vídeo para su transmisión en redes. Los códecs más utilizados son:
+
+					* H.264 (MPEG-4 AVC): Ofrece una alta relación de compresión con buena calidad de vídeo y es ampliamente utilizado en videoconferencias y transmisiones de vídeo.
+					* H.265 (HEVC): Proporciona una compresión aún mejor que H.264 con la misma calidad de vídeo, reduciendo significativamente el ancho de banda requerido.
+					* VP8 y VP9: Códecs de vídeo de código abierto desarrollados por Google, utilizados en aplicaciones web y móviles para transmisiones de vídeo de alta calidad.
+
+			- Códecs de Datos:
+
+				Se utilizan para la compresión de datos en redes de comunicación. Aunque no son específicos para la transmisión de audio o vídeo, pueden ayudar a optimizar el uso del ancho de banda.
+
+		Consideraciones en la Elección de Códecs
+
+			- Ancho de Banda: Los códecs que ofrecen mayor compresión pueden reducir significativamente el uso de ancho de banda, pero a veces a expensas de la calidad.
+
+			- Calidad de Servicio: La elección de un códec influye directamente en la calidad percibida por el usuario. Los códecs con menor tasa de compresión tienden a ofrecer mejor calidad.
+
+			- Latencia y Retardo: Los códecs que requieren más tiempo de procesamiento pueden añadir latencia a la comunicación, afectando la sincronización en tiempo real.
+
+			- Compatibilidad e Interoperabilidad: Es fundamental asegurarse de que los códecs seleccionados sean compatibles con los dispositivos y sistemas de red utilizados.
+
+	3. Calidad del Servicio (QoS)
+
+		La Calidad del Servicio (QoS) es un conjunto de tecnologías y mecanismos que priorizan ciertos tipos de tráfico en la red para asegurar una comunicación confiable y de alta calidad. La QoS es especialmente crítica en redes que manejan tráfico en tiempo real, como voz y vídeo.
+
+		Componentes de QoS
+
+			- Clasificación y Marcado del Tráfico:
+
+				QoS clasifica el tráfico en diferentes categorías (por ejemplo, voz, vídeo, datos) y marca los paquetes con etiquetas específicas (como el campo DSCP en el encabezado IP) para definir la prioridad de manejo en la red.
+
+			- Colas de Prioridad (Queuing):
+
+				La red utiliza diferentes técnicas de encolado (como FIFO, Weighted Fair Queuing, o Low Latency Queuing) para manejar los paquetes según su prioridad, asegurando que los paquetes de alta prioridad (como los de voz) sean procesados antes que los de baja prioridad (como los de correo electrónico).
+
+			- Política de Gestión de Congestión:
+
+				QoS implementa políticas para gestionar la congestión de la red, como la limitación de ciertos tipos de tráfico o el uso de técnicas como el "tail drop" o "RED" (Random Early Detection).
+
+			- Control de Admisión de Llamadas (Call Admission Control, CAC):
+
+				El CAC es una técnica que garantiza que solo se permitan nuevas llamadas o flujos de medios si hay suficiente ancho de banda disponible para mantener la calidad de las llamadas existentes. Si la red está congestionada, el sistema puede rechazar nuevas llamadas para mantener la calidad.
+Control de Flujo y Modelado de Tráfico (Traffic Policing and Shaping):
+
+			Estas técnicas limitan la tasa de entrada de ciertos tipos de tráfico para prevenir la saturación de la red y garantizar la disponibilidad de ancho de banda para servicios críticos.
+
+		Beneficios de QoS
+
+			Mejor Calidad de Comunicación: Reduce la latencia, la pérdida de paquetes y la fluctuación (jitter), proporcionando una mejor calidad de voz y vídeo.
+
+			Uso Eficiente del Ancho de Banda: Prioriza el tráfico esencial y gestiona eficientemente los recursos de la red.
+
+			Fiabilidad: Asegura que los servicios críticos estén disponibles y funcionen de manera óptima incluso en condiciones de alta demanda.
+
+	Conclusión
+
+		La gestión del ancho de banda, el uso de códecs adecuados y la implementación de QoS son esenciales para garantizar una experiencia de comunicación de alta calidad en redes modernas. Estos elementos permiten a las organizaciones optimizar el rendimiento de la red, garantizar la eficiencia del ancho de banda y ofrecer servicios de comunicación confiables y de alta calidad, incluso en entornos de red complejos y congestionados.

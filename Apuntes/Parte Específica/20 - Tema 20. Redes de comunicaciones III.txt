@@ -1,0 +1,235 @@
+Tema 20. Redes de comunicaciones III.
+
+20.1. Equipos de comunicaciones y elementos de interconexión de redes.
+
+	Estos componentes son esenciales para el diseño, implementación y funcionamiento de las redes de comunicación, ya sean redes locales (LAN), redes de área extensa (WAN), redes inalámbricas, entre otras.
+
+	Equipos de Comunicaciones
+
+		Los equipos de comunicaciones son dispositivos utilizados para transmitir, recibir, amplificar o procesar señales de datos en una red. Algunos de los equipos más comunes incluyen:
+
+			- Routers (Enrutadores):
+
+				Los routers son dispositivos que encaminan paquetes de datos entre diferentes redes. Permiten la conexión de múltiples redes y aseguran que los datos lleguen a su destino correcto a través de la ruta más eficiente. Utilizan protocolos de enrutamiento como OSPF, BGP, EIGRP, entre otros.
+
+			- Switches (Conmutadores):
+
+				Los switches son dispositivos que conectan dispositivos dentro de una misma red (por ejemplo, una LAN) y permiten la comunicación directa entre ellos. Operan en la capa de enlace de datos (Capa 2 del modelo OSI) y, en algunos casos, también en la capa de red (Capa 3). Los switches pueden ser administrables (con configuración avanzada) o no administrables (configuración básica).
+
+			- Access Points (Puntos de Acceso Inalámbrico):
+
+				Son dispositivos que permiten la conexión de dispositivos inalámbricos a una red cableada. Actúan como un puente entre la red cableada y los dispositivos móviles, como teléfonos inteligentes, laptops, etc.
+
+			- Firewalls (Cortafuegos):
+
+				Son dispositivos de seguridad que supervisan y controlan el tráfico de red entrante y saliente. Los firewalls pueden ser de software o hardware y están diseñados para proteger la red de accesos no autorizados, ataques, y otros riesgos de seguridad.
+
+			- Modems:
+
+				Los modems (moduladores-demoduladores) son dispositivos que convierten señales digitales en analógicas y viceversa. Son esenciales para la conexión de redes a Internet a través de tecnologías como DSL, cable, fibra óptica, etc.
+
+			- Gateways:
+
+				Actúan como "puertas de enlace" que conectan redes que operan bajo diferentes protocolos de comunicación. Son especialmente útiles en entornos donde se necesita la integración de diferentes tipos de redes.
+
+	Elementos de Interconexión de Redes
+
+		Los elementos de interconexión de redes son los componentes que permiten la comunicación y transferencia de datos entre diferentes redes. Algunos de los elementos de interconexión más importantes incluyen:
+
+			- Hubs (Concentradores):
+
+				Son dispositivos básicos de interconexión que envían datos a todos los puertos, sin importar el destino. Son menos eficientes que los switches porque generan más tráfico en la red.
+
+			- Bridges (Puentes):
+
+				Los puentes conectan dos segmentos de red a nivel de capa de enlace de datos. Filtran el tráfico de red para reducir la congestión y mejorar el rendimiento.
+
+			- Gateways:
+
+				Actúan como traductores de protocolos, conectando dos redes que pueden tener diferentes tecnologías de comunicación. Un ejemplo típico es un gateway que conecta una red IP a una red telefónica.
+
+			- Repeaters (Repetidores):
+
+				Son dispositivos que amplifican la señal para que pueda viajar distancias más largas. Se utilizan en redes donde la señal puede debilitarse debido a la distancia o interferencia.
+
+			- Backbones (Espinas Dorsales):
+
+				Son los "troncos" principales de una red que conectan múltiples redes más pequeñas o subredes. Los backbones suelen tener un gran ancho de banda para manejar grandes cantidades de tráfico de datos.
+
+	Resumen
+
+		La combinación de equipos de comunicaciones y elementos de interconexión de redes es fundamental para diseñar redes eficientes, seguras y escalables. Estos componentes trabajan juntos para asegurar la conectividad, el rendimiento y la seguridad de las comunicaciones dentro de cualquier tipo de red.
+
+20.2. Principales requisitos a tener en cuenta en la adquisición de estos equipos.
+
+	La adquisición de equipos de comunicaciones y elementos de interconexión de redes es una decisión crítica para cualquier organización, ya que afecta directamente la eficiencia, seguridad, escalabilidad y fiabilidad de la red. A continuación, te detallo los principales requisitos que deben considerarse al adquirir estos equipos:
+
+	1. Requisitos de Capacidad y Rendimiento
+
+		- Ancho de Banda: Evalúa la cantidad de tráfico de datos que el equipo puede manejar. Por ejemplo, un switch o router debe ser capaz de manejar el tráfico máximo esperado sin colapsar. Esto incluye considerar la cantidad de puertos, velocidad de los puertos (10/100/1000 Mbps o 10 Gbps), y la capacidad de conmutación en el caso de switches.
+
+		- Latencia y Retardo: Es crucial que los equipos mantengan una latencia baja para aplicaciones sensibles al tiempo, como videoconferencias, VoIP o servicios de transmisión en tiempo real.
+
+		- Escalabilidad: Considera equipos que puedan crecer junto con la red. Los dispositivos modulares que permiten agregar más puertos, módulos de expansión o mejoras de firmware son una buena opción para redes en expansión.
+
+	2. Compatibilidad y Estándares
+
+		- Compatibilidad con Protocolos y Estándares: Asegúrate de que los equipos soporten los protocolos y estándares de red necesarios para tu infraestructura (como IPv4/IPv6, VLAN, QoS, etc.). Esto es especialmente importante en entornos heterogéneos donde pueden coexistir diferentes tipos de dispositivos y tecnologías.
+
+		- Interoperabilidad: Los equipos deben ser compatibles con otros dispositivos de diferentes fabricantes que ya existan en la red, especialmente en grandes redes corporativas donde el cambio de todo el hardware puede no ser factible.
+
+	3. Seguridad
+
+		- Capacidades de Seguridad Integradas: Busca equipos que soporten características avanzadas de seguridad, como firewalls integrados, VPN, autenticación 802.1X, listas de control de acceso (ACL), prevención de intrusiones (IPS), y detección de intrusiones (IDS).
+
+		- Gestión de Seguridad: Considera la facilidad con la que los equipos permiten gestionar la seguridad. Algunos dispositivos ofrecen gestión centralizada que puede simplificar la configuración de políticas de seguridad en toda la red.
+
+		- Actualizaciones de Firmware y Soporte de Seguridad: Verifica que el proveedor del equipo tenga un historial sólido de actualizaciones de seguridad y soporte a largo plazo.
+
+	4. Facilidad de Gestión y Mantenimiento
+
+		- Interfaz de Gestión: La gestión eficiente del equipo es crucial. Los dispositivos deben ofrecer interfaces de administración intuitivas y flexibles, como GUI basadas en web, CLI (línea de comandos), o mediante protocolos de administración de red como SNMP, NetFlow, etc.
+
+		- Herramientas de Monitorización y Diagnóstico: Equipos con características de monitorización, generación de informes y herramientas de diagnóstico ayudan a detectar problemas antes de que afecten a la red.
+
+		- Documentación y Soporte Técnico: Es importante que el proveedor ofrezca una buena documentación, soporte técnico confiable y recursos de formación, especialmente para el personal de TI.
+
+	5. Costo Total de Propiedad (TCO)
+
+		- Costo Inicial vs. Costo a Largo Plazo: Aparte del precio de compra, considera los costos a largo plazo, como el mantenimiento, actualizaciones de firmware, licencias de software, energía, refrigeración, y soporte.
+
+		- Licenciamiento de Características: Algunos fabricantes pueden cobrar licencias adicionales para características específicas, como enrutamiento avanzado, firewall, o capacidades de VPN. Es importante conocer estos detalles para evitar costos ocultos.
+
+	6. Confiabilidad y Resiliencia
+
+		- Redundancia y Alta Disponibilidad: Considera equipos que ofrezcan opciones de redundancia, como fuentes de alimentación dobles, ventiladores reemplazables en caliente, o configuraciones de cluster para failover automático. Esto es esencial para mantener la continuidad del negocio.
+
+		- Tasa de Fallos y Garantías: Revisa la tasa de fallos del equipo y las garantías ofrecidas por el fabricante. Los equipos de comunicaciones deben ser robustos y ofrecer garantías extendidas y acuerdos de nivel de servicio (SLA).
+
+	7. Capacidades de Red Avanzadas
+
+		- Calidad de Servicio (QoS): Es esencial en entornos donde el tráfico de red debe ser priorizado (por ejemplo, tráfico de voz y video frente a tráfico de datos).
+
+		- Soporte para Virtualización de Redes: En redes modernas, especialmente en centros de datos y entornos en la nube, el soporte para SDN (redes definidas por software) y virtualización de funciones de red (NFV) puede ser crucial.
+
+	8. Escenarios Específicos de Uso
+
+		- Ambiente de Trabajo: Considera factores ambientales como el tamaño, la temperatura de funcionamiento, la resistencia al polvo o agua (en el caso de equipos para exteriores), y el nivel de ruido, especialmente en entornos industriales o lugares de trabajo sensibles.
+
+		- Movilidad y Conectividad Inalámbrica: Para redes que requieren conectividad inalámbrica, los puntos de acceso deben soportar los estándares Wi-Fi más recientes (como Wi-Fi 6 o 6E) y características avanzadas como MIMO, beamforming, y seguridad WPA3.
+
+	9. Reputación del Fabricante y Soporte Comunitario
+
+		- Reputación del Fabricante: Investiga la reputación del fabricante en cuanto a confiabilidad, soporte postventa y disponibilidad de actualizaciones.
+
+		- Soporte Comunitario y Foros: Un fuerte soporte comunitario puede ser invaluable para solucionar problemas o aprender de la experiencia de otros usuarios.
+
+	Conclusión
+
+		La adquisición de equipos de comunicaciones y elementos de interconexión de redes debe basarse en un análisis exhaustivo de los requisitos técnicos, de seguridad, financieros y de gestión. Al considerar estos aspectos, es posible asegurar una red robusta, segura y adaptable que satisfaga las necesidades actuales y futuras de la organización.
+
+20.3. Sistemas de cableado estructurado. Tipos de cables de red.
+
+	El cableado estructurado es un sistema estandarizado de cables y componentes que permite la transmisión de datos, voz, video y señales de control a través de una red. Es la infraestructura física sobre la que se construyen las redes de comunicación en edificios, oficinas, centros de datos, etc.
+
+	Uno de los aspectos más importantes del cableado estructurado es la elección del tipo de cable de red adecuado. Los tipos de cables de red más utilizados incluyen cables de cobre y cables de fibra óptica. A continuación, te proporciono una descripción detallada de cada tipo de cable, sus características, aplicaciones y ventajas.
+
+	Tipos de Cables de Red
+
+		1. Cables de Cobre
+
+			Los cables de cobre son los más utilizados en redes locales (LAN) debido a su coste relativamente bajo y facilidad de instalación. Dentro de los cables de cobre, los más comunes son:
+
+			a) Cables de Par Trenzado
+
+				Los cables de par trenzado consisten en pares de cables de cobre trenzados entre sí para reducir la interferencia electromagnética. Este tipo de cable se divide en varias categorías, las más relevantes son:
+
+				- Categoría 5e (Cat 5e):
+
+					* Es la versión mejorada del Cat 5. Soporta velocidades de hasta 1 Gbps (Gigabit Ethernet) y frecuencias de hasta 100 MHz.
+
+					* Es ampliamente utilizado para redes LAN en entornos residenciales y comerciales.
+
+					* Limitado a distancias de hasta 100 metros.
+
+				- Categoría 6 (Cat 6):
+
+					* Soporta velocidades de hasta 10 Gbps a distancias de hasta 55 metros y frecuencias de hasta 250 MHz.
+
+					* Utilizado en entornos que requieren mayor ancho de banda, como centros de datos y aplicaciones de video en alta definición.
+
+					* Tiene un mayor grosor y aislamiento en comparación con Cat 5e, lo que reduce el ruido y la diafonía.
+
+				- Categoría 6a (Cat 6a):
+
+					* Soporta velocidades de hasta 10 Gbps a distancias de hasta 100 metros y frecuencias de hasta 500 MHz.
+
+					* Ofrece mejor protección contra la diafonía y las interferencias externas, siendo adecuado para aplicaciones de red más exigentes y entornos de alta densidad.
+
+				- Categoría 7 (Cat 7):
+
+					* Soporta velocidades de hasta 10 Gbps y frecuencias de hasta 600 MHz. Su longitud máxima recomendada es de 100 metros.
+
+					* Cada par de cables está blindado individualmente y el cable en su conjunto también, proporcionando una excelente protección contra la interferencia.
+
+					* Se utiliza en aplicaciones que requieren un alto nivel de inmunidad al ruido, como estudios de grabación, aplicaciones industriales y centros de datos.
+
+				- Categoría 8 (Cat 8):
+
+					* Es el estándar más reciente de cables de cobre de par trenzado. Soporta velocidades de hasta 25 Gbps y 40 Gbps en distancias de hasta 30 metros.
+
+					* Utilizado principalmente en centros de datos donde se requieren conexiones de alta velocidad y baja latencia.
+
+					* Funciona a frecuencias de hasta 2000 MHz y proporciona un blindaje superior para entornos de alta interferencia.
+
+			b) Cables Coaxiales
+		
+				Aunque son menos comunes en las redes LAN modernas, los cables coaxiales se siguen utilizando para ciertos tipos de conexiones, como sistemas de televisión por cable, cámaras de seguridad y aplicaciones industriales.
+
+				Tienen un núcleo conductor central rodeado por un aislamiento, una malla metálica y un revestimiento externo. Ofrecen buena resistencia a la interferencia electromagnética.
+
+		2. Cables de Fibra Óptica
+			
+			Los cables de fibra óptica utilizan fibras de vidrio o plástico para transmitir datos como pulsos de luz, lo que permite velocidades de transmisión muy altas y a largas distancias con baja atenuación. Se dividen principalmente en dos tipos:
+
+			a) Fibra Óptica Monomodo (Single-Mode Fiber - SMF)
+
+				- Transmite un único modo de luz. Se utiliza para largas distancias, como enlaces troncales entre ciudades, redes metropolitanas y aplicaciones de larga distancia.
+				
+				- Tiene un núcleo más pequeño (alrededor de 9 micrómetros) y soporta distancias de hasta 100 km sin necesidad de repetidores.
+
+				- Soporta velocidades de hasta 100 Gbps o más, dependiendo de la tecnología utilizada.
+
+			b) Fibra Óptica Multimodo (Multi-Mode Fiber - MMF)
+
+				- Transmite múltiples modos de luz simultáneamente, lo que puede provocar dispersión modal y limitar la distancia de transmisión.
+
+				- Tiene un núcleo más grande (50 o 62.5 micrómetros) y es ideal para distancias más cortas (hasta 2 km).
+
+				- Utilizado en redes de área local (LAN), centros de datos y enlaces de campus.
+
+				- Las subcategorías de MMF incluyen OM1, OM2, OM3, OM4, y OM5, que varían en términos de ancho de banda y distancia de transmisión. Por ejemplo, OM3 y OM4 son adecuados para 10 Gbps, 40 Gbps y 100 Gbps.
+
+		3. Cables de Fibra Óptica de Categoría Especial
+
+			- Cables Armados: Tienen una capa adicional de protección contra daños físicos, utilizados en entornos industriales.
+
+			- Cables para Exteriores: Diseñados para resistir condiciones ambientales extremas, como cambios de temperatura, humedad, y exposición a químicos.
+
+	Factores a Considerar en la Selección de Cables de Red
+
+		Al seleccionar el tipo de cable de red para un sistema de cableado estructurado, se deben considerar los siguientes factores:
+
+			- Distancia de Transmisión: Los cables de cobre tienen limitaciones de distancia (generalmente 100 metros), mientras que los cables de fibra óptica pueden cubrir distancias mucho mayores.
+
+			- Velocidad y Ancho de Banda: Dependiendo de la necesidad de velocidad y ancho de banda, se pueden seleccionar cables de diferentes categorías (Cat 5e, Cat 6, Cat 6a, etc.) o fibra óptica.
+
+			- Ambiente de Instalación: Considera las condiciones del entorno (interferencias electromagnéticas, temperatura, humedad, riesgo de daños físicos, etc.).
+
+			- Costo: Los cables de cobre son generalmente más baratos que los de fibra óptica, pero el costo a largo plazo puede ser más alto si se requiere un mayor mantenimiento o si no se puede cumplir con los requisitos de velocidad.
+
+			- Futuras Actualizaciones y Escalabilidad: Planifica con anticipación las posibles expansiones o aumentos de ancho de banda para evitar tener que reemplazar el cableado en el futuro.
+
+	Conclusión
+
+		La elección del tipo de cable de red adecuado es crucial para garantizar el rendimiento, la fiabilidad y la escalabilidad de una red. Considerar los requisitos específicos del entorno, el rendimiento deseado y el presupuesto ayudará a seleccionar el sistema de cableado estructurado más adecuado.

@@ -1,0 +1,87 @@
+Tema 7. Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas:
+
+7.1. Principios informadores. Iniciación del procedimiento. Especialidades en el inicio del procedimiento sancionador y de responsabilidad patrimonial.
+
+	Principios Informadores:
+		La LPACAP establece principios generales que deben regir la actuación de las administraciones públicas, que incluyen la legalidad, la igualdad, la proporcionalidad, la seguridad jurídica, la responsabilidad y la eficacia, entre otros. Estos principios buscan garantizar que las actuaciones administrativas se realicen de manera objetiva y conforme a la ley.
+
+	Iniciación del Procedimiento:
+		El procedimiento administrativo puede iniciarse de varias maneras, según lo dispuesto en el artículo 28 y siguientes de la LPACAP:
+
+			- De oficio: por la propia administración, a través de sus órganos competentes, en base a sus propios hallazgos o informaciones, o por denuncia.
+			- A petición del interesado: cualquier ciudadano o entidad que tenga un interés legítimo puede solicitar la iniciación de un procedimiento.
+			- Por orden superior: instrucción de un superior para iniciar el procedimiento.
+			- Por disposición legal o reglamentaria: cuando una norma establece la necesidad de iniciar el procedimiento.
+
+	Especialidades en el Inicio del Procedimiento Sancionador:
+		El procedimiento sancionador se rige por principios como la presunción de inocencia, la tipicidad, la proporcionalidad de las sanciones respecto a la infracción cometida, y la irretroactividad de las disposiciones sancionadoras no favorables. Las especialidades en el inicio de este procedimiento incluyen:
+
+			Iniciación de oficio, principalmente por la vía de denuncia o como resultado de la actividad inspectora. El órgano competente debe acordar la iniciación del procedimiento, identificar a los presuntos responsables, y designar un instructor. Los interesados tienen derecho a ser oídos y a presentar pruebas.
+
+	Especialidades en el Inicio del Procedimiento de Responsabilidad Patrimonial:
+		Este procedimiento se inicia para determinar la responsabilidad de la administración por los daños que sus actos o actividades hayan podido causar a los ciudadanos. Las características incluyen:
+
+			- Puede ser iniciado a solicitud del interesado que se considere afectado.
+			- La administración tiene el deber de reparar el daño causado conforme a la ley.
+			- Debe demostrarse la relación de causalidad entre la actividad administrativa y el perjuicio.
+			- El procedimiento debe resolverse en el plazo máximo de seis meses.
+		
+	Estos procedimientos y principios son fundamentales para asegurar que la administración actúe de manera justa y conforme a la ley, garantizando los derechos de los ciudadanos y la correcta gestión de las responsabilidades administrativas.
+
+
+7.2. Ordenación e instrucción del procedimiento. Participación de los interesados:
+
+	Ordenación del Procedimiento:
+		La ordenación del procedimiento se refiere a la gestión y organización del proceso para garantizar que se lleve a cabo de manera eficiente y ordenada. Según el artículo 68 y siguientes de la LPACAP, el órgano competente para la instrucción del procedimiento tendrá la responsabilidad de impulsar de oficio todas las actuaciones necesarias para la determinación, conocimiento y comprobación de los datos, en virtud de los cuales deba pronunciarse la resolución.
+
+		Estas son algunas de las acciones clave en la ordenación del procedimiento:
+
+			- Tramitación preferente: Determinados procedimientos pueden ser clasificados como preferentes y urgentes, lo que modifica los plazos usuales para su tramitación.
+
+			- Acumulación de expedientes: Se pueden acumular expedientes cuando se trate de procedimientos que tengan una misma finalidad, o cuya resolución deba ser coherente por estar vinculados por elementos comunes.
+
+			- Delegación de competencias: Siempre que esté previsto legalmente, se pueden delegar competencias para la resolución del procedimiento en órganos inferiores o en distintas administraciones.
+
+	Instrucción del Procedimiento
+		La instrucción implica la recolección y análisis de la información y pruebas que servirán de base para la resolución final del procedimiento. Esto incluye:
+
+			- Pruebas: La administración puede ordenar la apertura de un período de prueba para mejor proveer al esclarecimiento de los hechos que sean de interés en el procedimiento.
+
+			- Informes: Obtención de informes técnicos o legales que sean preceptivos o que el órgano instructor considere necesarios.
+
+			- Alegaciones: Antes de la propuesta de resolución, se permite un período de alegaciones donde los interesados pueden presentar argumentos adicionales o documentos complementarios.
+
+	Participación de los Interesados:
+		La participación de los interesados es un principio fundamental que busca garantizar que todas las partes afectadas por el procedimiento administrativo tengan la oportunidad de intervenir en el proceso. Esto incluye:
+
+			- Acceso al expediente: Los interesados tienen derecho a conocer el estado de la tramitación del procedimiento y a obtener copias de los documentos contenidos en el expediente.
+
+			- Presentación de alegaciones y documentos: Durante el procedimiento, especialmente en la fase de instrucción, los interesados pueden presentar todo tipo de documentos, alegaciones y justificaciones que consideren pertinentes.
+
+			- Audiencia en el procedimiento: En ciertos casos, antes de la resolución del procedimiento, se debe abrir un trámite de audiencia donde los interesados podrán examinar el expediente y presentar las alegaciones finales.
+
+	Estos mecanismos de participación son esenciales para asegurar que el proceso administrativo sea transparente, justo y conforme a los derechos de todas las partes involucradas. La LPACAP establece un marco legal que no solo regula la actuación de las administraciones públicas sino que también protege a los ciudadanos, permitiéndoles participar activamente en los procedimientos que les afectan directamente.
+
+7.3. Finalización del procedimiento: Disposiciones generales y formas de finalización:
+
+	Disposiciones Generales:
+		La finalización del procedimiento está diseñada para asegurar que todas las acciones y decisiones administrativas se formalicen de manera adecuada, con observancia de los derechos de los interesados y en cumplimiento de los plazos legales. Las disposiciones generales incluyen:
+
+			- Plazos: Los procedimientos deben resolverse dentro de los plazos establecidos por la normativa específica o, en su defecto, dentro del plazo máximo de seis meses, salvo que una ley establezca otra cosa. La falta de resolución en plazo se entiende como desestimación por silencio administrativo, excepto en aquellos casos en que la normativa aplicable establezca lo contrario.
+
+			- Notificación: Todas las resoluciones deben notificarse a los interesados, indicando los recursos que pueden interponerse contra la misma, el órgano administrativo o judicial ante el cual debe presentarse el recurso y el plazo para hacerlo.
+
+	Formas de Finalización:
+		El procedimiento administrativo puede concluir de varias maneras, cada una contemplada y regulada por la LPACAP para asegurar que todos los aspectos legales y derechos individuales sean respetados. Las formas de finalización incluyen:
+
+			- Resolución expresa: Es la forma más común de finalización de un procedimiento. La administración emite una decisión que resuelve todas las cuestiones planteadas por los interesados y aquellas otras derivadas del procedimiento.
+
+			- Desistimiento: El interesado puede desistir de su petición en cualquier momento antes de la resolución final. Este desistimiento debe ser aceptado por la administración, salvo que la ley disponga lo contrario.
+
+			- Renuncia: El interesado puede renunciar a sus derechos, siempre y cuando esta renuncia no sea contraria al interés público o a terceros.
+
+			- Caducidad: El procedimiento puede caducar si transcurre el tiempo máximo sin que se impulse de oficio o a petición del interesado. Esto supone la pérdida de la vigencia del procedimiento sin resolver el fondo del asunto.
+
+			- Imposibilidad material de continuar el procedimiento: Circunstancias sobrevenidas que hacen imposible la continuación del procedimiento, como el fallecimiento del interesado cuando el procedimiento es personalísimo.
+
+	Cada una de estas formas de finalización está diseñada para asegurar un tratamiento justo de los asuntos administrativos, respetando tanto los principios legales como los derechos de los individuos involucrados en el procedimiento. La claridad en la finalización del procedimiento es crucial para la seguridad jurídica y la correcta administración pública.

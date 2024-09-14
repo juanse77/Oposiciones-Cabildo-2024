@@ -1,0 +1,248 @@
+Tema 54. Sistemas de copias de seguridad I.
+
+54.1. Copias de seguridad Conceptos, funcionalidades y técnicas.
+
+	Las copias de seguridad (o backups) son una práctica fundamental en la gestión de datos, que consiste en la duplicación de información almacenada en un sistema para prevenir la pérdida de datos en caso de fallos, errores humanos, ataques cibernéticos o desastres naturales. A continuación, se detallan los conceptos, funcionalidades y técnicas relacionadas con las copias de seguridad:
+
+
+	Conceptos:
+
+		- Backup (Copia de Seguridad): Proceso de duplicación de datos con el fin de restaurarlos en caso de pérdida, corrupción o eliminación. Una copia de seguridad es una "instantánea" de los datos en un momento dado.
+
+		- Restore (Restauración): Proceso de recuperación de datos desde una copia de seguridad después de que se hayan perdido, eliminado o dañado los datos originales.
+
+		- Recovery Point Objective (RPO): El punto en el tiempo al cual se deben restaurar los datos tras un incidente. Define la cantidad máxima de datos que la organización está dispuesta a perder. Un RPO de una hora significa que la copia de seguridad debe permitir la recuperación de datos de hasta una hora antes de la falla.
+
+		- Recovery Time Objective (RTO): El tiempo máximo aceptable para restaurar los datos y servicios tras un incidente. Por ejemplo, un RTO de 4 horas significa que los sistemas deben estar nuevamente operativos dentro de ese tiempo.
+
+		- Snapshot: Una copia instantánea de un sistema de archivos en un momento específico. Las instantáneas no son necesariamente copias completas, sino un registro de los cambios realizados desde la última instantánea.
+
+		- Redundancia: Técnica de tener múltiples copias de datos almacenadas en diferentes ubicaciones o medios para asegurar la disponibilidad y la recuperación.
+
+	Funcionalidades:
+
+		- Programación de Copias de Seguridad: Permite definir cuándo y con qué frecuencia se deben realizar las copias de seguridad (diarias, semanales, mensuales, etc.).
+
+		- Tipos de Copias de Seguridad: Existen varios tipos de copias de seguridad, cada uno con diferentes funcionalidades y propósitos:
+
+		- Completa: Copia de todos los datos. Es más lenta y consume más espacio, pero facilita la restauración rápida.
+
+		- Incremental: Copia solo los datos que han cambiado desde la última copia de seguridad. Es más rápida y eficiente en términos de almacenamiento, pero puede ser más lenta en la restauración.
+
+		- Diferencial: Copia todos los cambios realizados desde la última copia de seguridad completa. Es un término medio entre las copias completas e incrementales.
+
+		- Compresión y Encriptación: Técnicas utilizadas para reducir el tamaño de las copias de seguridad y proteger los datos durante el almacenamiento o la transmisión.
+
+		- Automatización: Uso de herramientas y software que permiten automatizar el proceso de copias de seguridad, reducir el riesgo de errores humanos y asegurar que las copias de seguridad se realicen de manera consistente.
+
+		- Almacenamiento Remoto: Las copias de seguridad pueden ser almacenadas fuera del sitio principal (offsite) para proteger contra desastres locales. Se pueden almacenar en la nube, en centros de datos remotos o en dispositivos de almacenamiento físico.
+
+	Técnicas:
+
+		- 3-2-1 Backup Rule: Estrategia que sugiere mantener al menos tres copias de los datos (el original y dos copias), almacenar las copias en al menos dos tipos de medios de almacenamiento diferentes, y mantener al menos una copia fuera del sitio principal.
+
+		- Backup en la Nube: Utilización de servicios en la nube para realizar copias de seguridad automáticas de datos. Ofrece ventajas como la escalabilidad, flexibilidad y recuperación ante desastres.
+
+		- Backup Local vs. Backup Remoto: Los backups locales se almacenan en dispositivos cercanos (discos duros, NAS, etc.), mientras que los backups remotos están en ubicaciones distantes o en la nube. Una combinación de ambos ofrece una protección robusta.
+
+		- Data Deduplication (Desduplicación de Datos): Técnica para eliminar copias duplicadas de datos repetitivos y reducir los requisitos de almacenamiento. Esto es especialmente útil en entornos de backup incrementales.
+
+	Cold, Warm, and Hot Backups:
+
+		- Cold Backup: Realizado cuando el sistema está fuera de línea o inactivo. Proporciona copias seguras pero implica tiempo de inactividad.
+
+		- Warm Backup: Realizado cuando el sistema está parcialmente activo. Hay un pequeño impacto en el rendimiento.
+
+		- Hot Backup: Realizado mientras el sistema está completamente activo. No hay tiempo de inactividad, pero puede afectar el rendimiento.
+
+		- Archiving: Almacenamiento a largo plazo de datos que ya no se utilizan activamente pero que deben conservarse por razones legales, de cumplimiento o históricas.
+
+	Consideraciones Importantes
+
+		- Frecuencia de Backups: La frecuencia debe basarse en la cantidad de datos generados, la criticidad de los datos y las políticas de la empresa.
+
+		- Integridad y Verificación: Se deben realizar pruebas periódicas para asegurarse de que las copias de seguridad se pueden restaurar correctamente.
+
+		- Seguridad: Las copias de seguridad deben protegerse mediante cifrado y controles de acceso para evitar el acceso no autorizado o ataques maliciosos (como el ransomware).
+
+	Implementar un plan de copias de seguridad adecuado es crucial para proteger la continuidad del negocio y garantizar la recuperación rápida ante cualquier desastre.
+
+54.2. Copias totales, incrementales y diferenciales. Diferencias.
+
+	Las copias de seguridad (backups) totales, incrementales y diferenciales son tres enfoques diferentes para respaldar datos. Cada tipo de copia de seguridad tiene su propio método de copia de datos, uso de almacenamiento y tiempo de restauración, adaptándose a diferentes necesidades y estrategias de recuperación de desastres. A continuación, se explican en detalle las diferencias entre estas tres técnicas de copia de seguridad:
+
+	1. Copia de Seguridad Completa (Total)
+
+		Descripción: Una copia de seguridad completa implica copiar todos los datos seleccionados (archivos, carpetas, bases de datos, etc.) cada vez que se realiza la copia de seguridad.
+
+		Ventajas:
+
+			- Facilita el proceso de restauración, ya que todos los datos necesarios están contenidos en una única copia de seguridad.
+
+			- No depende de otras copias de seguridad para restaurar los datos.
+
+		Desventajas:
+
+			- Consume más espacio de almacenamiento porque se duplica todo el conjunto de datos cada vez que se realiza la copia de seguridad.
+
+			- Es el tipo de copia de seguridad más lenta, ya que implica copiar todos los datos.
+
+		Uso Común: Suelen realizarse en intervalos más amplios, como semanal o mensualmente, debido al tiempo y espacio que requieren.
+
+	2. Copia de Seguridad Incremental
+
+		Descripción: Una copia de seguridad incremental guarda solo los datos que han cambiado desde la última copia de seguridad (ya sea total o incremental). Por ejemplo, si una copia de seguridad total se realiza el lunes y una copia incremental se realiza el martes, la copia del martes solo contendrá los archivos que han cambiado desde el lunes.
+
+		Ventajas:
+
+			- Rápida de realizar porque solo copia los cambios más recientes.
+			
+			- Requiere menos espacio de almacenamiento en comparación con las copias de seguridad completas y diferenciales.
+
+		Desventajas:
+
+			- El proceso de restauración puede ser más lento y complejo, ya que requiere restaurar la última copia de seguridad completa y todas las copias incrementales subsiguientes hasta el punto deseado.
+
+			- Dependencia de múltiples copias de seguridad incrementales puede aumentar el riesgo de fallos en la restauración si alguna copia incremental está dañada o falta.
+
+			Uso Común: Ideal para entornos donde se necesitan copias de seguridad frecuentes y se desea minimizar el uso de almacenamiento y tiempo de copia de seguridad.
+
+	3. Copia de Seguridad Diferencial
+
+		Descripción: Una copia de seguridad diferencial copia todos los datos que han cambiado desde la última copia de seguridad completa. A diferencia de la incremental, la diferencial no tiene en cuenta otras copias diferenciales anteriores; siempre se refiere a la última copia completa. Por ejemplo, si una copia completa se realiza el lunes, una diferencial realizada el miércoles incluirá todos los cambios desde el lunes, incluso los cambios del martes.
+
+		Ventajas:
+
+			- Restauración más rápida que las copias incrementales, ya que solo se necesita la última copia completa y la última copia diferencial.
+
+			- Requiere menos espacio de almacenamiento que las copias completas, pero más que las incrementales.
+
+		Desventajas:
+
+			A medida que pasa el tiempo desde la última copia de seguridad completa, las copias diferenciales pueden volverse más grandes y lentas, ya que acumulan todos los cambios desde la última copia completa.
+
+		Uso Común: Útil en entornos donde se desea un equilibrio entre tiempo de copia de seguridad, espacio de almacenamiento y rapidez de restauración.
+
+	Comparación de las Copias de Seguridad Totales, Incrementales y Diferenciales
+
+		Característica		Completa	Incremental	Diferencial
+	Datos Copiados		Todos los datos seleccionados		Solo los datos cambiados desde la última copia (total o incremental)	Solo los datos cambiados desde la última copia completa
+	Tiempo de Copia de Seguridad	Largo		Corto		Intermedio
+	Espacio de Almacenamiento	Alto		Bajo		Medio
+	Tiempo de Restauración		Corto (solo una copia necesaria)	Largo (requiere restaurar la copia completa y todas las incrementales)	Intermedio (requiere la última copia completa y la última diferencial)
+	Frecuencia de Uso	Semanal, mensual	Diario, frecuente	Diario, intermedio
+	Complejidad de Restauración	Baja	Alta (requiere todas las copias incrementales)	Media (requiere la última completa y la última diferencial)
+
+	Resumen
+
+		- Copias Completas son útiles para restauraciones rápidas, pero requieren más tiempo y espacio para realizarlas.
+
+		- Copias Incrementales son más eficientes en términos de tiempo y espacio de almacenamiento, pero pueden llevar más tiempo para restaurarse.
+
+		- Copias Diferenciales ofrecen un equilibrio entre almacenamiento y tiempo de restauración, aunque pueden crecer en tamaño con el tiempo.
+
+		- La elección entre estos tipos de copias de seguridad dependerá de los requisitos específicos de la organización, como la frecuencia de los cambios de datos, el tiempo disponible para realizar copias de seguridad y el tiempo objetivo de recuperación.
+
+54.3. Políticas de copias de seguridad.
+
+	Las políticas de copias de seguridad son directrices establecidas por una organización para gestionar de manera efectiva la creación, almacenamiento, protección y restauración de copias de seguridad de datos críticos. Estas políticas son fundamentales para garantizar la continuidad del negocio, la recuperación ante desastres y la protección contra pérdida de datos debido a fallos, errores humanos, ataques cibernéticos o desastres naturales.
+
+	A continuación, se describen los componentes esenciales y las consideraciones al crear políticas de copias de seguridad:
+
+	Componentes de una Política de Copias de Seguridad
+
+		Alcance y Objetivo:
+
+			Define qué datos, sistemas y aplicaciones deben incluirse en las copias de seguridad. No todos los datos necesitan ser respaldados de la misma manera; algunos datos son más críticos que otros.
+Establece el propósito de la política: proteger la información, garantizar la continuidad del negocio, cumplir con normativas legales, etc.
+
+		Frecuencia de Copias de Seguridad:
+
+			- Determina la frecuencia con la que se deben realizar las copias de seguridad (diarias, semanales, mensuales). Esto dependerá del Recovery Point Objective (RPO), que define cuánto tiempo de datos está dispuesto a perder la organización.
+
+			- Es común utilizar una combinación de copias de seguridad completas, incrementales y diferenciales.
+
+		Tipos de Copias de Seguridad:
+
+			- Especifica qué tipo de copias de seguridad se utilizarán:
+			- Copias Completas: Realizadas con menos frecuencia (semanales o mensuales).
+			- Copias Incrementales: Realizadas con mayor frecuencia (diarias o incluso varias veces al día).
+			- Copias Diferenciales: Realizadas en días intermedios (por ejemplo, entre copias completas).
+	
+		Medios de Almacenamiento:
+
+			- Determina los medios de almacenamiento utilizados para las copias de seguridad (discos duros, cintas, almacenamiento en la nube, etc.).
+			- Considera el uso de múltiples medios para mayor redundancia y protección contra fallos de hardware.
+		
+		Localización del Almacenamiento:
+
+			- Define si las copias de seguridad se almacenan localmente, fuera del sitio (offsite) o en la nube.
+			- Se recomienda seguir la regla 3-2-1, que implica: 3 copias de datos, 2 tipos de medios diferentes, y al menos 1 copia almacenada fuera del sitio principal.
+
+		Retención y Eliminación de Datos:
+
+			- Establece cuánto tiempo deben conservarse las copias de seguridad antes de ser eliminadas o archivadas. Esto depende de las necesidades de la empresa, el espacio de almacenamiento disponible y los requisitos legales o normativos.
+
+			- Es importante definir políticas de eliminación segura para garantizar que los datos antiguos no sean recuperables por personas no autorizadas.
+
+		Cifrado y Seguridad de las Copias de Seguridad:
+
+			- Requiere que todas las copias de seguridad estén cifradas tanto en tránsito como en reposo para proteger contra el acceso no autorizado.
+
+			- Define los controles de acceso y la autenticación necesarios para gestionar las copias de seguridad.
+
+		Automatización y Programación:
+
+			- Utiliza herramientas de software para automatizar las copias de seguridad según la frecuencia y tipo especificados.
+
+			- Programar copias de seguridad automáticas reduce el riesgo de errores humanos y garantiza consistencia.
+
+		Pruebas de Restauración:
+
+			- Establece procedimientos para realizar pruebas periódicas de restauración de copias de seguridad para asegurarse de que los datos se pueden recuperar de manera efectiva y que las copias de seguridad no están dañadas o corruptas.
+
+			- Define la frecuencia de estas pruebas (trimestrales, semestrales, anuales) y quién es responsable de llevarlas a cabo.
+
+		Responsabilidades y Roles:
+
+			- Asigna roles y responsabilidades claras para la gestión de copias de seguridad, incluidas las tareas de creación, almacenamiento, mantenimiento, restauración y pruebas.
+
+			- Define quién tiene acceso a las copias de seguridad y los derechos asociados para realizar restauraciones.
+
+		Documentación y Auditoría:
+
+			- Mantener documentación detallada de todas las políticas, procedimientos, cambios y eventos de copia de seguridad. Esto es crucial para auditorías y para identificar posibles problemas.
+
+			- Realizar auditorías periódicas para garantizar que las políticas de copia de seguridad se cumplen y se ajustan a los requisitos legales y de la empresa.
+
+		Plan de Recuperación ante Desastres (DRP):
+
+			- Integrar las políticas de copias de seguridad con el Plan de Recuperación ante Desastres de la organización.
+
+			- Definir los procedimientos de recuperación, los tiempos de recuperación objetivo (Recovery Time Objective - RTO) y las acciones a tomar en caso de desastre o pérdida de datos.
+
+		Consideraciones Adicionales
+	
+			- Cumplimiento Normativo y Legal: Asegurar que las políticas de copias de seguridad cumplan con las leyes y regulaciones aplicables, como GDPR, HIPAA, SOX, etc., que pueden requerir la conservación de datos durante ciertos períodos o garantizar la confidencialidad de la información.
+
+			- Protección contra Ransomware: Implementar técnicas específicas, como backups inmutables (que no pueden ser modificados una vez creados) y air-gapped backups (copias de seguridad desconectadas de la red), para protegerse contra ataques de ransomware.
+
+			- Uso de Herramientas de Gestión: Utilizar herramientas de software para la gestión centralizada de copias de seguridad, lo que facilita la monitorización, programación y auditoría de las actividades de respaldo.
+
+	Ejemplo de Política de Copias de Seguridad
+
+		Una política de copias de seguridad podría establecer:
+
+			- Frecuencia: Copias completas semanales los domingos; copias incrementales diarias de lunes a sábado.
+
+			- Medios: Copias completas en un almacenamiento NAS local; copias incrementales en almacenamiento en la nube cifrado.
+
+			- Retención: Copias completas se retienen durante 3 meses; copias incrementales se retienen durante 1 mes.
+
+			- Pruebas de Restauración: Realización de pruebas de restauración completas una vez al trimestre.
+
+			- Seguridad: Cifrado AES-256 para todas las copias de seguridad; acceso restringido a personal de TI autorizado.
+
+			- Automatización: Uso de software de gestión de copias de seguridad para la programación automática y el monitoreo de todas las actividades de respaldo.
+
+	Una política de copias de seguridad bien definida y aplicada garantiza la protección adecuada de los datos críticos, minimiza el tiempo de inactividad y asegura la continuidad del negocio en caso de desastres.

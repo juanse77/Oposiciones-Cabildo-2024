@@ -1,0 +1,156 @@
+Tema 38. Gestión de proyectos.
+
+38.1. Metodologías ágiles para la gestión de proyectos. Concepto y características. Ventajas de uso de estas metodologías frente a las tradicionales.
+
+	Las metodologías ágiles para la gestión de proyectos son enfoques que se centran en la flexibilidad, colaboración y entrega rápida de productos. Se caracterizan por ser iterativas e incrementales, permitiendo que los equipos respondan rápidamente a los cambios y ajusten su trabajo según las necesidades del cliente y las circunstancias del proyecto.
+
+	Concepto de Metodologías Ágiles
+
+		Las metodologías ágiles surgieron como una alternativa a los enfoques tradicionales de gestión de proyectos, que a menudo se consideran rígidos y poco adaptativos. Estas metodologías se basan en los principios del Manifiesto Ágil, publicado en 2001, que promueve valores como:
+
+			Individuos e interacciones sobre procesos y herramientas.
+			Software funcionando sobre documentación extensa.
+			Colaboración con el cliente sobre la negociación del contrato.
+			Responder al cambio sobre seguir un plan.
+	
+	Características de las Metodologías Ágiles
+	
+		Iteración e Incremento: El trabajo se divide en ciclos cortos llamados iteraciones o sprints (en Scrum), permitiendo la entrega de partes funcionales del proyecto en cada ciclo.
+
+		Colaboración y Comunicación: Fomenta la comunicación continua y transparente entre los miembros del equipo y los clientes, asegurando que todos estén alineados con los objetivos del proyecto.
+
+		Flexibilidad y Adaptabilidad: Se adapta fácilmente a los cambios en los requisitos del cliente o las condiciones del proyecto, lo cual es fundamental en entornos dinámicos.
+
+		Enfoque en el Cliente: La retroalimentación constante del cliente es esencial para el éxito del proyecto, garantizando que el producto final cumpla con sus expectativas y necesidades.
+
+		Mejora Continua: A través de reuniones de retrospectiva y revisiones periódicas, los equipos buscan constantemente mejorar sus procesos y resultados.
+
+		Equipos Autogestionados y Multifuncionales: Los equipos tienen la autonomía para tomar decisiones y están compuestos por miembros con diversas habilidades para abordar diferentes aspectos del proyecto.
+
+	Ventajas de las Metodologías Ágiles Frente a las Tradicionales
+
+		Mayor Flexibilidad: A diferencia de las metodologías tradicionales como el modelo en cascada, donde los cambios en los requisitos pueden ser costosos y difíciles de implementar, las metodologías ágiles permiten ajustes en cada iteración.
+
+		Entrega Continua de Valor: Los productos o funcionalidades se entregan de manera incremental, permitiendo a los clientes ver resultados tangibles y obtener valor rápidamente.
+
+		Mejor Gestión de Riesgos: Al trabajar en ciclos cortos y entregar frecuentemente, es más fácil identificar y mitigar riesgos antes de que se conviertan en problemas graves.
+
+		Mayor Participación del Cliente: La colaboración constante con el cliente asegura que sus necesidades y expectativas se tengan en cuenta, lo que aumenta la satisfacción del cliente.
+
+		Motivación y Productividad del Equipo: Los equipos autogestionados y la participación en la toma de decisiones fomentan un ambiente de trabajo más dinámico y motivador.
+
+		Reducción del Tiempo de Comercialización: Las iteraciones rápidas permiten que los productos lleguen al mercado más rápidamente, lo que es crucial en industrias altamente competitivas.
+
+		Calidad Mejorada del Producto: La entrega de productos funcionales en cada iteración y la retroalimentación continua ayudan a identificar errores y problemas de calidad tempranamente, mejorando el resultado final.
+
+	En resumen, las metodologías ágiles ofrecen un enfoque más dinámico, colaborativo y flexible para la gestión de proyectos, adaptándose mejor a entornos cambiantes y promoviendo una mayor satisfacción tanto del equipo como del cliente.
+
+38.2. Scrum y Kanban.
+
+	Scrum y Kanban son dos de las metodologías ágiles más populares utilizadas para la gestión de proyectos. Cada una tiene sus propios principios, prácticas y beneficios específicos que se adaptan a diferentes tipos de equipos y proyectos. A continuación, explico cada uno en detalle:
+
+	Scrum
+
+		Scrum es un marco ágil de trabajo que se utiliza para desarrollar, entregar y mantener productos complejos. Se centra en equipos pequeños y multifuncionales que trabajan en iteraciones llamadas sprints, que suelen durar entre 2 y 4 semanas.
+
+		Conceptos Clave de Scrum
+
+			Sprints: Periodos de trabajo de tiempo fijo, donde se desarrollan y entregan incrementos de producto que son funcionales y potencialmente utilizables.
+
+			Roles en Scrum:
+
+				- Product Owner (Propietario del Producto): Responsable de maximizar el valor del producto y gestionar el backlog del producto (lista priorizada de tareas).
+
+				- Scrum Master: Facilita el proceso Scrum, ayuda al equipo a seguir las prácticas y principios ágiles, y elimina impedimentos.
+
+				- Development Team (Equipo de Desarrollo): Grupo multifuncional de profesionales que trabajan juntos para entregar los incrementos del producto. Son autogestionados y autoorganizados.
+
+			Artefactos de Scrum:
+
+				- Product Backlog: Lista priorizada de todas las funcionalidades, requisitos y cambios que se deben realizar en el producto.
+
+				- Sprint Backlog: Conjunto de elementos del Product Backlog seleccionados para trabajarse en el sprint actual.
+
+				- Increment: Resultado del sprint, que es un incremento de producto "hecho" que cumple con la definición de "Terminado".
+
+			Eventos de Scrum:
+
+				- Sprint Planning (Planificación del Sprint): Reunión al inicio del sprint para definir qué trabajo se realizará.
+
+				- Daily Stand-Up (Reunión Diaria): Reunión diaria de 15 minutos donde los miembros del equipo comparten su progreso, planes y obstáculos.
+
+				- Sprint Review (Revisión del Sprint): Reunión al final del sprint para revisar el trabajo realizado y recibir retroalimentación.
+
+				- Sprint Retrospective (Retrospectiva del Sprint): Reunión para reflexionar sobre el proceso del sprint y mejorar para el siguiente.
+
+		Ventajas de Scrum
+
+			Fomenta la colaboración y comunicación constante dentro del equipo.
+			Adaptación rápida a los cambios de requisitos.
+			Permite entregas frecuentes de valor al cliente.
+			Ayuda a identificar y resolver problemas rápidamente a través de la inspección y adaptación continua.
+
+	Kanban:
+
+		Kanban es un método ágil para gestionar el trabajo con un enfoque visual. A diferencia de Scrum, no utiliza iteraciones fijas; en su lugar, se basa en un flujo continuo de trabajo.
+
+		Conceptos Clave de Kanban
+
+			- Tablero Kanban: Herramienta visual que muestra el flujo de trabajo. Generalmente está dividido en columnas que representan diferentes etapas del proceso (como "Pendiente", "En Progreso", "Revisión" y "Terminado").
+
+			- Tarjetas Kanban: Cada tarea o ítem de trabajo se representa con una tarjeta que se mueve a través del tablero a medida que progresa.
+
+			- Límite de Trabajo en Progreso (Work In Progress - WIP): Se establecen límites para la cantidad de trabajo que puede estar en cada etapa del proceso al mismo tiempo, lo cual ayuda a identificar cuellos de botella y mantener un flujo constante.
+
+			- Mejora Continua: Kanban fomenta la revisión continua del proceso y la identificación de áreas de mejora.
+
+		Principios de Kanban:
+
+			Comenzar con lo que haces ahora: No requiere grandes cambios desde el inicio; se implementa de manera gradual.
+
+			Buscar la mejora continua: A través de la retroalimentación constante y la gestión visual del flujo de trabajo.
+
+			Roles flexibles: No hay roles específicos como en Scrum, y los equipos pueden ser más flexibles en su estructura.
+
+		Ventajas de Kanban
+
+			Flexibilidad para adaptarse a cambios en cualquier momento.
+			Transparencia y visibilidad del flujo de trabajo, permitiendo la identificación rápida de cuellos de botella.
+			Mejora del flujo de trabajo mediante la limitación del trabajo en progreso.
+			Fácil de implementar y no requiere cambios importantes en los procesos existentes.
+
+38.3. Comparativa de estas metodologías.
+
+	Comparación entre Scrum y Kanban
+
+		- Enfoque:
+			Scrum: Iteraciones fijas (sprints)
+			Kanban: Flujo continuo de trabajo
+		
+		- Roles:
+			Scrum: Definidos: Product Owner, Scrum Master, Equipo de Desarrollo
+			Kanban: No hay roles estrictos
+
+		- Planificación:
+			Scrum: Planificación detallada al inicio de cada sprint
+			Kanban: Planificación continua según el flujo de trabajo
+
+		- Tablero:
+			Scrum: Usado para visualizar el sprint backlog
+			Kanban: Usado para visualizar todo el flujo de trabajo
+
+		- Entrega de valor:
+			Scrum: Al final de cada sprint
+			Kanban: Entrega continua a medida que se completa el trabajo
+
+		- Mejora continua:
+			Scrum: A través de la retrospectiva del sprint
+			Kanban: Revisión continua del proceso
+
+		- Adaptabilidad:
+			Scrum: Adaptable, pero con ciclos fijos
+			Kanban: Muy adaptable, cambios posibles en cualquier momento
+
+	Conclusión
+
+		Scrum y Kanban son enfoques ágiles que pueden ser utilizados de manera complementaria o independiente, dependiendo de las necesidades del proyecto y del equipo. Mientras que Scrum es ideal para equipos que prefieren la estructura y el ritmo de trabajo definido, Kanban es más flexible y permite a los equipos manejar el trabajo de manera continua, mejorando gradualmente el flujo de trabajo. La elección entre ambos depende del contexto y las necesidades específicas del proyecto.

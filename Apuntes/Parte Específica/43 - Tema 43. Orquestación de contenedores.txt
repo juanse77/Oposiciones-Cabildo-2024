@@ -1,0 +1,296 @@
+Tema 43. Orquestación de contenedores.
+
+43.1. Concepto. Clústeres de contenedores estáticos y dinámicos. Ventajas de uso.
+
+	Orquestación de contenedores se refiere a la gestión automatizada de la implementación, escalado, redes y disponibilidad de aplicaciones basadas en contenedores. A medida que las aplicaciones y los entornos de desarrollo han evolucionado hacia arquitecturas de microservicios y contenedores, la necesidad de herramientas de orquestación se ha vuelto crucial para gestionar múltiples contenedores distribuidos a través de diferentes entornos (como desarrollo, prueba y producción).
+
+	Herramientas como Kubernetes, Docker Swarm, y Apache Mesos son ejemplos de plataformas de orquestación de contenedores que permiten a los desarrolladores y equipos de DevOps automatizar la gestión de contenedores, proporcionando alta disponibilidad, escalabilidad, recuperación ante fallos, y simplificación en la gestión del ciclo de vida de las aplicaciones.
+
+	Concepto de Orquestación de Contenedores
+
+		La orquestación de contenedores implica varios procesos, que incluyen:
+
+			- Despliegue Automático: Automatiza la implementación de contenedores y garantiza que se inicien y configuren correctamente según las especificaciones definidas.
+
+			- Escalado Horizontal y Vertical: Gestiona el escalado de contenedores (agregar o quitar instancias) en función de la demanda, ya sea de forma automática o manual.
+
+			- Gestión del Ciclo de Vida de Contenedores: Coordina el ciclo de vida de los contenedores, como el arranque, la detención, el reinicio, la actualización y la eliminación.
+
+			- Balanceo de Carga y Redes: Implementa balanceo de carga para distribuir el tráfico de red entre los contenedores, así como gestiona la red de contenedores para garantizar la comunicación segura entre ellos.
+
+			- Monitoreo y Registro: Proporciona herramientas para monitorear el rendimiento de los contenedores y registrar eventos y errores para la depuración y el análisis de rendimiento.
+
+			- Recuperación ante Fallos y Alta Disponibilidad: Garantiza que los contenedores se repliquen y reprogramen en caso de fallos, manteniendo la disponibilidad de la aplicación.
+
+	Clústeres de Contenedores: Estáticos y Dinámicos
+
+		Un clúster de contenedores es un conjunto de máquinas (nodos) que trabajan juntas para ejecutar contenedores de manera coordinada. Dependiendo de cómo se gestionen los recursos y la configuración del clúster, se pueden clasificar en clústeres estáticos y clústeres dinámicos.
+
+		1. Clústeres de Contenedores Estáticos
+
+			En los clústeres de contenedores estáticos, la infraestructura del clúster (nodos y recursos) se define y provisiona previamente y generalmente permanece fija durante el tiempo de vida del clúster.
+
+			Características:
+
+				Los nodos se añaden y eliminan de forma manual.
+				La capacidad del clúster es predefinida y fija.
+				Escalabilidad limitada a los recursos físicos ya disponibles.
+				Son adecuados para aplicaciones con cargas de trabajo predecibles.
+
+			Ventajas:
+
+				Simplicidad de Gestión: Al tener una configuración fija, la gestión del clúster es relativamente sencilla.
+				Predecibilidad del Rendimiento: Debido a la naturaleza estática de los recursos, el rendimiento es más predecible.
+				Costos Controlados: Los costos se controlan mejor ya que los recursos son limitados y conocidos.
+
+			Desventajas:
+
+				Escalabilidad Limitada: No es fácil de escalar rápidamente en respuesta a cambios en la demanda.
+				Inflexibilidad: Dificultad para ajustar los recursos en función de las cargas de trabajo cambiantes.
+				Menos Eficiente en Utilización de Recursos: Es posible que los recursos infrautilizados permanezcan ociosos, aumentando los costos.
+
+	2. Clústeres de Contenedores Dinámicos
+
+		Los clústeres de contenedores dinámicos permiten la adición y eliminación automática de nodos y recursos en función de las necesidades cambiantes de la aplicación y la demanda. Son gestionados dinámicamente por herramientas de orquestación como Kubernetes y permiten un escalado ágil.
+
+		Características:
+
+			Los nodos se pueden añadir o eliminar automáticamente en función de la demanda.
+			La capacidad del clúster se ajusta dinámicamente.
+			Mejor integración con entornos de nube (como AWS, Azure, Google Cloud) para escalar horizontalmente.
+			Son adecuados para aplicaciones con cargas de trabajo variables o impredecibles.
+
+		Ventajas:
+
+			Escalabilidad Flexible: Los recursos pueden escalar automáticamente en función de la demanda, mejorando la eficiencia operativa.
+			Mejor Utilización de Recursos: Se optimiza el uso de recursos, evitando tanto el exceso como la escasez de capacidad.
+			Integración con Nube y CI/CD: Compatible con implementaciones continuas e integración continua, lo que facilita la automatización del ciclo de vida de la aplicación.
+			Alta Disponibilidad y Recuperación ante Fallos: Capacidad para mover cargas de trabajo a diferentes nodos en caso de fallo.
+
+		Desventajas:
+
+			Complejidad de Gestión: Requiere habilidades avanzadas y conocimientos para configurar, gestionar y monitorizar el clúster.
+			Costos Variables: Los costos pueden ser impredecibles ya que dependen del uso real de los recursos.
+	
+	Ventajas del Uso de Orquestadores de Contenedores
+
+		El uso de herramientas de orquestación de contenedores como Kubernetes, Docker Swarm y Apache Mesos ofrece varias ventajas significativas para equipos de desarrollo, operaciones y DevOps:
+
+			- Automatización del Despliegue y Gestión: Facilita la automatización del despliegue de aplicaciones contenedorizadas y su gestión continua, reduciendo errores humanos y tiempos de implementación.
+
+			- Escalabilidad y Elasticidad: Permite el escalado dinámico de las aplicaciones para satisfacer las demandas variables de los usuarios, ya sea agregando más instancias de contenedores o aumentando los recursos disponibles para los contenedores existentes.
+
+			- Alta Disponibilidad y Recuperación ante Fallos: Proporciona mecanismos de autorecuperación y alta disponibilidad para garantizar que las aplicaciones permanezcan operativas incluso en caso de fallos de hardware o software.
+
+			- Eficiencia Operativa: Optimiza el uso de recursos físicos al programar contenedores en los nodos más adecuados, reduciendo el desperdicio de recursos.
+
+			- Portabilidad y Flexibilidad: Las aplicaciones contenedorizadas gestionadas a través de orquestadores son altamente portátiles y se pueden ejecutar de manera consistente en cualquier entorno que soporte contenedores, como entornos locales, en la nube o híbridos.
+
+			- Simplificación del Desarrollo y DevOps: Proporciona herramientas integradas para monitoreo, registro, y despliegue continuo, lo que permite a los equipos de DevOps integrar mejor sus flujos de trabajo de desarrollo y operación.
+
+			- Aislamiento de Aplicaciones: Aísla las aplicaciones en contenedores separados, lo que evita conflictos de dependencias y proporciona entornos consistentes y reproducibles.
+
+	Conclusión
+
+		La orquestación de contenedores es fundamental para gestionar de manera eficiente aplicaciones distribuidas y contenedorizadas en entornos de producción modernos. Tanto los clústeres de contenedores estáticos como dinámicos tienen sus casos de uso específicos, con ventajas y desafíos únicos. Las herramientas de orquestación como Kubernetes han permitido a las organizaciones escalar y gestionar sus aplicaciones de manera más eficiente, segura y resiliente, haciendo de la orquestación de contenedores una parte esencial del desarrollo y despliegue de software contemporáneo.
+
+43.2. Docker y Swarm Funcionalidad. Arquitectura. Características principales.
+
+	Docker Swarm es la herramienta de orquestación de contenedores nativa de Docker. Permite la gestión de múltiples contenedores distribuidos en un clúster de máquinas, proporcionando alta disponibilidad, escalabilidad y una gestión simplificada de servicios. A diferencia de otras herramientas de orquestación como Kubernetes, Docker Swarm es más fácil de configurar y administrar, lo que lo convierte en una opción popular para proyectos de tamaño pequeño a mediano que buscan simplicidad y eficiencia.
+
+	Funcionalidad de Docker Swarm
+
+		Docker Swarm permite a los usuarios crear un clúster de Docker donde los contenedores pueden ser desplegados, gestionados, escalados y asegurados automáticamente en varios nodos. Las principales funcionalidades de Docker Swarm incluyen:
+
+			- Gestión de Clústeres de Contenedores: Permite la creación de clústeres (Swarm) que agrupan varios nodos Docker para actuar como un único sistema de orquestación de contenedores.
+
+			- Definición de Servicios: Los servicios son la unidad de trabajo en Docker Swarm. Un servicio define qué contenedores deben ejecutarse, cuántas réplicas se necesitan y cómo deben ser distribuidos en el clúster.
+
+			- Escalabilidad Automática: Swarm permite escalar automáticamente el número de réplicas de un servicio en función de las necesidades, asegurando que la carga de trabajo se distribuya de manera eficiente.
+
+			- Balanceo de Carga: Docker Swarm implementa un balanceo de carga interno que distribuye automáticamente el tráfico de red entrante entre las réplicas de los servicios.
+
+			- Auto-recuperación y Alta Disponibilidad: En caso de fallo de un nodo o contenedor, Swarm puede reprogramar automáticamente los contenedores afectados en nodos disponibles, asegurando alta disponibilidad.
+
+			- Seguridad Integrada: Docker Swarm soporta seguridad integrada, incluyendo el uso de TLS para la comunicación segura entre nodos, y la encriptación de datos en tránsito.
+
+			- Despliegue Declarativo: Los usuarios pueden definir la configuración deseada del clúster (número de réplicas, configuración de red, etc.) utilizando archivos YAML en formato docker-compose, permitiendo un despliegue sencillo y repetible.
+
+	Arquitectura de Docker Swarm
+
+		La arquitectura de Docker Swarm se basa en un modelo maestro-esclavo (manager-worker), donde los nodos se dividen en managers (gestores) y workers (trabajadores):
+
+		Nodos en Docker Swarm
+
+		- Nodos Managers:
+
+			Son responsables de la gestión y coordinación del clúster.
+			Administran el estado del clúster, mantienen la configuración deseada de los servicios y se encargan de la programación de los contenedores.
+			Ejecutan el Raft Consensus Algorithm para garantizar la consistencia del estado del clúster.
+			Se recomiendan al menos tres nodos manager en un clúster de producción para proporcionar redundancia y evitar puntos únicos de fallo.
+
+		- Nodos Workers:
+
+			Son responsables de ejecutar los contenedores de las aplicaciones.
+			Reciben instrucciones de los nodos manager sobre qué tareas ejecutar y reportan el estado de las tareas en ejecución.
+			No participan en la gestión del clúster ni en la toma de decisiones de programación.
+
+	Servicios y Tareas
+
+		Servicios: Un servicio es una abstracción que define cómo se ejecuta una aplicación en el clúster Swarm. Un servicio puede ser de dos tipos:
+
+			- Servicios Replicados: Ejecutan un número específico de réplicas de un contenedor en el clúster.
+
+			- Servicios Globales: Ejecutan una instancia del contenedor en cada nodo del clúster.
+
+		Tareas: Una tarea representa una instancia de un contenedor en ejecución. Cada tarea es programada en un nodo y es gestionada por Swarm para asegurar que esté en el estado deseado.
+
+	Redes en Docker Swarm
+
+		Docker Swarm proporciona soporte nativo para redes de contenedores, permitiendo que los servicios se comuniquen entre sí de forma segura.
+
+		Las opciones de red incluyen:
+
+			- Red de Superposición (Overlay Network): Permite la comunicación segura entre servicios distribuidos en diferentes nodos.
+
+			- Red de Enlace (Bridge Network): Permite la comunicación entre contenedores en el mismo host.
+
+	Almacenamiento en Docker Swarm
+
+		Swarm permite el uso de volúmenes de Docker para el almacenamiento persistente, lo que permite que los datos de los contenedores persistan más allá del ciclo de vida de un contenedor.
+
+		Mecanismos de Seguridad
+
+			Docker Swarm asegura la comunicación entre nodos utilizando Transport Layer Security (TLS).
+			La gestión de credenciales y secretos también se maneja dentro del clúster Swarm, permitiendo que los secretos sean inyectados de forma segura en los contenedores cuando sea necesario.
+
+	Características Principales de Docker Swarm
+
+		Integración Nativa con Docker: Docker Swarm está integrado en Docker Engine, lo que permite a los usuarios que ya están familiarizados con Docker aprender y utilizar Swarm con facilidad. Los comandos de Docker Swarm se ejecutan utilizando la CLI de Docker.
+
+		Configuración Sencilla: Docker Swarm es fácil de configurar y administrar en comparación con otras soluciones de orquestación de contenedores como Kubernetes. Es ideal para equipos pequeños y entornos donde la simplicidad es clave.
+
+		Despliegue Declarativo de Aplicaciones: Utiliza archivos YAML de Docker Compose para definir y desplegar aplicaciones en un clúster Swarm, permitiendo una configuración clara, repetible y fácil de gestionar.
+
+		Balanceo de Carga Interno: Swarm proporciona balanceo de carga integrado para distribuir automáticamente el tráfico entre las réplicas de servicios.
+
+		Autocompletar Recuperación y Escalabilidad: Docker Swarm permite la recuperación automática de contenedores en caso de fallos, así como el escalado dinámico de servicios en función de la demanda.
+
+		Seguridad Incorporada: Incluye características de seguridad integradas como la encriptación de datos en tránsito y el uso de certificados TLS para la autenticación de nodos.
+
+		Compatibilidad con el Ecosistema Docker: Docker Swarm es compatible con todas las herramientas de Docker, lo que facilita la integración en los flujos de trabajo existentes de desarrollo y despliegue de aplicaciones.
+
+		Gestión de Secretos: Soporta la gestión segura de secretos, como contraseñas y certificados, permitiendo inyectar estos secretos en contenedores de manera segura.
+
+		Estrategias de Despliegue y Actualización: Permite estrategias de actualización controladas, como rolling updates (actualizaciones progresivas), para minimizar el tiempo de inactividad y reducir los riesgos durante las actualizaciones de servicios.
+
+	Conclusión
+
+		Docker Swarm es una solución poderosa y fácil de usar para la orquestación de contenedores que se integra perfectamente con el ecosistema Docker. Su simplicidad de configuración y su funcionalidad integrada lo hacen ideal para equipos de desarrollo que buscan una solución de orquestación ligera y fácil de gestionar. Si bien Docker Swarm no tiene la misma profundidad de características que Kubernetes para gestionar entornos de gran escala y alta complejidad, es una opción eficaz para muchas organizaciones que necesitan una herramienta de orquestación fácil de implementar y mantener.
+
+43.3. Kubernetes Funcionalidad. Arquitectura. Características principales.
+
+	Kubernetes es una plataforma de orquestación de contenedores de código abierto que automatiza el despliegue, la gestión, el escalado y la operación de aplicaciones contenedorizadas. Kubernetes se ha convertido en el estándar de facto para la orquestación de contenedores debido a su flexibilidad, extensibilidad, capacidad para escalar aplicaciones de manera eficiente y su comunidad robusta.
+
+	Funcionalidad de Kubernetes
+
+		Kubernetes proporciona una amplia gama de funcionalidades para la gestión automatizada de aplicaciones contenedorizadas en clústeres:
+
+			- Despliegue Automatizado de Aplicaciones: Kubernetes permite el despliegue automático y la gestión de aplicaciones en contenedores en diferentes entornos, asegurando que se ejecuten de manera uniforme y predecible.
+
+			- Escalado Automático: Proporciona escalado automático (horizontal y vertical) de aplicaciones según métricas predefinidas, como uso de CPU, memoria o métricas personalizadas, permitiendo un uso eficiente de los recursos.
+
+			- Autoreparación y Recuperación ante Fallos: Kubernetes supervisa constantemente el estado de los contenedores y nodos, y automáticamente reprograma contenedores fallidos, reemplaza contenedores que fallan, y evita que el tráfico llegue a contenedores no saludables.
+
+			- Gestión de Redes y Balanceo de Carga: Implementa políticas de redes y balanceo de carga para gestionar el tráfico de red hacia y desde los contenedores, garantizando una distribución eficiente del tráfico y la comunicación segura entre servicios.
+
+			- Gestión de Configuración y Secretos: Kubernetes permite la gestión segura de configuraciones sensibles y secretos, como contraseñas, tokens y certificados, para su uso en aplicaciones.
+
+			- Orquestación de Almacenamiento Persistente: Proporciona mecanismos para definir y gestionar volúmenes persistentes, permitiendo que los datos de las aplicaciones persistan más allá del ciclo de vida de los contenedores.
+
+			- Despliegue Declarativo con Archivos YAML/JSON: Utiliza archivos YAML o JSON para definir de manera declarativa el estado deseado de las aplicaciones, proporcionando despliegues repetibles y consistentes.
+
+			- Actualizaciones Controladas: Facilita las actualizaciones de aplicaciones mediante estrategias como Rolling Updates (actualizaciones continuas) y Canary Releases (lanzamientos progresivos), minimizando el tiempo de inactividad y reduciendo los riesgos de despliegue.
+
+	Arquitectura de Kubernetes
+
+		Kubernetes sigue una arquitectura master-worker distribuida, donde el clúster está compuesto por un conjunto de nodos master y worker. Cada componente de esta arquitectura juega un papel clave en la orquestación de contenedores.
+
+		Nodos en Kubernetes
+
+		Nodos Master:
+
+			Son responsables de la gestión y control del clúster.
+			Los componentes principales del nodo master incluyen:
+
+				- API Server: Punto de entrada para todas las solicitudes REST que gestionan el clúster. Exponer la API de Kubernetes y validar y configurar los datos para los objetos API, incluidos Pods, Servicios, etc.
+
+				- etcd: Almacén de datos clave-valor distribuido que almacena todo el estado del clúster de Kubernetes.
+
+				- Controller Manager: Ejecuta controladores que regulan el estado de los recursos en el clúster, como la replicación, el ajuste de escalas y la recuperación de fallos.
+
+				- Scheduler: Asigna contenedores (Pods) a nodos disponibles basados en requisitos de recursos, afinidad y políticas de programación.
+
+		Nodos Worker:
+
+			Son responsables de ejecutar los contenedores que forman parte de las aplicaciones.
+			
+			Los componentes principales de los nodos worker incluyen:
+
+				- Kubelet: Es el agente que corre en cada nodo del clúster y garantiza que los contenedores estén ejecutándose según lo especificado en los archivos de configuración de Pods.
+
+				- Kube-proxy: Gestiona las reglas de red en cada nodo, permitiendo la comunicación de red entre los servicios y los Pods.
+
+				- Container Runtime: El motor que ejecuta los contenedores (por ejemplo, Docker, containerd, CRI-O).
+
+	Objetos de Kubernetes
+
+		Kubernetes gestiona las aplicaciones utilizando varios objetos y conceptos clave:
+
+			- Pod: La unidad más pequeña y básica de implementación en Kubernetes. Un Pod puede contener uno o más contenedores que comparten el mismo almacenamiento, red y espacio de nombres de IPC.
+
+			- ReplicaSet: Asegura que un número especificado de réplicas de un Pod estén en ejecución en cualquier momento.
+
+			- Deployment: Proporciona actualizaciones declarativas para los Pods y ReplicaSets. Es la forma más común de administrar aplicaciones en Kubernetes, facilitando el despliegue, la actualización, y la reversión de aplicaciones.
+
+			- Service: Un objeto de red que expone un conjunto de Pods a través de una política de red. Los servicios permiten el balanceo de carga y el descubrimiento de servicios entre aplicaciones.
+
+			- ConfigMap y Secret: Mecanismos para gestionar configuraciones de aplicación y secretos (como credenciales y certificados) de manera segura.
+
+			- Persistent Volume (PV) y Persistent Volume Claim (PVC): Proporcionan abstracciones para el almacenamiento persistente en Kubernetes. PV es el recurso de almacenamiento real, mientras que PVC es una solicitud de almacenamiento.
+
+	Redes en Kubernetes
+
+		CNI (Container Network Interface): Permite a los administradores de clústeres definir cómo los contenedores y Pods se comunican entre sí y con el mundo exterior. Existen varios plugins de CNI como Calico, Flannel, Weave Net, y Cilium.
+
+		Servicios de Red: Los servicios como ClusterIP, NodePort y LoadBalancer permiten que los Pods se comuniquen dentro del clúster y con el exterior.
+
+	Orquestación de Almacenamiento en Kubernetes
+
+		Provisionamiento de Volúmenes Dinámicos: Permite la creación automática de volúmenes persistentes basados en la solicitud de las aplicaciones, usando Storage Classes.
+
+		Storage Classes: Definen diferentes niveles de almacenamiento (rápido, estándar, encriptado) proporcionados por los backend de almacenamiento como Amazon EBS, Google Persistent Disk, Azure Disk, NFS, Ceph, etc.
+
+	Características Principales de Kubernetes
+
+		Escalabilidad Horizontal Automática: Kubernetes permite el escalado automático de aplicaciones en función de la demanda mediante el uso de Horizontal Pod Autoscaler (HPA) y Vertical Pod Autoscaler (VPA).
+
+		Autoreparación de Contenedores y Pods: Si un contenedor, Pod o nodo falla, Kubernetes automáticamente los reprograma y los restablece en función del estado deseado definido por el usuario.
+
+		Gestión de Red y Balanceo de Carga: Kubernetes proporciona balanceo de carga interno y externo a través de servicios y permite la configuración de políticas de red avanzadas.
+
+		Despliegue Declarativo y Gestión de Configuración: Utiliza archivos YAML o JSON para gestionar la configuración del clúster y los despliegues de aplicaciones, asegurando consistencia y portabilidad.
+
+		Orquestación de Almacenamiento Persistente: Kubernetes ofrece integración nativa con numerosos sistemas de almacenamiento para soportar aplicaciones con necesidades de almacenamiento persistente, incluyendo soporte para NFS, Ceph, Amazon EBS, Azure Disk, Google Persistent Disk, y muchos más.
+
+		Compatibilidad con la Nube y Multi-nube: Kubernetes es compatible con la mayoría de los proveedores de la nube, permitiendo a las organizaciones ejecutar clústeres Kubernetes en entornos híbridos y multi-nube con consistencia.
+
+		Seguridad Avanzada y Gestión de Acceso: Soporta políticas de control de acceso basadas en roles (RBAC), Pod Security Policies, y proporciona gestión segura de secretos y configuraciones.
+
+		Extensibilidad y Ecosistema: Kubernetes es altamente extensible mediante el uso de Custom Resource Definitions (CRDs), Operators, y API extensibles, permitiendo la integración de herramientas y plugins adicionales para monitorización, seguridad, CI/CD, etc.
+
+		Comunicación entre Microservicios: Kubernetes facilita la comunicación entre microservicios a través de servicios, balanceadores de carga, y descubrimiento de servicios.
+
+	Conclusión
+
+		Kubernetes es una poderosa plataforma de orquestación de contenedores que permite gestionar, escalar y operar aplicaciones de manera eficiente en entornos de producción modernos. Su arquitectura distribuida, sus características avanzadas de escalabilidad, recuperación ante fallos, gestión de configuración y almacenamiento, y su capacidad para soportar entornos multi-nube y híbridos lo convierten en la opción preferida para muchas organizaciones que buscan una solución robusta y extensible para la gestión de aplicaciones contenedorizadas. Kubernetes ha demostrado ser una tecnología clave para la implementación de arquitecturas de microservicios y la adopción de DevOps.

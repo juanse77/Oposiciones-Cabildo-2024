@@ -1,0 +1,97 @@
+Tema 18. Redes de comunicaciones I.
+
+18.1. Capas de modelo TCP/IP.
+
+	El modelo TCP/IP, es un conjunto de protocolos de comunicación utilizado en redes y en Internet. TCP/IP es un acrónimo de Transmission Control Protocol/Internet Protocol, los dos protocolos más importantes del modelo. Este modelo se compone de cuatro capas, cada una con funciones específicas:
+
+		- Capa de Enlace de Datos (Link Layer):
+
+			Esta capa se encarga de la transmisión física de los datos entre dispositivos en una misma red local (LAN). Incluye los protocolos y medios de transmisión que operan en el nivel más bajo, es decir, el hardware como tarjetas de red, cables, etc. Algunos protocolos importantes de esta capa incluyen Ethernet y Wi-Fi.
+
+		- Capa de Internet (Internet Layer):
+
+			La capa de Internet es fundamental para el funcionamiento de TCP/IP. Aquí es donde reside el protocolo IP (Internet Protocol), que facilita el enrutamiento de paquetes de datos entre dispositivos que pueden estar en redes separadas. Los routers operan en esta capa, decidiendo cómo enviar paquetes a sus destinos finales. Otros protocolos aquí incluyen ICMP (Internet Control Message Protocol) y IGMP (Internet Group Management Protocol).
+
+		- Capa de Transporte (Transport Layer):
+
+			Esta capa se encarga de la entrega de los datos de forma fiable entre dispositivos finales a través de la red. Los dos protocolos más importantes en esta capa son TCP (Transmission Control Protocol) y UDP (User Datagram Protocol). TCP proporciona conexiones orientadas a la conexión y garantiza la entrega de datos; UDP, por otro lado, ofrece un servicio sin conexión que no garantiza la entrega de datos pero es más rápido y eficiente en ciertos contextos.
+
+		- Capa de Aplicación (Application Layer):
+
+			La capa de aplicación contiene los protocolos que las aplicaciones utilizan para intercambiar datos. No se trata sólo de aplicaciones de usuario final, sino de protocolos que operan en un nivel más alto y proporcionan servicios específicos, como HTTP para la web, FTP para la transferencia de archivos, SMTP para el correo electrónico, y DNS para la resolución de nombres de dominio.
+Este modelo de capas es menos riguroso que el modelo OSI de 7 capas, pero ha sido increíblemente exitoso y es fundamental para el funcionamiento de la Internet moderna.
+
+18.2. Direccionamiento IP v4.
+
+	El direccionamiento IP versión 4 (IPv4) es un componente esencial del protocolo IP y juega un papel crucial en la forma en que los dispositivos se identifican y comunican en Internet. Aquí tienes una descripción detallada de cómo funciona el direccionamiento IPv4:
+
+	1. Estructura de Direcciones IPv4
+		IPv4 utiliza direcciones de 32 bits, que generalmente se expresan en notación decimal con puntos, dividida en cuatro octetos (conjuntos de 8 bits). Por ejemplo, una dirección IPv4 típica podría ser 192.168.1.1, donde cada número entre los puntos representa un valor decimal de un octeto.
+
+	2. Clases de Direcciones
+		Originalmente, las direcciones IPv4 se dividían en clases, principalmente A, B y C, para facilitar el manejo de direcciones en diferentes tamaños y tipos de redes:
+
+			- Clase A: Diseñada para redes muy grandes, el primer octeto es para la red y los tres restantes para los hosts. El rango va de 1.0.0.0 a 127.255.255.255.
+		
+			- Clase B: Utilizada en redes de tamaño medio, los primeros dos octetos representan la red y los otros dos a los hosts. El rango va de 128.0.0.0 a 191.255.255.255.
+
+			- Clase C: Usada en redes pequeñas, los primeros tres octetos son para la red y el último para los hosts. El rango va de 192.0.0.0 a 223.255.255.255.
+
+			- Las clases D y E también existen, donde D se utiliza para multicast y E para propósitos experimentales, pero no se asignan para uso general en redes.
+
+	3. Subredes
+
+		La subdivisión de redes en subredes más pequeñas permite un uso más eficiente de las direcciones IP y mejora la seguridad y el rendimiento de la red. La subred se define mediante una máscara de subred, que también se expresa en notación decimal con puntos. Por ejemplo, si tienes una dirección IP de 192.168.1.1 con una máscara de subred de 255.255.255.0, significa que los primeros tres octetos (192.168.1) definen la red y el último octeto (1) define el host específico dentro de esa red.
+
+	4. Direccionamiento Privado y Público
+
+		IPv4 define ciertos rangos de direcciones para uso privado dentro de redes locales, que no son enrutables en Internet. Estos incluyen:
+
+			- 10.0.0.0 a 10.255.255.255 (Clase A)
+			- 172.16.0.0 a 172.31.255.255 (Clase B)
+			- 192.168.0.0 a 192.168.255.255 (Clase C)
+
+		Las direcciones fuera de estos rangos se consideran públicas y son enrutables en Internet.
+
+	5. Exhaustación de Direcciones IPv4
+
+		Debido a la creciente cantidad de dispositivos conectados y limitaciones de 32 bits, las direcciones IPv4 están prácticamente agotadas, lo que ha llevado a medidas como el uso extensivo de NAT (Network Address Translation) para conservar direcciones y el desarrollo de IPv6, que utiliza direcciones de 128 bits, ofreciendo un espacio prácticamente ilimitado de direcciones.
+
+18.3. IP Subnetting.
+
+	El subnetting o subdivisión de redes IP es una técnica usada para dividir una red IP más grande en redes más pequeñas (subredes). Esta práctica es fundamental para la gestión eficiente del espacio de direcciones IP y puede ayudar a mejorar la seguridad y el rendimiento de la red. El subnetting se utiliza tanto en IPv4 como en IPv6, aunque es más común en IPv4 debido a la escasez de direcciones. Aquí te explico cómo funciona el subnetting en IPv4:
+
+	Conceptos básicos de Subnetting
+
+		El subnetting implica el uso de una máscara de subred para dividir una dirección IP en dos componentes: uno que identifica la red y otro que identifica el host dentro de esa red. Una máscara de subred también se expresa en notación decimal con puntos, como una dirección IP. Por ejemplo, la máscara de subred 255.255.255.0 indica que los primeros tres octetos de la dirección IP corresponden a la red y el último octeto al host específico dentro de esa red.
+
+	¿Por qué Subnetear?
+
+		- Optimización del espacio de direcciones: Permite a las organizaciones usar sus asignaciones de direcciones IP más eficientemente, asignando solo el espacio necesario para cada segmento de la red.
+
+		- Mejora del rendimiento y la seguridad: Reduciendo el tamaño de las redes, se limita el dominio de broadcast, lo que reduce el tráfico innecesario en la red y minimiza las vulnerabilidades de seguridad.
+
+		- Organización y control: Facilita la administración de la red al permitir que se agrupen lógicamente los dispositivos y servicios relacionados.
+
+	Cómo realizar Subnetting
+
+		Para hacer subnetting, se modifican los bits de la máscara de subred estándar de una clase determinada de dirección para crear múltiples subredes más pequeñas. Aquí están los pasos básicos:
+
+			- Definir la cantidad de subredes o hosts necesarios: Dependiendo de los requisitos de la red, puedes decidir cuántas subredes necesitas o cuántos hosts necesitará cada subred.
+
+			- Ajustar la máscara de subred: Ampliar la máscara de subred estándar 'prestándole' bits del campo de host para el campo de red. Por ejemplo, si se empieza con una dirección de clase C (máscara estándar de 255.255.255.0) y se necesitan más subredes, se puede cambiar la máscara a 255.255.255.192. Esto divide cada subred clase C en cuatro subredes más pequeñas.
+
+			- Calcular las direcciones de red y broadcast: Cada subred tendrá su propia dirección de red (el primer número en la subred) y dirección de broadcast (el último número en la subred). Los dispositivos dentro de la subred tendrán direcciones IP entre estos valores.
+
+	Ejemplo práctico
+
+		Supongamos que tienes la dirección IP 192.168.1.0 con una máscara de subred 255.255.255.0 y necesitas crear cuatro subredes. Al extender la máscara a 255.255.255.192, obtienes las siguientes subredes:
+
+			Subred 1: 192.168.1.0 - 192.168.1.63
+			Subred 2: 192.168.1.64 - 192.168.1.127
+			Subred 3: 192.168.1.128 - 192.168.1.191
+			Subred 4: 192.168.1.192 - 192.168.1.255
+
+		Cada una de estas subredes puede alojar hasta 62 hosts (64 direcciones menos 2 reservadas para la dirección de red y la de broadcast).
+
+	El subnetting es una herramienta esencial en la caja de herramientas de cualquier administrador de red, permitiendo un uso más granular y eficiente del espacio de direcciones IP asignado.

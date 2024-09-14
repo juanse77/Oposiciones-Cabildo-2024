@@ -1,0 +1,260 @@
+Tema 32. Programación en Java I.
+
+32.1. Características, conceptos y componentes.
+
+	El lenguaje de programación Java es uno de los lenguajes más populares y ampliamente utilizados en el desarrollo de software debido a su portabilidad, seguridad y robustez.
+
+	Características de Java
+
+		- Orientado a Objetos: Java es un lenguaje puramente orientado a objetos. Todo en Java se representa como objetos, lo que facilita la creación de programas modulares y reutilizables. Los conceptos clave de la programación orientada a objetos (POO) en Java incluyen clases, objetos, herencia, polimorfismo, encapsulación y abstracción.
+
+		- Plataforma Independiente: Java es conocido por su lema "Escribe una vez, ejecuta en cualquier lugar" (WORA, "Write Once, Run Anywhere"). Esto es posible gracias a la Máquina Virtual de Java (JVM), que permite que el código compilado de Java (bytecode) se ejecute en cualquier sistema operativo que tenga una JVM.
+
+		- Seguro y Robusto: Java tiene características de seguridad integradas, como la gestión de memoria automática (recolección de basura), la ausencia de punteros explícitos y la verificación de códigos de bytes. También cuenta con un sistema de manejo de excepciones y una sólida gestión de memoria que ayuda a prevenir errores.
+
+		- Multihilo (Multithreading): Java permite la ejecución de múltiples hilos de un programa de manera concurrente. Esto permite aprovechar mejor los recursos de hardware y crear aplicaciones que pueden realizar varias tareas simultáneamente.
+
+		- Simplicidad y Facilidad de Aprendizaje: Java se diseñó para ser fácil de aprender y usar. La sintaxis de Java es simple y similar a otros lenguajes como C y C++, pero elimina características complicadas como la manipulación de punteros.
+
+		- Alto Rendimiento: Aunque no es tan rápido como lenguajes de bajo nivel como C o C++, Java ofrece un rendimiento aceptable para la mayoría de las aplicaciones gracias a su compilación just-in-time (JIT) y optimizaciones en tiempo de ejecución.
+
+
+		- Bibliotecas Ricas y API: Java cuenta con un extenso conjunto de bibliotecas estándar y APIs que facilitan el desarrollo de aplicaciones. Desde la manipulación de archivos, la conectividad de red, la creación de interfaces gráficas, hasta la conexión con bases de datos, Java proporciona herramientas listas para usar.
+
+		- Distribuido: Java soporta programación distribuida, lo que permite que los programas se distribuyan en una red. Proporciona bibliotecas como RMI (Remote Method Invocation) y soporte para tecnologías de red.
+
+	Conceptos Clave en Java
+
+		- Clases y Objetos: Son los bloques de construcción básicos de Java. Una clase es una plantilla para crear objetos (instancias), que son entidades en tiempo de ejecución que tienen estado (atributos) y comportamiento (métodos).
+
+		- Herencia: Permite que una clase derive de otra clase, compartiendo así su funcionalidad y reutilizando código. En Java, la herencia es simple (no admite herencia múltiple de clases).
+
+		- Polimorfismo: Permite que un objeto se comporte de diferentes maneras dependiendo del contexto. En Java, el polimorfismo se logra a través de la sobrecarga de métodos (compile-time) y la sobrescritura de métodos (runtime).
+
+		- Encapsulación: Es el principio de ocultar los detalles internos de un objeto y permitir solo el acceso controlado a sus datos. En Java, esto se logra utilizando modificadores de acceso como private, protected y public.
+
+		- Abstracción: Es el proceso de ocultar los detalles de implementación de un objeto y mostrar solo la funcionalidad relevante. Java utiliza clases abstractas e interfaces para lograr la abstracción.
+
+		- Interfaces: Son tipos de referencia en Java que pueden contener solo métodos abstractos y constantes. Las interfaces se utilizan para lograr la abstracción completa y la herencia múltiple (a través de múltiples interfaces).
+
+	Componentes del Lenguaje Java
+
+		- JVM (Java Virtual Machine): Es el motor de ejecución que permite que el bytecode de Java se ejecute en cualquier plataforma. La JVM convierte el bytecode en código de máquina específico de la plataforma. Es responsable de la administración de la memoria, la gestión de hilos y la verificación de códigos.
+
+		- JRE (Java Runtime Environment): Es un conjunto de herramientas de software que permite ejecutar programas Java. Incluye la JVM, bibliotecas de clases y otros componentes necesarios para ejecutar aplicaciones Java.
+
+		- JDK (Java Development Kit): Es un entorno de desarrollo de software utilizado para desarrollar aplicaciones y applets Java. Incluye el JRE, así como herramientas de desarrollo como el compilador javac, el depurador jdb, y el generador de documentación javadoc.
+
+		- Bibliotecas Estándar de Java (Java Standard Library): Proporciona un conjunto de bibliotecas de clases que facilitan diversas tareas de programación. Estas incluyen las bibliotecas de colecciones (java.util), entrada/salida (java.io), red (java.net), concurrencia (java.util.concurrent), bases de datos (java.sql), y muchas más.
+
+		- Bytecode: Es el código intermedio generado después de compilar el código fuente de Java. Este bytecode es independiente de la máquina y es interpretado por la JVM, lo que hace que Java sea un lenguaje portátil.
+
+		- Garbage Collection (Recolección de Basura): Es un proceso automático que maneja la memoria en Java. La JVM elimina automáticamente los objetos que ya no son utilizados por el programa, lo que ayuda a prevenir fugas de memoria y mejora la eficiencia.
+
+	Resumen
+
+		Java es un lenguaje potente y versátil con una rica historia en el desarrollo de software. Es especialmente conocido por su independencia de plataforma, seguridad, robustez y características orientadas a objetos. La JVM, JRE y JDK son componentes clave que forman la base del entorno de desarrollo de Java. Su sintaxis simple y sus ricas bibliotecas lo hacen ideal tanto para principiantes como para desarrolladores experimentados.
+
+32.2. Arquitectura Java EE.
+
+	La Arquitectura Java EE (Java Platform, Enterprise Edition), ahora conocida como Jakarta EE (desde su traslado a la Fundación Eclipse), es una plataforma robusta y de alta escalabilidad diseñada para el desarrollo de aplicaciones empresariales. Proporciona un conjunto de especificaciones, APIs, y servicios para desarrollar aplicaciones de nivel empresarial, como aplicaciones web, aplicaciones distribuidas, sistemas backend, servicios web, y más.
+
+	Arquitectura de Java EE
+
+		La arquitectura de Java EE se basa en una estructura de capas bien definida, donde cada capa tiene un propósito específico. La arquitectura es modular, escalable, segura, y está diseñada para facilitar el desarrollo y la integración de aplicaciones empresariales complejas. A continuación, se presenta una descripción de la arquitectura de Java EE:
+
+	Capa de Cliente:
+
+		Los clientes pueden ser de diferentes tipos, como navegadores web, aplicaciones de escritorio, dispositivos móviles, etc. En el contexto de aplicaciones Java EE, los clientes interactúan con la capa de presentación (o capa web) mediante protocolos como HTTP/HTTPS.
+
+		Los clientes pueden incluir aplicaciones web, clientes pesados (JavaFX, Swing), clientes ligeros (navegadores web con HTML, CSS, JavaScript) o clientes móviles.
+
+	Capa de Presentación (Web Layer):
+
+		La capa de presentación gestiona la interacción del usuario y se encarga de presentar la información de manera apropiada.
+
+		En Java EE, esta capa incluye tecnologías como JavaServer Faces (JSF), JavaServer Pages (JSP), Servlets, Facelets, y JavaServer Pages Standard Tag Library (JSTL).
+
+		Los componentes en esta capa se ejecutan en un contenedor web que es responsable de manejar la solicitud HTTP del cliente, procesar la lógica de presentación, y enviar la respuesta HTTP al cliente.
+
+	Capa de Negocio (Business Layer):
+
+		Esta capa se encarga de la lógica de negocio de la aplicación. Aquí es donde se procesan las reglas de negocio y los algoritmos.
+
+		En Java EE, esta capa está soportada por tecnologías como Enterprise JavaBeans (EJB), que proporciona servicios como transacciones, seguridad, y manejo de concurrencia.
+
+		Los EJB pueden ser de diferentes tipos: Session Beans (Stateless y Stateful), Message-Driven Beans (MDB), y Entity Beans (aunque estos últimos han sido reemplazados por JPA).
+	
+		Capa de Persistencia (Persistence Layer):
+
+			Esta capa maneja la persistencia de datos y las interacciones con las bases de datos.
+
+			Java EE utiliza Java Persistence API (JPA) como la especificación estándar para el mapeo objeto-relacional (ORM), que permite a los desarrolladores manejar datos de bases de datos relacionales utilizando objetos de Java.
+
+			Además, otras tecnologías como Java Database Connectivity (JDBC) pueden ser utilizadas para una gestión de bases de datos de nivel inferior.
+
+		Capa de Integración (Integration Layer):
+
+			Esta capa se encarga de la integración con sistemas externos o de legado, servicios web, o sistemas distribuidos.
+
+			Java EE ofrece varias tecnologías para facilitar la integración, tales como Java Message Service (JMS) para la mensajería asincrónica, Java API for RESTful Web Services (JAX-RS) y Java API for XML Web Services (JAX-WS) para la creación de servicios web RESTful y SOAP respectivamente.
+También incluye Java Connector Architecture (JCA) para conectar con sistemas empresariales de legado.
+
+		Capa de Seguridad:
+
+			La seguridad es una preocupación transversal en la arquitectura de Java EE.
+
+			Java EE proporciona un modelo de seguridad que incluye autenticación y autorización, gestión de identidades, encriptación de datos y protección contra amenazas comunes de seguridad web.
+
+			Utiliza especificaciones como Java Authentication and Authorization Service (JAAS), Java EE Security API, y políticas de contenedores.
+
+		Componentes de Java EE
+		
+			Java EE define una serie de componentes que proporcionan funcionalidades clave en aplicaciones empresariales:
+
+				- Servlets y JSP:
+
+					Las servlets son componentes Java que manejan solicitudes y respuestas HTTP. Son utilizadas principalmente para manejar la lógica del lado del servidor en aplicaciones web.
+
+				- JavaServer Pages (JSP):
+					
+					Permite a los desarrolladores crear contenido dinámico utilizando HTML, CSS y Java, facilitando la creación de vistas y plantillas web.
+
+				- Enterprise JavaBeans (EJB):
+					
+					Son componentes del lado del servidor que encapsulan la lógica de negocio. Los EJB son administrados por el contenedor EJB, que proporciona servicios como transacciones, seguridad, y administración de la concurrencia.
+
+					Los tipos de EJB incluyen:
+						- Session Beans (Stateless y Stateful)
+						- Singleton Beans
+						- Message-Driven Beans (MDB).
+
+				- Java Persistence API (JPA):
+	
+					JPA es la API estándar de Java EE para la persistencia de datos y el mapeo objeto-relacional (ORM). Permite interactuar con bases de datos relacionales de una manera orientada a objetos.
+
+				- Java Message Service (JMS):
+
+					JMS es la API para la mensajería asíncrona en Java EE. Permite la comunicación entre componentes distribuidos en una aplicación utilizando mensajería basada en cola o temas (publish/subscribe).
+
+				- Java API for RESTful Web Services (JAX-RS) y Java API for XML Web Services (JAX-WS):
+
+					JAX-RS es la API de Java para construir servicios web RESTful, mientras que JAX-WS se utiliza para crear servicios web basados en SOAP.
+
+				- Java Transaction API (JTA):
+
+					JTA proporciona un manejo distribuido de transacciones que permite coordinar transacciones entre múltiples recursos transaccionales, como bases de datos y sistemas de mensajería.
+
+				- Java Naming and Directory Interface (JNDI):
+
+					JNDI proporciona un mecanismo para buscar y vincular componentes distribuidos, servicios, y otros recursos.
+
+				- JavaMail:
+
+					Proporciona un conjunto de APIs para enviar y recibir correos electrónicos en Java.
+
+		Servidores de Aplicaciones Java EE
+
+			Para ejecutar aplicaciones Java EE, se necesita un servidor de aplicaciones que implemente las especificaciones Java EE y que proporcione el entorno de ejecución necesario. Algunos de los servidores de aplicaciones Java EE más populares son:
+
+				- Apache TomEE (basado en Tomcat)
+				- WildFly (anteriormente conocido como JBoss)
+				- GlassFish
+				- WebSphere Application Server
+				- WebLogic Server
+
+	Resumen:
+
+		Java EE proporciona una arquitectura robusta y flexible para desarrollar aplicaciones empresariales complejas, ofreciendo componentes estandarizados, APIs, y servicios que facilitan la creación de soluciones escalables, seguras y distribuidas. Con la evolución a Jakarta EE, la plataforma continúa desarrollándose y mejorando, manteniéndose como un pilar fundamental en el desarrollo de software empresarial.
+
+32.3. Patrones de diseño. Persistencia.
+
+	Los patrones de diseño y la persistencia son conceptos fundamentales en el desarrollo de aplicaciones en Java, especialmente en aplicaciones empresariales.
+
+	Patrones de Diseño en Java:
+
+		Los patrones de diseño son soluciones reutilizables para problemas comunes que surgen durante el desarrollo de software. Los patrones de diseño no son código específico, sino más bien descripciones o plantillas sobre cómo resolver un problema que puede ser adaptado a diferentes situaciones. Estos patrones se dividen generalmente en tres categorías: creacionales, estructurales, y de comportamiento.
+
+		1. Patrones de Diseño Creacionales
+
+			Estos patrones se centran en la forma en que los objetos son creados. Permiten a los desarrolladores crear objetos de manera que sean adecuados para la situación, proporcionando flexibilidad y control sobre el proceso de instanciación.
+
+				- Factory Method: Proporciona una interfaz para crear objetos, pero deja que las subclases decidan qué clase instanciar. Este patrón permite una mayor flexibilidad y desacoplamiento en la creación de objetos.
+
+				- Abstract Factory: Proporciona una interfaz para crear familias de objetos relacionados o dependientes sin especificar sus clases concretas. Es útil cuando el sistema debe ser independiente de cómo se crean y representan los objetos.
+
+				- Singleton: Asegura que una clase solo tenga una instancia y proporciona un punto de acceso global a ella. Este patrón es útil en casos donde una única instancia de una clase tiene que controlar el acceso a un recurso compartido, como una base de datos o un archivo.
+
+				- Builder: Se utiliza para construir un objeto complejo paso a paso. El patrón Builder proporciona una manera de construir objetos complejos de manera más manejable y flexible.
+
+				- Prototype: Permite la creación de nuevos objetos copiando instancias existentes en lugar de crear nuevas instancias desde cero. Esto es útil cuando los costos de creación son costosos o complicados.
+
+	2. Patrones de Diseño Estructurales
+
+		Estos patrones se centran en la composición de clases y objetos, facilitando la creación de estructuras de software flexibles y eficientes.
+
+			- Adapter: Permite que las interfaces incompatibles trabajen juntas mediante la conversión de la interfaz de una clase en otra que el cliente espera. Es útil cuando queremos usar una clase existente y su interfaz no coincide con la que necesitamos.
+
+			- Decorator: Añade responsabilidades adicionales a un objeto de manera dinámica. Este patrón proporciona una alternativa flexible a la herencia para extender la funcionalidad.
+
+			- Facade: Proporciona una interfaz simplificada a un subsistema complejo. Este patrón oculta la complejidad de los subsistemas y proporciona una interfaz más fácil de usar.
+
+			- Composite: Permite tratar de manera uniforme a objetos individuales y a compuestos de objetos. Este patrón es útil para representar jerarquías de objetos.
+
+			- Proxy: Proporciona un sustituto o marcador de posición para otro objeto para controlar el acceso a él. Es útil cuando queremos agregar un nivel de control adicional al acceso a un objeto.
+
+	3. Patrones de Diseño de Comportamiento
+
+		Estos patrones se centran en la comunicación entre objetos, asignando responsabilidades y promoviendo la flexibilidad en la forma en que interactúan.
+
+			- Observer: Define una dependencia uno-a-muchos entre objetos de manera que cuando un objeto cambia de estado, todos sus dependientes son notificados automáticamente. Es útil para implementar sistemas de notificación.
+
+			- Strategy: Permite seleccionar un algoritmo en tiempo de ejecución. Define una familia de algoritmos, encapsula cada uno de ellos, y los hace intercambiables.
+
+			- Command: Encapsula una solicitud como un objeto, permitiendo parametrizar clientes con diferentes solicitudes, encolarlas o registrar operaciones para deshacer.
+
+			- Iterator: Proporciona una manera de acceder secuencialmente a los elementos de una colección sin exponer su representación interna.
+
+			- Template Method: Define el esqueleto de un algoritmo en una operación, difiriendo algunos pasos a las subclases. Permite que las subclases redefinan ciertos pasos de un algoritmo sin cambiar su estructura.
+
+	Persistencia en Java:
+
+		La persistencia en Java se refiere a la capacidad de almacenar y recuperar objetos de Java en una base de datos o algún otro almacenamiento permanente. Java proporciona varias tecnologías y API para la persistencia, siendo las más destacadas JDBC y JPA.
+
+		1. Java Database Connectivity (JDBC)
+
+			JDBC es la API estándar de Java para interactuar con bases de datos relacionales. Es una API de bajo nivel que permite a los desarrolladores ejecutar consultas SQL, recuperar datos de bases de datos, y realizar operaciones CRUD (Create, Read, Update, Delete).
+
+			Conexión a Bases de Datos: JDBC permite conectarse a bases de datos mediante controladores (drivers) específicos del proveedor de bases de datos.
+
+			Sentencias SQL: Los desarrolladores pueden ejecutar consultas SQL, actualizaciones, y procedimientos almacenados utilizando objetos Statement, PreparedStatement, y CallableStatement.
+
+			Gestión de Transacciones: JDBC permite el control de transacciones (commit y rollback) para garantizar la consistencia de los datos.
+
+			ResultSet: Permite recuperar y navegar por los resultados de una consulta SQL.
+
+			Aunque JDBC es poderoso y flexible, también es bastante detallado y verboso, ya que requiere que el desarrollador gestione explícitamente las conexiones, las sentencias, los resultados, y las excepciones. Debido a esto, se han desarrollado tecnologías de más alto nivel como JPA.
+
+		2. Java Persistence API (JPA)
+
+			JPA es la API estándar de Java para la persistencia de datos y el mapeo objeto-relacional (ORM). Permite trabajar con bases de datos relacionales utilizando objetos de Java sin necesidad de escribir SQL explícito.
+
+			Entidades: En JPA, una entidad es una clase Java simple (POJO) que se mapea a una tabla de base de datos. Cada instancia de la clase representa una fila en la tabla.
+
+			EntityManager: Es el componente principal de JPA que se utiliza para gestionar el ciclo de vida de las entidades (persistencia, fusión, eliminación, etc.). Proporciona métodos para realizar operaciones CRUD sobre las entidades.
+
+			JPQL (Java Persistence Query Language): JPA proporciona un lenguaje de consulta orientado a objetos similar a SQL pero que trabaja sobre entidades en lugar de tablas.
+
+			Anotaciones: JPA utiliza anotaciones para definir el mapeo entre las clases de Java y las tablas de la base de datos. Algunas anotaciones comunes son @Entity, @Table, @Id, @Column, y @OneToMany.
+
+			Proveedores de JPA: JPA es una especificación, por lo que necesita un proveedor de implementación para funcionar. Los proveedores más comunes son Hibernate, EclipseLink, y OpenJPA.
+
+			Transacciones: JPA permite gestionar transacciones de manera declarativa o programática para garantizar la integridad y consistencia de los datos.
+
+	Resumen
+
+		Los Patrones de Diseño en Java proporcionan soluciones a problemas comunes de diseño de software, ayudando a crear aplicaciones más flexibles, reutilizables y mantenibles.
+
+		La Persistencia en Java se logra a través de tecnologías como JDBC (para un control detallado de las interacciones con la base de datos) y JPA (para un enfoque más orientado a objetos en la gestión de datos persistentes).
+
+		Ambos temas son fundamentales para los desarrolladores de Java, ya que permiten construir aplicaciones robustas, escalables y fáciles de mantener.

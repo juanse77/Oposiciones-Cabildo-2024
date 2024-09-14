@@ -1,0 +1,131 @@
+TEMA 1. LA Constitución ESPAÑOLA 1978:
+
+1.1- Estructura y contenido esencial:
+	Preámbulo y Parte Dogmática: La Constitución Española de 1978 comienza con un preámbulo que expresa los principios y valores que inspiran la carta magna, como la justicia, la libertad, y la seguridad, así como la voluntad de establecer una sociedad democrática avanzada. Tras el preámbulo, la Parte Dogmática, que incluye los Títulos Preliminar y Primero, establece los derechos y deberes fundamentales. El Título Preliminar define España como un Estado social y democrático de derecho y establece la soberanía nacional y la monarquía parlamentaria como forma de gobierno. El Título I, por su parte, detalla los derechos y libertades de los ciudadanos, como la igualdad ante la ley, la libertad de expresión, y los derechos de reunión y asociación.
+
+	Organización Territorial: La Constitución dedica un capítulo importante a la organización territorial de España. El Título VIII establece la estructura del Estado en Comunidades Autónomas, permitiendo la autonomía de las regiones y nacionalidades que componen el país. Este título define las competencias y las relaciones entre el Estado y las Comunidades Autónomas, así como el procedimiento para que las distintas regiones accedan a la autonomía. La descentralización y la autonomía son pilares fundamentales para asegurar la diversidad y la unidad del país.
+
+	Instituciones del Estado: La organización y funcionamiento de las principales instituciones del Estado se detallan en varios títulos de la Constitución. El Título II se centra en la Corona, especificando las funciones del Rey como jefe de Estado. Los Títulos III, IV, y V regulan las Cortes Generales (Congreso y Senado), el Gobierno y la Administración, y las relaciones entre ambos poderes. Estas disposiciones garantizan la separación de poderes y establecen un sistema de pesos y contrapesos para evitar abusos de poder.
+
+	Poder Judicial: El Título VI de la Constitución trata sobre el Poder Judicial, asegurando su independencia del Ejecutivo y Legislativo. Establece el Consejo General del Poder Judicial como órgano de gobierno de los jueces y magistrados, y detalla la estructura del sistema judicial, incluyendo el Tribunal Constitucional. Este tribunal tiene la función de garantizar la supremacía de la Constitución y resolver conflictos de competencias entre el Estado y las Comunidades Autónomas, así como proteger los derechos fundamentales.
+
+	Reforma Constitucional: Finalmente, la Constitución Española de 1978 incluye disposiciones sobre su propia reforma en el Título X. Establece dos procedimientos distintos: uno ordinario y otro agravado. El procedimiento ordinario permite cambios por mayoría cualificada en ambas cámaras, mientras que el procedimiento agravado, necesario para modificaciones más profundas (como las que afectan a derechos fundamentales o la estructura territorial), requiere además la aprobación en referéndum. Esta flexibilidad permite adaptarse a las necesidades de la sociedad, garantizando al mismo tiempo estabilidad y consenso en los cambios más trascendentales.
+
+1.2- Los derechos fundamentales y libertades públicas. Garantías y suspensión de derechos y libertades.
+
+	Derechos Fundamentales y Libertades Públicas
+		Derechos y Libertades Individuales (Artículos 14-29):
+
+			Igualdad y no discriminación (Art. 14):
+				Todos los españoles son iguales ante la ley, sin discriminación por razón de nacimiento, raza, sexo, religión, opinión o cualquier otra condición o circunstancia personal o social.
+
+			Derecho a la vida y a la integridad física y moral (Art. 15):
+				Se garantiza el derecho a la vida y se prohíben la tortura, las penas o tratos inhumanos o degradantes y la pena de muerte (excepto en tiempos de guerra).
+
+			Libertad ideológica, religiosa y de culto (Art. 16):
+				Se reconoce la libertad ideológica y religiosa, y se garantiza la laicidad del Estado.
+
+			Libertad personal (Art. 17):
+				Se garantiza el derecho a la libertad y seguridad, estableciendo que nadie puede ser detenido salvo en los casos y en la forma previstos por la ley.
+
+			Derecho al honor, intimidad y propia imagen (Art. 18):
+				Protección del honor, la intimidad personal y familiar y la propia imagen, así como la inviolabilidad del domicilio y del secreto de las comunicaciones.
+
+			Libertad de residencia y circulación (Art. 19):
+				Derecho a elegir libremente su residencia y a circular por el territorio nacional.
+
+			Libertad de expresión y de información (Art. 20):
+				Derecho a expresar y difundir libremente pensamientos, ideas y opiniones, y derecho a recibir libremente información veraz.
+
+			Derecho de reunión y manifestación (Art. 21):
+				Derecho a reunirse pacíficamente y sin armas, y a manifestarse.
+
+			Libertad de asociación (Art. 22):
+				Derecho de asociación para fines lícitos.
+
+			Derecho a la participación política (Art. 23):
+				Derecho a participar en los asuntos públicos, directamente o por medio de representantes libremente elegidos en elecciones periódicas.
+
+			Derecho a la tutela judicial efectiva (Art. 24):
+				Derecho a obtener la tutela efectiva de jueces y tribunales en el ejercicio de sus derechos e intereses legítimos.
+
+			Derecho a contraer matrimonio (Art. 32):
+				Derecho a contraer matrimonio con plena igualdad jurídica entre los cónyuges.
+
+		Derechos Económicos y Sociales (Artículos 27-52):
+
+			Derecho a la educación (Art. 27):
+				Derecho a la educación y libertad de enseñanza.
+
+			Derecho a la huelga (Art. 28):
+				Derecho a la huelga de los trabajadores para la defensa de sus intereses.
+
+			Derecho a la negociación colectiva (Art. 37):
+				Derecho a la negociación colectiva laboral entre trabajadores y empresarios.
+
+			Protección de la salud (Art. 43):
+				Derecho a la protección de la salud.
+
+			Derecho a la vivienda digna (Art. 47):
+				Derecho a disfrutar de una vivienda digna y adecuada.
+
+			Derecho al medio ambiente adecuado (Art. 45):
+				Derecho a disfrutar de un medio ambiente adecuado para el desarrollo de la persona.
+
+			Protección a la familia y la infancia (Art. 39):
+				Protección a la familia, a la maternidad y a los menores.
+
+	Garantía y Suspensión de Derechos y Libertades
+		
+		Garantías (Artículos 53-54):
+
+			Protección de los derechos y libertades (Art. 53):
+				Los derechos y libertades reconocidos en el Capítulo II del Título I vinculan a todos los poderes públicos y están protegidos por la Constitución, que garantiza su protección judicial, incluyendo el recurso de amparo ante el Tribunal Constitucional.
+
+			Defensor del Pueblo (Art. 54):
+				Institución encargada de la defensa de los derechos fundamentales y libertades públicas mediante la supervisión de la actividad de la Administración, conocida como Defensor del Pueblo.
+Suspensión de Derechos y Libertades (Artículo 55):
+
+			Suspensión individual (Art. 55.1):
+				Se pueden suspender ciertos derechos en situaciones de estado de excepción o de sitio, como el derecho a la libertad y seguridad, el secreto de las comunicaciones, la libertad de expresión y el derecho de reunión y manifestación.
+
+			Suspensión en investigaciones de bandas armadas o elementos terroristas (Art. 55.2):
+				En casos de investigaciones relacionadas con bandas armadas o elementos terroristas, se pueden suspender ciertos derechos como la inviolabilidad del domicilio y el secreto de las comunicaciones, según lo dispuesto por una ley orgánica.
+
+1.3- Procedimiento de reforma de la Constitución:
+
+	Procedimiento Ordinario (Artículo 167)
+		
+		Iniciativa:
+			La reforma puede ser iniciada por el Gobierno, el Congreso de los Diputados, el Senado, o las Asambleas Legislativas de las Comunidades Autónomas. También puede ser propuesta por un mínimo de una décima parte de los miembros de cualquiera de las Cámaras.
+
+		Aprobación por las Cámaras:
+			La reforma debe ser aprobada por una mayoría de tres quintos de cada una de las Cámaras (Congreso y Senado). Si no hay acuerdo entre ambas Cámaras, se intentará obtener una mayoría de dos tercios en el Congreso y una mayoría absoluta en el Senado.
+
+		Referéndum:
+			Si una décima parte de los miembros de cualquiera de las Cámaras solicita un referéndum dentro de los quince días siguientes a la aprobación de la reforma, esta debe ser sometida a consulta popular. Si no se solicita, la reforma se considera definitivamente aprobada y se procede a su promulgación y publicación.
+
+	Procedimiento Agravado (Artículo 168)
+		
+		Iniciativa:
+			La reforma agravada se aplica a la revisión total de la Constitución o a una reforma que afecte a los derechos fundamentales y libertades públicas del Título I, al Título II (la Corona), o al Título preliminar.
+
+		Aprobación por las Cámaras:
+			La propuesta de reforma debe ser aprobada por una mayoría de dos tercios de cada una de las Cámaras.
+
+		Disolución de las Cámaras:
+			Una vez aprobada la reforma por ambas Cámaras, se procede a la disolución inmediata de las mismas y se convocan nuevas elecciones generales.
+
+		Nueva aprobación por las Cámaras:
+			Las nuevas Cámaras deben ratificar la reforma con una mayoría de dos tercios en cada Cámara.
+
+		Referéndum:
+			Finalmente, la reforma debe ser ratificada mediante referéndum, para el cual se convoca al cuerpo electoral. Si es aprobada, se procede a su promulgación y publicación.
+
+	Consideraciones Adicionales
+		
+		Flexibilidad y Estabilidad:
+			El procedimiento ordinario permite reformas más accesibles para adaptarse a las necesidades cambiantes de la sociedad, mientras que el procedimiento agravado asegura que los cambios más fundamentales solo se realicen con un amplio consenso y aprobación popular, garantizando así la estabilidad constitucional.
+
+		Supremacía Constitucional:
+			Cualquier reforma debe respetar los principios fundamentales de la Constitución y no puede contradecir el espíritu democrático y los derechos fundamentales que esta protege.
