@@ -101,12 +101,12 @@
     <button id="hamburger" onclick="toggleMenu()">☰ Menú</button>
 
     <div class="menu-container">
-        
+
         <ul class="menu" id="menu">
             <li>
                 Parte común:
-            </li>            
-            <li>        
+            </li>
+            <li>
                 <ul>
                     <li><a href="#" onclick="load_doc('01.html'); return false;">TEMA 1. La Constitución ESPAÑOLA
                             1978</a></li>
@@ -140,33 +140,12 @@
                 Parte específica
             </li>
 
-            <li>        
+            <li>
                 <ul>
-                    <li><a href="#" onclick="load_doc('01.html'); return false;">TEMA 1. La Constitución ESPAÑOLA
-                            1978</a></li>
-                    <li><a href="#" onclick="load_doc('02.html'); return false;">TEMA 2. La Organización territorial del
-                            Estado</a></li>
-                    <li><a href="#" onclick="load_doc('03.html'); return false;">TEMA 3. La Administración Local</a>
-                    </li>
-                    <li><a href="#" onclick="load_doc('04.html'); return false;">Tema 4. Ley 8/2015, de 1 de abril, de
-                            Cabildos Insulares</a></li>
-                    <li><a href="#" onclick="load_doc('05.html'); return false;">Tema 5. Ley 39/2015, de 1 de octubre,
-                            del Procedimiento Administrativo Común de las Administraciones Públicas (LPACAP) I</a></li>
-                    <li><a href="#" onclick="load_doc('06.html'); return false;">Tema 6. Ley 39/2015, de 1 de octubre,
-                            del Procedimiento Administrativo Común de las Administraciones Públicas (LPACAP) II</a></li>
-                    <li><a href="#" onclick="load_doc('07.html'); return false;">Tema 7. Ley 39/2015, de 1 de octubre,
-                            del Procedimiento Administrativo Común de las Administraciones Públicas III</a></li>
-                    <li><a href="#" onclick="load_doc('08.html'); return false;">TEMA 8 - Real Decreto Legislativo
-                            5/2015, de 30 de octubre, por el que se aprueba el Texto Refundido de la Ley del Estatuto
-                            Básico del Empleado Público</a></li>
-                    <li><a href="#" onclick="load_doc('09.html'); return false;">Tema 9. El presupuesto general de las
-                            Entidades Locales.</a></li>
-                    <li><a href="#" onclick="load_doc('10.html'); return false;">Tema 10. La Ley Orgánica 3/2007, de 22
-                            de marzo, para la igualdad efectiva de mujeres y hombres</a></li>
-                    <li><a href="#" onclick="load_doc('11.html'); return false;">Tema 11. Prevención de Riesgos
-                            Laborales</a></li>
-                    <li><a href="#" onclick="load_doc('12.html'); return false;">TEMA 12. Ley Orgánica 3/2018, de 5 de
-                            diciembre, de Protección de Datos Personales y Garantía de los Derechos Digitales</a></li>
+                    <li><a href="#" onclick="load_doc('13.html'); return false;">Tema 13. Componentes de los sistemas de
+                            información</a></li>
+                    <li><a href="#" onclick="load_doc('14.html'); return false;">Tema 14. Infraestructuras físicas de
+                            servidores</a></li>
                 </ul>
             </li>
 
@@ -200,7 +179,7 @@
                 .then( data => {
                     document.getElementById( 'contenido-externo' ).innerHTML = data;
                     toggleMenu();
-                    window.scrollTo(0, 0);
+                    window.scrollTo( 0, 0 );
                 } )
                 .catch( error => console.error( 'Error al cargar el archivo:', error ) );
 
