@@ -14,9 +14,9 @@
 
         .menu-container {
             display: flex;
+            border: none;
             justify-content: center;
             align-items: center;
-            background-color: #333;
             width: 100%;
         }
 
@@ -24,10 +24,10 @@
             list-style-type: none;
             padding: 0;
             margin: 0;
-            display: none;
+            border: none;
             flex-direction: column;
             width: 100%;
-            background-color: #444;
+            background-color: #333;
         }
 
         .menu li {
@@ -57,10 +57,10 @@
             background-color: #333;
             color: white;
             padding: 10px 20px;
-            border: none;
             cursor: pointer;
             width: 100%;
             text-align: left;
+            margin-bottom: 1px;
         }
 
         /* Estilos para pantallas grandes */
@@ -98,11 +98,11 @@
 
 <body>
 
-    <button id="hamburger" onclick="toggleMenu()">☰ Menú</button>
+    <button id="hamburger" onclick="toggleMenu()" style="font-size: 16pt;">☰ Menú</button>
 
     <div class="menu-container">
 
-        <ul class="menu" id="menu">
+        <ul class="menu" id="menu" style="display: block;">
             <li>
                 Parte común:
             </li>
@@ -126,7 +126,7 @@
                             5/2015, de 30 de octubre, por el que se aprueba el Texto Refundido de la Ley del Estatuto
                             Básico del Empleado Público</a></li>
                     <li><a href="#" onclick="load_doc('09.html'); return false;">Tema 9. El presupuesto general de las
-                            Entidades Locales.</a></li>
+                            Entidades Locales</a></li>
                     <li><a href="#" onclick="load_doc('10.html'); return false;">Tema 10. La Ley Orgánica 3/2007, de 22
                             de marzo, para la igualdad efectiva de mujeres y hombres</a></li>
                     <li><a href="#" onclick="load_doc('11.html'); return false;">Tema 11. Prevención de Riesgos
