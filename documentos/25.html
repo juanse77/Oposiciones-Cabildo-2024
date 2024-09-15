@@ -1,0 +1,242 @@
+<h1>Tema 25. Sistemas de automatizaci&oacute;n.</h1>
+<h2>25.1. Automatizaci&oacute;n del aprovisionamiento y gesti&oacute;n de configuraciones.</h2>
+<p>La automatizaci&oacute;n del aprovisionamiento y gesti&oacute;n de configuraciones en inform&aacute;tica se refiere a
+    los procesos automatizados que permiten instalar, configurar, mantener y actualizar software, hardware, y servicios
+    en un entorno de TI de manera eficiente y consistente. Este tipo de automatizaci&oacute;n es crucial en la
+    administraci&oacute;n de infraestructuras modernas, especialmente en entornos de nube y DevOps, donde la rapidez, la
+    coherencia y la escalabilidad son primordiales.</p>
+<h3>1. Automatizaci&oacute;n del Aprovisionamiento</h3>
+<p>El aprovisionamiento automatizado consiste en la creaci&oacute;n, configuraci&oacute;n y despliegue de recursos de TI
+    (como servidores, bases de datos, redes y almacenamiento) de manera autom&aacute;tica, sin intervenci&oacute;n
+    manual. El objetivo es reducir el tiempo y el esfuerzo necesarios para preparar estos recursos, as&iacute; como
+    minimizar los errores humanos. Algunas caracter&iacute;sticas clave incluyen:</p>
+<p>- Infraestructura como C&oacute;digo (IaC): Se utilizan herramientas como Terraform, AWS CloudFormation, o Azure
+    Resource Manager, que permiten definir y gestionar la infraestructura a trav&eacute;s de archivos de
+    configuraci&oacute;n. Estos archivos pueden ser versionados, compartidos y auditados, asegurando que los entornos
+    sean replicables y coherentes.</p>
+<p>- Despliegue en la Nube: En entornos de nube como AWS, Azure, o Google Cloud Platform, el aprovisionamiento
+    autom&aacute;tico permite crear y destruir instancias y servicios seg&uacute;n sea necesario, optimizando costos y
+    recursos.</p>
+<p>- Automatizaci&oacute;n de M&aacute;quinas Virtuales y Contenedores: El aprovisionamiento tambi&eacute;n abarca la
+    configuraci&oacute;n autom&aacute;tica de m&aacute;quinas virtuales (VMs) y contenedores (como Docker). Los scripts
+    y plantillas pueden definir el sistema operativo, aplicaciones, bibliotecas y configuraciones necesarias para el
+    despliegue.</p>
+<h3>2. Gesti&oacute;n Automatizada de Configuraciones</h3>
+<p>La gesti&oacute;n de configuraciones automatizada se enfoca en mantener la coherencia y el control sobre el estado de
+    los sistemas de TI, asegurando que todos los sistemas tengan las configuraciones correctas y est&eacute;n en
+    cumplimiento con los requisitos establecidos. Algunos aspectos importantes son:</p>
+<p>- Herramientas de Gesti&oacute;n de Configuraci&oacute;n: Existen varias herramientas populares como Ansible, Puppet,
+    Chef y SaltStack que permiten automatizar la configuraci&oacute;n de servidores y aplicaciones. Estas herramientas
+    funcionan mediante el uso de scripts o archivos de configuraci&oacute;n (a menudo escritos en YAML, JSON, o
+    lenguajes similares) que describen el estado deseado de la infraestructura.</p>
+<p>- Configuraci&oacute;n Declarativa: En lugar de scripts imperativos que describen paso a paso c&oacute;mo realizar
+    configuraciones, la configuraci&oacute;n declarativa describe el estado final deseado. Las herramientas de
+    gesti&oacute;n de configuraci&oacute;n luego aseguran que el entorno alcance ese estado.</p>
+<p>- Automatizaci&oacute;n de Parches y Actualizaciones: Una parte crucial de la gesti&oacute;n de configuraciones es la
+    capacidad de aplicar parches y actualizaciones de manera autom&aacute;tica. Esto garantiza que el software
+    est&eacute; actualizado y protegido contra vulnerabilidades de seguridad.</p>
+<p>- Orquestaci&oacute;n y Gesti&oacute;n de Configuraci&oacute;n Centralizada: Muchas herramientas de gesti&oacute;n de
+    configuraciones permiten la orquestaci&oacute;n, donde m&uacute;ltiples tareas de configuraci&oacute;n se gestionan
+    de manera coordinada. Esto es &uacute;til en entornos de microservicios o de m&uacute;ltiples nubes, donde es
+    necesario asegurar que todos los componentes del sistema funcionen de manera cohesiva.</p>
+<h3>3. Beneficios de la Automatizaci&oacute;n del Aprovisionamiento y Gesti&oacute;n de Configuraciones</h3>
+<p>- Eficiencia y Ahorro de Tiempo: La automatizaci&oacute;n reduce significativamente el tiempo requerido para
+    aprovisionar y configurar recursos, permitiendo a los equipos de TI centrarse en tareas m&aacute;s
+    estrat&eacute;gicas.</p>
+<p>- Consistencia y Reproducibilidad: Con la infraestructura y configuraciones definidas como c&oacute;digo, es
+    f&aacute;cil reproducir entornos consistentes y homog&eacute;neos.</p>
+<p>- Reducci&oacute;n de Errores Humanos: Al minimizar la intervenci&oacute;n manual, se reducen los errores de
+    configuraci&oacute;n y otros problemas asociados.</p>
+<p>- Escalabilidad: La automatizaci&oacute;n facilita el escalado de la infraestructura y aplicaciones de manera
+    din&aacute;mica, especialmente en entornos de nube.</p>
+<p>- Seguridad Mejorada: La capacidad de gestionar configuraciones y aplicar parches de forma centralizada y
+    automatizada mejora la seguridad y el cumplimiento.</p>
+<h3>4. Desaf&iacute;os y Consideraciones</h3>
+<p>- Curva de Aprendizaje: Las herramientas de automatizaci&oacute;n requieren un tiempo de aprendizaje significativo y
+    experiencia para ser utilizadas de manera efectiva.</p>
+<p>- Gesti&oacute;n del Cambio: Automatizar la configuraci&oacute;n y el aprovisionamiento puede requerir cambios
+    significativos en la cultura y los procesos de la organizaci&oacute;n.</p>
+<p>- Mantenimiento del C&oacute;digo de Infraestructura: La IaC y los scripts de automatizaci&oacute;n necesitan ser
+    mantenidos y actualizados, lo que requiere habilidades de desarrollo de software.</p>
+<h3>5. Conclusi&oacute;n</h3>
+<p>La automatizaci&oacute;n del aprovisionamiento y la gesti&oacute;n de configuraciones son componentes esenciales de
+    la administraci&oacute;n de infraestructuras modernas. Con las herramientas y enfoques adecuados, las organizaciones
+    pueden mejorar la eficiencia operativa, reducir riesgos y mejorar la agilidad.</p>
+<h2>25.2. Plataforma de automatizaci&oacute;n Ansible.</h2>
+<p>Ansible es una plataforma de automatizaci&oacute;n de c&oacute;digo abierto que permite la administraci&oacute;n de
+    sistemas, la implementaci&oacute;n de aplicaciones, la gesti&oacute;n de configuraciones y la orquestaci&oacute;n de
+    procesos de TI de manera simple, poderosa y sin agentes. Desarrollado por Red Hat, Ansible es conocido por su
+    simplicidad y facilidad de uso, lo que lo convierte en una de las herramientas m&aacute;s populares en la
+    gesti&oacute;n de configuraciones e infraestructura como c&oacute;digo (IaC).</p>
+<h3>1. Caracter&iacute;sticas Principales de Ansible</h3>
+<p>Ansible es conocido por sus caracter&iacute;sticas distintivas que lo diferencian de otras herramientas de
+    automatizaci&oacute;n:</p>
+<p>- Sin Agentes (Agentless): A diferencia de otras herramientas como Puppet o Chef, Ansible no requiere que se instalen
+    agentes en los nodos gestionados. Utiliza SSH para comunicarse con los sistemas remotos, lo que reduce la sobrecarga
+    y simplifica la administraci&oacute;n.</p>
+<p>- Arquitectura Simple: Ansible sigue una arquitectura simple que consta de un "control node" (nodo de control) desde
+    el cual se gestionan los "managed nodes" (nodos gestionados). Este modelo simplificado permite a los administradores
+    concentrarse en la gesti&oacute;n sin preocuparse por la infraestructura subyacente.</p>
+<p>- Configuraci&oacute;n Declarativa: Ansible usa una configuraci&oacute;n declarativa basada en YAML (YAML Ain't
+    Markup Language) para definir el estado deseado de la infraestructura. Esto facilita la lectura y escritura de las
+    configuraciones.</p>
+<p>- Extensible y Modular: Ansible tiene un dise&ntilde;o modular que permite a los usuarios crear y personalizar
+    m&oacute;dulos para tareas espec&iacute;ficas. Adem&aacute;s, cuenta con una amplia colecci&oacute;n de
+    m&oacute;dulos predefinidos para gestionar diferentes tipos de sistemas, servicios, bases de datos, etc.</p>
+<p>- Playbooks: Ansible utiliza "playbooks", archivos YAML que describen un conjunto de instrucciones para realizar
+    tareas de automatizaci&oacute;n. Los playbooks permiten definir flujos de trabajo complejos, incluyendo el
+    aprovisionamiento, configuraci&oacute;n y despliegue de aplicaciones.</p>
+<p>- Orquestaci&oacute;n: Adem&aacute;s de la gesti&oacute;n de configuraciones, Ansible se puede utilizar para la
+    orquestaci&oacute;n, permitiendo coordinar la configuraci&oacute;n y el despliegue de m&uacute;ltiples aplicaciones
+    en entornos complejos de manera simult&aacute;nea.</p>
+<h3>2. Componentes Clave de Ansible</h3>
+<p>- Control Node: Es el nodo desde el cual se ejecutan los comandos de Ansible. Puede ser cualquier m&aacute;quina con
+    Ansible instalado. Es aqu&iacute; donde se definen y ejecutan los playbooks.</p>
+<p>- Managed Nodes: Son los sistemas gestionados por Ansible. Estos nodos no requieren instalaci&oacute;n de software
+    espec&iacute;fico de Ansible; solo necesitan tener un servidor SSH y Python instalado.</p>
+<p>- Inventarios: Son archivos que definen los sistemas gestionados por Ansible. Pueden ser archivos de texto simples o
+    din&aacute;micos que obtienen informaci&oacute;n de sistemas de inventario como AWS, Azure, o GCP.</p>
+<p>- Playbooks: Son archivos YAML que contienen una serie de "plays", que definen el estado deseado de los sistemas y
+    las tareas a realizar.</p>
+<p>- M&oacute;dulos: Ansible tiene m&aacute;s de 1,300 m&oacute;dulos para gestionar tareas espec&iacute;ficas como el
+    manejo de paquetes, archivos, usuarios, servicios, etc. Los m&oacute;dulos son los componentes que realmente
+    ejecutan las tareas en los managed nodes.</p>
+<h3>3. Automatizaci&oacute;n con Ansible: Conceptos Fundamentales</h3>
+<p>- Tasks (Tareas): Son acciones individuales que Ansible ejecuta en un nodo gestionado. Cada tarea utiliza un
+    m&oacute;dulo para realizar una acci&oacute;n espec&iacute;fica, como instalar un paquete, copiar un archivo o
+    reiniciar un servicio.</p>
+<p>- Roles: Son formas m&aacute;s estructuradas y reutilizables de agrupar tareas, archivos de configuraci&oacute;n,
+    plantillas y otros elementos relacionados para una funcionalidad espec&iacute;fica. Los roles facilitan la
+    reutilizaci&oacute;n de configuraciones y la organizaci&oacute;n de playbooks.</p>
+<p>- Handlers: Son tareas que se ejecutan en respuesta a un cambio en el estado de un nodo gestionado. Se utilizan para
+    optimizar las operaciones, asegurando que ciertas acciones (como reiniciar un servicio) solo se realicen cuando sea
+    necesario.</p>
+<p>- Templates (Plantillas): Son archivos que contienen texto y variables que se sustituyen en tiempo de
+    ejecuci&oacute;n, lo que permite configuraciones din&aacute;micas y personalizadas.</p>
+<p>- Variables: Ansible permite definir variables a diferentes niveles (grupos, hosts, roles, playbooks) para que las
+    configuraciones sean m&aacute;s flexibles y reutilizables.</p>
+<h3>4. Ventajas de Ansible</h3>
+<p>- Simplicidad y Facilidad de Uso: La sintaxis YAML de los playbooks es f&aacute;cil de leer y entender, incluso para
+    personas no t&eacute;cnicas. Esto facilita el desarrollo y mantenimiento de scripts de automatizaci&oacute;n.</p>
+<p>- Escalabilidad: Aunque Ansible es f&aacute;cil de comenzar a usar para entornos peque&ntilde;os, tambi&eacute;n
+    puede escalarse a miles de nodos gestionados.</p>
+<p>- Flexibilidad: Ansible se puede utilizar para una variedad de casos de uso, incluyendo aprovisionamiento,
+    gesti&oacute;n de configuraciones, despliegue de aplicaciones, orquestaci&oacute;n, y m&aacute;s.</p>
+<p>- Ampliaci&oacute;n y Ecosistema: Ansible tiene una amplia comunidad y ecosistema, lo que permite a los usuarios
+    aprovechar playbooks, roles y m&oacute;dulos desarrollados por otros.</p>
+<h3>5. Casos de Uso Comunes de Ansible</h3>
+<p>- Gesti&oacute;n de Configuraciones: Configuraci&oacute;n consistente de servidores y servicios en diferentes
+    entornos (desarrollo, prueba, producci&oacute;n).</p>
+<p>- Aprovisionamiento de Infraestructura: Creaci&oacute;n autom&aacute;tica de servidores, m&aacute;quinas virtuales,
+    contenedores, y otros recursos de infraestructura.</p>
+<p>- Despliegue de Aplicaciones: Automatizaci&oacute;n de la instalaci&oacute;n, actualizaci&oacute;n y
+    administraci&oacute;n de aplicaciones y servicios.</p>
+<p>- Orquestaci&oacute;n de Contenedores: Gesti&oacute;n de entornos de contenedores Docker y Kubernetes.</p>
+<p>- Automatizaci&oacute;n de Parches y Actualizaciones: Aplicaci&oacute;n de actualizaciones de seguridad y parches de
+    software en servidores y sistemas de manera automatizada.</p>
+<h3>6. Desaf&iacute;os y Limitaciones de Ansible</h3>
+<p>- Rendimiento en Grandes Entornos: En entornos extremadamente grandes, la ejecuci&oacute;n secuencial de tareas puede
+    convertirse en un cuello de botella. La paralelizaci&oacute;n puede mejorar el rendimiento, pero puede requerir
+    ajustes.</p>
+<p>- Complejidad de Playbooks Grandes: A medida que los playbooks crecen en tama&ntilde;o y complejidad, pueden volverse
+    dif&iacute;ciles de gestionar sin una estructura adecuada.</p>
+<p>- Compatibilidad con SSH: Ansible depende de SSH para la comunicaci&oacute;n con los nodos gestionados, lo que puede
+    ser una limitaci&oacute;n en entornos donde SSH no es deseable o est&aacute; restringido.</p>
+<h3>7. Conclusi&oacute;n</h3>
+<p>Ansible es una plataforma de automatizaci&oacute;n vers&aacute;til, poderosa y f&aacute;cil de usar que ha ganado
+    popularidad en el mundo DevOps y en la administraci&oacute;n de infraestructuras modernas. Con su enfoque sin
+    agentes, arquitectura simple, y configuraci&oacute;n declarativa, Ansible permite a las organizaciones automatizar
+    de manera eficiente la gesti&oacute;n de sistemas y la implementaci&oacute;n de aplicaciones, mejorando la
+    consistencia, la escalabilidad y la eficiencia operativa.</p>
+<h2>25.3. Herramienta de creaci&oacute;n de im&aacute;genes Packer.</h2>
+<p>Packer es una herramienta de c&oacute;digo abierto creada por HashiCorp que se utiliza para automatizar la
+    creaci&oacute;n de im&aacute;genes de m&aacute;quinas virtuales y contenedores de manera r&aacute;pida y eficiente.
+    Estas im&aacute;genes pueden ser utilizadas en una variedad de plataformas, como Amazon Web Services (AWS), Google
+    Cloud Platform (GCP), Microsoft Azure, VMware, VirtualBox, Docker, entre otras. Packer permite crear im&aacute;genes
+    consistentes y configuradas con todo el software necesario, lo que facilita la implementaci&oacute;n de entornos de
+    infraestructura reproducibles y escalables.</p>
+<h3>1. Caracter&iacute;sticas Principales de Packer</h3>
+<p>- Creaci&oacute;n de Im&aacute;genes Multiplataforma: Packer puede crear im&aacute;genes para m&uacute;ltiples
+    plataformas en paralelo desde una &uacute;nica plantilla. Esto asegura que las im&aacute;genes sean consistentes en
+    diferentes entornos, como nube, entornos locales o contenedores.</p>
+<p>- Integraci&oacute;n con Herramientas de Gesti&oacute;n de Configuraci&oacute;n: Packer se integra f&aacute;cilmente
+    con herramientas de gesti&oacute;n de configuraci&oacute;n como Ansible, Chef, Puppet, SaltStack, y scripts Shell o
+    PowerShell, lo que permite una configuraci&oacute;n automatizada y detallada de las im&aacute;genes.</p>
+<p>- Velocidad y Eficiencia: Packer es r&aacute;pido y eficiente, ya que permite la creaci&oacute;n de im&aacute;genes
+    de m&uacute;ltiples tipos al mismo tiempo, lo que reduce el tiempo de construcci&oacute;n de im&aacute;genes y
+    aumenta la eficiencia operativa.</p>
+<p>- Infraestructura como C&oacute;digo (IaC): Las plantillas de Packer est&aacute;n escritas en JSON o HCL (HashiCorp
+    Configuration Language), lo que permite la definici&oacute;n de la infraestructura de manera declarativa,
+    versionable y repetible.</p>
+<p>- F&aacute;cil de Usar: Packer es sencillo de instalar y utilizar, y ofrece una sintaxis clara y comprensible para
+    definir las plantillas de im&aacute;genes.</p>
+<h3>2. Componentes Clave de Packer</h3>
+<p>- Plantillas (Templates): Las plantillas son archivos JSON o HCL que definen c&oacute;mo se debe crear la imagen.
+    Estas plantillas especifican los "builders", "provisioners", y "post-processors".</p>
+<p>- Builders (Constructores): Son los componentes responsables de crear im&aacute;genes para diferentes plataformas.
+    Por ejemplo, amazon-ebs para AWS, googlecompute para GCP, azure-arm para Azure, docker para Docker, virtualbox-iso
+    para VirtualBox, etc. Los builders definen la plataforma de destino, la configuraci&oacute;n de la m&aacute;quina
+    base y otros detalles espec&iacute;ficos de la plataforma.</p>
+<p>- Provisioners (Provisores): Son herramientas que se utilizan para configurar la m&aacute;quina una vez que ha sido
+    creada. Los provisioners pueden incluir Ansible, Chef, Puppet, Salt, shell scripts, etc. Esto permite la
+    instalaci&oacute;n de software, la configuraci&oacute;n de archivos, y otros ajustes necesarios para la imagen.</p>
+<p>- Post-Processors: Son herramientas que realizan acciones despu&eacute;s de que se haya creado la imagen, como
+    comprimir archivos de imagen, cargarlos en servicios de almacenamiento, o distribuir im&aacute;genes a diferentes
+    regiones o centros de datos.</p>
+<p>- Variables: Packer permite el uso de variables en las plantillas para hacer que las configuraciones sean m&aacute;s
+    din&aacute;micas y reutilizables. Las variables pueden ser definidas directamente en la plantilla o pasadas desde la
+    l&iacute;nea de comandos.</p>
+<h3>3. C&oacute;mo Funciona Packer</h3>
+<p>Packer sigue un flujo de trabajo bastante directo y l&oacute;gico:</p>
+<p>- Definici&oacute;n de la Plantilla: El usuario define una plantilla que especifica el tipo de imagen que se quiere
+    crear, el sistema operativo base, las configuraciones necesarias, y los detalles de la plataforma de destino.</p>
+<p>- Construcci&oacute;n de la Imagen: Packer utiliza un "builder" para iniciar una m&aacute;quina virtual temporal
+    basada en la configuraci&oacute;n de la plantilla.</p>
+<p>- Provisioning de la Imagen: Una vez que la m&aacute;quina est&aacute; en funcionamiento, Packer utiliza los
+    "provisioners" definidos para instalar el software y realizar las configuraciones necesarias.</p>
+<p>- Creaci&oacute;n de la Imagen Final: Una vez completada la configuraci&oacute;n, la m&aacute;quina se apaga y se
+    convierte en una imagen que se puede reutilizar en la plataforma de destino.</p>
+<p>- Post-Procesamiento (Opcional): Packer ejecuta cualquier post-procesador definido, como la compresi&oacute;n de la
+    imagen o la carga en un repositorio.</p>
+<h3>4. Ventajas de Usar Packer</h3>
+<p>- Im&aacute;genes Consistentes y Reproducibles: Packer permite crear im&aacute;genes consistentes con el mismo
+    software y configuraciones en todas las plataformas, lo que reduce los problemas de incompatibilidad y mejora la
+    estabilidad.</p>
+<p>- Optimizaci&oacute;n de la Infraestructura: Al utilizar im&aacute;genes preconfiguradas, el tiempo de
+    aprovisionamiento de nuevas instancias se reduce significativamente, mejorando la eficiencia del tiempo de
+    despliegue.</p>
+<p>- Automatizaci&oacute;n y Escalabilidad: La automatizaci&oacute;n de la creaci&oacute;n de im&aacute;genes facilita
+    el mantenimiento y escalado de la infraestructura, lo que es esencial para entornos de nube y DevOps.</p>
+<p>- Integraci&oacute;n con CI/CD: Packer se integra f&aacute;cilmente con pipelines de integraci&oacute;n y entrega
+    continua (CI/CD), permitiendo la creaci&oacute;n automatizada de im&aacute;genes como parte del flujo de trabajo de
+    despliegue.</p>
+<p>- Minimizaci&oacute;n de Errores Humanos: Al automatizar la creaci&oacute;n de im&aacute;genes, se reducen los
+    errores humanos asociados con la configuraci&oacute;n manual.</p>
+<h3>5. Casos de Uso Comunes de Packer</h3>
+<p>- Creaci&oacute;n de Im&aacute;genes de M&aacute;quina Virtual para la Nube: Packer se utiliza com&uacute;nmente para
+    crear im&aacute;genes de Amazon Machine Images (AMI) para AWS, im&aacute;genes de Compute Engine para GCP, y VHDs
+    para Azure, lo que permite una configuraci&oacute;n uniforme en diferentes entornos de nube.</p>
+<p>- Despliegue de Entornos Locales: Packer tambi&eacute;n puede crear im&aacute;genes para entornos locales usando
+    VMware, VirtualBox, QEMU, y otros hipervisores.</p>
+<p>- Automatizaci&oacute;n de Despliegues de Contenedores: Creaci&oacute;n de im&aacute;genes Docker automatizadas y
+    consistentes para ser utilizadas en entornos de desarrollo, prueba y producci&oacute;n.</p>
+<p>- Integraci&oacute;n con Pipelines de CI/CD: Packer se puede integrar con herramientas como Jenkins, GitLab CI/CD, y
+    GitHub Actions para la construcci&oacute;n y despliegue automatizado de im&aacute;genes.</p>
+<p>- Mantenimiento de Im&aacute;genes Actualizadas: Automatizar la creaci&oacute;n de im&aacute;genes con las
+    &uacute;ltimas actualizaciones y parches de seguridad para mantener la infraestructura protegida y conforme a las
+    normativas.</p>
+<h3>6. Desaf&iacute;os y Limitaciones de Packer</h3>
+<p>- Curva de Aprendizaje Inicial: Aunque Packer es simple de usar, aprender a escribir plantillas complejas y gestionar
+    m&uacute;ltiples provisioners puede requerir tiempo y pr&aacute;ctica.</p>
+<p>- Manejo de Estados Temporales: Packer crea m&aacute;quinas temporales durante el proceso de construcci&oacute;n de
+    im&aacute;genes. En entornos grandes, esto puede llevar a un uso significativo de recursos si no se gestiona
+    adecuadamente.</p>
+<p>- Dependencia de Herramientas Externas: Para el aprovisionamiento de configuraciones m&aacute;s complejas, Packer
+    depende de otras herramientas de gesti&oacute;n de configuraci&oacute;n (como Ansible, Puppet, etc.), lo que puede
+    agregar complejidad.</p>
+<h3>7. Conclusi&oacute;n</h3>
+<p>Packer es una herramienta poderosa y flexible que facilita la creaci&oacute;n de im&aacute;genes de m&aacute;quinas y
+    contenedores automatizadas y consistentes en m&uacute;ltiples plataformas. Su capacidad de integraci&oacute;n con
+    herramientas de gesti&oacute;n de configuraci&oacute;n y CI/CD, junto con su enfoque en la Infraestructura como
+    C&oacute;digo (IaC), lo convierte en una herramienta esencial en el arsenal de DevOps para la administraci&oacute;n
+    moderna de infraestructuras.</p>

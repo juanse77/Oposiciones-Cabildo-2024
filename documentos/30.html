@@ -1,0 +1,197 @@
+<h1>Tema 30. Bases de datos no relacionales.</h1>
+<h2>30.1. Concepto y caracter&iacute;sticas. Ventajas y casos de usos.</h2>
+<p>Una base de datos no relacional, tambi&eacute;n conocida como NoSQL (Not Only SQL), es un tipo de sistema de
+    gesti&oacute;n de bases de datos que no sigue el modelo tradicional de bases de datos relacionales. A diferencia de
+    las bases de datos relacionales que organizan datos en tablas con filas y columnas y utilizan SQL para la
+    gesti&oacute;n y manipulaci&oacute;n de datos, las bases de datos NoSQL est&aacute;n dise&ntilde;adas para
+    almacenar, recuperar y gestionar datos en formatos no tabulares.</p>
+<h3>Caracter&iacute;sticas de las Bases de Datos No Relacionales</h3>
+<p>- Flexibilidad de Esquema: No requieren esquemas fijos. Pueden almacenar datos sin una estructura r&iacute;gida, lo
+    que permite manejar diferentes tipos de datos y esquemas dentro de la misma base de datos.</p>
+<p>- Escalabilidad Horizontal: A diferencia de las bases de datos relacionales, las bases de datos NoSQL pueden escalar
+    horizontalmente agregando m&aacute;s servidores en lugar de aumentar la capacidad de un solo servidor. Esto permite
+    manejar grandes vol&uacute;menes de datos de manera m&aacute;s eficiente.</p>
+<p>- Modelo de Datos Flexible: Soportan varios modelos de datos, incluidos documentos, grafos, clave-valor y columnas
+    anchas, lo que permite almacenar diferentes tipos de datos de acuerdo con los requisitos de la aplicaci&oacute;n.
+</p>
+<p>- Alto Rendimiento: Ofrecen una alta velocidad de lectura y escritura, lo que las hace adecuadas para aplicaciones
+    que requieren un acceso r&aacute;pido a grandes cantidades de datos.</p>
+<p>- Manejo de Grandes Vol&uacute;menes de Datos: Est&aacute;n dise&ntilde;adas para manejar grandes vol&uacute;menes de
+    datos no estructurados o semi-estructurados, como registros de eventos, datos de sensores, datos de redes sociales,
+    etc.</p>
+<p>- Alta Disponibilidad y Replicaci&oacute;n: Muchas bases de datos NoSQL ofrecen replicaci&oacute;n de datos y
+    tolerancia a fallos para garantizar la alta disponibilidad y la continuidad del negocio.</p>
+<h3>Ventajas de las Bases de Datos No Relacionales</h3>
+<p>- Flexibilidad y Agilidad: Permiten a los desarrolladores realizar cambios en el modelo de datos sin necesidad de
+    modificar la estructura de la base de datos. Esto es ideal para entornos &aacute;giles donde los requisitos de datos
+    pueden cambiar r&aacute;pidamente.</p>
+<p>- Escalabilidad: Las bases de datos NoSQL son m&aacute;s f&aacute;ciles de escalar horizontalmente en
+    comparaci&oacute;n con las bases de datos relacionales. Esto es particularmente &uacute;til para aplicaciones web y
+    m&oacute;viles de gran escala que manejan enormes vol&uacute;menes de datos y tr&aacute;fico.</p>
+<p>- Rendimiento Mejorado: Dado que las bases de datos NoSQL est&aacute;n optimizadas para consultas r&aacute;pidas de
+    lectura y escritura, son ideales para aplicaciones que requieren tiempos de respuesta r&aacute;pidos y una alta
+    velocidad de procesamiento.</p>
+<p>- Compatibilidad con Datos No Estructurados: Son m&aacute;s adecuadas para almacenar datos no estructurados o
+    semi-estructurados, como JSON, XML, BSON, etc. Esto facilita la integraci&oacute;n con aplicaciones modernas que
+    manejan datos en diversos formatos.</p>
+<p>- Replicaci&oacute;n y Disponibilidad: Ofrecen mecanismos de replicaci&oacute;n de datos y tolerancia a fallos, lo
+    que garantiza que la base de datos est&eacute; siempre disponible y que los datos est&eacute;n protegidos contra
+    fallos.</p>
+<h3>Casos de Uso de las Bases de Datos No Relacionales</h3>
+<p>Aplicaciones de Redes Sociales: Donde los datos cambian constantemente y el esquema puede ser muy flexible (por
+    ejemplo, perfiles de usuario, publicaciones, comentarios).</p>
+<p>Big Data y An&aacute;lisis en Tiempo Real: Bases de datos como Apache Cassandra o MongoDB se utilizan en
+    an&aacute;lisis de grandes vol&uacute;menes de datos para ofrecer respuestas r&aacute;pidas.</p>
+<p>Aplicaciones de IoT (Internet de las Cosas): Que requieren la ingesta de grandes cantidades de datos de sensores en
+    tiempo real.</p>
+<p>Aplicaciones de Comercio Electr&oacute;nico: Donde el cat&aacute;logo de productos puede cambiar con frecuencia y
+    cada producto puede tener diferentes atributos.</p>
+<p>Sistemas de Recomendaci&oacute;n: Como las recomendaciones de productos en Amazon o las recomendaciones de
+    pel&iacute;culas en Netflix, que requieren estructuras de datos flexibles y escalabilidad horizontal.</p>
+<p>Gesti&oacute;n de Contenidos y Documentos: Utilizan bases de datos de documentos (como MongoDB) para almacenar
+    documentos y datos de contenido, como blogs, art&iacute;culos y noticias.</p>
+<h3>Conclusi&oacute;n</h3>
+<p>Las bases de datos NoSQL son una opci&oacute;n poderosa para escenarios donde los datos no est&aacute;n
+    estructurados, la escalabilidad es crucial, y se requiere un rendimiento &oacute;ptimo con tiempos de respuesta
+    r&aacute;pidos. Si bien no son un reemplazo directo para las bases de datos relacionales, proporcionan una
+    alternativa valiosa para ciertos casos de uso y requisitos empresariales.</p>
+<h2>30.2. Tipo de bases de datos no relacionales.</h2>
+<p>Las bases de datos no relacionales, tambi&eacute;n conocidas como bases de datos NoSQL, abarcan varios tipos de
+    modelos de datos que est&aacute;n dise&ntilde;ados para abordar diferentes necesidades y casos de uso. A
+    continuaci&oacute;n, se presentan los principales tipos de bases de datos no relacionales:</p>
+<h3>1. Base de Datos de Documentos</h3>
+<p>- Descripci&oacute;n: Estas bases de datos almacenan datos en formato de documentos, como JSON, BSON, XML, o YAML.
+    Cada documento puede tener una estructura diferente, lo que permite almacenar datos no estructurados y
+    semi-estructurados.</p>
+<p>- Caracter&iacute;sticas:<br /> Flexibilidad en el esquema de datos; los documentos pueden tener diferentes
+    campos.<br /> Admite consultas ad hoc, &iacute;ndices secundarios y funciones de agregaci&oacute;n.<br /> Ideal para
+    almacenar datos jer&aacute;rquicos y anidados.</p>
+<p>Casos de Uso: Aplicaciones web y m&oacute;viles, sistemas de gesti&oacute;n de contenidos (CMS), aplicaciones de
+    comercio electr&oacute;nico, plataformas de redes sociales.</p>
+<p>Ejemplos: MongoDB, CouchDB, Amazon DocumentDB, ArangoDB.</p>
+<h3>2. Base de Datos Clave-Valor</h3>
+<p>- Descripci&oacute;n: Este tipo de base de datos es el m&aacute;s simple de todos los modelos NoSQL. Almacena datos
+    como pares de clave-valor, donde una clave &uacute;nica est&aacute; asociada con un valor. No tienen un esquema
+    predefinido y son altamente eficientes en t&eacute;rminos de rendimiento.</p>
+<h4>- Caracter&iacute;sticas:</h4>
+<p>Muy r&aacute;pida para b&uacute;squedas y recuperaci&oacute;n de datos.<br /> No hay restricciones de esquema, lo que
+    permite una gran flexibilidad.<br /> Escalabilidad horizontal f&aacute;cil de implementar.<br /> Casos de Uso:
+    Cach&eacute;s en memoria, sesiones de usuario, almacenamiento de configuraciones, aplicaciones en tiempo real donde
+    la latencia es cr&iacute;tica.<br /> Ejemplos: Redis, Amazon DynamoDB, Riak, Memcached, Aerospike.</p>
+<h3>3. Base de Datos de Columnas Anchas (Column Family)</h3>
+<p>- Descripci&oacute;n: Estas bases de datos organizan los datos en columnas en lugar de filas. Los datos se almacenan
+    en familias de columnas, que son conjuntos de columnas relacionadas. Cada fila puede tener un n&uacute;mero
+    diferente de columnas.</p>
+<h4>- Caracter&iacute;sticas:</h4>
+<p>Ideal para gestionar grandes vol&uacute;menes de datos distribuidos.<br /> Optimizaci&oacute;n para consultas de
+    lectura r&aacute;pida.<br /> Alto rendimiento en operaciones de escritura.<br /> Casos de Uso: An&aacute;lisis de
+    datos a gran escala, almacenamiento de registros de eventos, aplicaciones de big data, almacenes de datos
+    anal&iacute;ticos.<br /> Ejemplos: Apache Cassandra, HBase, ScyllaDB, Amazon Keyspaces.</p>
+<h3>4. Base de Datos de Grafos</h3>
+<p>Descripci&oacute;n: Este tipo de base de datos utiliza nodos, aristas y propiedades para representar y almacenar
+    datos. Los nodos representan entidades, las aristas representan relaciones entre las entidades y las propiedades
+    almacenan informaci&oacute;n sobre los nodos y aristas.</p>
+<h4>Caracter&iacute;sticas:</h4>
+<p>Excelente para modelar relaciones complejas entre datos.<br /> Soporte para consultas altamente interactivas y
+    traversal de grafos.<br /> Ideal para an&aacute;lisis de redes y datos conectados.<br /> Casos de Uso: Redes
+    sociales, recomendaciones de productos, an&aacute;lisis de rutas, gesti&oacute;n de fraudes, motores de
+    b&uacute;squeda sem&aacute;ntica.<br /> Ejemplos: Neo4j, Amazon Neptune, ArangoDB (multi-modelo), OrientDB, Titan.
+</p>
+<h3>5. Base de Datos Orientada a Objetos</h3>
+<p>Descripci&oacute;n: Estas bases de datos almacenan datos en forma de objetos, similar a c&oacute;mo los datos se
+    representan en lenguajes de programaci&oacute;n orientados a objetos (como Java, C++, etc.). Cada objeto contiene
+    tanto datos como los m&eacute;todos para operar sobre esos datos.</p>
+<h4>Caracter&iacute;sticas:</h4>
+<p>Almacenamiento de datos directamente como objetos, lo que elimina la necesidad de transformaci&oacute;n entre el
+    modelo de datos y el modelo de objetos de programaci&oacute;n.<br /> Ideal para aplicaciones donde los datos son muy
+    complejos y tienen relaciones jer&aacute;rquicas profundas.<br /> Casos de Uso: Aplicaciones de dise&ntilde;o
+    asistido por computadora (CAD), modelado de sistemas, almacenamiento de im&aacute;genes y multimedia.<br />
+    Ejemplos: Db4o, ObjectDB, Versant, GemStone.</p>
+<h3>6. Base de Datos Multimodelo</h3>
+<p>Descripci&oacute;n: Estas bases de datos pueden soportar m&uacute;ltiples tipos de modelos de datos (por ejemplo,
+    clave-valor, documentos, grafos, columnas anchas) en un solo backend. Esto ofrece flexibilidad a los desarrolladores
+    para manejar diferentes tipos de datos con la misma base de datos.</p>
+<h4>Caracter&iacute;sticas:</h4>
+<p>Soporte para consultas unificadas en diferentes modelos de datos.<br /> Ideal para aplicaciones que requieren
+    diferentes tipos de almacenamiento y modelos de datos.<br /> Casos de Uso: Aplicaciones complejas que necesitan
+    combinar diferentes tipos de datos y relaciones, como aplicaciones financieras, comercio electr&oacute;nico,
+    plataformas de inteligencia artificial.<br /> Ejemplos: ArangoDB, OrientDB, Cosmos DB (de Azure).</p>
+<h3>Conclusi&oacute;n</h3>
+<p>Cada tipo de base de datos no relacional tiene sus propias caracter&iacute;sticas, ventajas y casos de uso
+    espec&iacute;ficos. La elecci&oacute;n del tipo de base de datos NoSQL depende en gran medida de los requisitos de
+    la aplicaci&oacute;n, como el tipo de datos, la necesidad de escalabilidad, la flexibilidad del esquema, la
+    complejidad de las relaciones y el rendimiento deseado.</p>
+<h2>30.3. Gestores de bases de datos no relacionales. Caracter&iacute;sticas principales.</h2>
+<p>Los gestores de bases de datos no relacionales (NoSQL) est&aacute;n dise&ntilde;ados para manejar diferentes tipos de
+    datos de manera m&aacute;s flexible y escalable que los sistemas de gesti&oacute;n de bases de datos relacionales
+    (RDBMS). Los sistemas NoSQL son utilizados ampliamente en aplicaciones modernas que requieren procesamiento de
+    grandes vol&uacute;menes de datos, escalabilidad horizontal, y una arquitectura de datos m&aacute;s flexible. A
+    continuaci&oacute;n, se presentan las caracter&iacute;sticas principales de los gestores de bases de datos no
+    relacionales:</p>
+<h3>Caracter&iacute;sticas Principales de los Gestores de Bases de Datos No Relacionales</h3>
+<h4>- Esquema Flexible:</h4>
+<p>A diferencia de las bases de datos relacionales, los gestores NoSQL no requieren un esquema de datos predefinido.
+    Esto significa que los datos se pueden almacenar sin una estructura fija, permitiendo agregar nuevos campos
+    f&aacute;cilmente sin alterar la estructura existente.</p>
+<p>Esta caracter&iacute;stica es ideal para aplicaciones donde los datos pueden cambiar frecuentemente o tener
+    diferentes formatos.</p>
+<h4>- Escalabilidad Horizontal:</h4>
+<p>Los sistemas NoSQL est&aacute;n dise&ntilde;ados para escalar horizontalmente distribuyendo la carga a trav&eacute;s
+    de m&uacute;ltiples servidores o nodos. A diferencia de la escalabilidad vertical (agregar m&aacute;s recursos a un
+    solo servidor), la escalabilidad horizontal (agregar m&aacute;s servidores) permite manejar grandes vol&uacute;menes
+    de datos y tr&aacute;fico de manera eficiente.<br /> Esta caracter&iacute;stica es crucial para aplicaciones de alta
+    disponibilidad que requieren manejar grandes cantidades de datos en tiempo real.</p>
+<h4>- Alto Rendimiento para Lecturas y Escrituras:</h4>
+<p>Los gestores NoSQL est&aacute;n optimizados para realizar operaciones de lectura y escritura de manera r&aacute;pida,
+    lo que los hace adecuados para aplicaciones que requieren alta velocidad de procesamiento, como an&aacute;lisis en
+    tiempo real, registros de eventos, y sistemas de recomendaci&oacute;n.</p>
+<p>Al no depender de uniones complejas y transacciones ACID (Atomicidad, Consistencia, Aislamiento, Durabilidad) en la
+    mayor&iacute;a de los casos, pueden ofrecer un rendimiento superior para ciertos tipos de consultas.</p>
+<h4>- Replicaci&oacute;n y Alta Disponibilidad:</h4>
+<p>Los sistemas NoSQL suelen ofrecer capacidades de replicaci&oacute;n de datos de manera nativa, lo que permite que los
+    datos se copien autom&aacute;ticamente a varios nodos. Esto mejora la tolerancia a fallos y garantiza la alta
+    disponibilidad.</p>
+<p>Algunos gestores utilizan modelos de consistencia eventual en lugar de consistencia estricta para proporcionar mejor
+    disponibilidad y particionamiento.</p>
+<h4>- Modelo de Consistencia Flexible:</h4>
+<p>A diferencia de las bases de datos relacionales, que suelen seguir un modelo de consistencia estricta (ACID), muchos
+    sistemas NoSQL optan por un enfoque de consistencia eventual (BASE: Basically Available, Soft state, Eventually
+    consistent). Esto significa que los datos pueden no ser consistentes en todos los nodos de inmediato, pero se
+    sincronizar&aacute;n con el tiempo.</p>
+<p>Esto permite una mejor disponibilidad y rendimiento en sistemas distribuidos a gran escala.</p>
+<h4>- Soporte para Datos No Estructurados y Semi-estructurados:</h4>
+<p>Los gestores de bases de datos NoSQL est&aacute;n dise&ntilde;ados para almacenar y gestionar datos no estructurados
+    y semi-estructurados, como documentos JSON, archivos XML, datos binarios, etc. Esto permite manejar una amplia
+    variedad de tipos de datos y adaptarse a las necesidades de aplicaciones modernas que manejan diferentes formatos de
+    datos.<br />Los tipos de datos soportados incluyen texto, multimedia, datos anidados, y datos jer&aacute;rquicos.
+</p>
+<h4>- Optimizaci&oacute;n para Consultas Espec&iacute;ficas:</h4>
+<p>Los sistemas NoSQL est&aacute;n dise&ntilde;ados para optimizar ciertos tipos de consultas seg&uacute;n el modelo de
+    datos utilizado. Por ejemplo, las bases de datos de documentos son eficientes para consultas basadas en documentos,
+    mientras que las bases de datos de grafos son ideales para consultas de relaciones complejas y navegaci&oacute;n de
+    grafos.<br /> <br /> Esta optimizaci&oacute;n espec&iacute;fica puede proporcionar un rendimiento mucho mejor que
+    los RDBMS tradicionales para casos de uso espec&iacute;ficos.</p>
+<h4>- Modelos de Datos Diversos:</h4>
+<p>Las bases de datos NoSQL ofrecen diferentes modelos de datos que se adaptan a diferentes casos de uso: clave-valor,
+    documentos, columnas anchas y grafos, entre otros. Cada modelo tiene sus propias ventajas y es adecuado para
+    diferentes tipos de aplicaciones y necesidades de datos.</p>
+<p>Esto proporciona flexibilidad para elegir el modelo adecuado que mejor se adapte a los requisitos de la
+    aplicaci&oacute;n.</p>
+<h4>- Facilidad de Desarrollo y Integraci&oacute;n:</h4>
+<p>Muchos sistemas NoSQL proporcionan una integraci&oacute;n sencilla con lenguajes de programaci&oacute;n modernos y
+    herramientas de desarrollo. Los desarrolladores pueden trabajar con estructuras de datos nativas (como JSON) que son
+    compatibles con las tecnolog&iacute;as web y m&oacute;viles actuales.</p>
+<p>Adem&aacute;s, el uso de API RESTful y otros protocolos modernos facilita la integraci&oacute;n con otros servicios y
+    aplicaciones.</p>
+<h4>- Soporte para Distribuci&oacute;n Geogr&aacute;fica:</h4>
+<p>Algunos gestores NoSQL est&aacute;n dise&ntilde;ados para distribuir datos geogr&aacute;ficamente en varios centros
+    de datos. Esto mejora la latencia y la disponibilidad, permitiendo que los datos est&eacute;n m&aacute;s cerca del
+    usuario final.</p>
+<p>Esta capacidad es especialmente &uacute;til para aplicaciones globales que requieren un acceso r&aacute;pido y
+    confiable en diferentes ubicaciones geogr&aacute;ficas.</p>
+<h3>Conclusi&oacute;n</h3>
+<p>Los gestores de bases de datos no relacionales est&aacute;n dise&ntilde;ados para abordar las limitaciones de los
+    sistemas relacionales en entornos modernos de grandes vol&uacute;menes de datos, alta escalabilidad y datos no
+    estructurados. Las caracter&iacute;sticas mencionadas anteriormente hacen que los sistemas NoSQL sean adecuados para
+    una amplia gama de aplicaciones, como an&aacute;lisis en tiempo real, redes sociales, comercio electr&oacute;nico,
+    sistemas de recomendaci&oacute;n, y m&aacute;s.</p>

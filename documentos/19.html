@@ -1,0 +1,229 @@
+<h1>Tema 19. Redes de comunicaciones II.</h1>
+<h2>19.1. Segmentaci&oacute;n en redes.</h2>
+<p>La segmentaci&oacute;n en redes es un proceso fundamental en la administraci&oacute;n de redes de computadoras que
+    implica dividir una red grande en subredes m&aacute;s peque&ntilde;as o segmentos. Esta pr&aacute;ctica permite
+    mejorar la eficiencia, seguridad y gesti&oacute;n de la red al controlar el tr&aacute;fico, limitar el alcance de
+    los problemas de red, y aislar recursos o usuarios seg&uacute;n sea necesario.</p>
+<h3>&iquest;Qu&eacute; es la Segmentaci&oacute;n de Redes?</h3>
+<p>La segmentaci&oacute;n de redes divide una red grande en subredes m&aacute;s peque&ntilde;as, cada una de las cuales
+    se considera una "red" independiente. Esto se hace utilizando t&eacute;cnicas como el uso de VLANs (Virtual Local
+    Area Networks), subredes IP y listas de control de acceso (ACLs).</p>
+<h3>Beneficios de la Segmentaci&oacute;n de Redes</h3>
+<p>- Mejora del rendimiento de la red: Al dividir la red en segmentos m&aacute;s peque&ntilde;os, se reduce el
+    tr&aacute;fico de broadcast (difusi&oacute;n) y se mejora la eficiencia del enrutamiento, lo que reduce la
+    congesti&oacute;n y mejora el rendimiento general de la red.</p>
+<p>- Mejora de la seguridad: La segmentaci&oacute;n permite aislar diferentes partes de la red, limitando el alcance de
+    potenciales amenazas. Por ejemplo, si un segmento de red se ve comprometido, el acceso a otros segmentos puede estar
+    restringido, evitando as&iacute; que un atacante acceda a toda la red.</p>
+<p>- Facilidad de gesti&oacute;n: Permite a los administradores de red gestionar cada segmento por separado, aplicar
+    pol&iacute;ticas de seguridad espec&iacute;ficas y optimizar el tr&aacute;fico seg&uacute;n las necesidades del
+    segmento.</p>
+<p>- Control de acceso: La segmentaci&oacute;n facilita la implementaci&oacute;n de controles de acceso, permitiendo que
+    solo ciertos usuarios o dispositivos tengan acceso a recursos espec&iacute;ficos dentro de la red.</p>
+<h3>Tipos de Segmentaci&oacute;n de Redes</h3>
+<p>- Segmentaci&oacute;n F&iacute;sica: Implica la divisi&oacute;n de la red utilizando hardware f&iacute;sico, como
+    switches, routers y firewalls. Cada segmento es una red independiente con su propio equipo y cables.</p>
+<p>- Segmentaci&oacute;n L&oacute;gica: Utiliza t&eacute;cnicas como las VLANs para dividir una red f&iacute;sica en
+    m&uacute;ltiples subredes l&oacute;gicas. Esto permite agrupar dispositivos que est&aacute;n en diferentes
+    ubicaciones f&iacute;sicas pero que deben estar en la misma red l&oacute;gica.</p>
+<p>- Segmentaci&oacute;n por Microsegmentaci&oacute;n: Este enfoque m&aacute;s moderno implica la creaci&oacute;n de
+    segmentos a&uacute;n m&aacute;s peque&ntilde;os (microsegmentos) dentro de una red para ofrecer un control de acceso
+    m&aacute;s granular y mejorar la seguridad, especialmente en entornos de centro de datos.</p>
+<h3>T&eacute;cnicas Comunes de Segmentaci&oacute;n</h3>
+<p>- VLANs (Virtual LANs): Permiten dividir una red f&iacute;sica en m&uacute;ltiples subredes l&oacute;gicas. Por
+    ejemplo, una VLAN puede agrupar todos los dispositivos de una red de oficinas espec&iacute;ficas, mientras que otra
+    VLAN agrupa los dispositivos de una red de almacenamiento.</p>
+<p>- Subredes IP: Involucra dividir una red en subredes m&aacute;s peque&ntilde;as utilizando m&aacute;scaras de subred.
+    Esto ayuda a gestionar el tr&aacute;fico de manera m&aacute;s eficiente y aplicar pol&iacute;ticas de seguridad
+    espec&iacute;ficas.</p>
+<p>- Listas de Control de Acceso (ACLs): Son reglas que se aplican en routers y switches para controlar el
+    tr&aacute;fico entre subredes y permitir o denegar el acceso a ciertos recursos.</p>
+<h3>Aplicaciones de la Segmentaci&oacute;n de Redes</h3>
+<p>- Entornos empresariales: Donde se requiere separar las redes de usuarios internos de las redes de invitados para
+    mejorar la seguridad.</p>
+<p>- Centros de datos: Donde se necesita microsegmentaci&oacute;n para proteger aplicaciones cr&iacute;ticas y datos
+    sensibles.</p>
+<p>- Entornos industriales y de IoT: Donde se necesitan segmentaciones para proteger dispositivos y sistemas
+    cr&iacute;ticos de amenazas externas.</p>
+<p>Desaf&iacute;os de la Segmentaci&oacute;n de Redes</p>
+<p>- Complejidad de gesti&oacute;n: La segmentaci&oacute;n puede complicar la administraci&oacute;n de la red,
+    especialmente en redes grandes con muchos segmentos.</p>
+<p>- Configuraci&oacute;n incorrecta: Una configuraci&oacute;n incorrecta de la segmentaci&oacute;n puede llevar a
+    problemas de conectividad o vulnerabilidades de seguridad.</p>
+<p>- Requiere una planificaci&oacute;n cuidadosa: La segmentaci&oacute;n efectiva de la red requiere una buena
+    comprensi&oacute;n de la topolog&iacute;a de la red y las necesidades de tr&aacute;fico.</p>
+<h2>19.2. Redes locales virtuales (VLAN).</h2>
+<p>Las Redes Locales Virtuales (VLANs) son una t&eacute;cnica clave de segmentaci&oacute;n de red que permite agrupar
+    dispositivos en una o m&aacute;s redes l&oacute;gicas, independientemente de su ubicaci&oacute;n f&iacute;sica
+    dentro de una red f&iacute;sica m&aacute;s grande. Las VLANs mejoran la eficiencia, seguridad y
+    administraci&oacute;n de la red al segmentar y aislar el tr&aacute;fico de red en diferentes grupos l&oacute;gicos.
+</p>
+<h3>&iquest;Qu&eacute; es una VLAN?</h3>
+<p>Una VLAN (Virtual Local Area Network) es una subred l&oacute;gica que se crea dentro de un switch o una serie de
+    switches. Al permitir que un grupo de dispositivos en diferentes segmentos de red f&iacute;sica act&uacute;e como si
+    estuvieran en la misma red l&oacute;gica, las VLANs permiten una mayor flexibilidad y control en la
+    administraci&oacute;n de la red. Por ejemplo, se pueden crear VLANs para separar el tr&aacute;fico de la red de la
+    oficina administrativa del tr&aacute;fico de la red de invitados.</p>
+<h3>Caracter&iacute;sticas de las VLANs</h3>
+<p>- Separaci&oacute;n l&oacute;gica del tr&aacute;fico: Las VLANs separan el tr&aacute;fico de red en diferentes
+    dominios de broadcast. Esto significa que el tr&aacute;fico broadcast de una VLAN no se propaga a otras VLANs, lo
+    que ayuda a reducir la congesti&oacute;n de la red.</p>
+<p>- Independencia f&iacute;sica: Los dispositivos de diferentes ubicaciones f&iacute;sicas pueden agruparse en la misma
+    VLAN. Por ejemplo, los empleados de diferentes departamentos que se encuentran en distintos pisos de un edificio
+    pueden estar en la misma VLAN de &ldquo;Administraci&oacute;n&rdquo;.</p>
+<p>- Mejora de la seguridad: Al separar el tr&aacute;fico en diferentes VLANs, se puede controlar el acceso a recursos
+    espec&iacute;ficos. Por ejemplo, el tr&aacute;fico de los usuarios de invitados puede estar aislado del
+    tr&aacute;fico de los usuarios internos.</p>
+<p>- Facilidad de administraci&oacute;n: La administraci&oacute;n de la red se vuelve m&aacute;s flexible y eficiente.
+    Se pueden crear, eliminar o modificar las VLANs sin necesidad de hacer cambios f&iacute;sicos en la infraestructura
+    de red.</p>
+<h3>Tipos de VLANs</h3>
+<p>- VLAN de Datos: Se utiliza para transportar datos de los usuarios de la red. Cada departamento, como ventas,
+    finanzas o recursos humanos, puede tener su propia VLAN para separar y organizar el tr&aacute;fico.</p>
+<p>- VLAN de Voz: Optimizada para tr&aacute;fico de voz sobre IP (VoIP), con prioridad para este tipo de tr&aacute;fico
+    para reducir la latencia y mejorar la calidad de las llamadas.</p>
+<p>- VLAN de Administraci&oacute;n: Se reserva para el acceso a los dispositivos de administraci&oacute;n de la red,
+    como switches, routers y servidores. Esto proporciona una capa adicional de seguridad al limitar el acceso
+    administrativo a una VLAN espec&iacute;fica.</p>
+<p>- VLAN de Seguridad o Cuarentena: Utilizada para aislar dispositivos no confiables o que necesiten ser revisados
+    antes de acceder a la red principal.</p>
+<p>- VLAN de Invitados: Se utiliza para permitir a los invitados acceder a la red de manera restringida,
+    separ&aacute;ndolos del tr&aacute;fico interno de la red.</p>
+<h3>Funcionamiento de las VLANs</h3>
+<p>Las VLANs se configuran principalmente en switches administrados. El tr&aacute;fico de red se asigna a diferentes
+    VLANs utilizando un n&uacute;mero de identificaci&oacute;n llamado ID de VLAN. Existen dos tipos de puertos en los
+    switches en relaci&oacute;n con VLANs:</p>
+<p>- Puertos de Acceso (Access Ports): Est&aacute;n asignados a una &uacute;nica VLAN. Los dispositivos conectados a
+    estos puertos solo pueden comunicarse dentro de su propia VLAN. Este es el tipo de puerto que se utiliza para
+    conectar PCs y otros dispositivos finales.</p>
+<p>- Puertos de Troncal (Trunk Ports): Son capaces de transportar tr&aacute;fico de m&uacute;ltiples VLANs. Los puertos
+    de troncal generalmente se utilizan para conectar switches entre s&iacute; o para conectar un switch a un router. El
+    tr&aacute;fico de diferentes VLANs se identifica mediante un m&eacute;todo de etiquetado, como 802.1Q.</p>
+<h3>Etiquetado de VLANs: IEEE 802.1Q</h3>
+<p>El est&aacute;ndar IEEE 802.1Q es el m&eacute;todo m&aacute;s utilizado para el etiquetado de tr&aacute;fico de
+    VLANs. Este protocolo de red a&ntilde;ade una etiqueta (tag) de 4 bytes al encabezado del marco Ethernet original
+    para identificar a qu&eacute; VLAN pertenece un paquete. Los switches pueden leer esta etiqueta para dirigir
+    correctamente el tr&aacute;fico a la VLAN correspondiente.</p>
+<h3>Configuraci&oacute;n de VLANs</h3>
+<p>La configuraci&oacute;n de VLANs var&iacute;a seg&uacute;n el fabricante del switch (por ejemplo, Cisco, HP,
+    Juniper), pero generalmente implica los siguientes pasos b&aacute;sicos:</p>
+<p>- Crear la VLAN: Definir una VLAN espec&iacute;fica en el switch y asignarle un n&uacute;mero de
+    identificaci&oacute;n &uacute;nico (ID de VLAN).</p>
+<p>- Asignar puertos a la VLAN: Configurar los puertos del switch para que sean puertos de acceso o de troncal y
+    asignarlos a la VLAN correspondiente.</p>
+<p>- Configurar el router (enrutamiento entre VLANs): Si se necesita comunicaci&oacute;n entre diferentes VLANs, es
+    necesario un dispositivo de capa 3 como un router o un switch capa 3 para realizar el enrutamiento entre VLANs.</p>
+<p>- Etiquetado de puertos de troncal: Configurar los puertos de troncal para etiquetar el tr&aacute;fico de
+    m&uacute;ltiples VLANs utilizando 802.1Q.</p>
+<h3>Beneficios de Utilizar VLANs</h3>
+<p>- Aislamiento de tr&aacute;fico: Mejora la seguridad y reduce la congesti&oacute;n en la red.</p>
+<p>- Mejor administraci&oacute;n de la red: Simplifica la administraci&oacute;n al permitir a los administradores
+    aplicar pol&iacute;ticas de red m&aacute;s f&aacute;cilmente.</p>
+<p>- Mayor flexibilidad: Permite cambios r&aacute;pidos en la red sin necesidad de modificar f&iacute;sicamente la
+    infraestructura.</p>
+<p>- Calidad de servicio (QoS): Facilita la priorizaci&oacute;n de ciertos tipos de tr&aacute;fico, como VoIP o video,
+    en redes convergentes.</p>
+<p>Desaf&iacute;os de las VLANs</p>
+<p>- Configuraci&oacute;n y mantenimiento: Requiere conocimientos t&eacute;cnicos avanzados y una configuraci&oacute;n
+    cuidadosa.</p>
+<p>- Riesgos de seguridad: Si no se configuran correctamente, las VLANs pueden ser vulnerables a ataques como VLAN
+    hopping, donde un atacante intenta acceder a VLANs no autorizadas.</p>
+<p>- Compatibilidad y escalabilidad: La administraci&oacute;n de VLANs en entornos grandes y complejos puede volverse
+    complicada y requerir herramientas de administraci&oacute;n avanzadas.</p>
+<h3>Aplicaciones de VLANs</h3>
+<p>Las VLANs son ampliamente utilizadas en entornos corporativos, centros de datos, instituciones educativas y redes
+    empresariales donde se necesita segmentar el tr&aacute;fico para mejorar la seguridad, el rendimiento y la
+    administraci&oacute;n de la red.</p>
+<h2>19.3. Control de acceso a la red (NAC).</h2>
+<p>El Control de Acceso a la Red (Network Access Control, NAC) es una soluci&oacute;n de seguridad que gestiona y
+    controla el acceso a los recursos de una red, garantizando que solo los usuarios y dispositivos autorizados y que
+    cumplan con las pol&iacute;ticas de seguridad establecidas puedan conectarse y acceder a la red.</p>
+<h3>&iquest;Qu&eacute; es el Control de Acceso a la Red (NAC)?</h3>
+<p>El Control de Acceso a la Red (NAC) es un conjunto de tecnolog&iacute;as y pol&iacute;ticas que definen qui&eacute;n
+    puede acceder a una red, c&oacute;mo pueden acceder y qu&eacute; recursos pueden utilizar. Las soluciones NAC
+    verifican la identidad de los usuarios y dispositivos, validan su conformidad con las pol&iacute;ticas de seguridad
+    de la organizaci&oacute;n, y permiten o deniegan el acceso a la red en funci&oacute;n de esta validaci&oacute;n.</p>
+<h3>Objetivos del NAC</h3>
+<p>- Garantizar la seguridad de la red: Impedir el acceso de dispositivos no autorizados o comprometidos que puedan
+    representar una amenaza.</p>
+<p>- Cumplimiento de pol&iacute;ticas: Asegurar que los dispositivos que se conectan a la red cumplan con las
+    pol&iacute;ticas de seguridad, como actualizaciones de software, antivirus habilitado, configuraci&oacute;n
+    correcta, etc.</p>
+<p>- Control de acceso basado en roles: Permitir acceso diferenciado a los recursos de la red seg&uacute;n el perfil del
+    usuario o el tipo de dispositivo.</p>
+<p>- Visibilidad y gesti&oacute;n de dispositivos: Proporcionar visibilidad de todos los dispositivos conectados a la
+    red, facilitando su administraci&oacute;n.</p>
+<h3>Componentes de una Soluci&oacute;n NAC</h3>
+<p>Una soluci&oacute;n NAC t&iacute;pica consta de varios componentes que trabajan juntos para proporcionar un control
+    de acceso efectivo:</p>
+<p>- Pol&iacute;tica de control de acceso: Define las reglas que determinan qui&eacute;n puede acceder a la red,
+    c&oacute;mo pueden acceder y qu&eacute; recursos pueden utilizar. Estas pol&iacute;ticas pueden basarse en la
+    identidad del usuario, el tipo de dispositivo, la ubicaci&oacute;n, la hora del d&iacute;a, etc.</p>
+<p>- Autenticaci&oacute;n y Autorizaci&oacute;n: Verifica la identidad del usuario y del dispositivo
+    (autenticaci&oacute;n) y determina qu&eacute; nivel de acceso tiene permitido (autorizaci&oacute;n). Esto se logra a
+    trav&eacute;s de m&eacute;todos como 802.1X, RADIUS, LDAP, Active Directory, etc.</p>
+<p>- Evaluaci&oacute;n de la Conformidad del Endpoint: Antes de permitir el acceso, se eval&uacute;a el dispositivo para
+    asegurarse de que cumple con las pol&iacute;ticas de seguridad establecidas, como tener un antivirus actualizado,
+    parches aplicados, configuraci&oacute;n adecuada, etc.</p>
+<p>- Remediaci&oacute;n y Cuarentena: Si un dispositivo no cumple con las pol&iacute;ticas de seguridad, el NAC puede
+    colocar el dispositivo en una red de cuarentena donde solo tiene acceso limitado para remediaci&oacute;n (por
+    ejemplo, descargar actualizaciones o software de seguridad).</p>
+<p>- Gesti&oacute;n de Acceso y Aplicaci&oacute;n de Pol&iacute;ticas: Basado en la evaluaci&oacute;n, el NAC puede
+    permitir, denegar o restringir el acceso a la red. Tambi&eacute;n puede aplicar pol&iacute;ticas espec&iacute;ficas,
+    como permitir solo acceso a ciertos recursos o imponer limitaciones de ancho de banda.</p>
+<h3>M&eacute;todos de Implementaci&oacute;n de NAC</h3>
+<p>Existen varias maneras de implementar NAC en una red:</p>
+<p>- Basado en Agente: Requiere que los dispositivos tengan un software o agente instalado que informe sobre el estado
+    del dispositivo al sistema NAC. Este m&eacute;todo proporciona un control y visibilidad m&aacute;s detallados sobre
+    el dispositivo.</p>
+<p>- Sin Agente (Agentless): No requiere la instalaci&oacute;n de software en los dispositivos. Utiliza t&eacute;cnicas
+    como escaneos de red, an&aacute;lisis de tr&aacute;fico y autenticaci&oacute;n a trav&eacute;s de portales cautivos
+    para evaluar la conformidad del dispositivo.</p>
+<p>- Basado en Red (Network-based): Se integra con la infraestructura de red, como switches, routers y puntos de acceso
+    inal&aacute;mbricos, para controlar el acceso. Utiliza protocolos como 802.1X para autenticar y autorizar
+    dispositivos en la red.</p>
+<p>- Basado en Host (Host-based): Utiliza software en el host o dispositivo final para realizar la autenticaci&oacute;n
+    y control de acceso. Este m&eacute;todo es &uacute;til para la administraci&oacute;n de acceso remoto y dispositivos
+    m&oacute;viles.</p>
+<h3>Beneficios del Control de Acceso a la Red (NAC)</h3>
+<p>- Mayor Seguridad: Protege la red contra dispositivos no autorizados, malware y ataques internos.</p>
+<p>- Cumplimiento Normativo: Ayuda a cumplir con regulaciones y est&aacute;ndares de seguridad al imponer
+    pol&iacute;ticas de acceso y de seguridad.</p>
+<p>- Control Granular de la Red: Proporciona controles granulares basados en el rol del usuario, el tipo de dispositivo
+    y el estado del dispositivo.</p>
+<p>- Visibilidad de la Red: Ofrece una visibilidad completa de los dispositivos conectados a la red, permitiendo una
+    mejor gesti&oacute;n y respuesta a incidentes.</p>
+<p>- Acceso Remoto Seguro: Garantiza que los empleados y usuarios remotos cumplan con las pol&iacute;ticas de seguridad
+    antes de acceder a los recursos corporativos.</p>
+<h3>Desaf&iacute;os de la Implementaci&oacute;n de NAC</h3>
+<p>- Complejidad de Implementaci&oacute;n: Integrar NAC en una red existente puede ser complejo, especialmente en
+    entornos grandes o heterog&eacute;neos.</p>
+<p>- Compatibilidad de Dispositivos: Es posible que algunos dispositivos no sean compatibles con ciertos m&eacute;todos
+    de autenticaci&oacute;n o evaluaci&oacute;n de conformidad.</p>
+<p>- Requerimientos de Infraestructura: Puede requerir actualizaciones o cambios en la infraestructura de red existente,
+    como switches y puntos de acceso.</p>
+<p>- Gesti&oacute;n Continua: Requiere una gesti&oacute;n y mantenimiento continuos para adaptar las pol&iacute;ticas de
+    seguridad y responder a nuevas amenazas.</p>
+<h3>Protocolos y Tecnolog&iacute;as Asociadas con NAC</h3>
+<p>- 802.1X: Un est&aacute;ndar de IEEE para el control de acceso a redes basado en puertos. Es uno de los
+    m&eacute;todos m&aacute;s comunes utilizados en NAC para autenticar dispositivos que se conectan a una red.</p>
+<p>- RADIUS (Remote Authentication Dial-In User Service): Protocolo ampliamente utilizado para autenticaci&oacute;n,
+    autorizaci&oacute;n y contabilizaci&oacute;n de usuarios que se conectan a la red. Es un componente central en
+    muchas soluciones NAC.</p>
+<p>- TACACS+ (Terminal Access Controller Access-Control System Plus): Similar a RADIUS, pero ofrece un control de acceso
+    m&aacute;s granular y es com&uacute;nmente utilizado en entornos de red empresarial.</p>
+<p>- LDAP (Lightweight Directory Access Protocol) y Active Directory (AD): Utilizados para autenticar y autorizar
+    usuarios bas&aacute;ndose en directorios centralizados de la organizaci&oacute;n.</p>
+<h3>Aplicaciones del NAC</h3>
+<p>- Empresas y organizaciones: Aseguran que solo los empleados y dispositivos autorizados tengan acceso a la red
+    corporativa.</p>
+<p>- Instituciones educativas: Controlan el acceso de estudiantes, profesores y dispositivos de invitados a la red.</p>
+<p>- Redes de acceso p&uacute;blico: Proveen acceso seguro y controlado en hoteles, aeropuertos, y otros lugares
+    p&uacute;blicos.</p>
+<p>- Entornos de salud y hospitales: Aseguran que solo dispositivos m&eacute;dicos y personales autorizados tengan
+    acceso a redes cr&iacute;ticas.</p>
+<h3>Conclusi&oacute;n</h3>
+<p>El Control de Acceso a la Red (NAC) es una herramienta esencial para proteger redes modernas y complejas. Garantiza
+    que solo los dispositivos y usuarios autorizados y seguros puedan acceder a la red, cumpliendo as&iacute; con las
+    pol&iacute;ticas de seguridad y regulaciones de la organizaci&oacute;n. La correcta implementaci&oacute;n de una
+    soluci&oacute;n NAC puede proporcionar una fuerte defensa contra amenazas internas y externas.</p>
