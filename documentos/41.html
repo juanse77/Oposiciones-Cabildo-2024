@@ -1,0 +1,233 @@
+<h1>Tema 41. Sistemas de contenedores.</h1>
+<h2>41.1. Concepto y uso de sistemas de contenedores. Arquitectura y elementos.</h2>
+<h3>Concepto y Uso de Sistemas de Contenedores</h3>
+<p>Los sistemas de contenedores son una tecnolog&iacute;a de virtualizaci&oacute;n ligera que permite empaquetar y
+    ejecutar aplicaciones y sus dependencias de manera aislada del sistema operativo subyacente. A diferencia de las
+    m&aacute;quinas virtuales (VMs), que requieren un sistema operativo completo para cada instancia, los contenedores
+    comparten el mismo kernel del sistema operativo del host, lo que los hace m&aacute;s eficientes en t&eacute;rminos
+    de recursos, tiempo de inicio y portabilidad.</p>
+<h3>Uso de los Sistemas de Contenedores</h3>
+<p>Los contenedores se utilizan en diversos escenarios, tales como:</p>
+<ul>
+    <li>Desarrollo y Pruebas: Los desarrolladores pueden crear entornos consistentes que replican producci&oacute;n para
+        pruebas y desarrollo, reduciendo problemas de "funciona en mi m&aacute;quina".</li>
+    <li>Despliegue de Aplicaciones: Los contenedores permiten el despliegue de aplicaciones en cualquier entorno que
+        soporte contenedores (como Docker, Kubernetes, etc.) sin cambios en el c&oacute;digo o la configuraci&oacute;n.
+    </li>
+    <li>Microservicios: Facilitan la arquitectura de microservicios, donde cada servicio se puede ejecutar en su propio
+        contenedor y escalar independientemente.</li>
+    <li>Computaci&oacute;n en la Nube: Servicios de computaci&oacute;n en la nube como AWS, Google Cloud y Azure ofrecen
+        soporte nativo para contenedores, lo que permite una integraci&oacute;n fluida en entornos de producci&oacute;n.
+    </li>
+</ul>
+<h3>Arquitectura de Sistemas de Contenedores</h3>
+<p>La arquitectura de un sistema de contenedores t&iacute;picamente consta de los siguientes elementos:</p>
+<ul>
+    <li>Contenedor: Un contenedor es una instancia en ejecuci&oacute;n de una imagen de contenedor. Contiene todo lo que
+        una aplicaci&oacute;n necesita para ejecutarse: c&oacute;digo, dependencias, bibliotecas, y configuraciones del
+        sistema.</li>
+    <li>Imagen de Contenedor: Es una plantilla de solo lectura que define lo que el contenedor ejecutar&aacute;. Una
+        imagen contiene el sistema de archivos de la aplicaci&oacute;n, el c&oacute;digo binario, las bibliotecas y
+        otras dependencias.</li>
+    <li>Motor de Contenedores (Container Runtime): Es el software que permite crear, gestionar y ejecutar contenedores.
+        Ejemplos incluyen Docker, containerd, CRI-O y rkt. El motor se encarga de interactuar con el kernel del sistema
+        operativo para aprovisionar los recursos necesarios para los contenedores.</li>
+    <li>Orquestador de Contenedores: En entornos complejos con m&uacute;ltiples contenedores, los orquestadores como
+        Kubernetes, Docker Swarm y Apache Mesos se utilizan para gestionar el despliegue, escalado, y operaci&oacute;n
+        de contenedores en un cl&uacute;ster de servidores.</li>
+    <li>Registro de Im&aacute;genes de Contenedores (Container Registry): Es un almacenamiento centralizado donde se
+        almacenan las im&aacute;genes de contenedores. Los desarrolladores pueden "empujar" (push) im&aacute;genes al
+        registro, y los sistemas pueden "extraer" (pull) im&aacute;genes para crear nuevos contenedores. Docker Hub es
+        un ejemplo popular de un registro de contenedores.</li>
+</ul>
+<h3>Elementos de la Arquitectura de Contenedores</h3>
+<ul>
+    <li>Namespaces: Proporcionan aislamiento de recursos, permitiendo que los contenedores tengan su propia vista del
+        sistema, como procesos, red, IDs de usuarios, sistemas de archivos, etc.</li>
+    <li>Control Groups (cgroups): Permiten la limitaci&oacute;n y priorizaci&oacute;n de recursos como CPU, memoria,
+        disco, etc., para los contenedores. Los cgroups aseguran que un contenedor no consuma m&aacute;s recursos de los
+        asignados.</li>
+    <li>Overlay Filesystem (OverlayFS): Es un sistema de archivos utilizado para reducir la duplicaci&oacute;n de datos
+        en los contenedores. Permite que las capas del sistema de archivos sean reutilizables y compartidas entre
+        contenedores.</li>
+    <li>Red de Contenedores: Los contenedores requieren comunicaci&oacute;n entre s&iacute; y con el mundo exterior. Los
+        sistemas de contenedores ofrecen varias soluciones de red (como redes bridge, host, overlay) que permiten
+        configurar redes seguras y escalables para contenedores.</li>
+</ul>
+<h3>Conclusi&oacute;n</h3>
+<p>Los sistemas de contenedores son una tecnolog&iacute;a clave en la computaci&oacute;n moderna, especialmente en la
+    era de la computaci&oacute;n en la nube y el desarrollo &aacute;gil. Ofrecen ventajas significativas en
+    t&eacute;rminos de eficiencia, portabilidad, y consistencia, lo que los convierte en la opci&oacute;n preferida para
+    desplegar y gestionar aplicaciones en entornos de producci&oacute;n. La arquitectura de contenedores, apoyada en
+    tecnolog&iacute;as como Docker y Kubernetes, facilita la construcci&oacute;n y operaci&oacute;n de aplicaciones a
+    gran escala de manera efectiva y segura.</p>
+<h2>41.2. Contenedores Dockers.</h2>
+<p>Docker es una plataforma de software que permite crear, ejecutar, y gestionar contenedores. Lanzado en 2013, Docker
+    ha revolucionado la forma en que los desarrolladores construyen, distribuyen y ejecutan aplicaciones al proporcionar
+    un entorno de contenedores que es liviano, portable y eficiente. Docker utiliza contenedores para empaquetar una
+    aplicaci&oacute;n y sus dependencias, lo que garantiza que se ejecuten de manera uniforme en cualquier entorno,
+    desde una m&aacute;quina de desarrollo hasta un entorno de producci&oacute;n.</p>
+<h3>Conceptos Clave de Docker</h3>
+<p><strong>- Contenedores Docker</strong>: Un contenedor Docker es una instancia en ejecuci&oacute;n de una imagen
+    Docker. Los contenedores Docker encapsulan una aplicaci&oacute;n y todas sus dependencias, asegurando que la
+    aplicaci&oacute;n funcione de la misma manera independientemente del entorno en el que se ejecute. Los contenedores
+    son ligeros, port&aacute;tiles y se inician r&aacute;pidamente, lo que permite un escalado eficiente.</p>
+<p><strong>- Im&aacute;genes Docker</strong>: Una imagen Docker es una plantilla de solo lectura que contiene todo lo
+    necesario para ejecutar una aplicaci&oacute;n: c&oacute;digo fuente, dependencias, bibliotecas, configuraciones,
+    etc. Las im&aacute;genes se construyen utilizando un archivo llamado Dockerfile, que especifica una serie de
+    instrucciones para instalar dependencias, copiar archivos, configurar entornos, etc.</p>
+<p><strong>- Dockerfile</strong>: Es un archivo de texto que contiene una serie de instrucciones para construir una
+    imagen Docker. Por ejemplo, un Dockerfile puede especificar la base de la imagen (como ubuntu o alpine), copiar
+    archivos al contenedor, instalar paquetes, configurar variables de entorno, etc. El Dockerfile es la base para la
+    creaci&oacute;n de im&aacute;genes Docker personalizadas.</p>
+<p><strong>- Docker Engine</strong>: Es el motor central de Docker que se encarga de crear, ejecutar y gestionar
+    contenedores. Docker Engine consta de dos componentes principales:</p>
+<ul>
+    <li>Docker Daemon (dockerd): Es un proceso que ejecuta comandos y gestiona contenedores Docker en el sistema host.
+    </li>
+    <li>Docker CLI (docker): Es la interfaz de l&iacute;nea de comandos que permite a los usuarios interactuar con
+        Docker Daemon para crear, ejecutar y gestionar contenedores.</li>
+</ul>
+<p><strong>- Docker Hub</strong>: Es el registro p&uacute;blico de Docker, donde los desarrolladores pueden subir y
+    compartir im&aacute;genes de contenedores. Docker Hub ofrece miles de im&aacute;genes listas para usar, lo que
+    permite a los desarrolladores crear r&aacute;pidamente contenedores con aplicaciones y servicios populares.</p>
+<h3>Arquitectura de Docker</h3>
+<p>La arquitectura de Docker se compone de varios componentes clave:</p>
+<ul>
+    <li>Cliente Docker: Es el interfaz de l&iacute;nea de comandos (CLI) que permite a los usuarios interactuar con
+        Docker Daemon. Los comandos docker como docker run, docker build, docker pull, etc., son enviados al demonio
+        Docker para su ejecuci&oacute;n.</li>
+    <li>Docker Daemon: Es el proceso que corre en segundo plano y que se encarga de todas las operaciones de Docker,
+        como la construcci&oacute;n, ejecuci&oacute;n y gesti&oacute;n de contenedores. El Daemon escucha las
+        solicitudes del cliente Docker y lleva a cabo las tareas solicitadas.</li>
+    <li>Im&aacute;genes: Las im&aacute;genes son archivos de solo lectura que proporcionan todos los componentes
+        necesarios para ejecutar una aplicaci&oacute;n. Las im&aacute;genes son inmutables y se crean mediante un
+        Dockerfile.</li>
+    <li>Contenedores: Son instancias de im&aacute;genes que est&aacute;n en ejecuci&oacute;n. Los contenedores son los
+        que realmente ejecutan la aplicaci&oacute;n y son gestionados por Docker Daemon.</li>
+    <li>Redes Docker: Docker ofrece varias opciones de red para la comunicaci&oacute;n entre contenedores y con el mundo
+        exterior. Las redes Docker se pueden configurar como redes bridge, host, overlay, etc.</li>
+    <li>Vol&uacute;menes Docker: Son la forma recomendada de persistir datos generados por y utilizados en contenedores.
+        A diferencia de los datos almacenados en el sistema de archivos del contenedor, que se elimina cuando el
+        contenedor se elimina, los vol&uacute;menes permiten persistir datos m&aacute;s all&aacute; del ciclo de vida de
+        un contenedor.</li>
+</ul>
+<h3>Uso de Docker</h3>
+<p>El uso de Docker sigue generalmente un flujo de trabajo sencillo que implica construir, compartir y ejecutar
+    contenedores:</p>
+<ul>
+    <li>Construcci&oacute;n de Im&aacute;genes: Crear un archivo Dockerfile que contenga las instrucciones para
+        construir una imagen y luego ejecutar docker build para crear la imagen Docker.</li>
+    <li>Ejecuci&oacute;n de Contenedores: Utilizar el comando docker run para crear y ejecutar un contenedor a partir de
+        una imagen. Por ejemplo: docker run -d -p 80:80 my-web-app.</li>
+    <li>Gesti&oacute;n de Contenedores: Docker proporciona varios comandos para gestionar contenedores en
+        ejecuci&oacute;n, como docker ps (listar contenedores), docker stop (detener contenedores), docker rm (eliminar
+        contenedores), etc.</li>
+    <li>Compartir Im&aacute;genes: Utilizar el comando docker push para cargar im&aacute;genes personalizadas en un
+        registro como Docker Hub, donde otros desarrolladores pueden descargarla con docker pull.</li>
+</ul>
+<h3>Ventajas de Docker</h3>
+<ul>
+    <li>Portabilidad: Las aplicaciones Dockerizadas se pueden ejecutar en cualquier lugar que soporte Docker, desde
+        laptops de desarrollo hasta servidores en producci&oacute;n y servicios de nube.</li>
+    <li>Aislamiento: Docker garantiza que las aplicaciones y sus dependencias est&eacute;n completamente aisladas del
+        entorno del sistema operativo subyacente, reduciendo conflictos y problemas de dependencia.</li>
+    <li>Eficiencia en Recursos: Los contenedores Docker son ligeros y se inician r&aacute;pidamente, lo que reduce el
+        consumo de recursos y permite un mayor n&uacute;mero de instancias en el mismo hardware.</li>
+    <li>Escalabilidad: Docker facilita la construcci&oacute;n de aplicaciones basadas en microservicios que se pueden
+        escalar f&aacute;cilmente seg&uacute;n las necesidades.</li>
+</ul>
+<h3>Conclusi&oacute;n</h3>
+<p>Docker es una herramienta poderosa que ha transformado el desarrollo de software al proporcionar un entorno uniforme
+    y reproducible para la creaci&oacute;n, despliegue y ejecuci&oacute;n de aplicaciones. Su enfoque en la eficiencia
+    de recursos, portabilidad y facilidad de uso lo convierte en una soluci&oacute;n ideal para desarrolladores y
+    equipos de DevOps que buscan modernizar sus flujos de trabajo y operaciones.</p>
+<h2>41.3. Buenas pr&aacute;cticas en el uso de Dockers.</h2>
+<p>Las buenas pr&aacute;cticas en el uso de Docker son esenciales para garantizar la eficiencia, seguridad y
+    portabilidad de los contenedores y las aplicaciones que se ejecutan en ellos. A continuaci&oacute;n, se presentan
+    algunas de las mejores pr&aacute;cticas recomendadas para trabajar con Docker:</p>
+<h3>Buenas Pr&aacute;cticas en el Uso de Docker</h3>
+<h3>1. Escribir Dockerfiles Eficientes</h3>
+<ul>
+    <li>Usar Im&aacute;genes Base Ligeras: Utiliza im&aacute;genes base ligeras como alpine en lugar de im&aacute;genes
+        m&aacute;s grandes como ubuntu o debian cuando sea posible. Las im&aacute;genes m&aacute;s peque&ntilde;as
+        tienen menos vulnerabilidades y se descargan m&aacute;s r&aacute;pido.</li>
+    <li>Minimizar el N&uacute;mero de Capas: Cada instrucci&oacute;n en un Dockerfile crea una nueva capa. Combina
+        comandos que se pueden ejecutar juntos en una sola instrucci&oacute;n RUN para reducir el n&uacute;mero de capas
+        y el tama&ntilde;o final de la imagen.</li>
+    <li>Usar .dockerignore: Similar a .gitignore, el archivo .dockerignore excluye archivos y directorios innecesarios
+        del contexto de construcci&oacute;n, reduciendo el tama&ntilde;o de la imagen y mejorando la seguridad al no
+        incluir archivos confidenciales.</li>
+    <li>Eliminar Archivos Temporales: En el proceso de construcci&oacute;n, elimina cualquier archivo temporal o
+        cach&eacute; que no sea necesario despu&eacute;s de la instalaci&oacute;n de paquetes o compilaci&oacute;n.
+        Utiliza comandos como &amp;&amp; rm -rf /var/lib/apt/lists/* despu&eacute;s de instalar paquetes con apt-get en
+        Debian/Ubuntu.</li>
+    <li>Especificar Versiones de Dependencias: Define versiones espec&iacute;ficas de paquetes y dependencias en el
+        Dockerfile para garantizar un entorno consistente y evitar incompatibilidades futuras.</li>
+</ul>
+<h3>2. Seguridad en Docker</h3>
+<ul>
+    <li>No Ejecutar Contenedores como Root: Ejecutar procesos en contenedores como el usuario root es una
+        pr&aacute;ctica peligrosa. Utiliza la instrucci&oacute;n USER en el Dockerfile para crear y especificar un
+        usuario no privilegiado.</li>
+    <li>Actualizar Im&aacute;genes Regularmente: Las im&aacute;genes de contenedores deben mantenerse actualizadas con
+        los &uacute;ltimos parches de seguridad. Automatiza la reconstrucci&oacute;n y despliegue de im&aacute;genes
+        Docker cuando las dependencias cambien o se descubran nuevas vulnerabilidades.</li>
+    <li>Usar Im&aacute;genes Oficiales y de Fuentes Confiables: Utiliza im&aacute;genes oficiales de Docker Hub o
+        registros de im&aacute;genes de confianza para evitar im&aacute;genes que puedan contener software malicioso.
+    </li>
+    <li>Escanear Im&aacute;genes en Busca de Vulnerabilidades: Utiliza herramientas de escaneo de seguridad como Docker
+        Bench for Security, Clair, Trivy, o Anchore para detectar vulnerabilidades en las im&aacute;genes de Docker.
+    </li>
+    <li>Limitar los Recursos del Contenedor: Utiliza opciones como --memory y --cpus al ejecutar contenedores para
+        limitar el uso de memoria y CPU, evitando que un contenedor consuma todos los recursos del host.</li>
+</ul>
+<h3>3. Gesti&oacute;n de Im&aacute;genes y Contenedores</h3>
+<ul>
+    <li>Eliminar Im&aacute;genes y Contenedores No Utilizados: Regularmente limpia im&aacute;genes, contenedores,
+        vol&uacute;menes y redes no utilizados para liberar espacio en disco y mejorar el rendimiento. Comandos
+        &uacute;tiles incluyen docker system prune y docker volume prune.</li>
+    <li>Etiquetar Im&aacute;genes Adecuadamente: Utiliza etiquetas (tags) significativas y versionadas en las
+        im&aacute;genes (myapp:1.0, myapp:latest) para facilitar la gesti&oacute;n y el despliegue controlado de
+        versiones.</li>
+    <li>Evitar Usar latest Tag: Aunque latest es la etiqueta predeterminada, su uso puede llevar a resultados
+        inesperados, especialmente en entornos de producci&oacute;n. Especifica versiones expl&iacute;citas de las
+        im&aacute;genes para evitar la descarga y ejecuci&oacute;n de versiones no deseadas.</li>
+</ul>
+<h3>4. Networking y Almacenamiento</h3>
+<ul>
+    <li>Usar Redes Definidas por el Usuario: En lugar de usar la red bridge predeterminada, crea redes Docker
+        personalizadas que a&iacute;slen los contenedores y faciliten la comunicaci&oacute;n controlada entre ellos.
+    </li>
+    <li>Gestionar Vol&uacute;menes de Datos con Cuidado: Los vol&uacute;menes de Docker son el m&eacute;todo preferido
+        para persistir datos fuera del contenedor. Evita el uso de montajes de "bind" que dependen del sistema de
+        archivos del host y pueden ser menos portables y seguros.</li>
+    <li>Habilitar Backups de Vol&uacute;menes: Implementa estrategias de respaldo y recuperaci&oacute;n de
+        vol&uacute;menes de datos para garantizar la durabilidad de los datos en caso de fallos o eliminaci&oacute;n
+        accidental de contenedores.</li>
+</ul>
+<h3>5. Automatizaci&oacute;n y Orquestaci&oacute;n</h3>
+<ul>
+    <li>Utilizar Docker Compose para Desarrollo Local: Docker Compose es una herramienta excelente para definir y
+        ejecutar aplicaciones multi-contenedor en entornos de desarrollo. Mant&eacute;n archivos docker-compose.yml
+        organizados y bien documentados.</li>
+    <li>Orquestaci&oacute;n con Kubernetes u Otras Plataformas: Para entornos de producci&oacute;n, utiliza herramientas
+        de orquestaci&oacute;n como Kubernetes, Docker Swarm o Apache Mesos para gestionar contenedores en
+        cl&uacute;steres de manera eficiente y escalable.</li>
+    <li>Monitoreo y Logging de Contenedores: Implementa soluciones de monitoreo y logging (como Prometheus, Grafana, ELK
+        Stack) para tener visibilidad del rendimiento y comportamiento de los contenedores en tiempo real.</li>
+</ul>
+<h3>6. Documentaci&oacute;n y Colaboraci&oacute;n</h3>
+<ul>
+    <li>Documentar Dockerfiles y Configuraciones: Documenta todas las configuraciones, variables de entorno y procesos
+        que se ejecutan en el contenedor. Esto ayuda a los equipos a entender c&oacute;mo funciona el contenedor y
+        facilita la resoluci&oacute;n de problemas.</li>
+    <li>Utilizar Entornos Multi-Etapa para Construcci&oacute;n de Im&aacute;genes: Los Dockerfiles multi-stage permiten
+        construir im&aacute;genes de manera m&aacute;s eficiente al separar el proceso de construcci&oacute;n del
+        proceso de ejecuci&oacute;n. Esto es &uacute;til para reducir el tama&ntilde;o de la imagen final al eliminar
+        dependencias de desarrollo.</li>
+</ul>
+<h3>Conclusi&oacute;n</h3>
+<p>Adoptar estas buenas pr&aacute;cticas en el uso de Docker puede ayudar a mejorar la eficiencia, seguridad y
+    confiabilidad de tus aplicaciones contenedorizadas. Docker es una herramienta poderosa, pero es importante usarla de
+    manera responsable y consciente para aprovechar al m&aacute;ximo sus ventajas y minimizar los riesgos.</p>
