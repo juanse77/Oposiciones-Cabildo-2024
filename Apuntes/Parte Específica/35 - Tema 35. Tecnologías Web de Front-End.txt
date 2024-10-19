@@ -1,0 +1,239 @@
+Tema 35. Tecnologías Web de Front-End.
+
+35.1. XML, Html5, CSS.
+
+	1. XML (eXtensible Markup Language)
+
+		- Definición: XML es un lenguaje de marcado que se utiliza para almacenar y transportar datos. Es extensible, lo que significa que puedes definir tus propias etiquetas.
+
+		- Características:
+
+			No tiene un conjunto de etiquetas predefinidas; los desarrolladores definen las etiquetas según sus necesidades.
+
+			XML es tanto legible para humanos como para máquinas, lo que lo hace adecuado para intercambiar datos entre sistemas diferentes.
+
+			Utiliza una estructura jerárquica (basada en árboles) para organizar los datos.
+
+			No está diseñado para mostrar datos como HTML, sino para definir, almacenar y transportar información.
+
+		- Usos comunes:
+
+			Almacenamiento de datos en archivos de configuración.
+			Intercambio de datos entre servidores y aplicaciones web.
+			Formato para feeds de RSS y Atom.
+			Base para otros lenguajes de marcado como XHTML y SOAP.
+
+	2. HTML5 (HyperText Markup Language, Version 5)
+
+		- Definición: HTML5 es la versión más reciente de HTML, el lenguaje de marcado estándar utilizado para crear y estructurar contenido en la web.
+
+		- Características:
+
+			Introduce nuevas etiquetas semánticas como <header>, <footer>, <article>, <section>, que mejoran la accesibilidad y el SEO (optimización de motores de búsqueda).
+
+			Soporte nativo para elementos multimedia, como <audio> y <video>, eliminando la necesidad de plugins externos como Flash.
+
+			Nuevos elementos para formularios, como <input type="date">, <input type="email">, <input type="range">, que facilitan la validación y la interacción del usuario.
+
+			Mejora la integración con JavaScript a través de APIs como la API de Canvas (para gráficos en 2D), API de Geolocalización, API de Almacenamiento Web, etc.
+
+		- Usos comunes:
+
+			Estructuración del contenido de páginas web.
+			Creación de interfaces de usuario interactivas y enriquecidas.
+			Desarrollo de aplicaciones web modernas y progresivas (PWAs).
+
+	3. CSS (Cascading Style Sheets)
+
+		- Definición: CSS es un lenguaje de hojas de estilo utilizado para describir la presentación de un documento escrito en HTML o XML. Se utiliza para dar estilo y formato al contenido web.
+
+		- Características:
+			
+			CSS permite la separación de la estructura del contenido (HTML) de su presentación (estilo visual), facilitando el mantenimiento y la reutilización del código.
+
+			Utiliza una jerarquía de selectores que permite aplicar estilos específicos a diferentes elementos del DOM (Document Object Model).
+
+			Soporte para diseños responsivos a través de Media Queries, lo que permite crear sitios web adaptables a diferentes tamaños de pantalla.
+
+			Introducción de Flexbox y Grid Layout para un control más preciso del diseño de la página y la alineación de los elementos.
+
+		- Usos comunes:
+
+			Control del diseño, los colores, las fuentes y la disposición general de los elementos en una página web.
+
+			Creación de animaciones y transiciones para mejorar la interactividad.
+			Diseño de interfaces responsivas que se adapten a múltiples dispositivos y tamaños de pantalla.
+
+	¿Cómo trabajan juntos XML, HTML5 y CSS?
+
+		- HTML5 proporciona la estructura y el contenido de la página web.
+		- CSS se utiliza para aplicar estilos y diseñar la apariencia visual del contenido estructurado por HTML5.
+		- XML puede integrarse con HTML y otros sistemas como una forma de intercambiar datos. 
+	
+		Por ejemplo, un sitio web puede usar datos XML para rellenar dinámicamente su contenido a través de JavaScript.
+
+	Estas tecnologías son fundamentales para el desarrollo de la web moderna, permitiendo crear páginas web ricas, interactivas, adaptativas y con una buena organización de datos.
+
+35.2. JSP, JSF, Javascript.
+
+	Estas tecnologías están relacionadas con el desarrollo de aplicaciones web, pero cada una tiene un propósito diferente dentro del ecosistema web.
+
+	1. JSP (JavaServer Pages)
+
+		- Definición: JSP es una tecnología de Java que permite a los desarrolladores crear contenido dinámico en páginas web utilizando HTML, XML y otros formatos de documentos. Es un servidor de tecnología basada en Java que facilita la creación de contenido dinámico en aplicaciones web.
+
+		- Características:
+
+			Combina HTML estático con código dinámico basado en Java, lo que permite la creación de páginas web dinámicas.
+
+			Utiliza Servlets de Java en el fondo, pero permite una sintaxis más amigable para los desarrolladores que están más acostumbrados a HTML.
+
+			Permite la inclusión de elementos Java directamente en las páginas web utilizando expresiones <%= %>, declaraciones <%! %>, y scripts <% %>.
+
+			Admite la reutilización de código a través de JavaBeans y tag libraries (bibliotecas de etiquetas), lo que ayuda a mantener el código limpio y modular.
+
+		- Usos comunes:
+	
+			Creación de aplicaciones web que necesitan interactuar con bases de datos o realizar cálculos del lado del servidor.
+
+			Generación de contenido dinámico basado en la entrada del usuario o en otras fuentes de datos.
+
+			Desarrollo de aplicaciones empresariales basadas en Java que requieren lógica del lado del servidor.
+
+	2. JSF (JavaServer Faces)
+
+		- Definición: JSF es un marco de trabajo (framework) para la construcción de interfaces de usuario basadas en componentes para aplicaciones web Java. Es parte de la plataforma Java EE.
+
+		- Características:
+
+			Basado en el concepto de componentes reutilizables de la interfaz de usuario que se pueden definir y personalizar fácilmente.
+
+			Soporte para herramientas de enlace de datos que simplifican la gestión de la interacción de la interfaz de usuario con la lógica de la aplicación y el modelo de datos.
+
+			Integración nativa con otros frameworks y tecnologías de Java como JSP, EJB (Enterprise JavaBeans), y CDI (Context and Dependency Injection).
+
+			Permite la navegación controlada a través de "faces-config.xml", un archivo de configuración XML que define las reglas de navegación de la aplicación.
+
+			Facilita la creación de interfaces de usuario avanzadas con soporte para AJAX a través de bibliotecas como PrimeFaces, RichFaces y otros.
+
+		- Usos comunes:
+
+			Creación de aplicaciones web Java que necesitan interfaces de usuario complejas y basadas en componentes.
+
+			Desarrollo de aplicaciones empresariales grandes con una separación clara entre la lógica de negocio y la capa de presentación.
+
+			Integración con otras tecnologías de Java para el desarrollo de aplicaciones web robustas.
+
+	3. JavaScript
+
+		- Definición: JavaScript es un lenguaje de programación interpretado que se ejecuta del lado del cliente (aunque también puede ejecutarse en el servidor con tecnologías como Node.js). Es uno de los lenguajes más importantes para el desarrollo web moderno.
+
+		- Características:
+
+			Lenguaje de scripting orientado a objetos, dinámico y débilmente tipado.
+			
+			Permite la manipulación del DOM (Document Object Model), lo que permite a los desarrolladores crear páginas web interactivas y dinámicas.
+			
+			Soporte para Ajax (Asynchronous JavaScript and XML), lo que permite la comunicación asíncrona con el servidor sin recargar la página.
+			
+			Amplio soporte para bibliotecas y frameworks como jQuery, React, Angular, Vue.js, que facilitan el desarrollo de aplicaciones web y SPA (Single Page Applications).
+			
+			Capacidad de manejar eventos, validaciones de formularios, animaciones, y mucho más.
+
+		- Usos comunes:
+
+			Creación de aplicaciones web interactivas y dinámicas.
+			Manipulación de la interfaz de usuario en tiempo real sin necesidad de recargar la página.
+			Desarrollo del lado del servidor utilizando Node.js, creando aplicaciones de backend rápidas y escalables.
+			Integración con APIs y servicios externos para enriquecer la funcionalidad de las aplicaciones web.
+
+	¿Cómo trabajan juntos JSP, JSF y JavaScript?
+
+		JSP y JSF se utilizan principalmente en el lado del servidor para crear contenido dinámico y manejar la lógica de negocio.
+
+		JavaScript se ejecuta en el lado del cliente (navegador) y se utiliza para manipular el DOM, manejar eventos de usuario y realizar tareas asíncronas.
+
+		En aplicaciones Java basadas en la web, JSF puede generar vistas que utilizan JavaScript para manejar la interactividad del lado del cliente. Además, JSP puede incluir scripts de JavaScript para combinar la lógica del lado del servidor con la interactividad del lado del cliente.
+
+		En resumen, JSP, JSF y JavaScript son tecnologías clave para el desarrollo de aplicaciones web, cada una aportando su propio conjunto de características y capacidades para crear aplicaciones ricas y dinámicas.
+
+35.3. Usabilidad y Accesibilidad Web.
+
+	La usabilidad y la accesibilidad web son dos conceptos fundamentales en el desarrollo y diseño de sitios y aplicaciones web. Ambas son esenciales para crear experiencias web inclusivas, eficientes y efectivas para todos los usuarios, independientemente de sus habilidades o limitaciones.
+
+	1. Usabilidad Web
+
+		- Definición: La usabilidad web se refiere a la facilidad con la que los usuarios pueden navegar y utilizar un sitio web. En pocas palabras, es la capacidad de un sitio web para satisfacer las necesidades de sus usuarios de manera eficiente, efectiva y satisfactoria.
+
+		Principios clave de la usabilidad:
+
+			- Facilidad de Aprendizaje: Un sitio web debe ser fácil de aprender a usar para que los nuevos visitantes puedan encontrar lo que buscan sin dificultad.
+
+			- Eficiencia de Uso: Una vez que los usuarios han aprendido a usar el sitio, deben ser capaces de llevar a cabo sus tareas de manera rápida.
+
+			- Memorabilidad: Cuando los usuarios regresan al sitio después de un tiempo sin usarlo, deben ser capaces de recordar cómo usarlo con facilidad.
+
+			- Prevención de Errores: El diseño debe ayudar a los usuarios a evitar errores y, si ocurren, debe proporcionar instrucciones claras para resolverlos.
+
+			- Satisfacción del Usuario: Los usuarios deben sentirse satisfechos con su experiencia, encontrando la interfaz agradable y útil.
+
+		Prácticas recomendadas:
+
+			- Diseño de Navegación Claro: Usar menús de navegación simples y consistentes para que los usuarios puedan moverse fácilmente por el sitio.
+
+			- Consistencia: Mantener un diseño y una estructura consistentes en todas las páginas del sitio para que los usuarios se familiaricen rápidamente con él.
+
+			- Contenido Fácil de Escanear: Usar encabezados, listas y párrafos cortos para que el contenido sea fácil de leer y escanear.
+
+			- Diseño Responsivo: Adaptar el diseño de la web para que sea accesible y usable en diferentes dispositivos (móviles, tabletas, escritorios).
+
+	2. Accesibilidad Web
+
+		- Definición: La accesibilidad web se refiere a la práctica de hacer que los sitios y aplicaciones web sean utilizables por todas las personas, independientemente de sus discapacidades (físicas, auditivas, visuales, cognitivas, etc.). Esto significa que las personas con discapacidades deben poder percibir, entender, navegar e interactuar con la web de manera efectiva.
+
+		- Principios clave de la accesibilidad (según las Pautas de Accesibilidad para el Contenido Web - WCAG):
+
+			Perceptible: La información y los componentes de la interfaz de usuario deben ser presentados de manera que puedan ser percibidos por todos los usuarios. Ejemplos:
+
+				Texto alternativo para imágenes (atributo alt en HTML).
+				Subtítulos para contenido multimedia.
+			
+			Operable: Los componentes de la interfaz de usuario y la navegación deben ser operables. Ejemplos:
+
+				Navegación accesible mediante teclado para personas que no pueden usar un ratón.
+				Evitar contenido que parpadea rápidamente para prevenir ataques epilépticos.
+
+			Comprensible: La información y la operación de la interfaz de usuario deben ser comprensibles. Ejemplos:
+
+				Uso de un lenguaje claro y sencillo.
+				Consistencia en la navegación y el diseño de la interfaz.
+
+			Robusto: El contenido debe ser lo suficientemente robusto como para ser interpretado de manera fiable por una amplia variedad de agentes de usuario, incluidos los dispositivos de asistencia. Ejemplos:
+
+				Uso de estándares web correctos para garantizar la compatibilidad con lectores de pantalla.
+
+	Prácticas recomendadas:
+
+		Uso de Etiquetas Aria (Accessible Rich Internet Applications): Para proporcionar información adicional a los usuarios de tecnologías asistivas.
+
+		Contraste de Colores Adecuado: Asegurarse de que haya suficiente contraste entre el texto y el fondo para que el contenido sea legible para personas con discapacidades visuales.
+
+		Diseño Responsivo e Inclusivo: Crear sitios que sean utilizables en una amplia gama de dispositivos y configuraciones de hardware/software.
+
+		Formularios Accesibles: Proporcionar etiquetas y descripciones claras para todos los campos del formulario para que los usuarios sepan exactamente qué información se requiere.
+
+	Diferencia entre Usabilidad y Accesibilidad
+
+		Usabilidad se centra en la experiencia general del usuario y en cómo de fácil y eficiente es para ellos usar el sitio web.
+
+		Accesibilidad, por otro lado, se centra en asegurar que el sitio web sea utilizable por personas con discapacidades, garantizando que todos tengan igual acceso a la información y las funcionalidades del sitio.
+
+	¿Por qué son importantes la Usabilidad y la Accesibilidad?
+
+		Experiencia de Usuario Mejorada: Una buena usabilidad y accesibilidad crean una experiencia positiva para todos los usuarios, lo que puede aumentar la retención, la satisfacción y la lealtad del usuario.
+
+		Cumplimiento Legal: En muchos países, la accesibilidad web es un requisito legal para sitios web públicos, gubernamentales e incluso comerciales. Incumplir con estos estándares puede resultar en demandas o sanciones.
+
+		Ampliación del Público Objetivo: La accesibilidad web permite que más personas, incluidas aquellas con discapacidades, accedan y utilicen sitios y aplicaciones web, ampliando así el alcance potencial de un sitio web.
+
+	En resumen, la usabilidad y la accesibilidad web son esenciales para garantizar que los sitios web sean inclusivos, eficientes y efectivos para todos los usuarios, mejorando tanto la experiencia del usuario como el cumplimiento con las normativas legales.

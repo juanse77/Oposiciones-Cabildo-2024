@@ -1,0 +1,190 @@
+Tema 39. Proyectos de desarrollo de software.
+
+39.1. DEVOPS Concepto, principios y beneficios.
+
+	DevOps es una metodología que combina desarrollo de software (Development) y operaciones de TI (Operations) con el objetivo de mejorar la colaboración entre estos dos equipos, automatizar procesos, y entregar software de forma más rápida, segura y confiable. DevOps no es solo una herramienta o un conjunto de prácticas; es una cultura y mentalidad que aboga por la integración, la automatización, la colaboración y la retroalimentación continua.
+
+	Concepto de DevOps
+
+		El concepto de DevOps se centra en romper los silos tradicionales entre los equipos de desarrollo y operaciones, promoviendo una cultura de trabajo colaborativa. Esta integración permite que los equipos puedan trabajar juntos durante todo el ciclo de vida del software, desde el desarrollo y las pruebas hasta el despliegue y las operaciones. DevOps busca optimizar y automatizar los procesos, reducir el tiempo de entrega de software y mejorar la calidad mediante prácticas de integración y entrega continua.
+
+	Principios de DevOps
+
+		Colaboración y Comunicación: Fomentar la comunicación y la colaboración entre los equipos de desarrollo y operaciones es fundamental. Los equipos deben trabajar en conjunto desde el inicio del proyecto hasta el final.
+
+		Automatización: Automatizar tareas repetitivas como pruebas, integración, despliegue y monitoreo es crucial para mejorar la eficiencia y reducir errores humanos.
+
+		Integración Continua (CI) y Entrega Continua (CD): Estas prácticas implican la integración frecuente de código en un repositorio compartido y la automatización de las pruebas y el despliegue. El objetivo es permitir lanzamientos de software más rápidos y seguros.
+
+		Infraestructura como Código (IaC): Utilizar código para gestionar y aprovisionar infraestructuras, permitiendo la automatización de la configuración y la escalabilidad de recursos de manera consistente.
+
+		Monitoreo y Retroalimentación Continua: Es esencial tener visibilidad sobre el rendimiento de las aplicaciones y la infraestructura. Un monitoreo constante permite identificar problemas rápidamente y aplicar mejoras continuas.
+
+		Cultura de Aprendizaje y Mejora Continua: Fomentar una cultura donde los errores se consideren oportunidades de aprendizaje y se incentive la mejora constante de procesos y herramientas.
+
+	Beneficios de DevOps
+
+		Entrega Rápida y Frecuente de Software: La automatización y las prácticas de CI/CD permiten ciclos de entrega más cortos, lo que facilita una respuesta más rápida a las necesidades del mercado y a las solicitudes de los clientes.
+
+		Mayor Calidad y Confiabilidad: Al integrar pruebas automáticas y despliegues automatizados, se reduce la probabilidad de errores, mejorando la calidad del software y la confiabilidad de los lanzamientos.
+
+		Mejora en la Colaboración y la Eficiencia: DevOps elimina las barreras entre los equipos de desarrollo y operaciones, fomentando una colaboración más estrecha y reduciendo los conflictos.
+
+		Reducción de Costos y Riesgos: La automatización de procesos y la infraestructura como código permiten un mejor control de costos y una reducción en los riesgos asociados con errores humanos.
+
+		Escalabilidad y Flexibilidad: DevOps permite una infraestructura y aplicaciones más escalables y flexibles, que pueden adaptarse rápidamente a cambios en el entorno o en las necesidades del negocio.
+
+		Mayor Innovación y Velocidad en el Mercado: Los ciclos de retroalimentación más cortos permiten a los equipos experimentar y adoptar nuevas tecnologías y mejoras de manera más rápida, llevando la innovación al mercado más pronto.
+
+		En resumen, DevOps es una filosofía que busca mejorar el ciclo de vida del desarrollo de software mediante la integración, la automatización y la colaboración continua. Implementar DevOps puede llevar a una entrega de software más eficiente, de mayor calidad y con un mejor alineamiento a las necesidades del negocio.
+
+39.2. DEVOPS Ciclo de vida de las aplicaciones.
+
+	El ciclo de vida de las aplicaciones en DevOps es un proceso continuo que abarca todas las etapas desde la planificación y desarrollo hasta la operación y monitoreo de software. Este ciclo de vida se centra en la integración, la automatización y la retroalimentación continua para entregar software de alta calidad de manera rápida y eficiente. A continuación se describe cada etapa del ciclo de vida de las aplicaciones en 
+
+	Ciclo de Vida de las Aplicaciones en DevOps:
+
+		- Planificación (Plan):
+
+			En esta etapa, los equipos de desarrollo y operaciones colaboran para definir los requisitos, los objetivos del proyecto y los criterios de éxito.
+
+			Se utiliza una metodología ágil (como Scrum o Kanban) para gestionar el backlog de tareas y priorizar las funcionalidades que se desarrollarán.
+
+			Las herramientas comunes en esta etapa incluyen Jira, Trello, Azure Boards, entre otras.
+
+		- Codificación (Code):
+
+			Los desarrolladores escriben el código de la aplicación según los requisitos definidos en la etapa de planificación.
+
+			Se utiliza control de versiones (como Git) para gestionar y mantener el código fuente, facilitando la colaboración entre desarrolladores y permitiendo trabajar en paralelo.
+
+			Las revisiones de código (code reviews) y la integración continua ayudan a mantener la calidad del código.
+
+		- Construcción (Build):
+
+			Una vez que el código está escrito y revisado, se compila y se construye en un entorno de integración continua (CI).
+
+			En esta etapa, las herramientas como Jenkins, GitLab CI/CD, CircleCI, y Azure DevOps Pipelines automatizan la construcción del software.
+
+			El objetivo es crear un artefacto (por ejemplo, un ejecutable, contenedor Docker, etc.) que pueda ser probado y desplegado.
+
+		- Pruebas (Test):
+
+			Se ejecutan pruebas automatizadas para garantizar la calidad del software, incluidas pruebas unitarias, de integración, de seguridad, de rendimiento, y pruebas de aceptación.
+
+			Las herramientas comunes incluyen Selenium, JUnit, TestNG, SonarQube, y muchas otras.
+El objetivo es identificar y corregir errores antes de que lleguen a producción.
+
+		- Integración Continua y Entrega Continua (CI/CD) (Release):
+
+			En DevOps, la integración continua y la entrega continua son prácticas clave que permiten la implementación automática y constante de nuevas versiones del software.
+
+			Después de que el código pasa todas las pruebas, puede ser implementado automáticamente en entornos de desarrollo, pruebas y producción.
+
+			Herramientas como Jenkins, GitLab CI/CD, Travis CI, y Azure DevOps Pipelines facilitan este proceso.
+
+		- Despliegue (Deploy):
+
+			Una vez que una versión es aprobada, se despliega en un entorno de producción. Este despliegue debe ser automatizado, confiable y rápido.
+
+			Las herramientas de gestión de contenedores como Kubernetes y Docker, y las plataformas de nube como AWS, Azure, y Google Cloud son ampliamente utilizadas para automatizar y orquestar los despliegues.
+
+			Se pueden utilizar técnicas de despliegue como "blue-green deployment", "canary releases" y "rolling updates" para minimizar el tiempo de inactividad y reducir riesgos.
+
+		- Operación (Operate):
+
+			En esta fase, la aplicación está en funcionamiento en el entorno de producción. El equipo de operaciones gestiona la infraestructura, supervisa el rendimiento y se asegura de que la aplicación esté disponible y funcione de manera óptima.
+
+			Herramientas de monitoreo como Prometheus, Grafana, Datadog, New Relic y ELK Stack (Elasticsearch, Logstash, Kibana) se utilizan para recopilar métricas, logs y datos de rendimiento.
+
+		- Monitoreo y Retroalimentación Continua (Monitor):
+
+			Se realiza un monitoreo constante de la aplicación para detectar problemas, errores o anomalías en tiempo real. Esto permite a los equipos reaccionar rápidamente ante cualquier incidente.
+
+			El monitoreo no solo se centra en la infraestructura, sino también en la experiencia del usuario final (observabilidad).
+
+			La retroalimentación de los usuarios y los equipos internos se recopila para mejorar continuamente el producto.
+
+		- Mejora Continua (Continuous Improvement):
+
+			DevOps es un ciclo continuo, lo que significa que después de la fase de monitoreo, los equipos utilizan los datos recopilados para identificar áreas de mejora.
+
+			Esta información se retroalimenta en la fase de planificación para optimizar tanto el proceso de desarrollo como la operación de la aplicación.
+
+	Resumen
+
+		El ciclo de vida de las aplicaciones en DevOps es un proceso iterativo que integra las etapas de desarrollo, prueba, despliegue, operación y monitoreo de manera continua. El objetivo es garantizar entregas de software más rápidas, de alta calidad y alineadas con las necesidades del negocio, fomentando una cultura de colaboración, automatización y mejora continua.
+
+		Este enfoque reduce el riesgo, mejora la calidad del software, permite una rápida adaptación a las necesidades del mercado y fomenta la innovación.
+
+39.3. Integración continua y despliegue continuo (CICD).
+
+	Integración Continua (Continuous Integration, CI) y Despliegue Continuo (Continuous Deployment, CD) son prácticas clave dentro del enfoque DevOps que permiten a los equipos de desarrollo y operaciones entregar software de alta calidad de manera rápida, segura y frecuente. Estas prácticas se centran en la automatización de la construcción, pruebas y despliegue del software, lo que mejora la colaboración entre equipos y reduce el tiempo de entrega.
+
+	Integración Continua (CI)
+
+		Integración Continua (CI) es una práctica de desarrollo de software en la que los desarrolladores integran su código de trabajo en un repositorio compartido de forma frecuente, generalmente varias veces al día. Cada integración es verificada automáticamente mediante la construcción del software y la ejecución de pruebas automatizadas, lo que ayuda a detectar errores en una etapa temprana del desarrollo.
+
+		Objetivos de la Integración Continua
+
+			- Detección Temprana de Errores: Al integrar el código con frecuencia, los problemas se detectan rápidamente, lo que facilita la identificación y corrección de errores en el código.
+
+			- Menos Conflictos de Integración: La integración frecuente reduce la complejidad de la integración, ya que los cambios son pequeños y fáciles de gestionar.
+
+			- Desarrollo Más Rápido y Colaborativo: Los desarrolladores pueden colaborar de manera más eficiente, ya que el código siempre está disponible en un estado actualizado y funcional.
+
+			- Calidad de Software Consistente: La ejecución automática de pruebas asegura que el software cumpla consistentemente con los estándares de calidad.
+
+		Prácticas y Herramientas Comunes para CI
+
+			- Control de Versiones: Utilización de sistemas como Git, Subversion o Mercurial para gestionar y versionar el código fuente.
+
+			- Automatización de la Construcción: Uso de herramientas como Jenkins, Travis CI, GitLab CI/CD, CircleCI, Azure Pipelines, y Bamboo para automatizar la construcción del software cada vez que se realiza una integración.
+
+			- Pruebas Automatizadas: Implementación de pruebas unitarias, pruebas de integración, pruebas de aceptación, etc., para verificar que el código recién integrado no rompe la funcionalidad existente.
+
+			- Integración de Revisiones de Código: Revisión del código mediante "pull requests" o "merge requests" para asegurar que el código cumpla con los estándares de calidad antes de ser integrado en la rama principal.
+
+	Despliegue Continuo (CD)
+
+		Despliegue Continuo (CD) se refiere a dos prácticas diferentes dentro del ciclo de vida de desarrollo: Entrega Continua (Continuous Delivery) y Despliegue Continuo (Continuous Deployment). Aunque a menudo se usan indistintamente, hay una diferencia clave entre ellos:
+
+		Entrega Continua (Continuous Delivery): Significa que el código se encuentra siempre en un estado listo para ser desplegado en producción. La diferencia es que el despliegue en producción es un paso manual que requiere la aprobación de un desarrollador o de un equipo de operaciones.
+
+		Despliegue Continuo (Continuous Deployment): Aquí, cada cambio que pasa las etapas automatizadas de pruebas es desplegado automáticamente en producción sin intervención humana. Esta práctica representa la automatización completa de todo el pipeline de entrega de software.
+
+	Objetivos del Despliegue Continuo
+
+		Automatización del Proceso de Despliegue: El proceso de despliegue está completamente automatizado, lo que reduce la posibilidad de errores humanos.
+
+		Entregas Rápidas y Frecuentes a Producción: Permite la entrega de nuevas funcionalidades, corrección de errores y mejoras de manera rápida y continua, lo que facilita la adaptación a las necesidades del mercado.
+
+		Mayor Feedback y Retroalimentación de Usuarios: Las actualizaciones frecuentes permiten recibir retroalimentación de los usuarios más rápidamente, lo que es esencial para el proceso de mejora continua.
+
+		Minimización de Riesgos: Los despliegues frecuentes de cambios pequeños reducen el riesgo de grandes fallos en producción. Si ocurre un problema, es más fácil revertir o arreglar un cambio pequeño.
+
+	Prácticas y Herramientas Comunes para CD
+
+		Pipeline de CI/CD: Configuración de un pipeline que abarca las etapas de construcción, pruebas, y despliegue. Herramientas como Jenkins, GitLab CI/CD, Travis CI, CircleCI, Spinnaker, y Azure DevOps Pipelines son comúnmente utilizadas.
+
+		Infraestructura como Código (IaC): Uso de herramientas como Terraform, Ansible, Chef, y Puppet para gestionar la infraestructura de manera programática, permitiendo la consistencia y la automatización en los entornos de despliegue.
+
+		Pruebas Automatizadas de Aceptación y Pruebas en Producción: Además de pruebas unitarias e integración, se implementan pruebas funcionales, de rendimiento y seguridad para garantizar que el software esté listo para producción.
+
+		Técnicas de Despliegue Seguro: Métodos como Canary Releases (despliegue gradual a un pequeño porcentaje de usuarios), Blue-Green Deployment (tener dos entornos de producción idénticos y cambiar entre ellos), y Rolling Updates (actualizar la aplicación en partes) son utilizados para minimizar el impacto y riesgos.
+
+	Beneficios Combinados de CI/CD
+
+		Reducción del Tiempo de Entrega de Software: Elimina los cuellos de botella del proceso de despliegue, permitiendo una entrega rápida y continua.
+
+		Mejora de la Calidad del Software: La integración continua de código y pruebas automatizadas asegura que los problemas sean detectados temprano, mejorando la calidad general del software.
+
+		Mayor Innovación y Productividad del Equipo: Al automatizar procesos repetitivos, los equipos pueden enfocarse en tareas de mayor valor agregado, como la creación de nuevas funcionalidades y mejoras.
+
+		Feedback Continuo: Facilita la recopilación de retroalimentación del usuario y de producción en ciclos rápidos, lo que permite mejoras y corrección de errores más eficientes.
+
+		Reducción del Riesgo: Los despliegues frecuentes de cambios pequeños permiten una rápida identificación de problemas, facilitando la recuperación rápida y la reducción de riesgos.
+
+	Conclusión
+
+		CI/CD son prácticas fundamentales en DevOps que, cuando se implementan correctamente, permiten a las organizaciones entregar software de manera rápida, eficiente y con alta calidad. La combinación de CI y CD impulsa la cultura de colaboración, mejora continua y respuesta rápida a los cambios del mercado, lo que se traduce en una ventaja competitiva significativa.

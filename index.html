@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Documento Principal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que el diseño sea responsivo -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-container {
+            display: flex;
+            border: none;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .menu {
+            list-style-type: none;
+            padding: 14px 5px;
+            margin: 0;
+            border: none;
+            flex-direction: column;
+            width: 100%;
+            background-color: #333;
+            height: 300px;
+            overflow-y: auto;
+        }
+
+        .menu li {
+            color: white;
+            display: block;
+            text-align: left;
+            text-decoration: none;
+            margin: 5px 10px;
+            list-style-type: none;
+        }
+
+        #contenido-externo li {
+            margin: 8px 0;
+        }
+
+        .menu li a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+
+        .menu li a:hover {
+            background-color: #555;
+        }
+
+        #menu-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #444;
+        }
+
+        #hamburger {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+            border-bottom: 1px solid white;
+            position: relative;
+        }
+
+        /* Estilos para pantallas grandes */
+        @media screen and (min-width: 600px) {
+
+            #hamburger {
+                display: block;
+            }
+
+            .menu {
+                position: relative;
+                width: auto;
+            }
+
+            .menu li {
+                display: block;
+            }
+        }
+
+        @media screen and (max-width: 599px) {
+            #hamburger {
+                display: block;
+                /* Mostrar botón hamburguesa */
+            }
+        }
+
+        #contenido-externo {
+            display: block;
+            max-width: 800px;
+            margin: 0 auto;
+            margin-top: 30px;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="menu-bar">
+
+        <button id="hamburger" onclick="toggleMenu()" style="font-size: 16pt;">☰ Menú</button>
+
+        <div class="menu-container">
+
+            <ul class="menu" id="menu" style="display: block;">
+                <li>
+                    Parte común:
+                </li>
+                <li>
+                    <ul>
+                        <li><a href="#" onclick="load_doc('01.html'); return false;">Tema 1. La Constitución ESPAÑOLA
+                                1978</a></li>
+                        <li><a href="#" onclick="load_doc('02.html'); return false;">Tema 2. La Organización territorial
+                                del
+                                Estado</a></li>
+                        <li><a href="#" onclick="load_doc('03.html'); return false;">Tema 3. La Administración Local</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('04.html'); return false;">Tema 4. Ley 8/2015, de 1 de abril,
+                                de
+                                Cabildos Insulares</a></li>
+                        <li><a href="#" onclick="load_doc('05.html'); return false;">Tema 5. Ley 39/2015, de 1 de
+                                octubre,
+                                del Procedimiento Administrativo Común de las Administraciones Públicas (LPACAP) I</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('06.html'); return false;">Tema 6. Ley 39/2015, de 1 de
+                                octubre,
+                                del Procedimiento Administrativo Común de las Administraciones Públicas (LPACAP) II</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('07.html'); return false;">Tema 7. Ley 39/2015, de 1 de
+                                octubre,
+                                del Procedimiento Administrativo Común de las Administraciones Públicas III</a></li>
+                        <li><a href="#" onclick="load_doc('08.html'); return false;">Tema 8 - Real Decreto Legislativo
+                                5/2015, de 30 de octubre, por el que se aprueba el Texto Refundido de la Ley del
+                                Estatuto
+                                Básico del Empleado Público</a></li>
+                        <li><a href="#" onclick="load_doc('09.html'); return false;">Tema 9. El presupuesto general de
+                                las
+                                Entidades Locales</a></li>
+                        <li><a href="#" onclick="load_doc('10.html'); return false;">Tema 10. La Ley Orgánica 3/2007, de
+                                22
+                                de marzo, para la igualdad efectiva de mujeres y hombres</a></li>
+                        <li><a href="#" onclick="load_doc('11.html'); return false;">Tema 11. Prevención de Riesgos
+                                Laborales</a></li>
+                        <li><a href="#" onclick="load_doc('12.html'); return false;">Tema 12. Ley Orgánica 3/2018, de 5
+                                de
+                                diciembre, de Protección de Datos Personales y Garantía de los Derechos Digitales</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    Parte específica
+                </li>
+
+                <li>
+                    <ul>
+                        <li><a href="#" onclick="load_doc('13.html'); return false;">Tema 13. Componentes de los
+                                sistemas de
+                                información</a></li>
+                        <li><a href="#" onclick="load_doc('14.html'); return false;">Tema 14. Infraestructuras físicas
+                                de
+                                servidores</a></li>
+                        <li><a href="#" onclick="load_doc('15.html'); return false;">Tema 15. Sistemas de
+                                almacenamiento</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('16.html'); return false;">Tema 16. Infraestructuras
+                                hiperconvergentes</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('17.html'); return false;">Tema 17. Servicios en la nube</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('18.html'); return false;">Tema 18. Redes de comunicaciones
+                                I</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('19.html'); return false;">Tema 19. Redes de comunicaciones
+                                II</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('20.html'); return false;">Tema 20. Redes de comunicaciones
+                                III</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('21.html'); return false;">Tema 21. Sistemas operativos
+                                Windows Server</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('22.html'); return false;">Tema 22. Sistemas operativos de
+                                Linux Server</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('23.html'); return false;">Tema 23. Sistema de
+                                virtualizaci&oacute;n de servidores</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('24.html'); return false;">Tema 24. Sistemas DNS, NTP y
+                                DHCP</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('25.html'); return false;">Tema 25. Sistemas de
+                                automatizaci&oacute;n</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('26.html'); return false;">Tema 26. Bases de datos
+                                relacionales</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('27.html'); return false;">Tema 27. Administraci&oacute;n de
+                                Bases de Datos Oracle</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('28.html'); return false;">Tema 28. El lenguaje SQL I</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('29.html'); return false;">Tema 29. El lenguaje SQL II</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('30.html'); return false;">Tema 30. Bases de datos no
+                                relacionales</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('31.html'); return false;">Tema 31. Gesti&oacute;n documental,
+                                gesti&oacute;n de contenidos y gesti&oacute;n de proyectos</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('32.html'); return false;">Tema 32. Programaci&oacute;n en
+                                Java I</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('33.html'); return false;">Tema 33. Programaci&oacute;n en
+                                Java II</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('34.html'); return false;">Tema 34. Tecnolog&iacute;as Web</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('35.html'); return false;">Tema 35. Tecnolog&iacute;as Web de Front-End</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('36.html'); return false;">Tema 36. Arquitecturas orientadas a servicios SOA I</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('37.html'); return false;">Tema 37. Arquitecturas orientadas a servicios SOA II</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('38.html'); return false;">Tema 38. Gesti&oacute;n de proyectos</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('39.html'); return false;">Tema 39. Proyectos de desarrollo de software</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('40.html'); return false;">Tema 40. Sistemas de control de versiones</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('41.html'); return false;">Tema 41. Sistemas de contenedores</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('42.html'); return false;">Tema 42. Persistencia de datos con contenedores</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('43.html'); return false;">Tema 43. Orquestaci&oacute;n de contenedores</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('44.html'); return false;">Tema 44. Gesti&oacute;n de la calidad del software</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('45.html'); return false;">Tema 45. Sistemas de identificaci&oacute;n y gesti&oacute;n de privilegios</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('46.html'); return false;">Tema 46. Sistemas de gesti&oacute;n y monitorizaci&oacute;n</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('47.html'); return false;">Tema 47. Sistemas de riesgo de eventos</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('48.html'); return false;">Tema 48. Sistemas de encriptaci&oacute;n</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('49.html'); return false;">Tema 49. Infraestructuras de clave p&uacute;blica</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('50.html'); return false;">Tema 50. Servicios de certificaci&oacute;n</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('51.html'); return false;">Tema 51. Sistemas de seguridad en tecnolog&iacute;as Web</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('52.html'); return false;">Tema 52. Sistemas de seguridad I</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('53.html'); return false;">Tema 53. Sistemas de seguridad II</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('54.html'); return false;">Tema 54. Sistemas de copias de seguridad I</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('55.html'); return false;">Tema 55. Sistemas de copias de seguridad II</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('56.html'); return false;">Tema 56. Plan de contingencia TIC</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('57.html'); return false;">Tema 57. Sistemas de correo electr&oacute;nico</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('58.html'); return false;">Tema 58. Sistemas de telefon&iacute;a sobre IP (VoIP)</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('59.html'); return false;">Tema 59. Redes de pr&oacute;xima generaci&oacute;n (NGN)</a>
+                        </li>
+                        <li><a href="#" onclick="load_doc('60.html'); return false;">Tema 60. Nivel de servicio</a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div id="contenido-externo"></div>
+
+    <script>
+
+        function toggleMenu() {
+            const menu = document.getElementById( 'menu' );
+            if ( menu.style.display === "block" ) {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+
+        function load_doc( doc ) {
+
+            const url = './documentos/' + doc;
+
+            fetch( url )
+                .then( response => {
+                    if ( !response.ok ) {
+                        throw new Error( 'Error al cargar el archivo: ' + response.statusText );
+                    }
+                    return response.text();
+                } )
+                .then( data => {
+                    document.getElementById( 'contenido-externo' ).innerHTML = data;
+                    toggleMenu();
+                    window.scrollTo( 0, 0 );
+                } )
+                .catch( error => console.error( 'Error al cargar el archivo:', error ) );
+
+        }
+
+    </script>
+
+</body>
+
+</html>

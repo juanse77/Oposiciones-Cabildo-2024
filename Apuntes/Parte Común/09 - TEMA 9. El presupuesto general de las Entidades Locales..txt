@@ -1,0 +1,205 @@
+Tema 9. El presupuesto general de las Entidades Locales.
+
+9.1. Estructura presupuestaria. Elaboración y aprobación.
+
+	La estructura presupuestaria de las entidades locales en España está regida por una serie de normativas y procedimientos que aseguran la correcta gestión y control de los recursos públicos. Este proceso implica varias fases, desde la elaboración hasta la aprobación y ejecución del presupuesto. A continuación, te detallo estos aspectos:
+
+	1. Estructura Presupuestaria:
+		La estructura presupuestaria de las entidades locales se organiza en base a varios criterios, como la naturaleza económica del gasto y del ingreso, su finalidad, y la unidad organizativa responsable. Los principales componentes son:
+
+			- Ingresos: Clasificados en capítulos, artículos, conceptos y subconceptos. Los capítulos principales incluyen impuestos directos e indirectos, tasas, precios públicos, transferencias corrientes, ingresos patrimoniales, enajenación de inversiones reales, transferencias de capital, activos financieros y pasivos financieros.
+
+			- Gastos: También clasificados en capítulos, artículos, conceptos y subconceptos, diferenciando entre gastos corrientes (personal, bienes y servicios, transferencias corrientes), gastos de capital (inversiones reales, transferencias de capital), activos financieros y pasivos financieros.
+
+			- Programas y Proyectos: Los gastos se agrupan por programas que indican las finalidades y objetivos, y dentro de cada programa puede haber proyectos específicos que detallen las actividades concretas.
+
+	2. Elaboración del Presupuesto:
+		La elaboración del presupuesto es un proceso que requiere la coordinación entre diferentes áreas y departamentos de la entidad local. Los pasos generales son:
+
+			- Orientaciones iniciales: El órgano de gobierno (como el pleno municipal) proporciona las directrices iniciales y el marco económico general en el que se debe basar el presupuesto.
+
+			- Propuesta de cada área: Cada departamento o área de la entidad local elabora sus propuestas de ingresos y gastos, conforme a las directrices iniciales.
+
+			- Integración: La intervención municipal o el área de hacienda recoge las propuestas y elabora un anteproyecto de presupuesto, integrando todas las partidas de ingresos y gastos.
+
+			- Ajustes y Revisión: Se realizan los ajustes necesarios para asegurar el equilibrio presupuestario, es decir, que los ingresos previstos cubran los gastos. Se revisan las partidas para asegurar su adecuación y justificación.
+
+	3. Aprobación del Presupuesto:
+		La aprobación del presupuesto sigue un proceso formal con varios pasos y plazos establecidos:
+
+			- Aprobación inicial: El anteproyecto se presenta al pleno municipal o al órgano de gobierno correspondiente, que debe aprobarlo inicialmente. Esta aprobación inicial se suele realizar antes del 15 de octubre del año anterior al que se refiere el presupuesto.
+
+			- Exposición pública y alegaciones: Una vez aprobado inicialmente, el presupuesto se expone al público durante un plazo determinado (generalmente 15 días hábiles), durante el cual los interesados pueden presentar alegaciones o sugerencias.
+
+			- Resolución de alegaciones: El pleno u órgano competente resuelve las alegaciones presentadas y realiza las modificaciones necesarias.
+
+			- Aprobación definitiva: Tras resolver las alegaciones, el presupuesto se aprueba definitivamente, generalmente antes del 31 de diciembre del año anterior al que se refiere el presupuesto.
+
+			- Publicación: El presupuesto aprobado se publica en el boletín oficial correspondiente y entra en vigor el 1 de enero del año siguiente.
+
+	4. Ejecución y Control:
+		Una vez aprobado, el presupuesto entra en la fase de ejecución, que incluye:
+
+			- Gestión de ingresos y gastos: Se realiza la gestión de cobros y pagos conforme a lo previsto en el presupuesto.
+
+			- Modificaciones presupuestarias: Durante el ejercicio, puede ser necesario realizar modificaciones presupuestarias (créditos adicionales, transferencias de crédito, etc.) para ajustar el presupuesto a las necesidades reales.
+
+			- Control interno y externo: Se lleva a cabo un control interno por parte de la intervención municipal y un control externo por parte de los órganos de fiscalización (como el Tribunal de Cuentas y los órganos de control autonómicos).
+
+	Conclusión:
+		La estructura y el proceso de elaboración y aprobación del presupuesto en las entidades locales españolas están diseñados para asegurar una gestión eficiente y transparente de los recursos públicos. Cada fase del proceso, desde la planificación hasta la ejecución y el control, implica una serie de procedimientos y mecanismos de supervisión que buscan garantizar la sostenibilidad financiera y la adecuada prestación de servicios a la comunidad.
+
+9.2. Modificaciones presupuestarias:
+
+	Las modificaciones presupuestarias en las entidades locales españolas son ajustes que se realizan al presupuesto aprobado con el objetivo de adaptar los ingresos y gastos a las necesidades y realidades cambiantes durante el ejercicio. Estas modificaciones están reguladas por un marco legal específico que establece las condiciones y procedimientos para su ejecución.
+
+	Tipos de Modificaciones Presupuestarias:
+		Suplementos de Crédito:
+			Se utilizan para aumentar el crédito de una partida presupuestaria que resulta insuficiente. Su financiación proviene de recursos adicionales, como mayores ingresos o remanentes de tesorería.
+
+		Créditos Extraordinarios:
+			Se aplican para cubrir gastos específicos no previstos en el presupuesto original. Requieren justificación y financiación específica.
+
+		Transferencias de Crédito:
+			Implican la reubicación de créditos entre distintas partidas presupuestarias sin incrementar el gasto total. Pueden ser entre partidas del mismo capítulo (créditos internos) o de capítulos diferentes (créditos externos).
+
+		Generaciones de Crédito:
+			Aumentan el presupuesto de gastos financiados con nuevos ingresos no contemplados inicialmente, como subvenciones o aportaciones externas.
+
+		Incorporaciones de Remanentes:
+			Permiten el uso de remanentes de crédito no gastados del ejercicio anterior para el ejercicio corriente.
+
+		Bajas por Anulación:
+			Reducen el crédito de partidas con exceso de financiación para destinar esos fondos a otros usos.
+
+	Marco Legal:
+		El marco legal que regula las modificaciones presupuestarias en las entidades locales incluye varias normativas y reglamentos:
+
+		Ley Reguladora de las Haciendas Locales (Ley 7/1985, de 2 de abril):
+			- Establece las bases del régimen financiero y presupuestario de las entidades locales.
+			- Regula la elaboración, aprobación y ejecución de los presupuestos, incluyendo las modificaciones presupuestarias.
+
+		Real Decreto Legislativo 2/2004, de 5 de marzo:
+			- Aprueba el Texto Refundido de la Ley Reguladora de las Haciendas Locales.
+			- Detalla los tipos de modificaciones presupuestarias y sus requisitos.
+
+		Ley General Presupuestaria (Ley 47/2003, de 26 de noviembre):
+			- Proporciona un marco general para la gestión presupuestaria en todas las administraciones públicas, incluyendo las locales.
+			- Define procedimientos y principios para la ejecución del presupuesto y sus modificaciones.
+
+		Reglamento de Haciendas Locales (Real Decreto 500/1990, de 20 de abril):
+			- Desarrolla la Ley Reguladora de las Haciendas Locales.
+			- Detalla los procedimientos específicos para la tramitación de modificaciones presupuestarias.
+
+		Plan General de Contabilidad Pública:
+			- Proporciona normas contables para la gestión y control presupuestario en las entidades locales.
+			- Asegura la correcta contabilización de las modificaciones presupuestarias.
+
+	Procedimiento de Modificación Presupuestaria:
+		El procedimiento para realizar una modificación presupuestaria generalmente incluye los siguientes pasos:
+
+			- Identificación de la Necesidad:
+
+				Los responsables de las áreas o departamentos detectan la necesidad de ajustar el presupuesto. Se elabora un informe justificativo que detalla la necesidad y la propuesta de modificación.
+
+			- Propuesta de Modificación:
+				La propuesta se presenta a la intervención municipal o al área de hacienda para su análisis. Se verifica que la modificación cumpla con los requisitos legales y presupuestarios.
+
+			- Aprobación Inicial:
+				Dependiendo del tipo de modificación, la aprobación puede corresponder al alcalde/presidente, la junta de gobierno o el pleno municipal. Algunas modificaciones requieren la aprobación previa de los órganos de control externos.
+
+			- Exposición Pública y Alegaciones:
+				En ciertos casos, las modificaciones deben exponerse al público para recibir posibles alegaciones. Las alegaciones se analizan y, si procede, se ajusta la modificación.
+
+			- Aprobación Definitiva:
+				Tras resolver las alegaciones, la modificación se aprueba definitivamente.
+Se publica en el boletín oficial correspondiente y se incorpora al presupuesto.
+	
+			- Ejecución y Control:
+				La modificación aprobada se ejecuta conforme a los nuevos créditos ajustados. Se realiza un seguimiento y control para asegurar su correcta aplicación.
+
+	Conclusión:
+		Las modificaciones presupuestarias son herramientas esenciales para la gestión flexible y eficiente de los recursos públicos en las entidades locales. Su correcta aplicación, conforme al marco legal establecido, permite adaptar el presupuesto a las necesidades reales y asegurar una administración responsable y transparente.
+
+9.3. Fases de ejecución del presupuesto. La liquidación del presupuesto:
+
+	Fases de Ejecución del Presupuesto:
+		La ejecución del presupuesto en las entidades locales implica una serie de fases que aseguran la correcta administración de los recursos y el cumplimiento de los objetivos presupuestarios. Estas fases están reguladas por un marco legal que incluye varias leyes y reglamentos, asegurando transparencia y eficiencia en la gestión financiera.
+
+	Fases de Ejecución:
+		Fase de Autorización:
+			Concepto: Es el acto administrativo que permite a los órganos gestores realizar gastos con cargo a los créditos presupuestarios.
+			Regulación: Según la Ley General Presupuestaria y la Ley Reguladora de las Haciendas Locales.
+			Proceso: Los responsables de las distintas áreas proponen los gastos necesarios, que deben ser autorizados por la autoridad competente.
+
+		Fase de Compromiso:
+			Concepto: Implica la reserva de crédito para un gasto específico, garantizando que los fondos estarán disponibles cuando se necesiten.
+			Regulación: Incluida en el Real Decreto Legislativo 2/2004.
+			Proceso: Tras la autorización, se formaliza el compromiso mediante la reserva de los créditos correspondientes.
+
+		Fase de Reconocimiento de la Obligación:
+			Concepto: Se reconoce formalmente la obligación de pago, basada en la justificación documental del gasto realizado.
+			Regulación: Detallada en el Plan General de Contabilidad Pública.
+			Proceso: Se verifica que el bien o servicio ha sido recibido conforme a lo pactado y se registra la obligación de pago.
+
+		Fase de Ordenación del Pago:
+			Concepto: Es el acto mediante el cual se ordena el pago de una obligación reconocida.
+			Regulación: Cubierta por la Ley 47/2003 y el Reglamento de Haciendas Locales.
+			Proceso: La orden de pago se emite tras verificar la disponibilidad de fondos y la conformidad de la obligación.
+
+		Fase de Pago:
+			Concepto: Es el desembolso efectivo del dinero para satisfacer la obligación.
+			Regulación: Regida por las normativas presupuestarias y contables.
+			Proceso: Se realiza el pago a través de la Tesorería, asegurando que los fondos se transfieren correctamente al beneficiario.
+
+	Marco Legal:
+		Ley Orgánica 2/2012, de 27 de abril, de Estabilidad Presupuestaria y Sostenibilidad Financiera
+
+			Objetivo: Garantizar la estabilidad presupuestaria y la sostenibilidad financiera de todas las administraciones públicas.	
+			Impacto: Establece límites y reglas para asegurar que las entidades locales mantengan un equilibrio presupuestario y no incurran en déficits excesivos.
+
+		Orden EHA/3565/2008, de 3 de diciembre
+
+			Objetivo: Regular la estructura de la contabilidad de las entidades locales.
+			Impacto: Establece las normas contables específicas y los procedimientos de registro de operaciones presupuestarias.
+
+	Liquidación del Presupuesto:
+		La liquidación del presupuesto es el proceso final del ciclo presupuestario, donde se evalúa el grado de ejecución del presupuesto y se determinan los resultados financieros del ejercicio. Este proceso incluye varios pasos clave y está estrictamente regulado para asegurar transparencia y responsabilidad.
+
+		Proceso de Liquidación:
+			Cierre del Ejercicio:
+				Concepto: Finalización de las operaciones presupuestarias del año, dejando de admitir nuevas operaciones y centrando en cerrar las existentes.
+				Proceso: Se recopilan todos los datos contables y se revisan para asegurar que todas las operaciones han sido registradas correctamente.
+
+			Elaboración de la Liquidación:
+				Concepto: Se elabora un documento que resume la ejecución del presupuesto, mostrando ingresos y gastos reales frente a los presupuestados.
+				Proceso: La intervención municipal compila los datos y elabora la liquidación, comparando las previsiones iniciales con los resultados finales.
+
+			Aprobación y Publicación:
+				Concepto: La liquidación debe ser aprobada por el órgano de gobierno competente y publicada para asegurar transparencia.
+				Proceso: Se presenta al pleno municipal para su aprobación y se publica en el boletín oficial correspondiente.
+
+			Remanentes de Tesorería:
+				Concepto: Los remanentes de tesorería son los saldos positivos o negativos resultantes de la ejecución presupuestaria.
+				Proceso: Se calculan los remanentes y se determina su destino, ya sea para financiar el presupuesto siguiente o para ajustar desequilibrios.
+
+	Marco Legal:
+		Ley Reguladora de las Haciendas Locales (Ley 7/1985 y RDL 2/2004)
+			Regulación de la Liquidación: Establece los requisitos y procedimientos para la liquidación del presupuesto.
+			Impacto: Asegura que todas las entidades locales realicen una liquidación adecuada y transparente.
+
+		Ley General Presupuestaria (Ley 47/2003)
+			Normas de Liquidación: Proporciona normas generales para la liquidación y control del presupuesto en todas las administraciones públicas.
+			Impacto: Asegura uniformidad en los procedimientos de liquidación.
+
+		Orden EHA/3565/2008
+			Contabilidad de la Liquidación: Establece los procedimientos contables específicos para la liquidación del presupuesto.
+			Impacto: Asegura que la liquidación se realice conforme a principios contables aceptados.
+
+		Ley Orgánica 2/2012
+			Estabilidad y Sostenibilidad: La liquidación debe mostrar el cumplimiento de los objetivos de estabilidad presupuestaria y sostenibilidad financiera.
+			Impacto: Refuerza la responsabilidad fiscal de las entidades locales.
+
+
+Conclusión:
+	La ejecución y liquidación del presupuesto en las entidades locales españolas son procesos esenciales que garantizan la correcta gestión de los recursos públicos. Estas fases están reguladas por un robusto marco legal que incluye leyes específicas como la Ley Orgánica 2/2012 y la Orden EHA/3565/2008, asegurando transparencia, responsabilidad y eficiencia en la administración financiera

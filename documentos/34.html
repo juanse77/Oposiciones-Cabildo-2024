@@ -1,0 +1,259 @@
+<h1>Tema 34. Tecnolog&iacute;as Web.</h1>
+<h2>34.1. WildFly Application Server, componentes y caracter&iacute;sticas principales.</h2>
+<p>WildFly es un servidor de aplicaciones Java EE (Enterprise Edition) desarrollado por Red Hat. Anteriormente conocido
+    como JBoss Application Server, WildFly es un servidor ligero, r&aacute;pido y altamente modular que se utiliza para
+    ejecutar aplicaciones basadas en Java. A continuaci&oacute;n, se detallan los componentes y caracter&iacute;sticas
+    principales de WildFly:</p>
+<h3>Componentes Principales de WildFly:</h3>
+<h4>N&uacute;cleo Modular (JBoss Modules):</h4>
+<p>WildFly utiliza un sistema de m&oacute;dulos que permite cargar solo los componentes necesarios para una
+    aplicaci&oacute;n espec&iacute;fica, lo que reduce el consumo de memoria y mejora la velocidad de arranque. Los
+    m&oacute;dulos son piezas reutilizables que pueden incluir bibliotecas, configuraciones y recursos.</p>
+<h4>Servidor Web (Undertow):</h4>
+<p>Undertow es un servidor web de alto rendimiento y ligero que es el componente principal del servidor web en WildFly.
+    Est&aacute; dise&ntilde;ado para manejar grandes cantidades de conexiones y es compatible con los est&aacute;ndares
+    HTTP/2 y WebSockets.</p>
+<h4>Gesti&oacute;n y Administraci&oacute;n (CLI y Consola de Administraci&oacute;n):</h4>
+<p>WildFly proporciona una Interfaz de L&iacute;nea de Comandos (CLI) y una Consola de Administraci&oacute;n basada en
+    web para la gesti&oacute;n y configuraci&oacute;n del servidor. La consola permite a los administradores monitorear
+    el rendimiento, desplegar aplicaciones y gestionar configuraciones.</p>
+<h4>EJB (Enterprise Java Beans):</h4>
+<p>Soporta el est&aacute;ndar EJB 3.2, proporcionando una forma simplificada de desarrollar componentes empresariales
+    que pueden ser distribuidos y transaccionales.</p>
+<h4>JPA (Java Persistence API):</h4>
+<p>Proporciona integraci&oacute;n con Hibernate para la implementaci&oacute;n de JPA, permitiendo la persistencia de
+    datos en bases de datos relacionales.</p>
+<h4>JAX-RS (Java API for RESTful Web Services):</h4>
+<p>Implementa JAX-RS 2.1 para el desarrollo de servicios web RESTful, proporcionando APIs simplificadas para la
+    construcci&oacute;n de aplicaciones orientadas a servicios.</p>
+<h4>JMS (Java Message Service):</h4>
+<p>WildFly incluye soporte para el est&aacute;ndar JMS 2.0 a trav&eacute;s de su propio proveedor de mensajes llamado
+    "ActiveMQ Artemis", que es una implementaci&oacute;n de alto rendimiento de mensajer&iacute;a.</p>
+<h4>CDI (Contexts and Dependency Injection):</h4>
+<p>Ofrece soporte para CDI 2.0, lo que permite una inyecci&oacute;n de dependencias eficiente y un manejo de contexto de
+    objetos empresariales en el ciclo de vida de la aplicaci&oacute;n.</p>
+<h4>Seguridad (PicketLink y Elytron):</h4>
+<p>WildFly utiliza Elytron como su marco de seguridad para proporcionar un enfoque unificado de seguridad de la
+    aplicaci&oacute;n. Ofrece autenticaci&oacute;n, autorizaci&oacute;n, y gesti&oacute;n de credenciales, y es
+    compatible con JAAS, OAuth2, OpenID Connect, entre otros.</p>
+<h4>Clustering y Alta Disponibilidad:</h4>
+<p>WildFly ofrece soporte para clustering, balanceo de carga, replicaci&oacute;n de sesiones, y failover. Esto es
+    fundamental para aplicaciones empresariales que requieren alta disponibilidad y escalabilidad.</p>
+<h4>Soporte de Servicios Web (JAX-WS y JAX-RS):</h4>
+<p>Permite la creaci&oacute;n de servicios web basados en SOAP (JAX-WS) y REST (JAX-RS), facilitando la
+    interoperabilidad y la comunicaci&oacute;n entre sistemas heterog&eacute;neos.</p>
+<h4>MicroProfile:</h4>
+<p>WildFly es compatible con MicroProfile, un conjunto de especificaciones destinadas a optimizar las arquitecturas de
+    microservicios. Esto incluye configuraciones, m&eacute;tricas, tolerancia a fallos, OpenAPI, JWT Propagation, entre
+    otros.</p>
+<h3>Caracter&iacute;sticas Principales de WildFly</h3>
+<h4>Ligereza y Rapidez:</h4>
+<p>Gracias a su arquitectura modular, WildFly es un servidor de aplicaciones r&aacute;pido y ligero, adecuado tanto para
+    entornos de desarrollo como de producci&oacute;n.</p>
+<h4>Escalabilidad y Clustering:</h4>
+<p>WildFly soporta el clustering autom&aacute;tico, lo que permite que las aplicaciones escalen horizontalmente de
+    manera eficiente.</p>
+<h4>Compatibilidad con Java EE:</h4>
+<p>Es totalmente compatible con Java EE 8, lo que lo convierte en una opci&oacute;n robusta para aplicaciones
+    empresariales que requieren cumplir con estas especificaciones.</p>
+<h4>Soporte Multi-Plataforma:</h4>
+<p>Compatible con diversos sistemas operativos, incluyendo Windows, Linux y macOS, lo que proporciona flexibilidad para
+    diferentes entornos de desarrollo y producci&oacute;n.</p>
+<h4>Flexibilidad de Configuraci&oacute;n:</h4>
+<p>WildFly puede configurarse en modo "Standalone" (para entornos de desarrollo o de baja demanda) o en modo "Domain"
+    (para entornos de producci&oacute;n de alta demanda donde se manejan m&uacute;ltiples servidores).</p>
+<h4>Integraci&oacute;n Continua y Despliegue:</h4>
+<p>Compatible con herramientas de integraci&oacute;n continua como Jenkins, Maven, y Gradle, facilitando el proceso de
+    despliegue automatizado.</p>
+<h4>Monitoreo y Gesti&oacute;n Simplificados:</h4>
+<p>Proporciona herramientas avanzadas de monitoreo, como JBoss Operations Network (JON) y soporte para JMX (Java
+    Management Extensions).</p>
+<h3>Conclusi&oacute;n</h3>
+<p>WildFly es un servidor de aplicaciones poderoso, flexible y moderno que proporciona todas las caracter&iacute;sticas
+    necesarias para desarrollar, desplegar y administrar aplicaciones empresariales Java. Su arquitectura modular,
+    combinada con soporte para est&aacute;ndares de Java EE y microservicios, lo hace una opci&oacute;n atractiva tanto
+    para desarrolladores como para administradores de sistemas.</p>
+<h2>34.2. Apache Tomcat Componentes y caracter&iacute;sticas principales.</h2>
+<p>Apache Tomcat es un contenedor de servlets de c&oacute;digo abierto desarrollado por la Apache Software Foundation.
+    Es uno de los servidores web m&aacute;s populares utilizados para desplegar aplicaciones Java basadas en
+    tecnolog&iacute;as como Servlets, JavaServer Pages (JSP), Java Expression Language (EL), y Java WebSocket. Aunque
+    Tomcat no es un servidor de aplicaciones completo como WildFly o GlassFish, es ampliamente utilizado debido a su
+    simplicidad, rendimiento y facilidad de uso.</p>
+<h3>Componentes Principales de Apache Tomcat:</h3>
+<h4>- Catalina:</h4>
+<p>Catalina es el motor de Servlets de Tomcat. Es el contenedor de servlets que proporciona la implementaci&oacute;n del
+    API de Servlets y JSP. Catalina gestiona el ciclo de vida de las aplicaciones web, desde su despliegue hasta su
+    cierre, y maneja todas las peticiones y respuestas HTTP para las aplicaciones desplegadas.</p>
+<h4>- Coyote:</h4>
+<p>Coyote es el conector HTTP de Tomcat, que permite que el servidor web reciba y procese solicitudes HTTP desde
+    clientes web. Coyote puede ser configurado para manejar tanto HTTP/1.1 como el protocolo AJP (Apache JServ
+    Protocol), que permite la conexi&oacute;n entre servidores web como Apache HTTP Server y Tomcat.</p>
+<h4>- Jasper:</h4>
+<p>Jasper es el motor JSP de Tomcat. Es responsable de traducir archivos JSP en servlets, que luego son compilados y
+    ejecutados por Catalina. Jasper utiliza la API de JavaServer Pages para soportar la tecnolog&iacute;a JSP en Tomcat.
+</p>
+<h4>- Cluster:</h4>
+<p>Este componente proporciona capacidades de clustering en Tomcat. Permite la replicaci&oacute;n de sesiones entre
+    diferentes instancias de Tomcat para garantizar alta disponibilidad y balanceo de carga. Esto es &uacute;til en
+    entornos donde se requieren aplicaciones web altamente disponibles y escalables.</p>
+<h4>- Realm:</h4>
+<p>Un Realm en Tomcat es un repositorio que contiene informaci&oacute;n de usuarios, roles y permisos. Este componente
+    maneja la autenticaci&oacute;n y la autorizaci&oacute;n de los usuarios que acceden a las aplicaciones web. Puede
+    integrarse con diferentes fuentes de datos, como bases de datos, LDAP, o incluso archivos de texto.</p>
+<h4>- Session Manager:</h4>
+<p>Tomcat maneja sesiones de usuario a trav&eacute;s de un administrador de sesiones que permite configurar la
+    persistencia, el tiempo de expiraci&oacute;n, y la replicaci&oacute;n de sesiones en un entorno de cl&uacute;ster.
+</p>
+<h4>- WebSocket:</h4>
+<p>Tomcat incluye soporte para la especificaci&oacute;n de Java API para WebSocket, lo que permite crear aplicaciones
+    web en tiempo real que utilizan el protocolo WebSocket para la comunicaci&oacute;n bidireccional.</p>
+<h4>- Valves:</h4>
+<p>Las v&aacute;lvulas en Tomcat son similares a los filtros en Java EE. Son componentes que se pueden adjuntar a
+    diferentes etapas del ciclo de vida de una solicitud para realizar funciones como la autenticaci&oacute;n, el
+    registro de auditor&iacute;a y la modificaci&oacute;n de respuestas.</p>
+<h3>Caracter&iacute;sticas Principales de Apache Tomcat</h3>
+<h4>- Ligereza y Eficiencia:</h4>
+<p>Apache Tomcat es conocido por su ligereza y eficiencia. Consume menos recursos que los servidores de aplicaciones
+    completos, lo que lo hace adecuado para entornos de desarrollo, pruebas, y producci&oacute;n donde se necesita un
+    contenedor de servlets de alto rendimiento.</p>
+<h4>- Compatibilidad con Java EE:</h4>
+<p>Tomcat proporciona soporte para los est&aacute;ndares de Java EE relacionados con aplicaciones web, como Servlets,
+    JSP, y WebSocket, aunque no es un servidor de aplicaciones completo y no soporta otras tecnolog&iacute;as Java EE
+    como EJB.</p>
+<h4>- Despliegue Simplificado:</h4>
+<p>El despliegue de aplicaciones en Tomcat es sencillo; basta con colocar un archivo WAR (Web Application Archive) en el
+    directorio webapps de Tomcat, y este se desplegar&aacute; autom&aacute;ticamente.</p>
+<h4>- Configuraci&oacute;n Flexible:</h4>
+<p>Apache Tomcat ofrece una configuraci&oacute;n altamente flexible a trav&eacute;s de sus archivos server.xml, web.xml
+    y context.xml. Estos archivos permiten una personalizaci&oacute;n detallada de conectores, recursos JNDI,
+    autenticaci&oacute;n, seguridad, y muchos otros aspectos.</p>
+<h4>- Soporte de Seguridad:</h4>
+<p>Tomcat soporta m&uacute;ltiples m&eacute;todos de autenticaci&oacute;n, incluidos BASIC, DIGEST, FORM, y CLIENT-CERT,
+    y permite la integraci&oacute;n con SSL/TLS para asegurar las conexiones HTTP.</p>
+<h4>- Extensibilidad:</h4>
+<p>Tomcat es altamente extensible gracias a su arquitectura modular. Se pueden desarrollar componentes personalizados
+    como Connectors, Realms, Valves y Filters para a&ntilde;adir funcionalidades espec&iacute;ficas.</p>
+<h4>- Gesti&oacute;n y Monitoreo:</h4>
+<p>Incluye una aplicaci&oacute;n de administraci&oacute;n basada en web que permite monitorear el estado del servidor,
+    gestionar aplicaciones desplegadas, y realizar tareas de configuraci&oacute;n. Tambi&eacute;n puede integrarse con
+    herramientas de monitoreo y gesti&oacute;n como JMX (Java Management Extensions) y aplicaciones de terceros.</p>
+<h4>- Soporte para Clustering y Alta Disponibilidad:</h4>
+<p>Tomcat permite configuraciones de clustering para balanceo de carga y replicaci&oacute;n de sesiones. Esto es crucial
+    para entornos donde la alta disponibilidad y la escalabilidad son requisitos.</p>
+<h4>- Comunidad Activa y Amplio Ecosistema:</h4>
+<p>Tomcat tiene una comunidad de desarrollo muy activa y un amplio ecosistema de plugins y herramientas que complementan
+    sus funcionalidades.</p>
+<h4>- Compatibilidad con Protocolos Modernos:</h4>
+<p>Tomcat es compatible con HTTP/2, WebSocket y otros protocolos modernos, permitiendo desarrollar aplicaciones web que
+    requieren comunicaci&oacute;n bidireccional en tiempo real y mejor eficiencia de red.</p>
+<h3>Conclusi&oacute;n</h3>
+<p>Apache Tomcat es una opci&oacute;n popular para desplegar aplicaciones web basadas en Java debido a su eficiencia,
+    simplicidad y configuraci&oacute;n flexible. Su compatibilidad con los est&aacute;ndares de Java EE, junto con su
+    capacidad de integraci&oacute;n y extensibilidad, lo hace adecuado para una amplia gama de aplicaciones, desde
+    aplicaciones web simples hasta entornos de producci&oacute;n complejos que requieren alta disponibilidad y
+    escalabilidad.</p>
+<h2>34.3. Proxy inversos y balanceadores Web. Soluciones m&aacute;s utilizadas.</h2>
+<p>Los proxies inversos y balanceadores de carga web son componentes esenciales en la arquitectura de aplicaciones web
+    modernas, proporcionando mejoras en la seguridad, el rendimiento y la escalabilidad. Aunque ambos pueden realizar
+    funciones similares, tienen diferencias clave en sus prop&oacute;sitos y modos de operaci&oacute;n. Aqu&iacute;
+    tienes una descripci&oacute;n general de ambos, junto con las soluciones m&aacute;s utilizadas en cada
+    categor&iacute;a.</p>
+<h3>Proxy Inverso:</h3>
+<p>Un proxy inverso es un servidor que act&uacute;a como intermediario para las solicitudes de clientes que buscan
+    recursos en servidores de backend. El proxy inverso recibe las solicitudes de los clientes, las reenv&iacute;a al
+    servidor adecuado y luego devuelve la respuesta del servidor al cliente. Proporciona varias funciones, como
+    seguridad, distribuci&oacute;n de carga, almacenamiento en cach&eacute;, compresi&oacute;n de contenido y
+    terminaci&oacute;n de SSL.</p>
+<h3>Funciones Principales de un Proxy Inverso:</h3>
+<h4>Seguridad:</h4>
+<p>Oculta la direcci&oacute;n IP de los servidores backend, protegi&eacute;ndolos de ataques directos.<br /> Puede
+    implementar autenticaci&oacute;n, autorizaci&oacute;n y protecci&oacute;n contra ataques DDoS.</p>
+<h4>Balanceo de Carga:</h4>
+<p>Distribuye las solicitudes entrantes entre varios servidores backend para equilibrar la carga y mejorar el
+    rendimiento.</p>
+<h4>Almacenamiento en Cach&eacute;:</h4>
+<p>Guarda copias de contenido est&aacute;tico o din&aacute;mico para reducir la carga en los servidores de backend y
+    mejorar el tiempo de respuesta.</p>
+<h4>Terminaci&oacute;n SSL:</h4>
+<p>Gestiona el cifrado y descifrado de tr&aacute;fico SSL/TLS, descargando esta carga de los servidores backend.</p>
+<h4>Compresi&oacute;n de Contenido:</h4>
+<p>Comprime las respuestas del servidor antes de enviarlas al cliente, reduciendo el uso del ancho de banda.</p>
+<h3>Balanceador de Carga Web</h3>
+<p>Un balanceador de carga web es un dispositivo o software que distribuye el tr&aacute;fico de red entrante a
+    trav&eacute;s de varios servidores para garantizar que ning&uacute;n servidor se sobrecargue. Esto mejora la
+    disponibilidad, la fiabilidad y la escalabilidad de las aplicaciones web. Los balanceadores de carga suelen emplear
+    algoritmos como Round Robin, Least Connections, IP Hash, etc., para determinar c&oacute;mo distribuir el
+    tr&aacute;fico.</p>
+<h4>Funciones Principales de un Balanceador de Carga:</h4>
+<p>- Distribuci&oacute;n de Carga:</p>
+<p>Equilibra las solicitudes entrantes entre varios servidores para optimizar la utilizaci&oacute;n de recursos y evitar
+    la sobrecarga.</p>
+<p>- Alta Disponibilidad:</p>
+<p>Garantiza que si un servidor falla, el tr&aacute;fico se redirige autom&aacute;ticamente a otros servidores
+    disponibles.</p>
+<p>- Supervisi&oacute;n de la Salud del Servidor:</p>
+<p>Monitorea los servidores backend y elimina los servidores que no est&eacute;n funcionando correctamente del grupo de
+    servidores activos.</p>
+<p>- Escalabilidad:</p>
+<p>Permite agregar o eliminar servidores seg&uacute;n la demanda sin interrumpir el servicio.</p>
+<h3>Soluciones M&aacute;s Utilizadas para Proxy Inverso y Balanceadores de Carga</h3>
+<p>Existen varias soluciones populares para proxies inversos y balanceadores de carga, tanto de c&oacute;digo abierto
+    como comerciales. A continuaci&oacute;n se detallan las m&aacute;s utilizadas:</p>
+<h4>- Nginx:</h4>
+<p>Descripci&oacute;n: Nginx es una soluci&oacute;n de servidor web de alto rendimiento que tambi&eacute;n puede
+    funcionar como un proxy inverso, balanceador de carga, y servidor de cach&eacute;. Es conocido por su eficiencia,
+    bajo uso de recursos y capacidad de manejar grandes cantidades de conexiones concurrentes.</p>
+<p>Caracter&iacute;sticas: Soporte para balanceo de carga HTTP, HTTPS, TCP, y UDP; almacenamiento en cach&eacute;;
+    terminaci&oacute;n SSL; enrutamiento basado en URI; compresi&oacute;n GZIP; y seguridad avanzada.</p>
+<p>Uso Com&uacute;n: Aplicaciones web de alta disponibilidad, microservicios, APIs RESTful, y entrega de contenido
+    est&aacute;tico.</p>
+<h4>- HAProxy (High Availability Proxy):</h4>
+<p>Descripci&oacute;n: HAProxy es una soluci&oacute;n de balanceo de carga y proxy inverso de c&oacute;digo abierto
+    ampliamente utilizada en entornos de producci&oacute;n que requieren alta disponibilidad, escalabilidad y
+    rendimiento.</p>
+<p>Caracter&iacute;sticas: Balanceo de carga basado en algoritmos avanzados, terminaci&oacute;n SSL/TLS, soporte de
+    proxy HTTP/2, autenticaci&oacute;n integrada, enrutamiento basado en contenido, y supervisi&oacute;n de la salud del
+    servidor.</p>
+<p>Uso Com&uacute;n: Infraestructuras de nube, aplicaciones de comercio electr&oacute;nico, y plataformas SaaS.</p>
+<h4>- Apache HTTP Server (con m&oacute;dulo mod_proxy):</h4>
+<p>Descripci&oacute;n: Apache HTTP Server, uno de los servidores web m&aacute;s populares, puede configurarse como un
+    proxy inverso mediante el m&oacute;dulo mod_proxy.<br /> <br /> Caracter&iacute;sticas: Soporte para balanceo de
+    carga y proxy inverso HTTP y HTTPS, configuraci&oacute;n flexible, integraci&oacute;n con m&oacute;dulos de
+    seguridad y autenticaci&oacute;n, y soporte para la compresi&oacute;n y almacenamiento en cach&eacute;.</p>
+<p>Uso Com&uacute;n: Aplicaciones web tradicionales, portales empresariales y soluciones que requieren extensibilidad
+    mediante m&oacute;dulos adicionales.</p>
+<h4>- Traefik:</h4>
+<p>Descripci&oacute;n: Traefik es un proxy inverso y balanceador de carga moderno dise&ntilde;ado espec&iacute;ficamente
+    para entornos de microservicios y arquitecturas de contenedores como Kubernetes, Docker, y Mesos.</p>
+<p>Caracter&iacute;sticas: Autodescubrimiento de servicios, terminaci&oacute;n SSL autom&aacute;tica, integraci&oacute;n
+    con sistemas de orquestaci&oacute;n de contenedores, soporte para HTTP/2 y gRPC, y m&eacute;tricas integradas.</p>
+<p>Uso Com&uacute;n: Arquitecturas de microservicios, aplicaciones basadas en contenedores y entornos de DevOps.</p>
+<h4>- Envoy:</h4>
+<p>Descripci&oacute;n: Envoy es un proxy de capa de aplicaci&oacute;n de alto rendimiento y balanceador de carga
+    desarrollado por Lyft. Es parte fundamental de la infraestructura de Service Mesh (malla de servicios) en sistemas
+    distribuidos.</p>
+<p>Caracter&iacute;sticas: Balanceo de carga avanzado, terminaci&oacute;n SSL, enrutamiento din&aacute;mico,
+    integraci&oacute;n con herramientas de observabilidad, y soporte para HTTP/2 y gRPC.</p>
+<p>Uso Com&uacute;n: Service Meshes, plataformas de microservicios y sistemas distribuidos.</p>
+<h4>- F5 BIG-IP:</h4>
+<p>Descripci&oacute;n: F5 BIG-IP es una soluci&oacute;n comercial de balanceo de carga y proxy inverso altamente robusta
+    que proporciona una amplia gama de funcionalidades de administraci&oacute;n de tr&aacute;fico, seguridad y entrega
+    de aplicaciones.</p>
+<p>Caracter&iacute;sticas: Balanceo de carga L4/L7, WAF (Web Application Firewall), administraci&oacute;n de
+    tr&aacute;fico global, enrutamiento basado en pol&iacute;ticas, protecci&oacute;n DDoS, y administraci&oacute;n de
+    sesiones.</p>
+<p>Uso Com&uacute;n: Grandes empresas, aplicaciones cr&iacute;ticas de misi&oacute;n y entornos que requieren altos
+    niveles de seguridad y rendimiento.</p>
+<h4>- AWS Elastic Load Balancing (ELB):</h4>
+<p>Descripci&oacute;n: ELB es una soluci&oacute;n de balanceo de carga de AWS que distribuye autom&aacute;ticamente el
+    tr&aacute;fico entrante de aplicaciones entre m&uacute;ltiples instancias de Amazon EC2.</p>
+<p>Caracter&iacute;sticas: Soporte para balanceo de carga de aplicaciones (HTTP/HTTPS), balanceo de carga de red
+    (TCP/UDP), balanceo de carga de Gateway, terminaci&oacute;n SSL, y escalabilidad autom&aacute;tica.</p>
+<p>Uso Com&uacute;n: Aplicaciones en la nube, arquitecturas h&iacute;bridas y servicios basados en AWS.</p>
+<h3>Conclusi&oacute;n</h3>
+<p>Los proxies inversos y balanceadores de carga son componentes esenciales en las infraestructuras modernas de TI que
+    requieren alta disponibilidad, escalabilidad y seguridad. Las soluciones como Nginx, HAProxy, Traefik, Envoy, y F5
+    BIG-IP ofrecen una variedad de caracter&iacute;sticas avanzadas que se adaptan a diferentes escenarios, desde
+    peque&ntilde;as aplicaciones web hasta grandes arquitecturas de microservicios en la nube. La elecci&oacute;n de la
+    soluci&oacute;n adecuada depende de factores como el tama&ntilde;o de la aplicaci&oacute;n, los requisitos de
+    tr&aacute;fico, la seguridad y las preferencias del entorno de despliegue.</p>

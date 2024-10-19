@@ -1,0 +1,180 @@
+<h1>Tema 26. Bases de datos relacionales.</h1>
+<h2>26.1. Concepto, elementos y caracter&iacute;sticas.</h2>
+<h3>Concepto de Bases de Datos Relacionales</h3>
+<p>Una base de datos relacional (BDR) es un sistema para almacenar, organizar y gestionar datos que se basan en el
+    modelo relacional, propuesto por Edgar F. Codd en 1970. En este modelo, los datos se representan en tablas
+    (tambi&eacute;n llamadas relaciones), que est&aacute;n compuestas por filas (tuplas) y columnas (atributos). Las
+    bases de datos relacionales permiten organizar datos de manera estructurada, utilizando claves primarias y
+    for&aacute;neas para establecer relaciones entre las tablas.</p>
+<h3>Elementos de una Base de Datos Relacional</h3>
+<p>- Tablas (Relaciones):</p>
+<p>Son la estructura principal en las bases de datos relacionales. Una tabla es un conjunto de datos organizados en
+    filas y columnas. Cada tabla representa una entidad dentro del sistema de informaci&oacute;n.</p>
+<p>- Filas (Tuplas):</p>
+<p>Cada fila en una tabla representa un registro &uacute;nico de datos. Una tupla es una colecci&oacute;n de datos
+    relacionados entre s&iacute; que pertenecen a una entidad.</p>
+<p>- Columnas (Atributos):</p>
+<p>Las columnas definen los diferentes tipos de datos que cada fila puede contener. Cada columna tiene un nombre y un
+    tipo de datos (como enteros, texto, fecha, etc.).</p>
+<p>- Claves Primarias (Primary Keys):</p>
+<p>Una clave primaria es un atributo (o un conjunto de atributos) que identifica de manera &uacute;nica cada fila en una
+    tabla. Las claves primarias son esenciales para la integridad de los datos.</p>
+<p>- Claves For&aacute;neas (Foreign Keys):</p>
+<p>Una clave for&aacute;nea es un campo (o conjunto de campos) que crea una relaci&oacute;n entre dos tablas. Se refiere
+    a la clave primaria de otra tabla, estableciendo v&iacute;nculos entre los datos de diferentes tablas.</p>
+<p>- &Iacute;ndices:</p>
+<p>Son estructuras de datos que mejoran la velocidad de las consultas en la base de datos. Los &iacute;ndices permiten
+    un acceso m&aacute;s r&aacute;pido a los registros y se crean en una o m&aacute;s columnas de una tabla.</p>
+<p>- Vistas:</p>
+<p>Una vista es una tabla virtual creada a partir de una consulta sobre una o m&aacute;s tablas. Las vistas no almacenan
+    datos f&iacute;sicamente, sino que proporcionan una forma de acceder a un subconjunto de los datos de las tablas.
+</p>
+<p>- Consultas:</p>
+<p>Las consultas son solicitudes de informaci&oacute;n que se realizan a la base de datos. Estas se escriben en un
+    lenguaje de consulta estructurado, como SQL (Structured Query Language).</p>
+<h3>Caracter&iacute;sticas de una Base de Datos Relacional</h3>
+<p>- Organizaci&oacute;n en Tablas:</p>
+<p>Los datos se almacenan en tablas organizadas en filas y columnas, lo que facilita su interpretaci&oacute;n y
+    manipulaci&oacute;n.</p>
+<p>- Integridad de Datos:</p>
+<p>Utiliza reglas de integridad, como las restricciones de clave primaria y clave for&aacute;nea, para garantizar la
+    precisi&oacute;n y la consistencia de los datos.</p>
+<p>- Independencia de los Datos:</p>
+<p>La estructura f&iacute;sica de los datos es independiente de su representaci&oacute;n l&oacute;gica. Esto significa
+    que los cambios en el almacenamiento f&iacute;sico no afectan a la forma en que los datos se manejan a nivel
+    l&oacute;gico.</p>
+<h3>Normalizaci&oacute;n:</h3>
+<p>La normalizaci&oacute;n es el proceso de organizar los datos para minimizar la redundancia y evitar problemas de
+    inconsistencia. Las bases de datos relacionales est&aacute;n dise&ntilde;adas para facilitar la
+    normalizaci&oacute;n.</p>
+<p>Lenguaje de Consulta Estructurado (SQL):</p>
+<p>SQL es el lenguaje est&aacute;ndar para gestionar bases de datos relacionales. Permite la creaci&oacute;n,
+    modificaci&oacute;n y consulta de datos de manera eficiente y precisa.</p>
+<h3>Transacciones y ACID:</h3>
+<p>Las bases de datos relacionales soportan transacciones que siguen las propiedades ACID (Atomicidad, Consistencia,
+    Aislamiento, Durabilidad). Esto garantiza que las operaciones en la base de datos sean completas, coherentes y
+    seguras.</p>
+<p>- Flexibilidad:</p>
+<p>Las bases de datos relacionales permiten a los usuarios definir sus propias relaciones y atributos, proporcionando
+    flexibilidad en la forma en que los datos se modelan.</p>
+<p>- Escalabilidad:</p>
+<p>Aunque tradicionalmente las bases de datos relacionales han sido escaladas verticalmente (mejorando el hardware de un
+    solo servidor), con nuevas tecnolog&iacute;as y t&eacute;cnicas (como particionamiento horizontal), es posible
+    escalar horizontalmente tambi&eacute;n.</p>
+<p>- Seguridad:</p>
+<p>Las bases de datos relacionales proporcionan mecanismos de control de acceso, como permisos y roles de usuario, para
+    proteger la confidencialidad, integridad y disponibilidad de los datos.<br /> Las bases de datos relacionales siguen
+    siendo una tecnolog&iacute;a fundamental para muchas aplicaciones de software, especialmente aquellas que requieren
+    consistencia, integridad y relaciones complejas entre datos.</p>
+<h2>26.2. Normalizaci&oacute;n de bases de datos relacionales.</h2>
+<p>La normalizaci&oacute;n de bases de datos es un proceso esencial en el dise&ntilde;o de cualquier sistema de base de
+    datos relacional que busca reducir la redundancia y mejorar la integridad de los datos mediante la
+    organizaci&oacute;n de campos y tablas. A continuaci&oacute;n, detallo los fundamentos de la normalizaci&oacute;n y
+    las formas normales m&aacute;s comunes:</p>
+<h3>&iquest;Qu&eacute; es la Normalizaci&oacute;n?</h3>
+<p>La normalizaci&oacute;n es una t&eacute;cnica utilizada para dise&ntilde;ar esquemas de bases de datos que minimizan
+    la duplicaci&oacute;n de datos y maximizan la coherencia de datos. Este proceso implica dividir grandes tablas en
+    tablas m&aacute;s peque&ntilde;as y relacionarlas mediante claves primarias y for&aacute;neas. La
+    normalizaci&oacute;n ayuda a lograr ciertos objetivos, como:</p>
+<p>- Evitar la anomal&iacute;a de inserci&oacute;n: Problemas al intentar insertar datos debido a la ausencia de otros
+    datos.<br /> - Evitar la anomal&iacute;a de actualizaci&oacute;n: Inconsistencias que surgen cuando se actualizan
+    datos en una tabla, pero no en otra.<br /> - Evitar la anomal&iacute;a de eliminaci&oacute;n: P&eacute;rdida de
+    datos importantes debido a la eliminaci&oacute;n de otros datos que estaban relacionados.</p>
+<p>Formas Normales</p>
+<p>La normalizaci&oacute;n se estructura en "formas normales" (1NF, 2NF, 3NF, etc.), cada una con requisitos
+    espec&iacute;ficos que deben cumplirse para alcanzar ese nivel de normalizaci&oacute;n. Aqu&iacute; est&aacute;n las
+    formas normales m&aacute;s com&uacute;nmente aplicadas:</p>
+<p>Primera Forma Normal (1NF)</p>
+<ul>
+    <li>Requisito: Todos los atributos deben ser at&oacute;micos (indivisibles) y la tabla debe tener una clave
+        primaria.</li>
+    <li>Objetivo: Eliminar los valores repetidos o listas dentro de una columna.</li>
+    <li>Segunda Forma Normal (2NF)</li>
+    <li>Requisito: Estar en 1NF y todos los atributos no clave deben depender completamente de la clave primaria.</li>
+    <li>Objetivo: Resolver las dependencias parciales, donde algunos atributos dependen solo de una parte de la clave
+        primaria en el caso de claves primarias compuestas.</li>
+</ul>
+<p>Tercera Forma Normal (3NF)</p>
+<ul>
+    <li>Requisito: Estar en 2NF y no debe haber dependencias transitivas de atributos no clave sobre la clave primaria.
+    </li>
+    <li>Objetivo: Asegurar que todos los atributos no clave sean solo dependientes de la clave primaria.</li>
+    <li>Forma Normal de Boyce-Codd (BCNF)</li>
+    <li>Requisito: Una versi&oacute;n m&aacute;s estricta de 3NF donde cada determinante debe ser una clave candidata.
+    </li>
+    <li>Objetivo: Manejar las anomal&iacute;as que no resuelve la 3NF.</li>
+    <li>Cuarta Forma Normal (4NF)</li>
+    <li>Requisito: Estar en BCNF y no debe haber dependencias multivaluadas no triviales.</li>
+    <li>Objetivo: Separar las relaciones independientes que est&aacute;n mezcladas en una tabla.</li>
+</ul>
+<p>Quinta Forma Normal (5NF)</p>
+<ul>
+    <li>Requisito: Estar en 4NF y no debe haber dependencias de uni&oacute;n que no se puedan reconstruir a partir de
+        relaciones m&aacute;s peque&ntilde;as.</li>
+    <li>Objetivo: Descomponer las tablas para reducir la redundancia en casos muy espec&iacute;ficos y complejos.</li>
+</ul>
+<h3>Beneficios de la Normalizaci&oacute;n</h3>
+<p>- Mejora de la integridad de los datos: Asegura la consistencia y precisi&oacute;n de los datos.<br /> -
+    Optimizaci&oacute;n de las consultas: Reduce la carga en las consultas al minimizar la necesidad de revisar datos
+    duplicados.<br /> - Flexibilidad para el crecimiento: Facilita la escalabilidad del dise&ntilde;o de la base de
+    datos.</p>
+<h3>Desventajas de la Normalizaci&oacute;n</h3>
+<ul>
+    <li>Rendimiento: A veces, puede reducir la eficiencia en consultas que requieren unir muchas tablas peque&ntilde;as.
+    </li>
+    <li>Complejidad: El dise&ntilde;o puede volverse complejo, especialmente en formas normales superiores.</li>
+</ul>
+<p>La normalizaci&oacute;n es un equilibrio entre obtener una estructura &oacute;ptima de base de datos y mantener un
+    rendimiento aceptable en las operaciones de la base de datos. En la pr&aacute;ctica, muchas bases de datos se
+    normalizan hasta la tercera forma normal o la forma normal de Boyce-Codd, ya que ofrecen un buen equilibrio entre la
+    integridad de los datos y el rendimiento del sistema.</p>
+<h2>26.3. Caracter&iacute;sticas principales de MySQL y PostgreSQL.</h2>
+<p>Tanto MySQL como PostgreSQL son sistemas de gesti&oacute;n de bases de datos relacionales muy populares, pero tienen
+    caracter&iacute;sticas distintas que pueden hacer que uno sea m&aacute;s adecuado que el otro seg&uacute;n el
+    contexto de uso. Aqu&iacute; te detallo las caracter&iacute;sticas principales de cada uno:</p>
+<h3>MySQL:</h3>
+<p>MySQL es un sistema de gesti&oacute;n de bases de datos relacional (RDBMS) de c&oacute;digo abierto muy popular,
+    especialmente en aplicaciones web. Fue creado originalmente por la empresa sueca MySQL AB y actualmente es mantenido
+    por Oracle Corporation.</p>
+<p>Popularidad y Comunidad: MySQL es extremadamente popular, especialmente en entornos de alojamiento web, y es parte
+    del stack LAMP (Linux, Apache, MySQL, PHP/Python/Perl). Tiene una gran comunidad de desarrolladores y usuarios.</p>
+<p>Facilidad de Uso: Se conoce por su facilidad de instalaci&oacute;n y uso. MySQL es una opci&oacute;n preferida para
+    desarrolladores que no requieren operaciones de bases de datos complejas.</p>
+<p>Rendimiento y Escalabilidad: MySQL es muy r&aacute;pido en la lectura de datos, lo que lo hace ideal para
+    aplicaciones que no realizan muchas operaciones complejas de escritura o transacciones. Escala bien en sistemas con
+    altos vol&uacute;menes de lecturas y cargas ligeras de escritura.</p>
+<p>Replicaci&oacute;n y Alta Disponibilidad: MySQL ofrece varias opciones de replicaci&oacute;n (maestro-esclavo,
+    maestro-maestro) y soporta diferentes configuraciones para la alta disponibilidad.</p>
+<p>Seguridad: Incluye caracter&iacute;sticas robustas de seguridad como cifrado de datos, control de acceso basado en
+    roles y autenticaci&oacute;n de conexiones.</p>
+<p>Limitaciones en Transacciones: MySQL ha mejorado en soporte transaccional con InnoDB y otras engines de
+    almacenamiento, pero tradicionalmente ha tenido menos capacidades en este aspecto en comparaci&oacute;n con
+    PostgreSQL.</p>
+<h3>PostgreSQL:</h3>
+<p>PostgreSQL, tambi&eacute;n conocido como Postgres, es un sistema de gesti&oacute;n de bases de datos
+    relacional-objeto de c&oacute;digo abierto muy avanzado. Es conocido por su estabilidad, robustez, y cumplimiento de
+    est&aacute;ndares.</p>
+<p>Cumplimiento de Est&aacute;ndares SQL: Postgres es altamente conforme a los est&aacute;ndares SQL y a menudo
+    incorpora nuevas caracter&iacute;sticas del est&aacute;ndar SQL antes que otros RDBMS.</p>
+<p>Extensibilidad: PostgreSQL es altamente extensible. Los desarrolladores pueden crear y agregar sus propias funciones,
+    operadores y tipos de datos, as&iacute; como escribir c&oacute;digo en diferentes lenguajes de programaci&oacute;n
+    sin recompilar la base de datos.</p>
+<p>Soporte de Tipos de Datos Avanzados: Postgres soporta una gama m&aacute;s amplia de tipos de datos que MySQL,
+    incluyendo tipos geom&eacute;tricos, tipos de datos en red, y tipos de datos JSON de forma nativa.</p>
+<p>Caracter&iacute;sticas Transaccionales Avanzadas: PostgreSQL soporta transacciones con caracter&iacute;sticas
+    avanzadas como Atomicidad, Coherencia, Aislamiento, Durabilidad (ACID), y caracter&iacute;sticas adicionales como
+    transacciones con aislamiento serializable que realmente son serializables.</p>
+<p>Optimizado para Complejidad: Postgres maneja mejor las consultas complejas y operaciones de escritura intensiva, y es
+    conocido por su habilidad para gestionar grandes vol&uacute;menes de datos de manera eficiente.</p>
+<p>Concurrencia: Utiliza un modelo de concurrencia multiversi&oacute;n (MVCC) que mejora el rendimiento de las bases de
+    datos con m&uacute;ltiples usuarios, asegurando que las transacciones sean seguras y r&aacute;pidas.</p>
+<p>Extensi&oacute;n y Comunidad: Tiene un gran n&uacute;mero de extensiones disponibles y una comunidad activa que
+    contribuye constantemente con nuevas funcionalidades.</p>
+<h3>Conclusi&oacute;n</h3>
+<p>MySQL es generalmente m&aacute;s adecuado para aplicaciones web que requieren una soluci&oacute;n r&aacute;pida y
+    eficiente con una f&aacute;cil configuraci&oacute;n y mantenimiento. PostgreSQL es preferido para aplicaciones que
+    requieren operaciones transaccionales complejas y una excelente conformidad con los est&aacute;ndares SQL,
+    adem&aacute;s de un soporte extensivo para diferentes tipos de datos y operaciones avanzadas de base de datos. Ambas
+    bases de datos son robustas y tienen sus ventajas, por lo que la elecci&oacute;n depende de las necesidades
+    espec&iacute;ficas del proyecto.</p>
+<p>&nbsp;</p>

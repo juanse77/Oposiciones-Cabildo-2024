@@ -1,0 +1,155 @@
+Tema 5. Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas (LPACAP).
+
+5.1. Clases de interesados en el procedimiento. Representación. Identificación y firma de los interesados en
+el procedimiento administrativo.
+
+	Clases de interesados en el procedimiento administrativo
+		
+		La Ley 39/2015 distingue entre distintos tipos de interesados en un procedimiento administrativo. Según el artículo 4 de la ley, se consideran interesados:
+
+			- Quienes lo promuevan como titulares de derechos o intereses legítimos individuales o colectivos. Estas personas son aquellas que inician el procedimiento administrativo con el fin de proteger o hacer valer sus derechos o intereses.
+
+			- Los que, sin haber iniciado el procedimiento, tengan derechos que puedan resultar afectados por la decisión que en el mismo se adopte. Incluye a aquellos que no han iniciado el procedimiento pero cuyos derechos o intereses podrían verse perjudicados o beneficiados por el resultado del mismo.
+
+			- Aquellos cuyos intereses legítimos, individuales o colectivos, puedan resultar afectados por la resolución y se personen en el procedimiento en tanto no haya recaído resolución definitiva. Estas personas no han iniciado el procedimiento ni son necesariamente afectadas directamente por él desde el inicio, pero tienen intereses legítimos que pueden ser afectados y se incorporan al procedimiento antes de que se emita la resolución final.
+
+	Representación en el procedimiento administrativo
+		
+		El artículo 5 de la Ley 39/2015 regula la representación en los procedimientos administrativos:
+
+			Representación voluntaria:
+
+				Los interesados pueden actuar por medio de representante, ya sea una persona física o jurídica, siempre y cuando se acredite dicha representación. Para acreditar la representación, se pueden utilizar cualquier medio válido en Derecho que deje constancia fidedigna de su existencia. Esto incluye documentos notariales, poderes, etc. En los casos de procedimientos iniciados por personas jurídicas, se presume la validez de la representación de la persona física que firme, salvo prueba en contrario.
+
+			Representación obligatoria:
+
+				En ciertos procedimientos, la representación es obligatoria, como en el caso de menores o personas incapacitadas legalmente, quienes deberán ser representados por sus padres, tutores o representantes legales.
+
+	Identificación y firma de los interesados en el procedimiento administrativo:
+		
+		La identificación y firma de los interesados en los procedimientos administrativos está regulada en los artículos 9 y 10 de la Ley 39/2015:
+
+			Identificación de los interesados:
+
+				Los interesados deberán identificarse para realizar cualquier actuación ante las administraciones públicas. La identificación puede hacerse mediante el uso de DNI electrónico, certificados electrónicos reconocidos o cualificados, y cualquier otro sistema que las administraciones públicas consideren válido para asegurar la identidad del interesado.
+
+			Firma de los interesados:
+
+				La firma de los interesados es necesaria para la presentación de solicitudes, escritos y comunicaciones en los procedimientos administrativos. Se permite el uso de firma electrónica, que puede ser cualquiera de los sistemas reconocidos por la administración (firma electrónica avanzada, firma electrónica reconocida, entre otros). Las administraciones públicas deben establecer los medios y sistemas para que los interesados puedan firmar electrónicamente de manera segura y fiable.
+
+	Resumen:
+
+		En resumen, la Ley 39/2015 establece claramente las categorías de interesados en los procedimientos administrativos, así como las formas en que estos pueden actuar, ya sea directamente o mediante representación. Además, define los métodos válidos para la identificación y firma de los interesados, asegurando la autenticidad y la integridad de las actuaciones administrativas.
+
+5.2. Derechos de las personas en sus relaciones con las Administraciones Públicas. Derecho y obligación de
+relacionarse electrónicamente con las Administraciones Públicas. Registros.
+
+	Derechos de las personas en sus relaciones con las Administraciones Públicas:
+		
+		La Ley 39/2015 reconoce una serie de derechos a las personas en sus relaciones con las Administraciones Públicas. Según el artículo 13, los derechos son los siguientes:
+
+			- Derecho a comunicarse con las Administraciones Públicas a través de un Punto de Acceso General electrónico de la Administración: Las personas pueden acceder a todos los servicios y trámites de las administraciones públicas a través de un único punto de acceso electrónico.
+
+			- Derecho a ser asistidas en el uso de medios electrónicos en sus relaciones con las Administraciones Públicas: Las Administraciones Públicas deben prestar ayuda para la utilización de los medios electrónicos a aquellos que lo necesiten.
+
+			- Derecho a la protección de datos personales y confidencialidad: Las Administraciones Públicas están obligadas a garantizar la protección de los datos personales y la confidencialidad de la información.
+
+			- Derecho a conocer, en cualquier momento, el estado de la tramitación de los procedimientos en los que tengan la condición de interesados: Los interesados tienen derecho a acceder a la información sobre el estado de sus procedimientos, y a obtener copias de los documentos contenidos en ellos.
+
+			- Derecho a obtener copias electrónicas de los documentos administrativos: Las personas tienen derecho a obtener copias electrónicas de los documentos que formen parte de los procedimientos en los que tengan la condición de interesados.
+
+			- Derecho a no presentar documentos originales, salvo que excepcionalmente la normativa aplicable establezca lo contrario: En general, las personas no están obligadas a presentar documentos originales ante las Administraciones Públicas.
+
+			- Derecho a no presentar datos y documentos no exigidos por las normas aplicables al procedimiento de que se trate, que ya se encuentren en poder de las Administraciones Públicas: Las Administraciones Públicas deben evitar solicitar datos o documentos que ya obren en su poder.
+
+			- Derecho a formular alegaciones y a aportar documentos en cualquier fase del procedimiento anterior al trámite de audiencia: Los interesados pueden presentar alegaciones y aportar documentos en cualquier momento antes del trámite de audiencia.
+
+			- Derecho a obtener información y orientación acerca de los requisitos jurídicos o técnicos que las disposiciones vigentes impongan a los proyectos, actuaciones o solicitudes que se propongan realizar: Las Administraciones Públicas deben proporcionar información y orientación sobre los requisitos necesarios para llevar a cabo determinados proyectos o actuaciones.
+
+			- Derecho a actuar asistidos de asesor cuando lo consideren conveniente en el ejercicio de sus derechos y deberes: Los interesados pueden contar con la asistencia de un asesor en sus relaciones con las Administraciones Públicas.
+
+			- Derecho y obligación de relacionarse electrónicamente con las Administraciones Públicas
+La Ley 39/2015 establece el derecho y la obligación de relacionarse electrónicamente con las Administraciones Públicas, regulado en los artículos 14 y 16:
+
+			- Derecho a relacionarse electrónicamente: Las personas físicas pueden elegir si se relacionan con las Administraciones Públicas electrónicamente o no. Las personas jurídicas, entidades sin personalidad jurídica, quienes ejerzan una actividad profesional que requiera colegiación obligatoria y ciertos colectivos están obligados a relacionarse electrónicamente con las Administraciones Públicas.
+
+	Obligación de relacionarse electrónicamente:
+
+		Las personas jurídicas, entidades sin personalidad jurídica, quienes ejerzan una actividad profesional que requiera colegiación obligatoria, y los empleados de las Administraciones Públicas están obligados a relacionarse electrónicamente con las Administraciones Públicas.
+
+	Registros:
+		Los registros son un elemento fundamental en el funcionamiento de las Administraciones Públicas, regulados en el artículo 16 de la Ley 39/2015:
+
+		Registros electrónicos:
+
+			Las Administraciones Públicas deben disponer de un registro electrónico en el que se anotarán todos los documentos que se presenten o reciban, así como los que se emitan, para garantizar su constancia y validez.
+
+		Acceso a los registros electrónicos:
+
+			Los registros electrónicos deben ser accesibles de manera que permitan la presentación de documentos todos los días del año durante las 24 horas del día.
+		
+		Acuse de recibo:
+
+			Los registros electrónicos deben emitir automáticamente un recibo acreditativo de la presentación de documentos, indicando la fecha y hora en que se produjo la presentación, así como un número de registro.
+
+		Interoperabilidad:
+
+			Los registros electrónicos deben ser interoperables, es decir, deben poder intercambiar información y documentos con otros registros de las Administraciones Públicas.
+
+		Publicidad de los registros:
+
+			Las Administraciones Públicas deben garantizar la publicidad de sus registros, permitiendo a los interesados conocer el estado de tramitación de los procedimientos en los que tengan la condición de interesados.
+
+	Resumen:
+
+		En resumen, la Ley 39/2015 establece una serie de derechos para las personas en sus relaciones con las Administraciones Públicas, fomentando el uso de medios electrónicos y asegurando la protección de datos y la transparencia en los procedimientos. Además, regula la obligación de ciertos colectivos de relacionarse electrónicamente con las Administraciones Públicas y establece los requisitos y funcionamiento de los registros electrónicos para asegurar la constancia y validez de las actuaciones administrativas.
+
+5.3. Obligación de resolver. El silencio administrativo:
+	
+	Obligación de resolver:
+
+		La obligación de resolver está regulada en el artículo 21 de la Ley 39/2015 y establece que las Administraciones Públicas tienen la obligación de resolver expresamente y notificar en todos los procedimientos cualquiera que sea su forma de iniciación.
+
+		Plazos para resolver:
+
+			Los plazos para resolver y notificar se fijan en la normativa específica de cada procedimiento. Si no se establece un plazo específico, el plazo general es de tres meses. El plazo para resolver se computa desde la fecha en que el expediente esté completo. Si se requiere subsanar alguna deficiencia o aportar documentos, el plazo comenzará una vez se haya cumplido este requisito.
+
+		Interrupción del plazo:
+
+			El plazo para resolver puede ser interrumpido en algunos casos, como cuando se requiera la emisión de un informe preceptivo y determinante, o cuando se realicen actuaciones complementarias necesarias para la resolución del procedimiento.
+
+		Notificación:
+
+			La resolución debe ser notificada a los interesados en los términos previstos en la Ley 39/2015, garantizando que se les informe adecuadamente del contenido y alcance de la resolución.
+
+	Silencio administrativo:
+		
+		El silencio administrativo se regula en los artículos 24 y 25 de la Ley 39/2015 y se refiere a los efectos jurídicos que se producen cuando la Administración no resuelve expresamente dentro del plazo establecido.
+
+		Sentido del silencio administrativo:
+
+			Silencio administrativo positivo: Si el procedimiento ha sido iniciado a solicitud del interesado, la falta de resolución expresa en el plazo establecido se entenderá como estimación de la solicitud. Esto significa que el interesado obtiene una respuesta favorable a su petición.
+
+			Silencio administrativo negativo: Si el procedimiento ha sido iniciado de oficio, la falta de resolución expresa se entenderá como desestimación de la solicitud. Esto significa que el interesado no obtiene lo solicitado.
+
+		Excepciones al silencio positivo:
+
+			Existen excepciones en las que el silencio administrativo positivo no se aplica, tales como:
+				- Procedimientos que impliquen el ejercicio de actividades que puedan dañar el medio ambiente.
+
+				- Procedimientos relacionados con el acceso a actividades o su ejercicio, si está previsto por una norma con rango de Ley.
+
+				- Procedimientos de responsabilidad patrimonial de las Administraciones Públicas.
+Otros procedimientos expresamente excluidos por la normativa aplicable.
+
+		Efectos del silencio administrativo:
+
+			Los efectos del silencio administrativo se producen de manera automática una vez transcurrido el plazo máximo para resolver sin que la Administración haya dictado y notificado resolución expresa. La estimación o desestimación por silencio administrativo no exime a la Administración de su obligación de resolver expresamente.
+
+		Declaración de actos presuntos:
+
+			Los interesados pueden solicitar una certificación acreditativa del acto presunto que se ha producido por silencio administrativo. La Administración tiene la obligación de expedir esta certificación en el plazo de 15 días.
+
+	Resumen:
+
+		En resumen, la Ley 39/2015 establece claramente la obligación de las Administraciones Públicas de resolver expresamente y notificar en todos los procedimientos, especificando los plazos y condiciones para ello. Asimismo, regula el régimen del silencio administrativo, determinando los efectos jurídicos que se producen en caso de falta de resolución expresa dentro del plazo establecido, diferenciando entre silencio positivo y negativo, y estableciendo las excepciones a estas reglas.

@@ -1,0 +1,189 @@
+Tema 60. Nivel de servicio.
+
+60.1. Acuerdo de nivel de servicio (SLA).
+
+	Un Acuerdo de Nivel de Servicio (SLA, por sus siglas en inglés de Service Level Agreement) es un contrato o acuerdo formal entre un proveedor de servicios y un cliente que define los niveles de servicio esperados. Los SLAs se utilizan en diversas industrias, especialmente en el ámbito de la tecnología de la información (TI) y servicios en la nube, para establecer expectativas claras y gestionar la calidad del servicio proporcionado.
+
+	Elementos Clave de un SLA
+
+		- Descripción del Servicio: Define qué servicios se proporcionarán. Especifica el alcance, las características, y cualquier limitación del servicio.
+
+		- Niveles de Rendimiento: Detalla los estándares de rendimiento que el proveedor de servicios debe cumplir, tales como tiempo de respuesta, disponibilidad del sistema, tiempo de resolución de problemas, etc.
+
+		- Medidas de Rendimiento: Define cómo se medirán y monitorearán los niveles de servicio. Esto puede incluir métricas como el tiempo de actividad, tiempo medio de reparación (MTTR), tiempo medio entre fallas (MTBF), etc.
+
+		- Responsabilidades del Proveedor y del Cliente: Establece claramente las responsabilidades tanto del proveedor de servicios como del cliente. Por ejemplo, el proveedor es responsable de mantener la infraestructura, mientras que el cliente puede ser responsable de reportar problemas de manera oportuna.
+
+		- Gestión de Incidentes y Problemas: Describe los procesos para manejar incidentes y problemas, incluyendo los tiempos de respuesta y los procedimientos de escalamiento.
+
+		- Penalizaciones y Compensaciones: Define las penalizaciones que el proveedor de servicios enfrentará si no cumple con los niveles de servicio acordados. Esto puede incluir descuentos en tarifas, créditos de servicio, o incluso la terminación del contrato.
+
+		- Revisión y Actualización del SLA: Especifica la frecuencia con la que se revisará el SLA y los procedimientos para realizar cambios.
+
+		- Confidencialidad y Seguridad: Puede incluir cláusulas sobre la protección de datos y la seguridad de la información.
+
+	Importancia de los SLAs
+
+		- Establecen Expectativas Claras: Tanto el proveedor como el cliente tienen una comprensión clara de las expectativas de servicio.
+
+		- Mejoran la Calidad del Servicio: Al definir estándares claros de rendimiento, se fomenta la mejora continua.
+
+		- Gestión de Riesgos: Ayuda a mitigar riesgos al proporcionar un marco para manejar problemas y fallas en el servicio.
+
+		- Construyen Confianza: Al proporcionar transparencia en los servicios y en cómo se gestionarán los problemas, los SLAs ayudan a construir confianza entre las partes.
+
+		- Los SLAs son fundamentales para garantizar que las partes tengan expectativas claras y un entendimiento común del servicio proporcionado y de cómo se gestionarán los problemas o fallos que puedan ocurrir.
+
+60.2. Indicadores de nivel de servicio (SLI).
+
+	Los Indicadores de Nivel de Servicio (SLI, por sus siglas en inglés de Service Level Indicators) son métricas específicas utilizadas para medir el rendimiento real de un servicio en comparación con los niveles de servicio establecidos en un Acuerdo de Nivel de Servicio (SLA). Los SLIs son fundamentales para evaluar si se están cumpliendo los compromisos de servicio y para identificar áreas que requieren mejoras.
+
+	Principales Indicadores de Nivel de Servicio (SLIs)
+
+		Los SLIs se eligen en función del tipo de servicio proporcionado y los objetivos del acuerdo. A continuación, se presentan algunos de los SLIs más comunes utilizados en diferentes industrias:
+
+		- Disponibilidad (Uptime)
+
+			Mide el tiempo que un servicio está operativo y accesible para los usuarios.
+Suele expresarse como un porcentaje. Por ejemplo, una disponibilidad del 99.9% indica que el sistema estuvo operativo el 99.9% del tiempo en un período específico.
+
+		- Tiempo de Respuesta
+
+			Mide el tiempo que tarda el sistema en responder a una solicitud del usuario.
+
+			Es una métrica crítica para aplicaciones en tiempo real o servicios en línea que requieren respuestas rápidas.
+
+		- Tiempo Medio de Resolución (MTTR - Mean Time to Resolve)
+
+			Calcula el tiempo promedio que se necesita para resolver un problema o incidencia después de ser detectado.
+
+			Es un indicador clave de la eficiencia del soporte técnico y la gestión de incidentes.
+
+		- Tiempo Medio Entre Fallos (MTBF - Mean Time Between Failures)
+
+			Mide el tiempo promedio entre la ocurrencia de fallos o interrupciones del servicio.
+
+			Ayuda a evaluar la fiabilidad del sistema o infraestructura.
+
+		- Tasa de Error (Error Rate)
+
+			Mide la frecuencia de errores o fallos en un servicio o aplicación.
+
+			Puede expresarse como el número de errores por minuto, hora, día, o como un porcentaje de las solicitudes totales.
+
+		- Tasa de Éxito de las Transacciones
+
+			Mide el porcentaje de transacciones o solicitudes que se completan con éxito en un servicio.
+
+			Es crucial para servicios financieros, e-commerce, o cualquier plataforma donde las transacciones sean esenciales.
+
+		- Latencia
+
+			Mide el tiempo que tarda un paquete de datos en viajar desde el origen al destino.
+
+			Es un indicador clave para aplicaciones de redes y servicios que requieren comunicaciones en tiempo real, como videollamadas o juegos en línea.
+
+		- Ratio de Satisfacción del Usuario
+
+			Se mide a través de encuestas, valoraciones, o indicadores de experiencia del usuario (UX).
+
+			Proporciona una visión cualitativa del rendimiento del servicio desde la perspectiva del usuario.
+
+		- Uso de Recursos
+
+			Mide el uso de recursos del sistema, como CPU, memoria, ancho de banda, etc.
+Es importante para optimizar el rendimiento del sistema y prever la necesidad de escalado.
+
+		- Tiempo de Recuperación del Servicio
+
+			Mide el tiempo que se tarda en recuperar el servicio después de una interrupción.
+
+			Es un indicador clave en planes de recuperación ante desastres y continuidad del negocio.
+
+	Importancia de los SLIs
+
+		- Medición Objetiva del Rendimiento: Los SLIs proporcionan una base cuantitativa para medir el rendimiento real de un servicio.
+
+		- Monitoreo Proactivo: Ayudan a identificar problemas antes de que afecten significativamente a los usuarios.
+
+		- Mejora Continua: Permiten a las organizaciones identificar áreas de mejora y optimizar los procesos y recursos.
+
+		- Cumplimiento de SLA: Aseguran que los niveles de servicio acordados en los SLA se están cumpliendo o, en su defecto, ayudan a tomar acciones correctivas.
+
+	Selección de SLIs Adecuados
+
+		Es fundamental elegir los SLIs que mejor representen los objetivos de negocio y que sean relevantes para los usuarios del servicio. La selección de SLIs debe alinearse con los acuerdos de nivel de servicio (SLAs) y con los objetivos generales de calidad y experiencia del cliente.
+
+60.3. Objetivos de nivel de servicio (SLO).
+
+	Los Objetivos de Nivel de Servicio (SLO, por sus siglas en inglés de Service Level Objectives) son metas específicas y medibles que definen el nivel de servicio que se espera alcanzar para un determinado indicador de nivel de servicio (SLI). Los SLO son una parte fundamental de un Acuerdo de Nivel de Servicio (SLA), ya que establecen los criterios precisos que determinan si un servicio cumple con las expectativas del cliente o del usuario final.
+
+	Características de los SLO
+
+		- Específicos y Medibles: Los SLO deben ser claros, específicos y cuantificables. Por ejemplo, "una disponibilidad del 99.9% mensual" es un SLO claro y medible.
+
+		- Basados en SLIs: Los SLO siempre se definen en términos de SLIs (Indicadores de Nivel de Servicio). Un SLI mide un aspecto del servicio (como la disponibilidad), y el SLO define cuál es la meta que se debe alcanzar para ese SLI.
+
+		- Enfocados en el Usuario o Cliente: Los SLO deben alinearse con las expectativas del cliente y el impacto del servicio en el usuario final.
+
+		- Tiempo Definido: Los SLO tienen un período de tiempo específico durante el cual se deben alcanzar los objetivos, como semanal, mensual o trimestral.
+
+	Ejemplos Comunes de SLO
+
+		- Disponibilidad del Servicio
+
+			SLO: "El servicio debe tener una disponibilidad del 99.9% durante cada mes."
+			SLI asociado: Porcentaje de tiempo en que el servicio está operativo y accesible.
+
+		- Tiempo de Respuesta del Sistema
+
+			SLO: "El tiempo de respuesta promedio del sistema debe ser inferior a 200 milisegundos para el 95% de las solicitudes durante cada día."
+			SLI asociado: Tiempo medio de respuesta del sistema para solicitudes de usuario.
+
+		- Tiempo Medio de Resolución (MTTR)
+
+			SLO: "Los incidentes deben resolverse en un tiempo medio de 4 horas o menos durante cada mes."
+			SLI asociado: Tiempo promedio que se tarda en resolver un incidente desde su detección.
+
+		- Tasa de Error
+
+			SLO: "La tasa de error debe ser inferior al 0.1% de todas las transacciones en cada mes."
+			SLI asociado: Número de transacciones fallidas en comparación con el total de transacciones.
+
+		- Latencia de la Red
+
+			SLO: "La latencia de la red debe ser inferior a 100 milisegundos en el 99% del tiempo durante cada semana."
+			SLI asociado: Tiempo de ida y vuelta de paquetes de datos a través de la red.
+
+		- Tiempo de Recuperación del Servicio
+
+			SLO: "El tiempo de recuperación después de una interrupción no debe superar los 30 minutos en un 95% de los casos durante cada trimestre."
+
+			SLI asociado: Tiempo medio de recuperación del servicio tras una caída.
+
+		- Uso de Recursos
+
+			SLO: "El uso del CPU no debe superar el 75% de media durante cada mes."
+			SLI asociado: Porcentaje medio de uso del CPU del sistema.
+
+	Importancia de los SLO
+
+		Establecimiento de Expectativas Claras: Ayudan a definir qué niveles de servicio son aceptables para el proveedor y el cliente, proporcionando un marco claro de expectativas.
+
+		Facilitación del Monitoreo y la Mejora: Los SLO proporcionan objetivos claros que las organizaciones pueden monitorear continuamente para identificar áreas de mejora.
+
+		Gestión de la Calidad del Servicio: Permiten la priorización de recursos y esfuerzos para mantener o mejorar los niveles de servicio.
+
+		Comunicación y Transparencia: Proporcionan una base para discusiones abiertas y honestas entre los proveedores de servicios y sus clientes.
+
+	Cómo Establecer SLO Efectivos
+
+		Entender las Necesidades del Cliente: Los SLO deben basarse en lo que realmente importa para el cliente o usuario final.
+
+		Alinear con los Objetivos del Negocio: Se debe asegurar que los SLO sean relevantes para los objetivos de negocio de la organización.
+
+		Realistas y Alcanzables: Se debe evitar establecer SLO demasiado ambiciosos que no sean realistas de cumplir; esto podría conducir a frustración tanto para el equipo como para el cliente.
+
+		Revisión y Ajuste Periódico: Los SLO deben revisarse regularmente y ajustarse según sea necesario en función de cambios en el negocio, el entorno tecnológico, o las expectativas del cliente.
+
+		Los SLO son esenciales para gestionar y garantizar la calidad de los servicios proporcionados, ya que ofrecen una métrica clara y un objetivo contra el cual se puede medir el rendimiento y tomar decisiones proactivas.

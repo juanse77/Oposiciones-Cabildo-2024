@@ -1,0 +1,121 @@
+Tema 27. Administración de Bases de Datos Oracle.
+
+27.1. Arquitectura, lógica y física.
+
+	La arquitectura de Oracle Database se puede dividir en dos partes principales: la arquitectura física y la arquitectura lógica. Estas arquitecturas definen cómo los datos son almacenados, organizados y manejados en un sistema de bases de datos Oracle.
+
+	Arquitectura Física
+
+		La arquitectura física se refiere a la estructura de los archivos físicos y hardware que almacenan los datos y manejan las operaciones de la base de datos. Los componentes principales incluyen:
+
+			- Archivos de Datos: Estos son archivos en el sistema de archivos del sistema operativo que almacenan los datos reales de la base de datos. Cada archivo de datos pertenece a un tablespace específico.
+
+			- Archivos de Redo Log: Estos archivos almacenan todas las transacciones realizadas en la base de datos. Son cruciales para la recuperación de datos en caso de un fallo del sistema. Oracle utiliza un mecanismo llamado "redo log buffering" para minimizar la latencia de las operaciones de escritura en disco.
+
+			- Archivo de Control: Contiene metadatos sobre la base de datos, como la estructura de los archivos de datos y redo log. Oracle utiliza estos archivos para mantener la coherencia y el estado de la base de datos.
+
+			- Archivos de Parámetros: Almacenan configuraciones que Oracle necesita para funcionar correctamente, incluyendo parámetros que afectan al comportamiento y rendimiento de la base de datos.
+
+			- Archivo SPFILE: Un archivo especial que almacena parámetros que se cargan automáticamente al arrancar la instancia de la base de datos.
+
+	Arquitectura Lógica
+
+		La arquitectura lógica se refiere a la estructura de los datos tal como los ve el usuario, sin considerar cómo están almacenados físicamente. Los componentes principales incluyen:
+
+			- Instancia: Una instancia Oracle es un conjunto de estructuras de memoria y procesos de fondo que gestionan las operaciones de la base de datos. La instancia incluye el SGA (System Global Area) y procesos como el PMON (Process Monitor) y SMON (System Monitor).
+
+			- SGA (System Global Area): Es un área de memoria compartida que contiene datos e información de control que son necesarios por la instancia de base de datos para funcionar.
+
+			- PGA (Program Global Area): Un área de memoria no compartida que es usada por los procesos de base de datos para almacenar datos y controlar la información durante la ejecución de las sesiones de usuario.
+
+			- Tablespaces: Un tablespace es una unidad lógica de almacenamiento en Oracle, donde las estructuras lógicas de almacenamiento como tablas e índices son almacenadas.
+
+			- Data Dictionary: Una colección de tablas y vistas que contienen información sobre los objetos de la base de datos. El diccionario de datos es crucial para el funcionamiento interno de Oracle.
+
+	Esta división entre la arquitectura física y lógica permite que Oracle maneje eficientemente los datos, optimizando tanto el almacenamiento como la recuperación, y ofreciendo robustas opciones de recuperación y tuning.
+
+27.2. Gestión de almacenamiento.
+
+	La gestión de almacenamiento en Oracle es un aspecto fundamental para asegurar el rendimiento, la escalabilidad y la eficiencia de la base de datos. Oracle proporciona varias herramientas y técnicas para gestionar el almacenamiento de datos de manera eficiente. Estas se pueden clasificar en dos categorías principales: gestión de almacenamiento lógico y gestión de almacenamiento físico.
+
+	Gestión de Almacenamiento Lógico:
+
+		La gestión lógica se centra en cómo los datos son organizados y manejados dentro de la base de datos desde una perspectiva lógica:
+
+			- Tablespaces: Un tablespace es una unidad lógica de almacenamiento que agrupa estructuras lógicas relacionadas como tablas, índices y otros objetos. Los tablespaces permiten a los administradores de bases de datos asignar y controlar el espacio en disco de manera más eficaz.
+
+			- Tablespaces de Usuario y de Sistema: Oracle distingue entre tablespaces para almacenamiento de datos del usuario y tablespaces del sistema que almacenan datos críticos para el funcionamiento de la base de datos.
+
+			- Tablespaces Temporales: Utilizados para operaciones de clasificación y otras operaciones temporales.
+
+			- Segmentos: Dentro de los tablespaces, los datos se almacenan en segmentos. Cada tabla, cada índice y cada gran objeto (LOB) tiene su propio segmento.
+
+			- Extensiones: Cada segmento está compuesto de una o más extensiones. Una extensión es un conjunto específico de bloques contiguos en disco asignados a un segmento.
+
+			- Bloques de Datos: La unidad más pequeña de almacenamiento en Oracle. Los datos efectivamente se almacenan en bloques.
+
+	Gestión de Almacenamiento Físico
+
+		Esta gestión se ocupa de cómo los datos son físicamente almacenados en los dispositivos de almacenamiento:
+
+			- Archivos de Datos: Los archivos físicos en el sistema operativo donde se almacenan los tablespaces. Un tablespace puede abarcar uno o varios archivos de datos.
+
+			- Archivos de Redo Log: Archivos vitales para la recuperación de la base de datos, que registran todas las transacciones realizadas.
+
+			- Archivos de Control: Mantienen un registro del estado físico de la base de datos y son esenciales para su operación y recuperación.
+
+	Características y Herramientas de Gestión
+
+		Oracle Managed Files (OMF): Simplifica la gestión de los archivos de datos y redo log permitiendo que Oracle maneje automáticamente la creación, nombramiento y eliminación de archivos.
+
+		Automatic Storage Management (ASM): Proporciona una solución de administración de volúmenes y archivos integrada que simplifica la configuración y el manejo del almacenamiento de bases de datos.
+
+		Automatic Segment Space Management (ASSM): Mejora el rendimiento de las transacciones y la eficiencia del espacio al gestionar automáticamente el espacio libre dentro de los segmentos.
+
+		Transportable Tablespaces: Permite mover tablespaces entre bases de datos, lo que facilita la migración y recuperación de datos.
+
+		Data Pump y RMAN: Herramientas para la exportación, importación, respaldo y recuperación de datos que permiten una gestión eficiente del almacenamiento de datos.
+
+		Oracle ha optimizado estas características para ofrecer un alto rendimiento y confiabilidad en la gestión de datos, facilitando a las empresas grandes y pequeñas el manejo de vastas cantidades de información de manera efectiva y segura.
+
+27.3. Procesos de background de Oracle.
+
+	Los procesos de fondo de Oracle son esenciales para el funcionamiento de la base de datos, ya que realizan tareas críticas que ayudan a mantener la integridad de la base de datos, optimizar el rendimiento y garantizar la coherencia de los datos. Estos procesos son creados cuando se inicia una instancia de Oracle y operan de manera transparente para los usuarios. A continuación, te detallo algunos de los procesos de fondo más importantes en Oracle:
+
+	1. Database Writer (DBWn)
+		
+		El proceso Database Writer escribe los bloques modificados (dirty blocks) desde el buffer cache de la base de datos a los archivos de datos en disco. Oracle puede tener múltiples procesos de escritura de base de datos (por ejemplo, DBW0, DBW1) para mejorar el rendimiento en sistemas de alto tráfico.
+
+	2. Log Writer (LGWR)
+
+		El proceso Log Writer es responsable de escribir los registros de redo log desde el redo log buffer al archivo de redo log en disco. Esto es crucial para la recuperación de la base de datos ya que asegura que todas las transacciones confirmadas puedan ser recuperadas en caso de un fallo del sistema.
+
+	3. Checkpoint (CKPT)
+
+		El proceso de checkpoint actualiza el archivo de control y los archivos de datos para reflejar el punto hasta el cual los datos han sido escritos en disco. Esto ayuda a reducir la cantidad de trabajo necesario para la recuperación en caso de fallo y asegura que los archivos de redo logs puedan ser reutilizados.
+
+	4. System Monitor (SMON)
+
+		El System Monitor realiza una variedad de tareas de mantenimiento críticas, incluyendo la recuperación de instancias después de fallos, limpiando temporalmente segmentos que ya no se utilizan, y combinando espacios libres contiguos en el tablespace.
+
+	5. Process Monitor (PMON)
+
+		El Process Monitor recupera recursos que fueron asignados a procesos de usuario que han fallado o terminado abruptamente. Esto incluye limpiar la caché y liberar los locks de la base de datos.
+
+	6. Archiver (ARCn)
+
+		Cuando el archivado de logs está habilitado, el proceso Archiver copia los redo logs llenos al almacenamiento de archivo para asegurar que los datos puedan ser recuperados después de una pérdida de datos. Esto es esencial para las estrategias de backup y recuperación.
+
+	7. Recoverer (RECO)
+
+		El proceso Recoverer se utiliza en configuraciones de bases de datos distribuidas y ayuda a resolver fallos de transacciones distribuidas que están pendientes debido a un fallo de sistema.
+
+	8. Job Queue Processes (CJQ0 y otros)
+
+		Estos procesos manejan tareas programadas dentro de la base de datos Oracle. Ejecutan trabajos que han sido definidos y programados para la automatización de tareas administrativas o de aplicación.
+
+	9. Manageability Monitor Processes (MMON y MMNL)
+
+		Estos procesos apoyan la recolección de estadísticas de rendimiento y alertas de monitorización. MMON recopila datos de rendimiento y ayuda con las tareas de AWR (Automatic Workload Repository), mientras que MMNL maneja las métricas de menor granularidad.
+
+	Estos procesos de fondo son fundamentales para el rendimiento eficiente y la administración de una base de datos Oracle, permitiendo operaciones complejas y de alta demanda a realizarse de manera fluida y confiable.

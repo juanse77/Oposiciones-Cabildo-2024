@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 13 - Componentes de los sistemas de información</title>
+</head>
+
+<body>
+    <h1>Tema 13. Componentes de los sistemas de información.</h1>
+
+    <h2>13.1. Características de las arquitecturas cliente-servidor y multi-capa.</h2>
+
+    <h2>Arquitectura Cliente-Servidor</h2>
+
+    <h3>Características:</h3>
+
+    <h4>Distribución de Funciones:</h4>
+
+    <p>El modelo cliente-servidor se divide principalmente en dos entidades: el cliente y el servidor. El cliente
+        realiza solicitudes de servicios o recursos al servidor, que a su vez procesa esas solicitudes y envía una
+        respuesta.</p>
+
+    <h4>Independencia de Componentes:</h4>
+
+    <p>Los clientes y servidores son componentes independientes que pueden actualizarse, reemplazarse o ampliarse sin
+        afectar al otro, siempre que se mantengan las interfaces de comunicación.</p>
+
+    <h4>Centralización del Servidor:</h4>
+
+    <p>El servidor centraliza la lógica de la aplicación, la base de datos o los recursos compartidos, y gestiona el
+        acceso de múltiples clientes a estos recursos.</p>
+
+    <h4>Escalabilidad:</h4>
+
+    <p>Es relativamente fácil de escalar horizontalmente (añadiendo más servidores) para manejar un mayor número de
+        solicitudes de clientes.</p>
+
+    <h4>Seguridad:</h4>
+
+    <p>La seguridad puede ser gestionada de manera centralizada en el servidor, lo que facilita el control de acceso y
+        la protección de datos.</p>
+
+    <h4>Conexión y Comunicación:</h4>
+
+    <p>La comunicación entre el cliente y el servidor generalmente se realiza a través de redes usando protocolos
+        estándar como HTTP, FTP, o TCP/IP.</p>
+
+    <h2>Arquitectura Multi-Capa:</h2>
+
+    <h3>Características:</h3>
+
+    <h4>Capas Separadas:</h4>
+
+    <p>Una arquitectura multi-capa divide el sistema en varias capas lógicas o físicas, cada una con responsabilidades
+        específicas. Las capas típicas son: capa de presentación (interfaz de usuario), capa de lógica de negocio y capa
+        de acceso a datos.</p>
+
+    <h4>Modularidad:</h4>
+
+    <p>Cada capa es modular y puede ser desarrollada, mantenida y reemplazada independientemente, lo que facilita la
+        reutilización de componentes y la actualización del sistema.</p>
+
+    <h4>Mantenimiento y Evolución:</h4>
+
+    <p>Al estar organizado en capas, el mantenimiento del sistema es más sencillo ya que los cambios en una capa no
+        afectan directamente a las otras. Esto hace que sea más fácil evolucionar y escalar la aplicación.</p>
+
+    <h4>Distribución de la Carga:</h4>
+
+    <p>En una arquitectura distribuida, cada capa puede estar en un servidor diferente, lo que permite distribuir la
+        carga de trabajo y mejorar el rendimiento del sistema.</p>
+
+    <h4>Seguridad:</h4>
+
+    <p>La seguridad se puede gestionar de forma más detallada, implementando controles específicos en cada capa, como
+        autenticación en la capa de presentación y validación de datos en la capa de negocio.</p>
+
+    <h4>Interoperabilidad y Flexibilidad:</h4>
+
+    <p>Las capas interactúan entre sí a través de interfaces definidas, lo que permite una mayor flexibilidad en la
+        integración de tecnologías y la interoperabilidad con otros sistemas.</p>
+
+    <h3>Comparación y Usos:</h3>
+
+    <p>Cliente-Servidor es más sencillo y es adecuado para aplicaciones donde se necesita un enfoque directo para la
+        interacción entre usuarios y servicios, como aplicaciones web básicas o sistemas de bases de datos
+        centralizados.</p>
+
+    <p>Multi-Capa es más complejo y se usa en aplicaciones más grandes y con mayores necesidades de escalabilidad,
+        mantenimiento, y donde la separación de responsabilidades es crucial, como sistemas empresariales o aplicaciones
+        web a gran escala.</p>
+
+    <p>Cada arquitectura tiene sus propios beneficios y se elige según las necesidades específicas del proyecto, el
+        entorno de desarrollo y las expectativas de crecimiento del sistema.</p>
+
+    <h2>13.2. Sistemas Scale-out.</h2>
+
+    <h4>Definición:</h4>
+
+    <p>Scale-out se refiere a la capacidad de aumentar la capacidad de un sistema agregando más nodos o unidades
+        (servidores, discos, etc.) al sistema existente en lugar de mejorar o sustituir los componentes individuales
+        (como sucede en el enfoque scale-up).</p>
+
+    <h4>Características Principales:</h4>
+
+    <h4>Escalabilidad Horizontal:</h4>
+
+    <p>Los sistemas scale-out escalan horizontalmente, lo que significa que se agrega más hardware (servidores,
+        almacenamiento, etc.) para manejar el incremento de carga, sin la necesidad de reemplazar o actualizar los
+        equipos existentes.</p>
+
+    <h4>Alta Disponibilidad y Redundancia:</h4>
+
+    <p>Debido a que el sistema se distribuye a través de múltiples nodos, es inherentemente más resistente a fallos. Si
+        un nodo falla, los otros nodos pueden continuar operando, proporcionando alta disponibilidad.</p>
+
+    <h4>Costo Eficiente:</h4>
+
+    <p>Agregar nodos más pequeños y económicos para aumentar la capacidad suele ser más rentable que actualizar a un
+        único nodo más grande y caro.</p>
+
+    <h4>Flexibilidad:</h4>
+
+    <p>Los sistemas scale-out permiten agregar capacidad en función de las necesidades, lo que proporciona una gran
+        flexibilidad para responder a incrementos en la demanda o en los datos que se manejan.</p>
+
+    <h3>Sistemas Distribuidos:</h3>
+
+    <p>Este enfoque es común en sistemas distribuidos donde múltiples servidores trabajan juntos para proporcionar un
+        servicio único y cohesivo, como en el caso de bases de datos distribuidas, sistemas de archivos distribuidos
+        (ej. Hadoop HDFS), y servicios en la nube.</p>
+
+    <h4>Equilibrio de Carga:</h4>
+
+    <p>En un sistema scale-out, la carga se distribuye entre todos los nodos, lo que permite un mejor uso de los
+        recursos disponibles y puede mejorar el rendimiento general del sistema.</p>
+
+    <h4>Descentralización:</h4>
+
+    <p>A menudo, los sistemas scale-out son descentralizados, lo que significa que no dependen de un único punto de
+        control o fallo. Cada nodo funciona de manera semi-independiente o completamente independiente en algunos
+        diseños.</p>
+
+    <h4>Capacidad de Crecimiento Ilimitado:</h4>
+
+    <p>En teoría, un sistema scale-out puede crecer indefinidamente agregando más nodos. En la práctica, existen
+        limitaciones como la complejidad de la administración, pero el diseño scale-out es mucho más flexible para
+        crecer que los sistemas scale-up.</p>
+
+    <h4>Aplicaciones Comunes:</h4>
+
+    <p>Almacenamiento Distribuido: Usado en sistemas como Ceph o Amazon S3, donde se necesita almacenar grandes
+        cantidades de datos y acceder a ellos desde múltiples ubicaciones.</p>
+
+    <p>Bases de Datos NoSQL: Sistemas como Cassandra o MongoDB que pueden manejar grandes volúmenes de datos
+        distribuyendo la carga a través de varios servidores.</p>
+
+    <p>Servidores Web: Infraestructuras de servidores web que distribuyen el tráfico entre varios servidores utilizando
+        técnicas como el balanceo de carga.</p>
+
+    <p>Computación en la Nube: Las plataformas de nube como AWS, Google Cloud y Microsoft Azure utilizan arquitecturas
+        scale-out para proporcionar servicios de computación escalables.</p>
+
+    <h4>Ventajas y Desafíos:</h4>
+
+    <h4>Ventajas:</h4>
+
+    <p>- Costo-beneficio: Agregar nodos más pequeños es más económico que actualizar un único nodo.</p>
+    <p>- Flexibilidad y Adaptabilidad: Facilita responder rápidamente a cambios en la demanda.</p>
+    <p>- Resiliencia y Tolerancia a Fallos: Menor riesgo de fallos catastróficos debido a la distribución de la carga.
+    </p>
+
+    <h4>Desafíos:</h4>
+
+    <p>- Complejidad de Gestión: A medida que se agregan más nodos, la complejidad para administrar y coordinar los
+        recursos aumenta.</p>
+    <p>- Consistencia de Datos: Mantener la consistencia de datos en un sistema distribuido puede ser complejo,
+        especialmente en entornos con alta concurrencia.</p>
+    <p>- Latencia: La latencia puede aumentar si los nodos están geográficamente dispersos.</p>
+
+    <p>Los sistemas scale-out son ideales para organizaciones que necesitan escalabilidad, flexibilidad y resiliencia en
+        su infraestructura tecnológica, especialmente en un entorno de datos o tráfico en constante crecimiento.</p>
+
+    <h2>13.3. Sistemas de alta disponibilidad.</h2>
+
+    <h3>Características de los Sistemas de Alta Disponibilidad:</h3>
+
+    <h4>Redundancia:</h4>
+
+    <p>La redundancia es clave en un sistema de alta disponibilidad. Esto implica tener componentes duplicados o incluso
+        triplicados (servidores, bases de datos, redes) para que si un componente falla, otro pueda tomar su lugar sin
+        interrumpir el servicio.</p>
+
+    <h4>Balanceo de Carga:</h4>
+
+    <p>Se utilizan balanceadores de carga para distribuir el tráfico y las solicitudes entre múltiples servidores. Esto
+        no solo mejora el rendimiento, sino que también asegura que si un servidor falla, el tráfico puede ser
+        redirigido a otros servidores activos.</p>
+
+    <h4>Failover y Switchover:</h4>
+
+    <p>Failover se refiere al proceso automático de transferir la carga de trabajo de un sistema fallido a un sistema de
+        respaldo. Switchover es similar, pero se hace manualmente o bajo control supervisado, generalmente usado en
+        mantenimiento planificado.</p>
+
+    <h4>Monitoreo y Detección de Fallos:</h4>
+
+    <p>Los sistemas de alta disponibilidad incluyen herramientas de monitoreo continuo que detectan fallos o degradación
+        en los componentes del sistema. Estos sistemas pueden alertar a los administradores o activar procesos
+        automáticos de failover.</p>
+
+    <h4>Replicación de Datos:</h4>
+
+    <p>La replicación de datos es esencial para asegurar que todos los nodos de respaldo tengan la información más
+        reciente. Esto puede hacerse de manera sincrónica (con confirmación inmediata entre réplicas) o asincrónica (con
+        un retraso aceptable).</p>
+
+    <h4>Mantenimiento y Actualización sin Interrupción:</h4>
+
+    <p>Los sistemas de alta disponibilidad están diseñados para permitir actualizaciones de software o mantenimiento del
+        hardware sin detener el servicio. Esto se logra mediante técnicas como el balanceo de carga y la replicación de
+        datos.</p>
+
+    <h4>Tolerancia a Fallos:</h4>
+
+    <p>A través de la redundancia y la replicación, los sistemas de alta disponibilidad pueden continuar operando
+        incluso en situaciones donde hay fallos parciales en la infraestructura.</p>
+
+    <h4>Escalabilidad:</h4>
+
+    <p>Muchos sistemas de alta disponibilidad están diseñados para ser escalables, permitiendo agregar más recursos para
+        manejar aumentos en la demanda sin comprometer la disponibilidad.</p>
+
+    <h4>Implementación de Sistemas de Alta Disponibilidad:</h4>
+
+    <h4>Clústeres de Alta Disponibilidad:</h4>
+
+    <p>Un clúster de alta disponibilidad es un grupo de servidores que trabajan juntos para asegurar que si uno falla,
+        otro asuma su carga. Esto es común en bases de datos, servidores de aplicaciones, y servicios críticos.</p>
+
+    <h4>Sistemas Distribuidos:</h4>
+
+    <p>En un sistema distribuido de alta disponibilidad, las tareas y datos se distribuyen entre varios nodos. Ejemplos
+        incluyen sistemas de archivos distribuidos y bases de datos distribuidas, como Cassandra o MongoDB.</p>
+
+    <h4>Almacenamiento Redundante:</h4>
+
+    <p>Las soluciones de almacenamiento, como RAID (Redundant Array of Independent Disks) o sistemas de almacenamiento
+        distribuidos, también juegan un papel en la alta disponibilidad al proteger contra la pérdida de datos en caso
+        de fallo de disco.</p>
+
+    <h4>Planes de Recuperación ante Desastres (DR):</h4>
+
+    <p>Los sistemas de alta disponibilidad a menudo incluyen un plan de recuperación ante desastres, que es una
+        estrategia para recuperar datos y restaurar operaciones después de un fallo catastrófico.</p>
+
+    <h4>Ejemplos y Usos:</h4>
+
+    <h4>Servicios Financieros:</h4>
+
+    <p>Bancos y sistemas de pago en línea utilizan alta disponibilidad para asegurar que las transacciones puedan
+        completarse en cualquier momento sin interrupciones.</p>
+
+    <h4>Telecomunicaciones:</h4>
+
+    <p>Las redes telefónicas y de internet dependen de sistemas de alta disponibilidad para asegurar que los servicios
+        de comunicación estén siempre disponibles.</p>
+
+    <h4>Comercio Electrónico:</h4>
+
+    <p>Las plataformas de comercio electrónico necesitan alta disponibilidad para manejar transacciones y accesos
+        constantes de usuarios de todo el mundo.</p>
+
+    <h4>Desafíos de los Sistemas de Alta Disponibilidad:</h4>
+
+    <h4>Costo:</h4>
+
+    <p>Implementar y mantener sistemas de alta disponibilidad puede ser costoso debido a la necesidad de hardware y
+        software redundantes y personal especializado para su mantenimiento.</p>
+
+    <h4>Complejidad:</h4>
+
+    <p>La administración y configuración de estos sistemas puede ser compleja, ya que requiere monitoreo constante,
+        actualización y manejo de posibles fallos.</p>
+
+    <h4>Consistencia de Datos:</h4>
+
+    <p>Asegurar la consistencia de los datos entre nodos redundantes es un reto, especialmente en sistemas distribuidos.
+    </p>
+    <p>Los sistemas de alta disponibilidad son fundamentales para cualquier organización que necesite garantizar que sus
+        servicios estén disponibles sin interrupciones, brindando confiabilidad y confianza tanto a usuarios internos
+        como externos.</p>
+
+</body>
+
+</html>

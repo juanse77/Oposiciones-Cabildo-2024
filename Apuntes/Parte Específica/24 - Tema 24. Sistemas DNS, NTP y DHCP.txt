@@ -1,0 +1,211 @@
+Tema 24. Sistemas DNS, NTP y DHCP.
+
+24.1. Sistema de nombres de dominio (DNS y SNSSEC). BIND.
+
+	Sistema de Nombres de Dominio (DNS)
+
+		El Sistema de Nombres de Dominio (DNS) es un sistema jerárquico y descentralizado que permite la resolución de nombres en la red. Su principal función es traducir nombres de dominio legibles por humanos (como www.ejemplo.com) en direcciones IP (como 192.0.2.1) que las computadoras utilizan para identificar ubicaciones en la red.
+
+	Funcionamiento del DNS:
+
+		Consulta Recursiva: Cuando un usuario quiere acceder a www.ejemplo.com, su computadora realiza una consulta recursiva a un servidor DNS local, que a su vez puede realizar múltiples consultas a otros servidores DNS hasta resolver el nombre de dominio en una dirección IP.
+
+	Servidores DNS:
+
+		- Servidores Raíz: Son el nivel superior en la jerarquía del DNS. Contienen información sobre los servidores de nombres de dominio de nivel superior (como .com, .org, etc.).
+
+		- Servidores TLD (Top-Level Domain): Son responsables de un dominio de nivel superior específico, como .com, .net, etc.
+
+		- Servidores Autoritativos: Contienen la información de mapeo específica de dominios, por ejemplo, www.ejemplo.com.
+
+		- Registros DNS: Los registros DNS son entradas en una base de datos DNS que proporcionan información sobre los recursos de una red. Los tipos comunes de registros DNS incluyen:
+
+			* A (Address Record): Asocia un nombre de dominio con una dirección IPv4.
+			* AAAA (IPv6 Address Record): Asocia un nombre de dominio con una dirección IPv6.
+			* CNAME (Canonical Name Record): Redirige un nombre de dominio a otro dominio.
+			* MX (Mail Exchange Record): Define los servidores de correo para un dominio.
+			* NS (Name Server Record): Especifica los servidores de nombres autoritativos para un dominio.
+			* TXT (Text Record): Permite almacenar texto en un registro DNS. Se utiliza para diversos propósitos, como la verificación de dominios.
+			* DNSSEC (Domain Name System Security Extensions)
+				
+				DNSSEC es un conjunto de extensiones de seguridad al protocolo DNS que agrega mecanismos para garantizar la integridad y autenticidad de las respuestas DNS. DNSSEC no proporciona confidencialidad de los datos (no cifra los datos) sino que protege contra ciertos tipos de ataques, como ataques de cache poisoning (envenenamiento de caché) y spoofing.
+
+				Características de DNSSEC:
+
+					- Firmas Digitales: Los datos en el DNS están firmados digitalmente. Los clientes pueden verificar la firma para confirmar que los datos no han sido alterados.
+					- Cadena de Confianza: DNSSEC establece una "cadena de confianza" desde los servidores raíz hasta el dominio que se consulta.
+					- Registros Adicionales: DNSSEC utiliza registros adicionales en el DNS como:
+					- RRSIG (Resource Record Signature): Contiene una firma digital que cubre un conjunto de registros.
+					- DNSKEY (DNS Public Key Record): Contiene una clave pública que corresponde a una clave privada que firma los registros.
+					- DS (Delegation Signer Record): Vincula una zona DNS con su clave DNSKEY.
+					- NSEC (Next Secure Record) y NSEC3: Proporcionan mecanismos para negar la existencia de un registro de dominio de manera segura.
+
+	BIND (Berkeley Internet Name Domain)
+
+		BIND es uno de los servidores DNS más populares y ampliamente utilizados en el mundo. Desarrollado originalmente en la Universidad de California en Berkeley, es un software de código abierto que permite la implementación de servidores DNS autoritativos y recursivos.
+
+		Características de BIND:
+
+			- Flexible y Configurable: BIND es altamente configurable, lo que permite una gran flexibilidad en términos de configuración de zonas, vistas y políticas de resolución de nombres.
+
+			- Soporte para DNSSEC: BIND soporta completamente DNSSEC, lo que permite a los administradores de sistemas implementar configuraciones seguras para la resolución de nombres.
+
+			- Compatibilidad Multiplataforma: Funciona en diferentes sistemas operativos, incluidos Unix, Linux, y Windows.
+
+			- Zonas Maestras y Esclavas: Permite configurar servidores DNS como "maestros" (que contienen los datos originales de una zona) o "esclavos" (que contienen copias de los datos de una zona).
+
+			- Actualizaciones Dinámicas y Notificación de Zonas: BIND permite actualizaciones dinámicas de registros DNS y notificación de cambios a otros servidores DNS.
+
+	Resumen
+
+		- DNS: Traduce nombres de dominio a direcciones IP.
+		- DNSSEC: Agrega seguridad al DNS para garantizar la integridad y autenticidad de las respuestas DNS.
+		- BIND: Es un servidor DNS ampliamente utilizado que permite la implementación tanto de servidores DNS autoritativos como recursivos, con soporte completo para DNSSEC.
+
+24.2. Protocolo NTP. Comparativa NTPv3 y NTPv4.
+
+	El Protocolo de Tiempo de Red (NTP, Network Time Protocol) es un protocolo de red utilizado para sincronizar los relojes de los dispositivos conectados a una red de datos. El NTP es esencial para asegurar que todos los sistemas en una red tengan la misma hora, lo cual es crucial para muchas aplicaciones como registros de auditoría, transacciones financieras, autenticación, y otras tareas dependientes del tiempo.
+
+	Protocolo NTP (Network Time Protocol)
+
+		Función Principal: NTP permite a los dispositivos sincronizar sus relojes con precisión a milisegundos o microsegundos con respecto a una fuente de tiempo precisa, generalmente un servidor de tiempo que recibe la hora de un reloj atómico o GPS.
+
+		Arquitectura Jerárquica: El protocolo NTP utiliza una arquitectura jerárquica de niveles (llamados stratum). Los servidores de Stratum 0 son dispositivos de referencia de tiempo, como relojes atómicos o GPS. Los servidores de Stratum 1 están sincronizados directamente con un dispositivo de Stratum 0. Los servidores de Stratum 2 reciben el tiempo de los servidores Stratum 1, y así sucesivamente.
+
+		Protocolo de Comunicación: NTP utiliza el protocolo UDP en el puerto 123 para la comunicación. Emplea algoritmos complejos para ajustar el tiempo, evitando errores por retrasos de red, desviación de relojes (clock drift), y otros factores.
+
+		Modo de Operación: NTP puede operar en diferentes modos, como el modo cliente-servidor (comúnmente utilizado), modo de difusión (broadcast), y modo de multidifusión (multicast), entre otros.
+
+	Comparativa NTPv3 vs NTPv4
+
+		A lo largo del tiempo, el protocolo NTP ha evolucionado para abordar problemas de precisión, seguridad y eficiencia en la sincronización de tiempo. Las versiones más utilizadas son NTPv3 (definida en el RFC 1305, 1992) y NTPv4 (definida en el RFC 5905, 2010). Aquí se presenta una comparativa entre ambas versiones:
+
+Característica			NTPv3			NTPv4
+RFC				RFC 1305		RFC 5905
+Año de Publicación		1992			2010
+Precisión de Sincronización	Milisegundos		Microsegundos
+Soporte IPv6			No			Sí
+Compatibilidad con Protocolos	Solo IPv4		IPv4 e IPv6
+
+
+Eficiencia de Red:
+	NTPv3: Menos eficiente debido a menos optimizaciones en la red y el manejo de paquetes
+	NTPv4: Mejorada con algoritmos de selección de paquetes más eficientes
+
+Seguridad:
+	NTPv3: Métodos de autenticación básicos
+	NTPv4: Mejoras de seguridad, incluyendo algoritmos de autenticación basados en MAC (Message Authentication Code)
+
+Corrección de Reloj:
+	NTPv3: Algoritmos menos precisos y ajustados
+	NTPv4: Algoritmos mejorados para la corrección de la desviación del reloj (clock drift) y compensación de latencia de red
+
+Soporte para Relojes de Alta Precisión:
+	NTPv3: Limitado a algunos relojes y dispositivos
+	NTPv4: Mejorado para soportar relojes de alta precisión y mayor escalabilidad
+
+Dispositivos Móviles y Redes Inestables
+	NTPv3: No optimizado
+	NTPv4: Mejor optimizado para redes modernas, móviles e inestables
+
+	Detalles Clave de las Diferencias
+
+		- Soporte de IPv6: NTPv4 fue diseñado para soportar tanto IPv4 como IPv6, haciéndolo más adecuado para las redes modernas que han adoptado IPv6.
+
+		- Precisión y Eficiencia: NTPv4 incluye mejoras en el manejo de la precisión del tiempo y la eficiencia de la red. Esto se logra a través de mejoras en los algoritmos de selección de relojes y en los métodos de medición de la latencia de la red, lo que permite una sincronización de tiempo más precisa (hasta microsegundos).
+
+		- Seguridad Mejorada: NTPv4 mejora la seguridad del protocolo mediante el uso de algoritmos de autenticación más robustos, como el uso de MAC (Message Authentication Code) para asegurar que los mensajes NTP no sean manipulados. Esto es especialmente importante para evitar ataques como el "man-in-the-middle" y otros ataques de falsificación de tiempo.
+
+		- Algoritmos de Sincronización Mejorados: NTPv4 tiene algoritmos mejorados para manejar el "clock drift" (deriva del reloj) y para compensar la latencia de la red, lo cual es crítico para mantener una sincronización precisa en redes con latencia variable.
+
+		- Relojes de Alta Precisión: NTPv4 está diseñado para soportar relojes de mayor precisión y para funcionar de manera efectiva en entornos donde la precisión del tiempo es crítica.
+
+		- Redes Modernas y Móviles: NTPv4 está mejor adaptado para trabajar con redes modernas, incluidos los dispositivos móviles y las redes inestables, lo que lo hace más versátil en el contexto actual de la tecnología de la información.
+
+	Resumen
+
+		NTP es fundamental para la sincronización del tiempo en redes.
+		NTPv3 es la versión más antigua, mientras que NTPv4 ofrece mejoras significativas en términos de precisión, seguridad, eficiencia, soporte para IPv6, y adaptabilidad a redes modernas.
+
+		Para cualquier implementación nueva o actualización de sistemas que dependan de una sincronización precisa y segura del tiempo, NTPv4 es la versión recomendada.
+
+24.3. Protocolo DHCP.
+
+	El Protocolo de Configuración Dinámica de Host (DHCP, Dynamic Host Configuration Protocol) es un protocolo de red utilizado para asignar de manera automática direcciones IP y otros parámetros de configuración de red a dispositivos (hosts) en una red. DHCP simplifica la administración de redes al automatizar la asignación de configuraciones de red, evitando la necesidad de configurar manualmente cada dispositivo.
+
+	Protocolo DHCP (Dynamic Host Configuration Protocol)
+
+		1. Función Principal
+
+			El objetivo principal del protocolo DHCP es facilitar la asignación de parámetros de configuración IP a dispositivos que se conectan a una red, asegurando que cada dispositivo reciba una configuración única y adecuada sin intervención manual.
+
+		2. Componentes Clave de DHCP
+
+			Servidor DHCP: Es el dispositivo o software que gestiona las asignaciones de direcciones IP y mantiene la información de configuración de la red. El servidor DHCP almacena una base de datos de direcciones IP y otros parámetros de configuración disponibles para los clientes.
+
+			Cliente DHCP: Es cualquier dispositivo que solicita una dirección IP y otros parámetros de configuración de un servidor DHCP cuando se conecta a la red.
+
+			Rango de Direcciones IP (Scope): Un rango de direcciones IP definidas que el servidor DHCP puede asignar dinámicamente a los clientes DHCP en la red.
+
+			Reserva de IP: Una asignación específica en la que un servidor DHCP proporciona siempre la misma dirección IP a un cliente identificado por su dirección MAC (Media Access Control).
+
+			Concesión (Lease): El tiempo durante el cual una dirección IP asignada es válida. Una vez que el tiempo de concesión expira, el cliente debe solicitar una nueva concesión.
+
+		3. Proceso de Funcionamiento del DHCP
+
+			El protocolo DHCP funciona en un ciclo de cuatro pasos, conocido como DORA:
+
+				Discover (Descubrimiento): El cliente DHCP envía un mensaje de DHCPDISCOVER en broadcast (difusión) para localizar un servidor DHCP disponible en la red.
+
+				Offer (Oferta): Uno o más servidores DHCP responden al mensaje de descubrimiento con un mensaje DHCPOFFER, que contiene una dirección IP ofrecida, la máscara de subred, la puerta de enlace predeterminada y otros parámetros de configuración.
+
+				Request (Solicitud): El cliente DHCP selecciona una oferta de las recibidas (en caso de múltiples servidores DHCP) y responde con un mensaje DHCPREQUEST al servidor DHCP que ha realizado la oferta seleccionada, indicando que acepta la configuración propuesta.
+
+				Acknowledge (Confirmación): El servidor DHCP responde con un mensaje DHCPACK (acknowledgment), que confirma la concesión de la dirección IP y proporciona cualquier otra información de configuración de red. A partir de este momento, el cliente puede utilizar la dirección IP asignada y otros parámetros para comunicarse en la red.
+
+			En caso de que el servidor DHCP no pueda otorgar una dirección IP, responde con un DHCPNAK (Negative Acknowledgment).
+
+	4. Parámetros de Configuración Proporcionados por DHCP
+
+		Además de las direcciones IP, DHCP puede proporcionar otros parámetros de configuración de red esenciales, tales como:
+
+			Máscara de subred: Define el tamaño de la subred a la que pertenece la dirección IP.
+			Puerta de enlace predeterminada: La dirección IP del router que permite a los dispositivos comunicarse fuera de su red local.
+			Servidor DNS: Direcciones IP de los servidores de nombres de dominio para resolver nombres de dominio en direcciones IP.
+			Servidor WINS: Utilizado en redes basadas en Microsoft para la resolución de nombres NetBIOS.
+			Duración del arrendamiento (lease): El tiempo durante el cual la dirección IP asignada es válida.
+			Otros parámetros opcionales: Como el servidor de tiempo, servidor TFTP, opciones de proxy, etc.
+
+	5. Modos de Operación de DHCP
+
+		Asignación Dinámica: El servidor DHCP asigna una dirección IP disponible de su rango definido (scope) al cliente por un tiempo específico (concesión). Una vez que la concesión expira, la dirección IP puede ser reasignada a otro cliente.
+
+		Asignación Automática: El servidor DHCP asigna una dirección IP de manera permanente al cliente desde su rango de direcciones IP disponible. Si el cliente vuelve a conectarse a la red, recibe la misma dirección IP siempre que esté disponible.
+
+		Asignación Manual (Reserva): El administrador de red reserva manualmente una dirección IP específica para un cliente identificado por su dirección MAC. Este modo es útil para servidores y dispositivos de red que necesitan direcciones IP fijas.
+
+	6. Seguridad en DHCP
+
+		El protocolo DHCP, en su implementación básica, no incluye mecanismos de autenticación ni seguridad, lo que lo hace vulnerable a ciertos tipos de ataques, como:
+
+			- Ataques de Rogue DHCP Server: Un servidor DHCP no autorizado en la red puede proporcionar configuraciones incorrectas o maliciosas.
+
+			- Ataques de "DHCP Starvation": Un atacante puede enviar múltiples solicitudes DHCP falsas para agotar el rango de direcciones IP del servidor DHCP, dejando a los clientes legítimos sin direcciones IP disponibles.
+
+		Para mejorar la seguridad, se pueden implementar medidas como:
+
+			- DHCP Snooping: Una característica de seguridad que permite a los switches de red filtrar mensajes DHCP y limitar la configuración solo a servidores DHCP legítimos.
+
+			- Autenticación 802.1X: Utiliza autenticación de nivel de puerto para controlar el acceso a la red, asegurando que solo los dispositivos autorizados puedan conectarse y solicitar configuraciones DHCP.
+
+	Resumen
+
+		DHCP es un protocolo que permite la asignación automática de configuraciones de red (principalmente direcciones IP) a dispositivos en una red.
+
+		El proceso DHCP se compone de cuatro pasos: Discover, Offer, Request y Acknowledge (DORA).
+
+		DHCP puede proporcionar parámetros adicionales de configuración de red, como la máscara de subred, la puerta de enlace predeterminada, servidores DNS, etc.
+
+		Existen diferentes modos de asignación de direcciones IP: dinámica, automática y manual (reserva).
+
+		Para mitigar vulnerabilidades de seguridad, se pueden utilizar medidas como DHCP Snooping y autenticación de red.

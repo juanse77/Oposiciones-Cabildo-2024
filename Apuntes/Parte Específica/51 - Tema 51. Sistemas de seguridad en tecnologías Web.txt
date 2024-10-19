@@ -1,0 +1,374 @@
+Tema 51. Sistemas de seguridad en tecnologías Web.
+
+51.1. Protocolos SSL y TLS.
+
+	SSL (Secure Sockets Layer) y TLS (Transport Layer Security) son protocolos criptográficos diseñados para proporcionar comunicación segura a través de una red, como Internet. Ambos protocolos se utilizan para asegurar la transmisión de datos entre clientes y servidores, protegiendo la información mediante cifrado, autenticación y verificación de la integridad de los datos.
+
+	SSL (Secure Sockets Layer)
+
+		SSL fue el protocolo original diseñado por Netscape en la década de 1990 para proporcionar seguridad en la comunicación a través de Internet. Existen varias versiones de SSL, siendo las más comunes SSL 2.0 y SSL 3.0. SSL ha sido históricamente utilizado para proteger conexiones HTTP, lo que lleva al protocolo HTTPS (HTTP Secure).
+
+		Características de SSL:
+
+			- Cifrado: SSL utiliza algoritmos de cifrado como RC4, DES, 3DES, y AES para proteger los datos durante la transmisión.
+
+			- Autenticación: Utiliza certificados digitales para autenticar la identidad de las partes involucradas en la comunicación.
+
+			- Integridad de Datos: Utiliza funciones hash como MD5 o SHA-1 para garantizar que los datos no sean alterados durante la transmisión.
+
+	TLS (Transport Layer Security)
+
+		TLS es el sucesor de SSL y fue introducido como una mejora del protocolo SSL 3.0. TLS proporciona mayor seguridad y se ha convertido en el estándar de facto para la protección de datos en la web. Las versiones de TLS incluyen TLS 1.0, TLS 1.1, TLS 1.2, y la más reciente, TLS 1.3. TLS ha solucionado varias vulnerabilidades presentes en SSL, ofreciendo mejores prácticas de seguridad.
+
+		Características de TLS:
+
+			- Cifrado Mejorado: TLS utiliza algoritmos de cifrado más avanzados como AES con tamaños de clave más largos (128, 256 bits) y métodos de intercambio de claves como Diffie-Hellman.
+
+			- Autenticación y Confidencialidad: Mejora el proceso de autenticación y proporciona opciones más seguras para garantizar la confidencialidad de la comunicación.
+
+			- Mecanismos de Integridad más Seguros: Utiliza funciones hash más robustas como SHA-256, que son más resistentes a los ataques.
+
+			- Seguridad Adicional en TLS 1.3: La última versión de TLS 1.3 elimina algunos algoritmos criptográficos inseguros y reduce el número de rondas de comunicación necesarias para establecer una conexión segura, mejorando tanto la seguridad como la eficiencia.
+
+	Diferencias entre SSL y TLS
+
+		Seguridad y Algoritmos de Cifrado: TLS es más seguro y admite algoritmos de cifrado más modernos y robustos en comparación con SSL.
+
+		Compatibilidad: SSL ya no se considera seguro y ha sido desaprobado en la mayoría de las aplicaciones; TLS es ampliamente adoptado y recomendado.
+
+		Proceso de Negociación (Handshake): El "handshake" de TLS es más eficiente y seguro, eliminando algunas vulnerabilidades presentes en el "handshake" de SSL.
+
+		Integridad de Datos: TLS utiliza funciones hash más fuertes (SHA-256) en comparación con SSL (MD5 o SHA-1).
+
+	Uso Actual
+
+		Hoy en día, TLS es el protocolo estándar para proteger las conexiones en la web y en muchas otras aplicaciones que requieren seguridad, como correos electrónicos, VPNs, y mensajería instantánea. SSL ha sido ampliamente reemplazado debido a las vulnerabilidades conocidas y la desactualización de su tecnología.
+
+51.2. Protocolo HTTPS.
+
+	HTTPS (Hypertext Transfer Protocol Secure) es una versión segura del protocolo HTTP (Hypertext Transfer Protocol), utilizado principalmente para la transmisión de datos en la web. HTTPS combina HTTP con los protocolos SSL (Secure Sockets Layer) o TLS (Transport Layer Security) para proporcionar seguridad en la comunicación entre un cliente (generalmente un navegador web) y un servidor web. La adición de SSL/TLS permite que los datos sean cifrados, autenticados y verificados en cuanto a su integridad.
+
+	Características de HTTPS
+
+		- Cifrado de Datos:
+
+			HTTPS utiliza SSL/TLS para cifrar los datos transmitidos entre el cliente y el servidor. Esto asegura que la información sensible, como contraseñas, números de tarjetas de crédito y datos personales, esté protegida de ataques como el "man-in-the-middle" (MITM), donde un atacante intercepta y potencialmente manipula la comunicación.
+
+		- Autenticación del Servidor:
+
+			A través del uso de certificados digitales emitidos por Autoridades de Certificación (CAs), HTTPS permite que los clientes verifiquen la autenticidad del servidor con el que están comunicándose. Esto ayuda a evitar ataques como el "phishing" y asegura que los usuarios están conectándose a un sitio web genuino y no a uno falso.
+
+		- Integridad de los Datos:
+
+			HTTPS utiliza funciones hash criptográficas para asegurar que los datos no hayan sido alterados durante la transmisión. Esto garantiza que los datos enviados y recibidos sean los mismos que los transmitidos originalmente.
+
+	Funcionamiento de HTTPS
+
+		Cuando un navegador web intenta conectarse a un sitio web seguro, el proceso de conexión a través de HTTPS implica los siguientes pasos:
+
+		1.- Solicitud de Conexión Segura (Handshake):
+
+			El cliente (navegador) inicia una conexión con el servidor web y solicita una conexión segura.
+
+		2.- Envío del Certificado Digital:
+
+			El servidor envía su certificado digital al cliente. Este certificado contiene la clave pública del servidor y está firmado por una Autoridad de Certificación de confianza.
+
+		3.- Verificación del Certificado:
+
+			El cliente verifica la validez del certificado. Si el certificado es válido y proviene de una CA confiable, se procede con la conexión segura. Si no es válido o proviene de una fuente no confiable, el navegador muestra una advertencia al usuario.
+
+		4.- Intercambio de Claves:
+
+			Una vez verificado el certificado, el cliente y el servidor acuerdan un algoritmo de cifrado y se genera una clave de sesión única que se utiliza para cifrar los datos transmitidos durante esa sesión.
+
+		5.- Transmisión de Datos Cifrados:
+
+			Toda la comunicación entre el cliente y el servidor se cifra utilizando la clave de sesión, garantizando la privacidad y la seguridad de los datos.
+
+	Ventajas de HTTPS
+
+		- Seguridad: Proporciona confidencialidad, integridad y autenticación en la comunicación entre el cliente y el servidor.
+
+		- Confianza del Usuario: Los usuarios confían más en los sitios web que utilizan HTTPS, ya que el uso de HTTPS se indica comúnmente con un candado en la barra de direcciones del navegador.
+
+		- Mejor Posicionamiento en Motores de Búsqueda: Los motores de búsqueda, como Google, favorecen los sitios que utilizan HTTPS sobre aquellos que solo usan HTTP, lo que puede mejorar el SEO (optimización de motores de búsqueda).
+
+		- Protección contra Ataques de Phishing y MITM: HTTPS ayuda a proteger a los usuarios contra ataques en los que los atacantes intentan interceptar o manipular la comunicación.
+
+	Limitaciones de HTTPS
+
+		- Coste de Certificados: Aunque hay opciones gratuitas disponibles (como Let's Encrypt), algunos certificados de mayor nivel (Wildcard o EV) pueden tener un costo asociado.
+
+		- Sobrecarga de Rendimiento: El uso de HTTPS puede agregar una pequeña sobrecarga debido al cifrado y descifrado de datos. Sin embargo, con las mejoras en TLS 1.3 y el hardware moderno, esta sobrecarga es prácticamente imperceptible.
+
+		- Necesidad de Mantenimiento: Los certificados SSL/TLS deben renovarse periódicamente, lo que requiere administración y mantenimiento.
+
+	Conclusión
+
+		HTTPS es esencial para la seguridad en la web moderna. Proporciona un nivel de protección que es crucial para la privacidad de los usuarios y la integridad de la información. Es ampliamente recomendado, e incluso obligatorio en muchos casos, como parte de las mejores prácticas de desarrollo web para proteger la información sensible y construir la confianza del usuario.
+
+51.3. Web Application Firewall (WAF).
+
+	Un Web Application Firewall (WAF) es una solución de seguridad que protege las aplicaciones web al filtrar y monitorear el tráfico HTTP entre una aplicación web e Internet. Un WAF puede ayudar a defenderse contra una variedad de ataques, incluidos los ataques de inyección SQL, cross-site scripting (XSS), y otras amenazas en la capa de aplicación. A diferencia de los firewalls tradicionales que protegen a nivel de red, un WAF opera a nivel de la capa de aplicación (capa 7 del modelo OSI), enfocándose en la seguridad de las aplicaciones web y los servicios que utilizan HTTP/S.
+
+	¿Cómo Funciona un WAF?
+
+		Un WAF funciona inspeccionando el tráfico entrante y saliente hacia y desde una aplicación web. Utiliza un conjunto de reglas o políticas predefinidas para identificar patrones de tráfico malicioso o sospechoso. Cuando detecta un tráfico que coincide con alguna de estas reglas, el WAF puede bloquear, permitir, o alertar sobre la solicitud o respuesta, según las configuraciones definidas por el administrador de seguridad.
+
+		Características y Funcionalidades de un WAF
+
+			- Protección contra Ataques Comunes:
+
+				Un WAF está diseñado para proteger las aplicaciones web contra ataques conocidos, como:
+
+				* Inyección SQL (SQLi): Inserción de código SQL malicioso en una consulta para acceder a bases de datos.
+				* Cross-Site Scripting (XSS): Inserción de scripts maliciosos en páginas web vistas por otros usuarios.
+				* Cross-Site Request Forgery (CSRF): Engaña a un usuario autenticado para que ejecute acciones no intencionadas.
+				* Remote File Inclusion (RFI) y Local File Inclusion (LFI): Ataques que intentan cargar archivos maliciosos en la aplicación.	
+				* Ataques de Fuerza Bruta y DDoS de Capa de Aplicación: Ataques destinados a saturar los recursos de la aplicación web.
+
+			- Filtrado de Contenido:
+
+				Puede inspeccionar y bloquear contenido no deseado basado en palabras clave, tipos de archivo, y patrones específicos.
+
+			- Control de Acceso:
+
+				Establece políticas de acceso para restringir el tráfico desde direcciones IP específicas, rangos de IP, o basadas en geolocalización.
+
+			- Protección contra Automatización Maliciosa (Bots):
+
+				Puede detectar y mitigar el tráfico de bots, protegiendo contra ataques de scraping de datos, relleno de credenciales, y ataques de denegación de servicio (DoS).
+
+			- Monitoreo y Registro de Actividades:
+
+				Un WAF puede proporcionar registros detallados de las solicitudes HTTP que permiten a los administradores analizar intentos de ataques, identificar posibles vulnerabilidades y responder adecuadamente.
+
+			- Personalización de Reglas:
+
+				Los WAFs modernos permiten a los administradores definir reglas personalizadas para adaptarse a las necesidades específicas de la aplicación y las políticas de seguridad de la organización.
+
+	Modos de Implementación de un WAF
+
+		- Basado en Red (Network-based WAF):
+
+			Se implementa como un dispositivo físico o virtual en la red local, generalmente en línea con el tráfico de la aplicación web. Proporciona inspección a nivel de red y puede estar muy optimizado en términos de rendimiento.
+
+		- Basado en Host (Host-based WAF):
+
+			Se integra en el software de la aplicación misma o en el servidor web. Aunque puede ser más flexible en términos de personalización, consume recursos del sistema anfitrión y puede ser más complejo de gestionar.
+
+		- Basado en la Nube (Cloud-based WAF):
+
+			Proporcionado como un servicio alojado por un proveedor de seguridad. No requiere hardware físico y es fácil de implementar y escalar. Sin embargo, depende de la confianza en el proveedor de la nube para la seguridad de los datos.
+
+	Ventajas de Utilizar un WAF
+
+		- Protección Rápida y Eficaz: Proporciona protección casi inmediata contra amenazas conocidas y emergentes.
+
+		- Cumplimiento Normativo: Ayuda a cumplir con regulaciones de seguridad como PCI DSS, que exige la protección de aplicaciones web.
+
+		- Flexibilidad y Escalabilidad: Puede ser configurado para adaptarse a diferentes tipos de aplicaciones web y requisitos de seguridad.
+
+		- Reducción del Tiempo de Respuesta: Permite a los administradores bloquear ataques en tiempo real y ajustar las políticas de seguridad con rapidez.
+
+	Limitaciones de un WAF
+
+		- Falsos Positivos/Negativos: Puede haber casos en los que el WAF bloquee tráfico legítimo (falsos positivos) o permita tráfico malicioso (falsos negativos) si las reglas no están bien configuradas.
+
+		- Mantenimiento y Gestión: Los WAFs requieren un monitoreo y ajuste constante para mantenerse efectivos frente a nuevas amenazas.
+
+		- No Sustituye Otras Medidas de Seguridad: Aunque proporciona una capa crucial de protección, un WAF no reemplaza otras medidas de seguridad como la codificación segura, la protección a nivel de red, y la gestión adecuada de la seguridad del servidor.
+
+	Conclusión
+
+		Un Web Application Firewall (WAF) es una herramienta esencial para proteger aplicaciones web contra una amplia gama de amenazas y vulnerabilidades. Ofrece protección en tiempo real y permite a las organizaciones mitigar riesgos sin necesidad de modificar el código de la aplicación. Sin embargo, para ser efectivo, un WAF debe configurarse, administrarse y actualizarse adecuadamente como parte de una estrategia de seguridad en capas.
+
+Añadido: WAF populares:
+
+	Los Web Application Firewalls (WAF) más populares son proporcionados por una variedad de fabricantes y proveedores de servicios de seguridad que ofrecen diferentes características y modos de implementación (en la nube, basados en red, o basados en host). Aquí tienes una lista de algunos de los WAF más populares en el mercado:
+
+	1. AWS WAF (Amazon Web Services Web Application Firewall)
+
+		Un WAF basado en la nube proporcionado por Amazon Web Services. AWS WAF se integra con otros servicios de AWS como CloudFront, Application Load Balancer (ALB), y API Gateway, permitiendo a los usuarios definir reglas personalizadas y automatizar la protección contra ataques.
+
+		Características destacadas: Protección DDoS, integración con AWS Shield, soporte para la creación de reglas personalizadas, y fácil escalabilidad.
+
+	2. Azure WAF (Microsoft Azure Web Application Firewall)
+
+		Proporcionado por Microsoft Azure, este WAF se integra con Azure Front Door, Application Gateway y Content Delivery Network (CDN) de Azure. Ofrece protección contra amenazas comunes como inyecciones SQL, XSS, y otros tipos de ataques.
+
+		Características destacadas: Reglas administradas, personalización avanzada de políticas, integración profunda con servicios de Azure, y fácil implementación en arquitecturas basadas en la nube.
+
+	3. Cloudflare WAF
+
+		Cloudflare ofrece un WAF basado en la nube que forma parte de su plataforma de entrega de contenido y protección DDoS. Es ampliamente utilizado por sitios web y aplicaciones para protegerse contra ataques a nivel de aplicación.
+Características destacadas: Reglas gestionadas por Cloudflare, protección DDoS incorporada, optimización de rendimiento web, y capacidad para bloquear tráfico malicioso en tiempo real.
+
+	4. Imperva WAF
+
+		Imperva es un proveedor líder en seguridad de aplicaciones y datos. Su WAF puede ser implementado tanto en la nube como on-premise y está diseñado para proteger contra amenazas avanzadas a nivel de aplicación.
+
+		Características destacadas: Protección avanzada contra bots, gestión de reglas de seguridad en tiempo real, protección contra ataques de día cero, y soporte para entornos híbridos.
+
+	5. F5 BIG-IP Advanced WAF
+
+		Parte de la plataforma de seguridad BIG-IP de F5 Networks, Advanced WAF ofrece protección integral para aplicaciones web con capacidades avanzadas de análisis de tráfico y mitigación de amenazas.
+
+		Características destacadas: Protección contra ataques automatizados, prevención de abuso de API, integración con DevOps, y visibilidad profunda del tráfico.
+
+	6. Akamai Kona Site Defender
+		
+		Akamai es uno de los mayores proveedores de CDN y seguridad en la nube, y Kona Site Defender es su solución WAF para proteger aplicaciones web contra ataques de capa de aplicación.
+
+		Características destacadas: Protección avanzada contra DDoS, integración con CDN de Akamai, opciones de personalización de reglas, y soporte global distribuido.
+
+	7. Barracuda WAF
+
+		Barracuda Networks ofrece un WAF tanto en hardware como en la nube, diseñado para proteger aplicaciones web y API de una variedad de amenazas de seguridad.
+Características destacadas: Protección contra amenazas conocidas y emergentes, mitigación automática de ataques DDoS, control de acceso basado en políticas, y visibilidad granular.
+
+	8. Fortinet FortiWeb
+
+		Parte de la suite de seguridad de Fortinet, FortiWeb es un WAF que proporciona protección tanto on-premise como en la nube, con inteligencia artificial integrada para detección avanzada de amenazas.
+
+		Características destacadas: Protección contra ataques OWASP Top 10, análisis basado en comportamiento, integración con la plataforma Fortinet Security Fabric, y alta escalabilidad.
+
+	9. ModSecurity (ModSec)
+
+		ModSecurity es un WAF de código abierto ampliamente utilizado que puede ser implementado con servidores web como Apache, Nginx, y IIS. Ofrece flexibilidad y personalización, aunque requiere una configuración y mantenimiento cuidadosos.
+
+		Características destacadas: Gran capacidad de personalización, amplio soporte comunitario, integrable con varias plataformas de servidores web, y reglas de seguridad OWASP ModSecurity Core Rule Set (CRS).
+
+	10. Sucuri WAF
+
+		Sucuri es conocido por su enfoque en la seguridad de sitios web, especialmente para plataformas como WordPress, Joomla, y Drupal. Su WAF basado en la nube protege contra una variedad de ataques a nivel de aplicación.
+
+		Características destacadas: Protección contra malware y DDoS, optimización de rendimiento, fácil integración con CMS populares, y detección avanzada de ataques.
+
+	11. DenyAll (Rohde & Schwarz Cybersecurity)
+
+		DenyAll es una solución WAF que se centra en la protección de aplicaciones web y API, proporcionando una defensa robusta contra amenazas conocidas y emergentes.
+
+		Características destacadas: Análisis de comportamiento del tráfico, protección contra bots maliciosos, y capacidades avanzadas de gestión de políticas.
+
+	Conclusión
+
+		Cada WAF tiene sus propias características, ventajas y casos de uso específicos. La elección del WAF adecuado depende de factores como la infraestructura de TI existente, el nivel de personalización requerido, el presupuesto, y la experiencia del equipo de seguridad. Si estás interesado en una comparación más detallada entre algunos de estos WAFs o necesitas recomendaciones específicas para tu entorno, no dudes en preguntar.
+
+Añadido Costes WAF:
+
+	El coste económico de implementar un Web Application Firewall (WAF) puede variar ampliamente según el proveedor, el modelo de implementación (basado en la nube, local, híbrido), las características incluidas, el nivel de soporte, y el tamaño de la infraestructura a proteger. A continuación, te doy una orientación general sobre el coste de los WAF más populares. Es importante tener en cuenta que los precios pueden cambiar con el tiempo, por lo que siempre es recomendable contactar directamente con los proveedores para obtener presupuestos actualizados y personalizados.
+
+	Costes Generales de los WAF Más Populares
+
+		1. AWS WAF (Amazon Web Services Web Application Firewall)
+
+			Modelo de Precios: Basado en uso. Incluye una tarifa mensual por cada WAF Web ACL (lista de control de acceso web) y una tarifa por cada regla adicional.
+
+			Coste Aproximado:
+				$5 USD por Web ACL al mes.
+				$1 USD por regla por millón de solicitudes inspeccionadas.
+				$0.60 USD por cada millón de solicitudes inspeccionadas.
+
+			Coste Total: Depende del tráfico y del número de reglas utilizadas. Un escenario típico puede costar entre $100 y $500 USD al mes para aplicaciones medianas.
+
+		2. Azure WAF (Microsoft Azure Web Application Firewall)
+
+			Modelo de Precios: Similar al AWS WAF, basado en uso y tráfico.
+Coste Aproximado:
+				$20 USD por aplicación al mes para WAF en Azure Application Gateway.
+				$0.008 USD por GB de datos procesados.
+
+			Coste Total: Para aplicaciones de tamaño medio, los costes pueden oscilar entre $150 y $700 USD al mes, dependiendo del tráfico.
+
+		3. Cloudflare WAF
+
+			Modelo de Precios: Parte de los planes de seguridad de Cloudflare. Viene incluido en los planes de suscripción de Cloudflare, que pueden ser de pago mensual.
+
+			Coste Aproximado:
+				$20 USD/mes para el plan Pro que incluye WAF básico.
+				$200 USD/mes para el plan Business que incluye WAF avanzado con reglas personalizables.
+
+			Plan Enterprise: Precio personalizado, generalmente comienza en varios miles de dólares al mes.
+	
+			Coste Total: Varía entre $20 y miles de dólares al mes dependiendo del nivel de protección requerido.
+
+		4. Imperva WAF
+
+			Modelo de Precios: Basado en suscripción, dependiendo del tamaño del sitio web y del tráfico.
+
+			Coste Aproximado: A partir de $59 USD/mes por sitio para planes básicos en la nube.
+			
+			Planes avanzados y personalizados pueden costar varios miles de dólares al mes, especialmente para grandes organizaciones con requisitos de alta seguridad.
+
+			Coste Total: Desde $59 hasta miles de dólares al mes, según la complejidad y la escala.
+
+		5. F5 BIG-IP Advanced WAF
+
+			Modelo de Precios: Licencia perpetua o suscripción (hardware, virtual, o basado en la nube).
+
+			Coste Aproximado:
+
+				Licencia perpetua: Puede costar desde $10,000 a $50,000 USD o más, según la configuración.
+
+				Suscripción y soporte: Coste adicional anual de mantenimiento y soporte.
+
+			Coste Total: El coste inicial puede ser significativo, y los costes de soporte anual pueden oscilar entre $2,000 y $10,000 USD.
+
+		6. Akamai Kona Site Defender
+
+			Modelo de Precios: Basado en suscripción mensual y tráfico (GB).
+
+			Coste Aproximado: Comienza en $3,000 USD/mes para sitios web de tamaño medio.
+
+			Coste Total: Puede llegar a ser significativamente mayor dependiendo del tamaño de la aplicación y del tráfico (hasta decenas de miles de dólares al mes).
+
+		7. Barracuda WAF
+
+			Modelo de Precios: Licencia perpetua (hardware o virtual) o suscripción en la nube.
+
+			Coste Aproximado:
+
+				$1,000 - $5,000 USD por año para opciones en la nube.
+
+				$15,000 USD y más para soluciones basadas en hardware con soporte.
+
+			Coste Total: Para soluciones más avanzadas, puede ser necesario pagar por soporte adicional, actualizaciones y renovación de licencias.
+
+		8. Fortinet FortiWeb
+
+			Modelo de Precios: Licencia perpetua o suscripción anual (hardware, virtual, o en la nube).
+
+			Coste Aproximado:
+
+				Licencia perpetua: Desde $5,000 USD y puede superar los $30,000 USD.
+				Suscripción en la nube: Desde $500 USD/mes.
+
+			Coste Total: Puede variar ampliamente dependiendo de la configuración y el entorno.
+
+		9. ModSecurity (ModSec)
+
+			Modelo de Precios: Código abierto; sin coste de licencia, pero los costes vienen por la configuración, el mantenimiento y la gestión de reglas.
+
+			Coste Aproximado: Los costes son principalmente internos (tiempo de personal y recursos). Integraciones gestionadas o servicios de soporte de terceros pueden costar $1,000 - $5,000 USD o más.
+
+		10. Sucuri WAF
+
+			Modelo de Precios: Basado en suscripción, principalmente para sitios web pequeños y medianos.
+
+			Coste Aproximado:
+	
+				Planes desde $10 USD/mes hasta $300 USD/mes dependiendo del nivel de protección.
+
+			Coste Total: Adecuado para sitios web pequeños a medianos, puede variar entre $10 y $500 USD al mes.
+
+		11. DenyAll (Rohde & Schwarz Cybersecurity)
+
+			Modelo de Precios: Basado en suscripción o licencia perpetua.
+			
+			Coste Aproximado: No suele estar públicamente disponible, pero se sabe que los costes son comparables a otros proveedores de nivel empresarial (varios miles de dólares al mes).
+
+	Conclusión
+
+		El coste de un WAF puede variar significativamente dependiendo del proveedor, el nivel de protección, el tamaño de la infraestructura y el tráfico web. Los WAFs basados en la nube suelen ser más accesibles para pequeñas y medianas empresas, mientras que los WAFs empresariales (como F5 o Akamai) pueden tener costes mucho más altos, pero ofrecen funciones avanzadas de protección y escalabilidad.

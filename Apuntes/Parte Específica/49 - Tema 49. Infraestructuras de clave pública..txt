@@ -1,0 +1,185 @@
+Tema 49. Infraestructuras de clave pública.
+
+49.1. Definición y elementos de una PKI.
+
+	Una PKI (Public Key Infrastructure) o Infraestructura de Clave Pública es un conjunto de políticas, procedimientos, estándares, hardware, software y personas necesarias para crear, gestionar, distribuir, usar, almacenar y revocar certificados digitales. Los certificados digitales son documentos electrónicos que verifican la identidad de las partes involucradas en la comunicación digital y permiten el cifrado y la firma digital, asegurando la confidencialidad, integridad, autenticidad y no repudio de la información.
+
+	Definición de PKI
+
+		La PKI es una infraestructura de seguridad que utiliza criptografía de clave pública para proteger la comunicación en redes. En esencia, una PKI permite a las organizaciones emitir, gestionar y verificar certificados digitales, facilitando la autenticación y la comunicación segura entre usuarios y sistemas.
+
+	Elementos de una PKI
+	
+		Autoridad Certificadora (CA, Certification Authority): Es el componente central de una PKI. Una CA es responsable de emitir, gestionar y revocar certificados digitales. Verifica la identidad de una entidad (como un usuario, dispositivo o servidor) antes de emitir un certificado digital.
+
+		Autoridad de Registro (RA, Registration Authority): Actúa como intermediario entre el usuario y la CA. Su función principal es autenticar las identidades de los usuarios que solicitan certificados y aprobar o rechazar las solicitudes antes de que sean procesadas por la CA.
+
+		Certificados Digitales: Son documentos electrónicos que contienen la clave pública de una entidad y la información relacionada con la identidad de dicha entidad. Los certificados digitales están firmados digitalmente por una CA y proporcionan una prueba de autenticidad.
+
+		Clave Pública y Clave Privada: La PKI se basa en un par de claves criptográficas: la clave pública y la clave privada. La clave pública es compartida abiertamente y se incluye en el certificado digital, mientras que la clave privada se mantiene en secreto por el propietario y se utiliza para descifrar la información cifrada con la clave pública o para firmar digitalmente la información.
+
+		Lista de Revocación de Certificados (CRL, Certificate Revocation List): Es una lista mantenida por una CA que contiene todos los certificados digitales que han sido revocados antes de su fecha de vencimiento. Las CRLs se utilizan para verificar si un certificado sigue siendo válido.
+
+		Servidor de Protocolo de Estado de Certificado en Línea (OCSP, Online Certificate Status Protocol): Es un protocolo que permite consultar el estado de un certificado digital en tiempo real. Proporciona una alternativa más eficiente a la CRL para verificar si un certificado ha sido revocado.
+
+		Política de Certificación (CP, Certification Policy) y Declaración de Prácticas de Certificación (CPS, Certification Practice Statement): Son documentos que describen las reglas y los procedimientos bajo los cuales se emiten, gestionan y revocan los certificados digitales en una PKI. La CP define el conjunto de reglas que rigen el uso de los certificados, mientras que la CPS describe cómo la CA implementa estas reglas.
+
+		Gestión de Claves: Incluye el proceso de generación, distribución, almacenamiento, renovación y destrucción de claves criptográficas. Es crucial para mantener la seguridad de la infraestructura.
+
+		Almacén de Certificados: Es un repositorio seguro donde se almacenan los certificados digitales, las CRLs y otros objetos relacionados con la PKI. Este almacén debe ser accesible para las partes que necesitan verificar los certificados.
+
+	Beneficios de una PKI
+
+		- Autenticación: Verifica la identidad de los usuarios, dispositivos o servicios.
+		- Confidencialidad: Asegura que la información solo pueda ser leída por el destinatario previsto mediante cifrado.
+		- Integridad: Garantiza que la información no ha sido alterada durante la transmisión.
+		- No repudio: Impide que las partes nieguen haber enviado o recibido información.
+		
+	Una PKI es fundamental en el ámbito de la ciberseguridad y es utilizada en numerosos contextos, como el comercio electrónico, la banca en línea, la comunicación segura en internet, y más.
+
+49.2. Distribución de claves públicas.
+
+	La distribución de claves públicas es un proceso fundamental en la Infraestructura de Clave Pública (PKI) y en la criptografía de clave pública en general. La distribución de claves públicas implica que las claves públicas de los usuarios o entidades deben estar disponibles para otros, de manera que puedan ser utilizadas para cifrar mensajes o verificar firmas digitales. La seguridad de este proceso es crucial, ya que la integridad y autenticidad de la clave pública deben estar garantizadas para prevenir ataques de suplantación o intercepción.
+
+	Métodos de Distribución de Claves Públicas
+	
+		Existen varios métodos para distribuir claves públicas de forma segura. Aquí se describen los más comunes:
+
+		- Certificados Digitales:
+
+			Los certificados digitales son el método más utilizado para distribuir claves públicas. Un certificado digital es un documento electrónico emitido por una Autoridad Certificadora (CA) que contiene la clave pública de una entidad (usuario, servidor, dispositivo, etc.) junto con la identidad de la entidad y otros detalles relevantes.
+
+			El certificado está firmado digitalmente por la CA, lo que garantiza su autenticidad e integridad. Los usuarios y aplicaciones pueden confiar en la validez del certificado si confían en la CA emisora.
+		
+			Este método es la base de la PKI, donde las claves públicas se distribuyen a través de certificados digitales que son verificables a través de una cadena de confianza.
+
+		- Directorios Públicos:
+
+			Las organizaciones pueden utilizar directorios públicos o servidores de directorios para almacenar y distribuir claves públicas. Los usuarios o aplicaciones pueden acceder a estos directorios para obtener las claves públicas de las entidades con las que desean comunicarse de manera segura.
+
+			Estos directorios están protegidos con controles de acceso y autenticación para evitar manipulaciones no autorizadas de las claves públicas.
+
+		- Servidores de Claves Públicas (Key Servers):
+
+			Los servidores de claves públicas son sistemas diseñados específicamente para almacenar y distribuir claves públicas de manera segura. Estos servidores son utilizados en algunos sistemas de correo seguro (como PGP - Pretty Good Privacy) y otras aplicaciones que requieren distribución de claves.
+
+			Los usuarios pueden subir sus claves públicas al servidor, donde otros usuarios pueden buscarlas y descargarlas. La seguridad de estos servidores se basa en la verificación de la identidad del usuario que sube la clave y en mecanismos de autenticación.
+
+		- Intercambio Directo:
+
+			En entornos controlados, las claves públicas pueden ser distribuidas directamente de una entidad a otra, por ejemplo, a través de medios físicos seguros (USB, discos duros, etc.) o durante reuniones cara a cara.
+
+			Este método se utiliza generalmente en entornos de alta seguridad donde las entidades pueden verificar mutuamente la autenticidad de las claves públicas y minimizar el riesgo de interceptación o manipulación.
+
+		- Correo Electrónico Seguro:
+
+			Las claves públicas pueden ser enviadas a través de correo electrónico de manera segura si el correo electrónico está protegido mediante cifrado o firmado digitalmente.
+
+			Este método no es común para la distribución de claves a gran escala, ya que presenta desafíos en cuanto a la verificación de la autenticidad y la integridad de la clave pública.
+
+		- Protocolo de Intercambio de Claves:
+
+			Algunos sistemas criptográficos utilizan protocolos de intercambio de claves seguros, como el Protocolo de Difusión de Clave Pública (DHKE, Diffie-Hellman Key Exchange), para negociar claves públicas de forma segura en tiempo real. Aunque no distribuyen la clave pública de manera tradicional, permiten establecer un canal seguro por el cual se pueden intercambiar claves públicas.
+
+	Importancia de la Seguridad en la Distribución de Claves Públicas
+
+		La seguridad de la distribución de claves públicas es fundamental por varias razones:
+
+			- Prevención de Ataques Man-in-the-Middle (MitM): Si un atacante puede interceptar y manipular la distribución de una clave pública, puede realizar un ataque de intermediario (MitM) en el que se hace pasar por una de las partes.
+
+			- Garantía de Autenticidad: Es crucial que la clave pública distribuida sea auténtica y pertenezca a la entidad correcta. Los certificados digitales proporcionan esta garantía.
+
+			- Integridad de la Clave Pública: La clave pública debe llegar a su destino sin haber sido alterada. Los mecanismos de firma digital y autenticación garantizan que la clave no se ha modificado en tránsito.
+
+	Conclusión:
+
+		La distribución de claves públicas es un componente esencial en la criptografía de clave pública y la seguridad de la información. Para asegurar la integridad y autenticidad de las claves públicas, es fundamental usar métodos seguros como los certificados digitales, directorios públicos o servidores de claves, respaldados por una infraestructura de confianza.
+
+49.3. Firma electrónica.
+
+	La firma electrónica es un mecanismo que permite autenticar y garantizar la integridad de documentos y transacciones digitales. A diferencia de las firmas manuscritas tradicionales, la firma electrónica se utiliza en entornos digitales para verificar la identidad del firmante, asegurar que el contenido no ha sido alterado y, en algunos casos, proporcionar evidencia de consentimiento y no repudio.
+
+	Definición de Firma Electrónica
+
+		Una firma electrónica es cualquier tipo de símbolo, proceso o método electrónico que tiene la intención de ser equivalente a una firma manuscrita en un documento digital. Las firmas electrónicas pueden variar en complejidad y seguridad, desde una simple representación gráfica de una firma manuscrita hasta complejos sistemas de criptografía de clave pública.
+
+	Tipos de Firmas Electrónicas
+
+		- Firma Electrónica Simple:
+
+			Es la forma más básica de firma electrónica, que puede incluir métodos como una imagen escaneada de una firma manuscrita, una firma realizada con el dedo o el ratón en un dispositivo, o un simple "clic para aceptar".
+
+			Este tipo de firma es fácil de implementar y es adecuado para transacciones de bajo riesgo, pero ofrece menos garantías en términos de autenticidad e integridad.
+
+		- Firma Electrónica Avanzada:
+
+			Ofrece mayor seguridad que la firma electrónica simple y requiere que cumpla ciertos requisitos, como estar vinculada de manera única al firmante, ser capaz de identificar al firmante, y estar creada utilizando medios bajo el control exclusivo del firmante.
+
+			Las firmas electrónicas avanzadas suelen utilizar mecanismos de criptografía, como certificados digitales y claves privadas, para asegurar la autenticidad e integridad.
+
+		- Firma Electrónica Cualificada (o Firma Digital):
+
+			Es el tipo más seguro de firma electrónica y está respaldada por un Certificado Digital Cualificado emitido por una Autoridad Certificadora (CA) reconocida y de confianza.
+
+			La firma electrónica cualificada utiliza criptografía de clave pública para crear una firma digital única que se puede verificar matemáticamente. Este tipo de firma tiene la misma validez legal que una firma manuscrita en muchas jurisdicciones, siempre y cuando cumpla con los requisitos legales y normativos.
+
+			En la Unión Europea, las firmas electrónicas cualificadas están reguladas por el Reglamento eIDAS y tienen el nivel más alto de seguridad y garantía jurídica.
+
+	Componentes de una Firma Electrónica
+
+		- Certificado Digital:
+
+			Un certificado digital es emitido por una Autoridad Certificadora (CA) y vincula una clave pública a la identidad del firmante. Sirve como una prueba de la autenticidad de la firma electrónica.
+
+		- Clave Pública y Clave Privada:
+
+			En el caso de firmas digitales (firma electrónica cualificada), el firmante utiliza una clave privada para firmar digitalmente un documento. La clave pública correspondiente, que está incluida en el certificado digital, se utiliza para verificar la firma.
+
+		- Hash Criptográfico:
+
+			Un hash es una función que toma un bloque de datos y lo convierte en una cadena de caracteres de longitud fija. Para firmar un documento digital, primero se genera un hash del contenido del documento, que luego se cifra con la clave privada del firmante. Este hash cifrado es la firma digital.
+
+		- Software de Firma Electrónica:
+
+			Las plataformas y aplicaciones de firma electrónica son herramientas que permiten a los usuarios firmar documentos digitales de manera segura y sencilla. Estas herramientas pueden variar desde soluciones simples basadas en la web hasta sistemas complejos integrados en software empresarial.
+
+	Funcionamiento de la Firma Electrónica
+
+		El proceso de firma electrónica suele implicar los siguientes pasos:
+
+			1.- Creación de un Hash del Documento:
+
+				Se genera un hash criptográfico del documento que se va a firmar. Este hash es único para el contenido del documento y cambiará si se realiza alguna modificación en el documento.
+
+			2.- Cifrado del Hash con la Clave Privada del Firmante:
+
+				El hash generado se cifra utilizando la clave privada del firmante. Este cifrado del hash se convierte en la firma digital del documento.
+
+			3.- Adjunción de la Firma al Documento:
+
+				La firma digital (hash cifrado) se adjunta al documento junto con el certificado digital del firmante.
+
+			4.- Verificación de la Firma:
+
+				Cuando el destinatario recibe el documento firmado, utiliza la clave pública del firmante, que está incluida en el certificado digital, para descifrar la firma (hash cifrado). Luego, genera un nuevo hash del documento recibido.
+
+				Si el hash generado coincide con el hash descifrado, la firma es válida y el documento no ha sido alterado.
+
+	Ventajas de la Firma Electrónica
+
+		- Autenticidad: Verifica la identidad del firmante.
+		- Integridad: Garantiza que el contenido del documento no ha sido alterado después de haber sido firmado.
+		- No repudio: Evita que el firmante niegue haber firmado el documento.
+		- Eficiencia: Ahorra tiempo y costos asociados con la impresión, el escaneo y el envío físico de documentos.
+		- Validez Legal: En muchas jurisdicciones, las firmas electrónicas tienen la misma validez legal que las firmas manuscritas, especialmente si son firmas electrónicas cualificadas.
+
+	Usos Comunes de la Firma Electrónica
+
+		- Contratos y acuerdos legales: Firmar acuerdos de negocios, contratos de trabajo, contratos de venta, etc.
+		- Transacciones bancarias y financieras: Firmar documentos relacionados con préstamos, hipotecas, apertura de cuentas, etc.
+		- Gobierno y administración pública: Autenticación de documentos oficiales, solicitudes, y trámites digitales.
+		- Procesos empresariales internos: Aprobar documentos internos, órdenes de compra, permisos, etc.
+
+	Conclusión
+	
+		La firma electrónica es una herramienta poderosa en el mundo digital moderno que garantiza la autenticidad, integridad y no repudio de documentos y transacciones electrónicas. Dependiendo del nivel de seguridad requerido, se puede optar por firmas electrónicas simples, avanzadas o cualificadas, cada una con diferentes características y garantías legales.

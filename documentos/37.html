@@ -1,0 +1,242 @@
+<h1>Tema 37. Arquitecturas orientadas a servicios SOA II.</h1>
+<h2>37.1. Protocolos.</h2>
+<p>En la arquitectura orientada a servicios (SOA, por sus siglas en ingl&eacute;s), los protocolos son fundamentales
+    para la comunicaci&oacute;n y la interoperabilidad entre los diferentes servicios que componen una aplicaci&oacute;n
+    distribuida. SOA utiliza varios protocolos y est&aacute;ndares para garantizar que los servicios puedan comunicarse
+    de manera efectiva, independientemente de la plataforma, el lenguaje de programaci&oacute;n o la ubicaci&oacute;n.
+</p>
+<h3>Principales protocolos utilizados en SOA</h3>
+<h4>- SOAP (Simple Object Access Protocol):</h4>
+<p>SOAP es un protocolo basado en XML que define c&oacute;mo los mensajes deben ser estructurados y enviados a
+    trav&eacute;s de la red. Es ampliamente utilizado en SOA para la comunicaci&oacute;n entre servicios web.</p>
+<p>SOAP es independiente del protocolo de transporte (puede usarse con HTTP, SMTP, etc.) y proporciona una
+    comunicaci&oacute;n segura, confiable y transaccional.</p>
+<p>SOAP utiliza el est&aacute;ndar WSDL (Web Services Description Language) para definir la interfaz del servicio web y
+    describe qu&eacute; operaciones est&aacute;n disponibles y c&oacute;mo interactuar con ellas.</p>
+<h4>- REST (Representational State Transfer):</h4>
+<p>REST es un estilo arquitect&oacute;nico que utiliza HTTP para la comunicaci&oacute;n. Aunque REST no es un protocolo
+    en s&iacute; mismo, define un conjunto de restricciones y pr&aacute;cticas para la comunicaci&oacute;n entre
+    servicios.</p>
+<p>REST es m&aacute;s ligero que SOAP, ya que generalmente utiliza formatos de datos m&aacute;s simples como JSON o XML.
+    Es adecuado para aplicaciones donde se requiere un alto rendimiento y eficiencia.</p>
+<p>Los servicios RESTful son ampliamente utilizados debido a su simplicidad, flexibilidad y compatibilidad con las
+    arquitecturas modernas.</p>
+<h4>- HTTP (Hypertext Transfer Protocol):</h4>
+<p>HTTP es el protocolo de transporte m&aacute;s com&uacute;n utilizado para la comunicaci&oacute;n de servicios web en
+    SOA. Proporciona m&eacute;todos est&aacute;ndar como GET, POST, PUT, DELETE, etc., que son utilizados tanto por SOAP
+    como por REST.</p>
+<h4>- WSDL (Web Services Description Language):</h4>
+<p>Aunque no es un protocolo de comunicaci&oacute;n en s&iacute; mismo, WSDL es un est&aacute;ndar XML que describe los
+    servicios web SOAP y especifica c&oacute;mo los consumidores pueden interactuar con ellos. Define la interfaz, las
+    operaciones y los tipos de datos que un servicio web proporciona.</p>
+<h4>- XML-RPC (XML Remote Procedure Call):</h4>
+<p>XML-RPC es un protocolo de llamada a procedimiento remoto que utiliza XML para codificar sus llamadas y HTTP como
+    protocolo de transporte. Es m&aacute;s simple que SOAP pero menos utilizado hoy en d&iacute;a debido a la
+    popularidad de REST.</p>
+<h4>- UDDI (Universal Description, Discovery, and Integration):</h4>
+<p>UDDI es un est&aacute;ndar para el registro de servicios web. Permite que los servicios se registren y sean
+    descubiertos por otros servicios o aplicaciones. Aunque su uso ha disminuido, fue uno de los est&aacute;ndares clave
+    en los primeros d&iacute;as de SOA.</p>
+<h4>- AMQP (Advanced Message Queuing Protocol):</h4>
+<p>AMQP es un protocolo de mensajer&iacute;a de c&oacute;digo abierto que facilita la comunicaci&oacute;n entre
+    servicios distribuidos. Se utiliza principalmente en sistemas de mensajer&iacute;a y entornos donde es necesario
+    garantizar la entrega de mensajes.</p>
+<h4>- MQTT (Message Queuing Telemetry Transport):</h4>
+<p>MQTT es un protocolo de mensajer&iacute;a ligero dise&ntilde;ado para entornos de red inestables o con restricciones
+    de ancho de banda. Se utiliza principalmente en soluciones IoT dentro de una arquitectura SOA.</p>
+<h4>- JMS (Java Message Service):</h4>
+<p>JMS es una API de Java que proporciona un sistema de mensajer&iacute;a que puede ser utilizado en una arquitectura
+    SOA para permitir la comunicaci&oacute;n as&iacute;ncrona entre componentes.</p>
+<h4>- JSON-RPC:</h4>
+<p>Similar a XML-RPC, JSON-RPC es un protocolo de llamada a procedimiento remoto, pero utiliza JSON como formato de
+    codificaci&oacute;n en lugar de XML. Es m&aacute;s ligero y se utiliza en aplicaciones donde se prefieren los
+    formatos de datos basados en JSON.</p>
+<h3>Consideraciones para elegir protocolos en SOA</h3>
+<p><strong>Seguridad</strong>: La elecci&oacute;n de un protocolo puede depender de los requisitos de seguridad. SOAP,
+    por ejemplo, ofrece WS-Security para la protecci&oacute;n de mensajes.</p>
+<p><strong>Rendimiento</strong>: REST y JSON son generalmente m&aacute;s r&aacute;pidos y eficientes en t&eacute;rminos
+    de ancho de banda que SOAP y XML.</p>
+<p><strong>Compatibilidad</strong>: La interoperabilidad y la compatibilidad con sistemas legados pueden influir en la
+    elecci&oacute;n del protocolo.</p>
+<p><strong>Fiabilidad</strong>: Protocolos como AMQP y MQTT se utilizan en escenarios que requieren alta fiabilidad y
+    entrega garantizada de mensajes.</p>
+<p>Estos son algunos de los principales protocolos y est&aacute;ndares utilizados en SOA, cada uno con sus propias
+    caracter&iacute;sticas y casos de uso espec&iacute;ficos.</p>
+<h2>37.2. Elementos roles y ciclo de vida.</h2>
+<p>En la Arquitectura Orientada a Servicios (SOA), varios elementos y roles interact&uacute;an para construir un sistema
+    que permite la interoperabilidad, la reutilizaci&oacute;n y la flexibilidad en la creaci&oacute;n de aplicaciones
+    distribuidas. SOA se basa en la creaci&oacute;n de servicios modulares y desacoplados que pueden comunicarse entre
+    s&iacute; para cumplir con los requisitos de negocio.</p>
+<h3>Elementos de la Arquitectura SOA</h3>
+<h4>- Servicios:</h4>
+<p>Son los componentes b&aacute;sicos de SOA. Un servicio es una unidad de funcionalidad independiente que puede ser
+    consumida por otras aplicaciones o servicios. Los servicios en SOA est&aacute;n dise&ntilde;ados para ser modulares,
+    reutilizables y f&aacute;ciles de integrar.</p>
+<p>Cada servicio tiene una interfaz bien definida que se describe mediante WSDL (Web Services Description Language) en
+    caso de servicios SOAP, o mediante documentaci&oacute;n basada en OpenAPI (Swagger) para servicios RESTful.</p>
+<p><strong>Los servicios pueden ser de diferentes tipos</strong>:</p>
+<ul>
+    <li>Servicios B&aacute;sicos: Proporcionan funciones espec&iacute;ficas y est&aacute;n centrados en una tarea o
+        proceso simple.</li>
+    <li>&nbsp;Servicios Compuestos: Combina m&uacute;ltiples servicios b&aacute;sicos para realizar tareas m&aacute;s
+        complejas.</li>
+    <li>Servicios de Proceso Empresarial: Coordina varios servicios compuestos y b&aacute;sicos para soportar procesos
+        empresariales de mayor nivel.</li>
+</ul>
+<h3>Bus de Servicios Empresariales (ESB - Enterprise Service Bus):</h3>
+<p>ESB es un componente central en una arquitectura SOA que act&uacute;a como un medio de comunicaci&oacute;n entre
+    servicios. Facilita la integraci&oacute;n, la transformaci&oacute;n, el enrutamiento y la mediaci&oacute;n de
+    mensajes entre diferentes servicios.</p>
+<p>Permite que los servicios se comuniquen entre s&iacute; sin necesidad de que conozcan los detalles de
+    implementaci&oacute;n de otros servicios. Esto ayuda a desacoplar los servicios y a mejorar la flexibilidad y
+    escalabilidad del sistema.</p>
+<h4>- Registro de Servicios (Service Registry):</h4>
+<p>Un registro de servicios es un repositorio central donde se publican y describen los servicios disponibles en una
+    arquitectura SOA. Los desarrolladores y consumidores de servicios pueden buscar en el registro para descubrir
+    servicios disponibles y obtener detalles sobre c&oacute;mo interactuar con ellos.</p>
+<p>UDDI (Universal Description, Discovery, and Integration) es un est&aacute;ndar com&uacute;n para el registro de
+    servicios, aunque en la pr&aacute;ctica, muchas organizaciones han desarrollado sus propias soluciones de registro.
+</p>
+<h4>- Contratos de Servicio:</h4>
+<p>Un contrato de servicio define la interfaz, las operaciones, los mensajes y los protocolos que un servicio ofrece.
+    Este contrato proporciona un acuerdo claro sobre c&oacute;mo deben comunicarse los consumidores y los proveedores de
+    servicios.</p>
+<h4>- Repositorio de Servicios (Service Repository):</h4>
+<p>Almacena no solo los contratos de servicios y la informaci&oacute;n de registro, sino tambi&eacute;n otros metadatos
+    como pol&iacute;ticas de seguridad, configuraciones de nivel de servicio y versiones de servicios. Este repositorio
+    es utilizado para la gesti&oacute;n de servicios, especialmente en entornos empresariales grandes.</p>
+<h4>- Mediadores (Mediators):</h4>
+<p>Act&uacute;an como intermediarios que facilitan la comunicaci&oacute;n entre servicios. Pueden realizar
+    transformaciones de datos, validaciones, enrutamiento din&aacute;mico y otras tareas intermedias. Ejemplos incluyen
+    transformadores de mensajes y orquestadores de servicios.</p>
+<h4>- Capas de SOA:</h4>
+<ul>
+    <li><strong>Capa de Consumidores de Servicios</strong>: Contiene aplicaciones y clientes que consumen servicios
+        expuestos por la arquitectura SOA.</li>
+    <li><strong>Capa de Servicios Empresariales</strong>: Contiene la l&oacute;gica del negocio implementada como
+        servicios, que puede ser consumida por aplicaciones o procesos de negocio.</li>
+    <li><strong>Capa de Integraci&oacute;n (ESB)</strong>: Facilita la comunicaci&oacute;n, integraci&oacute;n,
+        transformaci&oacute;n y enrutamiento entre diferentes servicios.</li>
+    <li><strong>Capa de Procesos Empresariales</strong>: Gestiona y coordina m&uacute;ltiples servicios para cumplir con
+        los procesos empresariales de mayor nivel.</li>
+    <li><strong>Capa de Gobernanza</strong>: Involucra la seguridad, la administraci&oacute;n y el monitoreo de los
+        servicios y las pol&iacute;ticas que gobiernan su uso.</li>
+</ul>
+<h3>Roles en la Arquitectura SOA</h3>
+<h4>- Proveedor de Servicios (Service Provider):</h4>
+<p>El proveedor de servicios es responsable de crear, implementar y mantener los servicios. Publica los servicios en un
+    registro de servicios y asegura que est&eacute;n disponibles para ser consumidos por los consumidores.</p>
+<p>Tambi&eacute;n es responsable de cumplir con el contrato de servicio y garantizar que las pol&iacute;ticas de
+    seguridad y cumplimiento est&eacute;n en su lugar.</p>
+<h4>- Consumidor de Servicios (Service Consumer):</h4>
+<p>El consumidor de servicios es cualquier aplicaci&oacute;n, proceso o componente que consume servicios ofrecidos por
+    los proveedores de servicios.</p>
+<p>Los consumidores buscan en el registro de servicios para descubrir servicios y luego utilizan el contrato de servicio
+    para interactuar con los servicios.</p>
+<h4>- Corredor de Servicios (Service Broker):</h4>
+<p>Un corredor de servicios facilita la interacci&oacute;n entre el proveedor y el consumidor de servicios al actuar
+    como un intermediario. Los corredores de servicios pueden ser registros de servicios que permiten la b&uacute;squeda
+    y el descubrimiento de servicios disponibles.</p>
+<h4>- Gobernador de SOA (SOA Governance Manager):</h4>
+<p>Este rol es responsable de definir y aplicar las pol&iacute;ticas, est&aacute;ndares y directrices que gu&iacute;an
+    la arquitectura SOA dentro de la organizaci&oacute;n. Tambi&eacute;n supervisa el cumplimiento, la seguridad, la
+    calidad del servicio y la reutilizaci&oacute;n de servicios.</p>
+<h4>- Desarrollador de Servicios:</h4>
+<p>Los desarrolladores de servicios son responsables del dise&ntilde;o, la codificaci&oacute;n, las pruebas y la
+    implementaci&oacute;n de servicios. Tambi&eacute;n deben asegurarse de que los servicios cumplan con los contratos
+    de servicio y sigan las pol&iacute;ticas de gobernanza.</p>
+<h4>- Administrador de SOA (SOA Administrator):</h4>
+<p>Es responsable de administrar la infraestructura subyacente de SOA, incluido el ESB, los registros de servicios y
+    otros componentes relacionados. El administrador se asegura de que los servicios est&eacute;n operativos, monitorea
+    su rendimiento y resuelve problemas.</p>
+<h4>- Analista de Negocios:</h4>
+<p>El analista de negocios define los procesos empresariales que los servicios deben soportar. Trabajan en estrecha
+    colaboraci&oacute;n con desarrolladores y arquitectos para asegurarse de que los servicios sean alineados con los
+    objetivos de negocio.</p>
+<p><strong>Conclusi&oacute;n</strong></p>
+<p>La arquitectura SOA est&aacute; compuesta por varios elementos clave, como servicios, ESB, registros y contratos de
+    servicios, y depende de una serie de roles, como proveedores, consumidores, corredores, y gobernadores, para
+    garantizar que los servicios se desarrollen, se implementen, y se gestionen de manera efectiva. Estos elementos y
+    roles permiten una integraci&oacute;n flexible, interoperabilidad, y reutilizaci&oacute;n dentro de entornos
+    empresariales complejos.</p>
+<h2>37.3. Est&aacute;ndares de servicios Web REST y SOAP. Comparativa.</h2>
+<p>Los servicios web REST (Representational State Transfer) y SOAP (Simple Object Access Protocol) son dos
+    est&aacute;ndares ampliamente utilizados para la creaci&oacute;n de servicios web que permiten la
+    comunicaci&oacute;n entre aplicaciones distribuidas. Aunque ambos permiten la integraci&oacute;n y la
+    interoperabilidad en arquitecturas orientadas a servicios (SOA), existen diferencias fundamentales en su enfoque,
+    arquitectura, y casos de uso.</p>
+<h3>Est&aacute;ndares de Servicios Web REST y SOAP</h3>
+<h4>1. Servicios Web SOAP (Simple Object Access Protocol):</h4>
+<p>SOAP es un protocolo basado en XML para la comunicaci&oacute;n entre aplicaciones a trav&eacute;s de redes.
+    Proporciona una manera de enviar y recibir mensajes utilizando varios protocolos de transporte como HTTP, SMTP, TCP,
+    etc.</p>
+<p><strong>Formato de Mensaje</strong>: Utiliza XML para el formato de los mensajes. Los mensajes SOAP tienen un formato
+    estandarizado que incluye un sobre (Envelope), encabezado (Header), y cuerpo (Body).</p>
+<p><strong>Est&aacute;ndar de Descripci&oacute;n</strong>: Utiliza WSDL (Web Services Description Language) para
+    describir los servicios web, sus operaciones, mensajes, tipos de datos, y enlaces de comunicaci&oacute;n.</p>
+<p><strong>Seguridad</strong>: Utiliza WS-Security para proporcionar caracter&iacute;sticas de seguridad, como
+    autenticaci&oacute;n, autorizaci&oacute;n, encriptaci&oacute;n, y firma digital a nivel de mensaje.</p>
+<p><strong>Protocolos de Transporte</strong>: SOAP es independiente del protocolo de transporte y puede usar HTTP,
+    HTTPS, SMTP, TCP, entre otros.</p>
+<p><strong>Estado</strong>: SOAP es intr&iacute;nsecamente sin estado, aunque puede ser configurado para ser stateful
+    (con estado) utilizando WS-ReliableMessaging para la gesti&oacute;n del estado y la confiabilidad.</p>
+<p><strong>Enrutamiento y Transacciones</strong>: Soporta enrutamiento complejo, seguridad a nivel de mensaje, y
+    transacciones distribuidas a trav&eacute;s de WS-Coordination y WS-AtomicTransaction.</p>
+<h4>2. Servicios Web REST (Representational State Transfer):</h4>
+<p>REST es un estilo arquitect&oacute;nico que utiliza los principios de HTTP para la comunicaci&oacute;n. Se basa en
+    operaciones CRUD (Create, Read, Update, Delete) y es m&aacute;s simple y ligero en comparaci&oacute;n con SOAP.</p>
+<p><strong>Formato de Mensaje</strong>: Utiliza formatos de datos ligeros como JSON (predominante) o XML, aunque
+    tambi&eacute;n puede usar otros formatos como YAML, CSV, o incluso texto plano.</p>
+<p><strong>Est&aacute;ndar de Descripci&oacute;n</strong>: No tiene un est&aacute;ndar formal de descripci&oacute;n como
+    WSDL. Sin embargo, OpenAPI (anteriormente Swagger) es ampliamente utilizado para la documentaci&oacute;n de
+    servicios RESTful.</p>
+<p><strong>Seguridad</strong>: Depende principalmente de las caracter&iacute;sticas de seguridad del protocolo HTTP como
+    SSL/TLS para la encriptaci&oacute;n y autenticaci&oacute;n. Tambi&eacute;n se puede utilizar OAuth para
+    autenticaci&oacute;n y autorizaci&oacute;n.</p>
+<p><strong>Protocolos de Transporte</strong>: Utiliza HTTP/HTTPS como el protocolo de transporte est&aacute;ndar.</p>
+<p><strong>Estado</strong>: REST es inherentemente stateless (sin estado). Cada solicitud del cliente al servidor debe
+    contener toda la informaci&oacute;n necesaria para entender y procesar la solicitud.</p>
+<p><strong>Escalabilidad</strong>: REST es altamente escalable debido a su naturaleza sin estado y su simplicidad.
+    Utiliza cach&eacute; HTTP para mejorar el rendimiento.</p>
+<h4>Comparativa REST vs. SOAP</h4>
+<p>- Enfoque Arquitect&oacute;nico:<br /> * REST: Estilo arquitect&oacute;nico basado en recursos y operaciones HTTP
+    (CRUD).<br /> * SOAP: Protocolo basado en XML para llamadas a procedimiento remoto (RPC).</p>
+<p>- Formato de Mensaje:<br /> * REST: JSON (principalmente), XML, YAML, CSV, texto plano.<br /> * SOAP: XML
+    exclusivamente con un formato estandarizado (Envelope, Header, Body).</p>
+<p>- Protocolos de Transporte:<br /> * REST: HTTP/HTTPS.<br /> * SOAP: HTTP, HTTPS, SMTP, TCP, y m&aacute;s.</p>
+<p>- Est&aacute;ndar de Descripci&oacute;n:<br /> * REST: No tiene un est&aacute;ndar formal; utiliza OpenAPI (Swagger)
+    o RAML para documentaci&oacute;n.<br /> * SOAP: WSDL (Web Services Description Language) para describir la interfaz
+    de servicio.</p>
+<p>- Seguridad:<br /> * REST: Seguridad basada en HTTPS (SSL/TLS) y est&aacute;ndares como OAuth para
+    autenticaci&oacute;n y autorizaci&oacute;n.<br /> * SOAP: Seguridad avanzada a nivel de mensaje con WS-Security;
+    soporta firma digital, encriptaci&oacute;n, y tokens SAML.</p>
+<p>- Estado (Stateless/Stateful):<br /> * REST: Sin estado (stateless). Cada solicitud es independiente y contiene toda
+    la informaci&oacute;n necesaria.<br /> * SOAP: Principalmente sin estado (stateless), pero puede manejar estado
+    utilizando WS-ReliableMessaging.</p>
+<p>- Escalabilidad:<br /> * REST: Altamente escalable debido a su simplicidad y caracter&iacute;sticas sin estado.<br />
+    * SOAP: Menos escalable en comparaci&oacute;n con REST debido a su sobrecarga y complejidad en la
+    comunicaci&oacute;n.</p>
+<p>- Manejo de Errores:<br /> * REST: Utiliza c&oacute;digos de estado HTTP est&aacute;ndar (200, 404, 500, etc.) para
+    el manejo de errores.<br /> * SOAP: Define un est&aacute;ndar detallado para manejo de errores utilizando
+    c&oacute;digos SOAP Fault.</p>
+<p>- Transacciones:<br /> * REST: No soporta transacciones nativas; las transacciones distribuidas deben ser manejadas a
+    nivel de aplicaci&oacute;n.<br /> * SOAP: Soporte robusto para transacciones distribuidas y coordinadas utilizando
+    WS-Coordination y WS-AtomicTransaction.</p>
+<p>- Interoperabilidad:<br /> * REST: Altamente interoperable y f&aacute;cil de usar con sistemas modernos; m&aacute;s
+    amigable para desarrolladores debido a su simplicidad y uso de JSON.<br /> * SOAP: Interoperabilidad garantizada a
+    trav&eacute;s del uso de est&aacute;ndares estrictos, aunque puede ser m&aacute;s complejo y pesado debido a la
+    sobrecarga de XML y WS-* est&aacute;ndares.</p>
+<p>- Uso Com&uacute;n:<br /> * REST: Servicios web que requieren alta escalabilidad, baja latencia, f&aacute;cil
+    integraci&oacute;n, y sistemas ligeros como aplicaciones m&oacute;viles y APIs web.<br /> * SOAP: Aplicaciones
+    empresariales complejas que requieren alto nivel de seguridad, transacciones distribuidas, y manejo de mensajes
+    robusto (e.g., servicios financieros).</p>
+<p><strong>Conclusi&oacute;n</strong></p>
+<p>REST es ideal para aplicaciones que necesitan ser ligeras, r&aacute;pidas y altamente escalables, y donde la
+    simplicidad y la facilidad de integraci&oacute;n son clave. Es la opci&oacute;n preferida para APIs p&uacute;blicas
+    y servicios web modernos debido a su simplicidad, velocidad, y uso predominante de JSON.</p>
+<p>SOAP, por otro lado, es m&aacute;s adecuado para entornos empresariales donde se requiere un mayor nivel de
+    seguridad, transacciones distribuidas, y complejidad en el manejo de mensajes. SOAP es m&aacute;s seguro y robusto
+    en t&eacute;rminos de integridad de mensajes y transacciones, pero puede ser m&aacute;s pesado y complejo en
+    comparaci&oacute;n con REST.</p>
+<p>La elecci&oacute;n entre REST y SOAP depende de las necesidades espec&iacute;ficas de la aplicaci&oacute;n, los
+    requisitos de seguridad, el entorno de implementaci&oacute;n y las capacidades del equipo de desarrollo.</p>

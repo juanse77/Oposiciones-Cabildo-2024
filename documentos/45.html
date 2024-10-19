@@ -1,0 +1,206 @@
+<h1>Tema 45. Sistemas de identificaci&oacute;n y gesti&oacute;n de privilegios.</h1>
+<h2>45.1. Administraci&oacute;n de accesos privilegiados (PAM).</h2>
+<p>La Administraci&oacute;n de Accesos Privilegiados (PAM, por sus siglas en ingl&eacute;s: Privileged Access
+    Management) es un conjunto de tecnolog&iacute;as, pol&iacute;ticas y procedimientos que ayudan a las organizaciones
+    a proteger, controlar, monitorear y auditar el acceso privilegiado a recursos cr&iacute;ticos. Este tipo de acceso
+    suele estar asociado a cuentas con privilegios elevados, como las cuentas de administradores de sistemas, bases de
+    datos, redes, entre otros. El objetivo de PAM es minimizar los riesgos de seguridad asociados con el acceso
+    privilegiado no controlado o abusado.</p>
+<h3>Elementos Clave de PAM</h3>
+<h4>Gesti&oacute;n de Cuentas Privilegiadas:</h4>
+<p>PAM se centra en la gesti&oacute;n de cuentas con privilegios elevados que tienen acceso a sistemas cr&iacute;ticos y
+    datos sensibles. Estas cuentas pueden ser de administradores de sistemas, de bases de datos, de aplicaciones o de
+    redes.</p>
+<h4>Control de Acceso Basado en Roles (RBAC):</h4>
+<p>PAM implementa un control estricto sobre qui&eacute;n tiene acceso a qu&eacute; recursos y en qu&eacute; capacidad.
+    El acceso se otorga en funci&oacute;n de los roles, minimizando los privilegios para reducir el riesgo de abuso o
+    error.</p>
+<h4>Almacenamiento Seguro de Credenciales:</h4>
+<p>Las soluciones de PAM ofrecen un "cofre de contrase&ntilde;as" o "b&oacute;veda de credenciales" donde se almacenan
+    de manera segura las contrase&ntilde;as de las cuentas privilegiadas. Este sistema permite rotar contrase&ntilde;as
+    autom&aacute;ticamente, eliminando el riesgo de exposici&oacute;n por contrase&ntilde;as est&aacute;ticas.</p>
+<h4>Supervisi&oacute;n y Auditor&iacute;a de Sesiones Privilegiadas:</h4>
+<p>PAM permite monitorear y grabar las sesiones de acceso privilegiado. Este registro puede ser revisado para detectar
+    actividades sospechosas, cumplir con normativas de seguridad o realizar investigaciones forenses en caso de
+    incidentes.</p>
+<h4>Autenticaci&oacute;n Multifactor (MFA):</h4>
+<p>Para un nivel adicional de seguridad, PAM implementa la autenticaci&oacute;n multifactor, lo que asegura que solo los
+    usuarios autenticados adecuadamente tengan acceso a cuentas privilegiadas.</p>
+<h4>Delegaci&oacute;n de Privilegios Temporales:</h4>
+<p>PAM puede permitir que ciertos privilegios se otorguen de manera temporal. Esto es &uacute;til para trabajos que
+    requieren acceso privilegiado temporalmente, minimizando el riesgo de mantener acceso continuo innecesario.</p>
+<h4>Gesti&oacute;n de Accesos Just-In-Time (JIT):</h4>
+<p>Este enfoque permite otorgar acceso privilegiado solo cuando sea necesario, por el tiempo m&iacute;nimo necesario, y
+    se revoca autom&aacute;ticamente una vez completada la tarea. Este modelo reduce la posibilidad de abuso de
+    privilegios.</p>
+<h3>Beneficios de PAM</h3>
+<p><strong>Minimizaci&oacute;n de Riesgos de Seguridad</strong>: Al restringir y monitorear el acceso privilegiado, las
+    organizaciones reducen el riesgo de ciberataques internos y externos.</p>
+<p><strong>Cumplimiento Normativo</strong>: PAM ayuda a las organizaciones a cumplir con regulaciones de seguridad de
+    datos como GDPR, HIPAA, PCI-DSS, entre otras.</p>
+<p><strong>Visibilidad y Control Mejorados</strong>: Proporciona a los equipos de seguridad una mayor visibilidad y
+    control sobre el acceso a sistemas cr&iacute;ticos.</p>
+<p><strong>Reducci&oacute;n del Tiempo de Respuesta a Incidentes</strong>: El monitoreo y la auditor&iacute;a en tiempo
+    real permiten una respuesta r&aacute;pida ante cualquier actividad sospechosa.</p>
+<h3>Desaf&iacute;os en la Implementaci&oacute;n de PAM</h3>
+<p><strong>Complejidad en la Configuraci&oacute;n Inicial</strong>: La implementaci&oacute;n de PAM puede ser compleja
+    debido a la necesidad de integrar m&uacute;ltiples sistemas y definir pol&iacute;ticas de acceso claras.</p>
+<p><strong>Resistencia al Cambio por Parte del Personal</strong>: Los usuarios que tienen acceso privilegiado pueden ser
+    resistentes a los controles adicionales y la monitorizaci&oacute;n que implica PAM.</p>
+<p><strong>Mantenimiento Continuo</strong>: PAM no es una soluci&oacute;n &uacute;nica, requiere mantenimiento continuo,
+    actualizaciones y auditor&iacute;as para asegurar que las pol&iacute;ticas de acceso sean efectivas.</p>
+<h3>Soluciones y Herramientas de PAM</h3>
+<p>Existen varias soluciones y herramientas PAM en el mercado, como CyberArk, BeyondTrust, Thycotic, Centrify, entre
+    otras, que ofrecen capacidades avanzadas para gestionar el acceso privilegiado de manera eficiente.</p>
+<h2>45.2. Gesti&oacute;n de identidad y acceso (IAM).</h2>
+<p>La Gesti&oacute;n de Identidad y Acceso (IAM, por sus siglas en ingl&eacute;s: Identity and Access Management) es un
+    marco de pol&iacute;ticas, procesos y tecnolog&iacute;as que permite a las organizaciones gestionar de manera segura
+    las identidades digitales y los derechos de acceso de los usuarios a los recursos de la empresa. El objetivo
+    principal de IAM es asegurar que las personas adecuadas tengan el acceso adecuado a los recursos de la empresa en el
+    momento adecuado.</p>
+<p>IAM abarca la autenticaci&oacute;n (validaci&oacute;n de identidad) y la autorizaci&oacute;n (otorgar o restringir
+    acceso) de los usuarios y asegura que los sistemas y datos cr&iacute;ticos est&eacute;n protegidos contra accesos no
+    autorizados.</p>
+<h3>Componentes Clave de IAM</h3>
+<h4>- Gesti&oacute;n de Identidades:</h4>
+<p>Involucra la creaci&oacute;n, mantenimiento y eliminaci&oacute;n de identidades digitales en un sistema de
+    informaci&oacute;n. Las identidades pueden ser de empleados, clientes, proveedores o dispositivos. El proceso
+    incluye la asignaci&oacute;n de atributos como nombres, roles, credenciales, etc.</p>
+<h4>- Autenticaci&oacute;n:</h4>
+<p>Es el proceso de verificar la identidad de un usuario. IAM utiliza diversos m&eacute;todos de autenticaci&oacute;n,
+    como contrase&ntilde;as, autenticaci&oacute;n multifactor (MFA), autenticaci&oacute;n biom&eacute;trica (huellas
+    dactilares, reconocimiento facial), y tokens, para asegurar que solo los usuarios leg&iacute;timos accedan a los
+    sistemas.</p>
+<h3>Autorizaci&oacute;n y Control de Acceso Basado en Roles (RBAC):</h3>
+<p>Una vez autenticados, los usuarios necesitan autorizaci&oacute;n para acceder a ciertos recursos. IAM define roles y
+    pol&iacute;ticas de acceso que determinan qu&eacute; usuarios pueden hacer qu&eacute; cosas, bas&aacute;ndose en el
+    principio de "menor privilegio", donde se otorgan solo los permisos m&iacute;nimos necesarios.</p>
+<h3>Gesti&oacute;n de Ciclo de Vida de Identidades:</h3>
+<p>IAM gestiona el ciclo de vida completo de una identidad: desde la creaci&oacute;n de la cuenta (onboarding), la
+    gesti&oacute;n de permisos y roles, hasta la revocaci&oacute;n del acceso cuando un usuario deja la
+    organizaci&oacute;n (offboarding).</p>
+<h4>- Single Sign-On (SSO):</h4>
+<p>IAM puede implementar soluciones de inicio de sesi&oacute;n &uacute;nico (SSO) que permiten a los usuarios acceder a
+    m&uacute;ltiples aplicaciones y sistemas con una sola autenticaci&oacute;n, mejorando la experiencia del usuario y
+    reduciendo la carga de gesti&oacute;n de contrase&ntilde;as.</p>
+<h4>- Autenticaci&oacute;n Multifactor (MFA):</h4>
+<p>MFA a&ntilde;ade una capa adicional de seguridad al requerir m&uacute;ltiples m&eacute;todos de verificaci&oacute;n
+    (algo que el usuario sabe, algo que el usuario tiene, o algo que el usuario es) antes de permitir el acceso.</p>
+<h4>- Monitoreo, Auditor&iacute;a y Reporte:</h4>
+<p>IAM proporciona capacidades de monitoreo y auditor&iacute;a para registrar qui&eacute;n accede a qu&eacute; recursos,
+    cu&aacute;ndo y c&oacute;mo. Esto es esencial para la detecci&oacute;n de actividades sospechosas, cumplimiento de
+    normativas y an&aacute;lisis forense.</p>
+<h4>- Federaci&oacute;n de Identidades:</h4>
+<p>Permite a las organizaciones utilizar identidades gestionadas externamente para acceder a sus recursos. Esto es
+    &uacute;til en entornos donde se utilizan m&uacute;ltiples proveedores de servicios en la nube, permitiendo una
+    gesti&oacute;n de identidad consistente y segura a trav&eacute;s de diferentes plataformas.</p>
+<h3>Beneficios de IAM</h3>
+<p><strong>Mejora la Seguridad</strong>: Proporciona control granular sobre qui&eacute;n accede a qu&eacute; recursos,
+    minimizando el riesgo de accesos no autorizados y violaciones de seguridad.</p>
+<p><strong>Simplificaci&oacute;n del Cumplimiento</strong>: Ayuda a cumplir con normativas como GDPR, HIPAA, SOX,
+    PCI-DSS, entre otras, mediante pol&iacute;ticas de acceso bien definidas y registros de auditor&iacute;a.</p>
+<p><strong>Eficiencia Operativa</strong>: Automatiza la gesti&oacute;n de identidades y permisos, reduciendo la carga
+    administrativa sobre los equipos de TI.</p>
+<p><strong>Mejora la Experiencia del Usuario</strong>: Las soluciones como SSO y MFA reducen la necesidad de recordar
+    m&uacute;ltiples credenciales y aumentan la comodidad sin comprometer la seguridad.</p>
+<p><strong>Reducci&oacute;n de Costes</strong>: Al automatizar y simplificar la gesti&oacute;n de identidades, IAM puede
+    ayudar a reducir costos operativos y mejorar la eficiencia en la gesti&oacute;n de usuarios y accesos.</p>
+<h3>Desaf&iacute;os en la Implementaci&oacute;n de IAM</h3>
+<p><strong>Complejidad de Integraci&oacute;n</strong>: Integrar IAM con sistemas y aplicaciones existentes puede ser
+    complejo y requerir un esfuerzo significativo de personalizaci&oacute;n.</p>
+<p><strong>Gesti&oacute;n de Cambios</strong>: Las organizaciones deben gestionar cuidadosamente los cambios en los
+    procesos y pol&iacute;ticas de acceso para asegurar la aceptaci&oacute;n del usuario y minimizar interrupciones.</p>
+<p><strong>Escalabilidad</strong>: A medida que las organizaciones crecen, el sistema IAM debe ser capaz de escalar para
+    manejar m&aacute;s identidades y mayores necesidades de seguridad.</p>
+<h3>Soluciones y Herramientas de IAM</h3>
+<p>Existen diversas soluciones de IAM en el mercado, tanto en la nube como on-premises, que ofrecen una gama de
+    capacidades para satisfacer las necesidades de organizaciones de todos los tama&ntilde;os. Algunas de las
+    herramientas y proveedores m&aacute;s conocidos incluyen:</p>
+<p>- Microsoft Azure Active Directory (Azure AD)<br /> - Okta<br /> - Ping Identity<br /> - ForgeRock<br /> - IBM
+    Security Verify<br /> - SailPoint<br /> - Oracle Identity Cloud Service</p>
+<h3>Diferencias entre IAM y PAM</h3>
+<p>Mientras que IAM se centra en la gesti&oacute;n de identidades y accesos para todos los usuarios de una
+    organizaci&oacute;n, PAM (Administraci&oacute;n de Accesos Privilegiados) se centra espec&iacute;ficamente en la
+    gesti&oacute;n de cuentas y accesos privilegiados (como administradores). IAM gestiona accesos generales, mientras
+    que PAM proporciona una capa adicional de seguridad para los accesos de alto riesgo.</p>
+<h2>45.3. Gesti&oacute;n de identidades privilegiadas (PIM).</h2>
+<p>La Gesti&oacute;n de Identidades Privilegiadas (PIM, por sus siglas en ingl&eacute;s: Privileged Identity Management)
+    es una subdisciplina dentro de la gesti&oacute;n de identidades y accesos (IAM) que se enfoca en la gesti&oacute;n y
+    control de identidades que poseen privilegios elevados dentro de una organizaci&oacute;n. Las identidades
+    privilegiadas suelen ser aquellas que tienen un mayor nivel de acceso y control sobre los sistemas y datos
+    cr&iacute;ticos, como las cuentas de administrador, cuentas de servicio y cuentas de sistemas.</p>
+<p>PIM es fundamental para proteger los recursos cr&iacute;ticos de una organizaci&oacute;n de accesos no autorizados,
+    abuso de privilegios y ataques internos y externos. Mientras que la Administraci&oacute;n de Accesos Privilegiados
+    (PAM) se centra en la gesti&oacute;n del acceso a sistemas, la Gesti&oacute;n de Identidades Privilegiadas (PIM) se
+    enfoca espec&iacute;ficamente en la gesti&oacute;n de las identidades privilegiadas y la asignaci&oacute;n temporal
+    de privilegios.</p>
+<h3>Componentes Clave de PIM</h3>
+<h4>- Control de Acceso y Elevaci&oacute;n de Privilegios bajo Demanda:</h4>
+<p>PIM permite la asignaci&oacute;n de privilegios elevados a las identidades solo cuando sea necesario y durante un
+    tiempo limitado. Esto minimiza el tiempo durante el cual una identidad tiene acceso privilegiado, reduciendo la
+    superficie de ataque.</p>
+<h4>- Gesti&oacute;n de Roles Privilegiados:</h4>
+<p>PIM permite la creaci&oacute;n y gesti&oacute;n de roles espec&iacute;ficos para usuarios privilegiados. Estos roles
+    determinan qu&eacute; acciones pueden realizar estos usuarios dentro de sistemas cr&iacute;ticos, siguiendo el
+    principio de "menor privilegio".</p>
+<h4>- Aprobaci&oacute;n de Acceso Just-In-Time (JIT):</h4>
+<p>PIM habilita la asignaci&oacute;n de acceso justo a tiempo (JIT), donde los usuarios deben solicitar permisos
+    espec&iacute;ficos y estos deben ser aprobados antes de ser otorgados, con una duraci&oacute;n temporal establecida.
+</p>
+<h4>- Auditor&iacute;a y Monitoreo de Actividades Privilegiadas:</h4>
+<p>PIM incluye la capacidad de registrar y monitorear todas las actividades realizadas por cuentas con privilegios
+    elevados. Estas auditor&iacute;as ayudan a detectar y responder a actividades sospechosas o no autorizadas.</p>
+<h4>- Alerta y Notificaci&oacute;n en Tiempo Real:</h4>
+<p>Las soluciones de PIM proporcionan alertas y notificaciones en tiempo real sobre actividades potencialmente
+    maliciosas o no autorizadas llevadas a cabo por identidades privilegiadas, lo que permite una respuesta inmediata.
+</p>
+<h4>- Revisi&oacute;n Peri&oacute;dica de Accesos y Roles:</h4>
+<p>PIM requiere revisiones peri&oacute;dicas de accesos y roles para asegurar que los usuarios no tengan permisos
+    innecesarios o caducados. Este proceso implica la validaci&oacute;n continua de que los accesos son apropiados para
+    los roles asignados.</p>
+<h4>- Integraci&oacute;n con IAM y PAM:</h4>
+<p>PIM se integra estrechamente con sistemas de IAM y PAM para proporcionar un enfoque cohesivo y unificado para la
+    gesti&oacute;n de identidades y accesos en toda la organizaci&oacute;n.</p>
+<h3>Beneficios de PIM</h3>
+<p><strong>Minimizaci&oacute;n de Riesgos de Seguridad</strong>: La asignaci&oacute;n temporal de privilegios y la
+    vigilancia continua reducen el riesgo de accesos no autorizados y violaciones de seguridad.</p>
+<p><strong>Cumplimiento Normativo</strong>: PIM ayuda a cumplir con regulaciones de seguridad de datos como GDPR, HIPAA,
+    PCI-DSS, SOX, entre otras, al proporcionar visibilidad y control sobre las actividades de cuentas privilegiadas.</p>
+<p><strong>Visibilidad Mejorada de Actividades Privilegiadas</strong>: Las auditor&iacute;as y el monitoreo permiten una
+    mayor visibilidad de las actividades de los usuarios con privilegios elevados, lo que facilita la detecci&oacute;n
+    de comportamientos an&oacute;malos.</p>
+<p><strong>Reducci&oacute;n de Superficie de Ataque</strong>: Al limitar el tiempo de exposici&oacute;n de las cuentas
+    privilegiadas y automatizar la asignaci&oacute;n de permisos, se reduce la posibilidad de que los atacantes exploten
+    estas cuentas.</p>
+<p><strong>Aumento de la Eficiencia Operativa</strong>: Automatiza la gesti&oacute;n de identidades privilegiadas,
+    eliminando la necesidad de procesos manuales que pueden ser propensos a errores y lentos.</p>
+<h3>Desaf&iacute;os en la Implementaci&oacute;n de PIM</h3>
+<p><strong>Complejidad de Configuraci&oacute;n y Administraci&oacute;n</strong>: La implementaci&oacute;n de PIM puede
+    ser compleja debido a la necesidad de integrar con diversos sistemas y definir pol&iacute;ticas de acceso y
+    aprobaci&oacute;n claras.</p>
+<p><strong>Resistencia al Cambio por Parte de los Usuarios</strong>: Los usuarios con acceso privilegiado pueden
+    resistirse a las nuevas pol&iacute;ticas y controles, ya que perciben la gesti&oacute;n como una limitaci&oacute;n a
+    su capacidad de operar.</p>
+<p><strong>Mantenimiento Continuo</strong>: Al igual que IAM y PAM, PIM requiere un mantenimiento y revisi&oacute;n
+    continuos para asegurar que las pol&iacute;ticas de acceso se ajusten a los cambios en las necesidades de la
+    organizaci&oacute;n.</p>
+<h3>Soluciones y Herramientas de PIM</h3>
+<p>Algunas soluciones populares de PIM que las organizaciones utilizan incluyen:</p>
+<p><strong>Microsoft Azure AD Privileged Identity Management</strong>: Una soluci&oacute;n en la nube que permite
+    gestionar, monitorear y controlar el acceso a recursos de Azure AD.</p>
+<p><strong>CyberArk Privileged Access Security Solution</strong>: Proporciona capacidades robustas de gesti&oacute;n de
+    identidades privilegiadas en combinaci&oacute;n con la gesti&oacute;n de accesos privilegiados.</p>
+<p><strong>BeyondTrust Privileged Identity</strong>: Ofrece herramientas para la administraci&oacute;n de cuentas
+    privilegiadas, gesti&oacute;n de sesiones privilegiadas y auditor&iacute;a de actividades.</p>
+<p><strong>Thycotic Secret Server</strong>: Una soluci&oacute;n de seguridad para la gesti&oacute;n de
+    contrase&ntilde;as privilegiadas, con capacidades de monitoreo y control de accesos privilegiados.</p>
+<h3>Diferencias entre PIM, IAM y PAM</h3>
+<ul>
+    <li>IAM (Gesti&oacute;n de Identidad y Acceso) se centra en la gesti&oacute;n de identidades y accesos para todos
+        los usuarios de una organizaci&oacute;n.</li>
+    <li>PAM (Administraci&oacute;n de Accesos Privilegiados) se centra en el acceso y la seguridad de las cuentas
+        privilegiadas.</li>
+    <li>PIM (Gesti&oacute;n de Identidades Privilegiadas) es un subconjunto de PAM que se enfoca espec&iacute;ficamente
+        en la gesti&oacute;n de las identidades privilegiadas, su provisi&oacute;n temporal, y su monitoreo constante.
+    </li>
+</ul>

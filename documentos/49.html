@@ -1,0 +1,200 @@
+<h1>Tema 49. Infraestructuras de clave p&uacute;blica.</h1>
+<h2>49.1. Definici&oacute;n y elementos de una PKI.</h2>
+<p>Una PKI (Public Key Infrastructure) o Infraestructura de Clave P&uacute;blica es un conjunto de pol&iacute;ticas,
+    procedimientos, est&aacute;ndares, hardware, software y personas necesarias para crear, gestionar, distribuir, usar,
+    almacenar y revocar certificados digitales. Los certificados digitales son documentos electr&oacute;nicos que
+    verifican la identidad de las partes involucradas en la comunicaci&oacute;n digital y permiten el cifrado y la firma
+    digital, asegurando la confidencialidad, integridad, autenticidad y no repudio de la informaci&oacute;n.</p>
+<h3>Definici&oacute;n de PKI</h3>
+<p>La PKI es una infraestructura de seguridad que utiliza criptograf&iacute;a de clave p&uacute;blica para proteger la
+    comunicaci&oacute;n en redes. En esencia, una PKI permite a las organizaciones emitir, gestionar y verificar
+    certificados digitales, facilitando la autenticaci&oacute;n y la comunicaci&oacute;n segura entre usuarios y
+    sistemas.</p>
+<h3>Elementos de una PKI</h3>
+<p><strong>Autoridad Certificadora (CA, Certification Authority)</strong>: Es el componente central de una PKI. Una CA
+    es responsable de emitir, gestionar y revocar certificados digitales. Verifica la identidad de una entidad (como un
+    usuario, dispositivo o servidor) antes de emitir un certificado digital.</p>
+<p><strong>Autoridad de Registro (RA, Registration Authority)</strong>: Act&uacute;a como intermediario entre el usuario
+    y la CA. Su funci&oacute;n principal es autenticar las identidades de los usuarios que solicitan certificados y
+    aprobar o rechazar las solicitudes antes de que sean procesadas por la CA.</p>
+<p><strong>Certificados Digitales</strong>: Son documentos electr&oacute;nicos que contienen la clave p&uacute;blica de
+    una entidad y la informaci&oacute;n relacionada con la identidad de dicha entidad. Los certificados digitales
+    est&aacute;n firmados digitalmente por una CA y proporcionan una prueba de autenticidad.</p>
+<p><strong>Clave P&uacute;blica y Clave Privada</strong>: La PKI se basa en un par de claves criptogr&aacute;ficas: la
+    clave p&uacute;blica y la clave privada. La clave p&uacute;blica es compartida abiertamente y se incluye en el
+    certificado digital, mientras que la clave privada se mantiene en secreto por el propietario y se utiliza para
+    descifrar la informaci&oacute;n cifrada con la clave p&uacute;blica o para firmar digitalmente la
+    informaci&oacute;n.</p>
+<p><strong>Lista de Revocaci&oacute;n de Certificados (CRL, Certificate Revocation List)</strong>: Es una lista
+    mantenida por una CA que contiene todos los certificados digitales que han sido revocados antes de su fecha de
+    vencimiento. Las CRLs se utilizan para verificar si un certificado sigue siendo v&aacute;lido.</p>
+<p><strong>Servidor de Protocolo de Estado de Certificado en L&iacute;nea (OCSP, Online Certificate Status
+        Protocol)</strong>: Es un protocolo que permite consultar el estado de un certificado digital en tiempo real.
+    Proporciona una alternativa m&aacute;s eficiente a la CRL para verificar si un certificado ha sido revocado.</p>
+<p><strong>Pol&iacute;tica de Certificaci&oacute;n (CP, Certification Policy) y Declaraci&oacute;n de Pr&aacute;cticas
+        de Certificaci&oacute;n (CPS, Certification Practice Statement)</strong>: Son documentos que describen las
+    reglas y los procedimientos bajo los cuales se emiten, gestionan y revocan los certificados digitales en una PKI. La
+    CP define el conjunto de reglas que rigen el uso de los certificados, mientras que la CPS describe c&oacute;mo la CA
+    implementa estas reglas.</p>
+<p><strong>Gesti&oacute;n de Claves</strong>: Incluye el proceso de generaci&oacute;n, distribuci&oacute;n,
+    almacenamiento, renovaci&oacute;n y destrucci&oacute;n de claves criptogr&aacute;ficas. Es crucial para mantener la
+    seguridad de la infraestructura.</p>
+<p><strong>Almac&eacute;n de Certificados</strong>: Es un repositorio seguro donde se almacenan los certificados
+    digitales, las CRLs y otros objetos relacionados con la PKI. Este almac&eacute;n debe ser accesible para las partes
+    que necesitan verificar los certificados.</p>
+<h3>Beneficios de una PKI</h3>
+<p>- Autenticaci&oacute;n: Verifica la identidad de los usuarios, dispositivos o servicios.<br /> - Confidencialidad:
+    Asegura que la informaci&oacute;n solo pueda ser le&iacute;da por el destinatario previsto mediante cifrado.<br /> -
+    Integridad: Garantiza que la informaci&oacute;n no ha sido alterada durante la transmisi&oacute;n.<br /> - No
+    repudio: Impide que las partes nieguen haber enviado o recibido informaci&oacute;n.<br /> <br /> Una PKI es
+    fundamental en el &aacute;mbito de la ciberseguridad y es utilizada en numerosos contextos, como el comercio
+    electr&oacute;nico, la banca en l&iacute;nea, la comunicaci&oacute;n segura en internet, y m&aacute;s.</p>
+<h2>49.2. Distribuci&oacute;n de claves p&uacute;blicas.</h2>
+<p>La distribuci&oacute;n de claves p&uacute;blicas es un proceso fundamental en la Infraestructura de Clave
+    P&uacute;blica (PKI) y en la criptograf&iacute;a de clave p&uacute;blica en general. La distribuci&oacute;n de
+    claves p&uacute;blicas implica que las claves p&uacute;blicas de los usuarios o entidades deben estar disponibles
+    para otros, de manera que puedan ser utilizadas para cifrar mensajes o verificar firmas digitales. La seguridad de
+    este proceso es crucial, ya que la integridad y autenticidad de la clave p&uacute;blica deben estar garantizadas
+    para prevenir ataques de suplantaci&oacute;n o intercepci&oacute;n.</p>
+<h3>M&eacute;todos de Distribuci&oacute;n de Claves P&uacute;blicas</h3>
+<p>Existen varios m&eacute;todos para distribuir claves p&uacute;blicas de forma segura. Aqu&iacute; se describen los
+    m&aacute;s comunes:</p>
+<h4>- Certificados Digitales:</h4>
+<p>Los certificados digitales son el m&eacute;todo m&aacute;s utilizado para distribuir claves p&uacute;blicas. Un
+    certificado digital es un documento electr&oacute;nico emitido por una Autoridad Certificadora (CA) que contiene la
+    clave p&uacute;blica de una entidad (usuario, servidor, dispositivo, etc.) junto con la identidad de la entidad y
+    otros detalles relevantes.</p>
+<p>El certificado est&aacute; firmado digitalmente por la CA, lo que garantiza su autenticidad e integridad. Los
+    usuarios y aplicaciones pueden confiar en la validez del certificado si conf&iacute;an en la CA emisora.<br />
+    <br /> Este m&eacute;todo es la base de la PKI, donde las claves p&uacute;blicas se distribuyen a trav&eacute;s de
+    certificados digitales que son verificables a trav&eacute;s de una cadena de confianza.</p>
+<h4>- Directorios P&uacute;blicos:</h4>
+<p>Las organizaciones pueden utilizar directorios p&uacute;blicos o servidores de directorios para almacenar y
+    distribuir claves p&uacute;blicas. Los usuarios o aplicaciones pueden acceder a estos directorios para obtener las
+    claves p&uacute;blicas de las entidades con las que desean comunicarse de manera segura.</p>
+<p>Estos directorios est&aacute;n protegidos con controles de acceso y autenticaci&oacute;n para evitar manipulaciones
+    no autorizadas de las claves p&uacute;blicas.</p>
+<h4>- Servidores de Claves P&uacute;blicas (Key Servers):</h4>
+<p>Los servidores de claves p&uacute;blicas son sistemas dise&ntilde;ados espec&iacute;ficamente para almacenar y
+    distribuir claves p&uacute;blicas de manera segura. Estos servidores son utilizados en algunos sistemas de correo
+    seguro (como PGP - Pretty Good Privacy) y otras aplicaciones que requieren distribuci&oacute;n de claves.</p>
+<p>Los usuarios pueden subir sus claves p&uacute;blicas al servidor, donde otros usuarios pueden buscarlas y
+    descargarlas. La seguridad de estos servidores se basa en la verificaci&oacute;n de la identidad del usuario que
+    sube la clave y en mecanismos de autenticaci&oacute;n.</p>
+<h4>- Intercambio Directo:</h4>
+<p>En entornos controlados, las claves p&uacute;blicas pueden ser distribuidas directamente de una entidad a otra, por
+    ejemplo, a trav&eacute;s de medios f&iacute;sicos seguros (USB, discos duros, etc.) o durante reuniones cara a cara.
+</p>
+<p>Este m&eacute;todo se utiliza generalmente en entornos de alta seguridad donde las entidades pueden verificar
+    mutuamente la autenticidad de las claves p&uacute;blicas y minimizar el riesgo de interceptaci&oacute;n o
+    manipulaci&oacute;n.</p>
+<h4>- Correo Electr&oacute;nico Seguro:</h4>
+<p>Las claves p&uacute;blicas pueden ser enviadas a trav&eacute;s de correo electr&oacute;nico de manera segura si el
+    correo electr&oacute;nico est&aacute; protegido mediante cifrado o firmado digitalmente.</p>
+<p>Este m&eacute;todo no es com&uacute;n para la distribuci&oacute;n de claves a gran escala, ya que presenta
+    desaf&iacute;os en cuanto a la verificaci&oacute;n de la autenticidad y la integridad de la clave p&uacute;blica.
+</p>
+<h4>- Protocolo de Intercambio de Claves:</h4>
+<p>Algunos sistemas criptogr&aacute;ficos utilizan protocolos de intercambio de claves seguros, como el Protocolo de
+    Difusi&oacute;n de Clave P&uacute;blica (DHKE, Diffie-Hellman Key Exchange), para negociar claves p&uacute;blicas de
+    forma segura en tiempo real. Aunque no distribuyen la clave p&uacute;blica de manera tradicional, permiten
+    establecer un canal seguro por el cual se pueden intercambiar claves p&uacute;blicas.</p>
+<h3>Importancia de la Seguridad en la Distribuci&oacute;n de Claves P&uacute;blicas</h3>
+<p>La seguridad de la distribuci&oacute;n de claves p&uacute;blicas es fundamental por varias razones:</p>
+<p><strong>- Prevenci&oacute;n de Ataques Man-in-the-Middle (MitM)</strong>: Si un atacante puede interceptar y
+    manipular la distribuci&oacute;n de una clave p&uacute;blica, puede realizar un ataque de intermediario (MitM) en el
+    que se hace pasar por una de las partes.</p>
+<p><strong>- Garant&iacute;a de Autenticidad</strong>: Es crucial que la clave p&uacute;blica distribuida sea
+    aut&eacute;ntica y pertenezca a la entidad correcta. Los certificados digitales proporcionan esta garant&iacute;a.
+</p>
+<p><strong>- Integridad de la Clave P&uacute;blica</strong>: La clave p&uacute;blica debe llegar a su destino sin haber
+    sido alterada. Los mecanismos de firma digital y autenticaci&oacute;n garantizan que la clave no se ha modificado en
+    tr&aacute;nsito.</p>
+<h3>Conclusi&oacute;n:</h3>
+<p>La distribuci&oacute;n de claves p&uacute;blicas es un componente esencial en la criptograf&iacute;a de clave
+    p&uacute;blica y la seguridad de la informaci&oacute;n. Para asegurar la integridad y autenticidad de las claves
+    p&uacute;blicas, es fundamental usar m&eacute;todos seguros como los certificados digitales, directorios
+    p&uacute;blicos o servidores de claves, respaldados por una infraestructura de confianza.</p>
+<h2>49.3. Firma electr&oacute;nica.</h2>
+<p>La firma electr&oacute;nica es un mecanismo que permite autenticar y garantizar la integridad de documentos y
+    transacciones digitales. A diferencia de las firmas manuscritas tradicionales, la firma electr&oacute;nica se
+    utiliza en entornos digitales para verificar la identidad del firmante, asegurar que el contenido no ha sido
+    alterado y, en algunos casos, proporcionar evidencia de consentimiento y no repudio.</p>
+<h3>Definici&oacute;n de Firma Electr&oacute;nica</h3>
+<p>Una firma electr&oacute;nica es cualquier tipo de s&iacute;mbolo, proceso o m&eacute;todo electr&oacute;nico que
+    tiene la intenci&oacute;n de ser equivalente a una firma manuscrita en un documento digital. Las firmas
+    electr&oacute;nicas pueden variar en complejidad y seguridad, desde una simple representaci&oacute;n gr&aacute;fica
+    de una firma manuscrita hasta complejos sistemas de criptograf&iacute;a de clave p&uacute;blica.</p>
+<h3>Tipos de Firmas Electr&oacute;nicas</h3>
+<h4>- Firma Electr&oacute;nica Simple:</h4>
+<p>Es la forma m&aacute;s b&aacute;sica de firma electr&oacute;nica, que puede incluir m&eacute;todos como una imagen
+    escaneada de una firma manuscrita, una firma realizada con el dedo o el rat&oacute;n en un dispositivo, o un simple
+    "clic para aceptar".</p>
+<p>Este tipo de firma es f&aacute;cil de implementar y es adecuado para transacciones de bajo riesgo, pero ofrece menos
+    garant&iacute;as en t&eacute;rminos de autenticidad e integridad.</p>
+<h4>- Firma Electr&oacute;nica Avanzada:</h4>
+<p>Ofrece mayor seguridad que la firma electr&oacute;nica simple y requiere que cumpla ciertos requisitos, como estar
+    vinculada de manera &uacute;nica al firmante, ser capaz de identificar al firmante, y estar creada utilizando medios
+    bajo el control exclusivo del firmante.</p>
+<p>Las firmas electr&oacute;nicas avanzadas suelen utilizar mecanismos de criptograf&iacute;a, como certificados
+    digitales y claves privadas, para asegurar la autenticidad e integridad.</p>
+<h4>- Firma Electr&oacute;nica Cualificada (o Firma Digital):</h4>
+<p>Es el tipo m&aacute;s seguro de firma electr&oacute;nica y est&aacute; respaldada por un Certificado Digital
+    Cualificado emitido por una Autoridad Certificadora (CA) reconocida y de confianza.</p>
+<p>La firma electr&oacute;nica cualificada utiliza criptograf&iacute;a de clave p&uacute;blica para crear una firma
+    digital &uacute;nica que se puede verificar matem&aacute;ticamente. Este tipo de firma tiene la misma validez legal
+    que una firma manuscrita en muchas jurisdicciones, siempre y cuando cumpla con los requisitos legales y normativos.
+</p>
+<p>En la Uni&oacute;n Europea, las firmas electr&oacute;nicas cualificadas est&aacute;n reguladas por el Reglamento
+    eIDAS y tienen el nivel m&aacute;s alto de seguridad y garant&iacute;a jur&iacute;dica.</p>
+<h3>Componentes de una Firma Electr&oacute;nica</h3>
+<h4>- Certificado Digital:</h4>
+<p>Un certificado digital es emitido por una Autoridad Certificadora (CA) y vincula una clave p&uacute;blica a la
+    identidad del firmante. Sirve como una prueba de la autenticidad de la firma electr&oacute;nica.</p>
+<h4>- Clave P&uacute;blica y Clave Privada:</h4>
+<p>En el caso de firmas digitales (firma electr&oacute;nica cualificada), el firmante utiliza una clave privada para
+    firmar digitalmente un documento. La clave p&uacute;blica correspondiente, que est&aacute; incluida en el
+    certificado digital, se utiliza para verificar la firma.</p>
+<h4>- Hash Criptogr&aacute;fico:</h4>
+<p>Un hash es una funci&oacute;n que toma un bloque de datos y lo convierte en una cadena de caracteres de longitud
+    fija. Para firmar un documento digital, primero se genera un hash del contenido del documento, que luego se cifra
+    con la clave privada del firmante. Este hash cifrado es la firma digital.</p>
+<h4>- Software de Firma Electr&oacute;nica:</h4>
+<p>Las plataformas y aplicaciones de firma electr&oacute;nica son herramientas que permiten a los usuarios firmar
+    documentos digitales de manera segura y sencilla. Estas herramientas pueden variar desde soluciones simples basadas
+    en la web hasta sistemas complejos integrados en software empresarial.</p>
+<h3>Funcionamiento de la Firma Electr&oacute;nica</h3>
+<p>El proceso de firma electr&oacute;nica suele implicar los siguientes pasos:</p>
+<h4>1.- Creaci&oacute;n de un Hash del Documento:</h4>
+<p>Se genera un hash criptogr&aacute;fico del documento que se va a firmar. Este hash es &uacute;nico para el contenido
+    del documento y cambiar&aacute; si se realiza alguna modificaci&oacute;n en el documento.</p>
+<h4>2.- Cifrado del Hash con la Clave Privada del Firmante:</h4>
+<p>El hash generado se cifra utilizando la clave privada del firmante. Este cifrado del hash se convierte en la firma
+    digital del documento.</p>
+<h4>3.- Adjunci&oacute;n de la Firma al Documento:</h4>
+<p>La firma digital (hash cifrado) se adjunta al documento junto con el certificado digital del firmante.</p>
+<h4>4.- Verificaci&oacute;n de la Firma:</h4>
+<p>Cuando el destinatario recibe el documento firmado, utiliza la clave p&uacute;blica del firmante, que est&aacute;
+    incluida en el certificado digital, para descifrar la firma (hash cifrado). Luego, genera un nuevo hash del
+    documento recibido.</p>
+<p>Si el hash generado coincide con el hash descifrado, la firma es v&aacute;lida y el documento no ha sido alterado.
+</p>
+<h3>Ventajas de la Firma Electr&oacute;nica</h3>
+<p>- <strong>Autenticidad</strong>: Verifica la identidad del firmante.<br /> - <strong>Integridad</strong>: Garantiza
+    que el contenido del documento no ha sido alterado despu&eacute;s de haber sido firmado.<br /> - <strong>No
+        repudio</strong>: Evita que el firmante niegue haber firmado el documento.<br /> - <strong>Eficiencia</strong>:
+    Ahorra tiempo y costos asociados con la impresi&oacute;n, el escaneo y el env&iacute;o f&iacute;sico de
+    documentos.<br /> - <strong>Validez Legal</strong>: En muchas jurisdicciones, las firmas electr&oacute;nicas tienen
+    la misma validez legal que las firmas manuscritas, especialmente si son firmas electr&oacute;nicas cualificadas.</p>
+<h3>Usos Comunes de la Firma Electr&oacute;nica</h3>
+<p>- <strong>Contratos y acuerdos legales</strong>: Firmar acuerdos de negocios, contratos de trabajo, contratos de
+    venta, etc.<br /> - <strong>Transacciones bancarias y financieras</strong>: Firmar documentos relacionados con
+    pr&eacute;stamos, hipotecas, apertura de cuentas, etc.<br /> - <strong>Gobierno y administraci&oacute;n
+        p&uacute;blica</strong>: Autenticaci&oacute;n de documentos oficiales, solicitudes, y tr&aacute;mites
+    digitales.<br /> - <strong>Procesos empresariales internos</strong>: Aprobar documentos internos, &oacute;rdenes de
+    compra, permisos, etc.</p>
+<h3>Conclusi&oacute;n</h3>
+<p>La firma electr&oacute;nica es una herramienta poderosa en el mundo digital moderno que garantiza la autenticidad,
+    integridad y no repudio de documentos y transacciones electr&oacute;nicas. Dependiendo del nivel de seguridad
+    requerido, se puede optar por firmas electr&oacute;nicas simples, avanzadas o cualificadas, cada una con diferentes
+    caracter&iacute;sticas y garant&iacute;as legales.</p>

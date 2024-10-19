@@ -1,0 +1,340 @@
+<h1>Tema 52. Sistemas de seguridad I.</h1>
+<h2>52.1. Sistemas Cortafuegos.</h2>
+<p>Los sistemas cortafuegos (o "firewalls" en ingl&eacute;s) son componentes fundamentales en la seguridad de las redes
+    inform&aacute;ticas. Su funci&oacute;n principal es proteger los sistemas y redes de accesos no autorizados, ataques
+    y amenazas externas, y, en algunos casos, tambi&eacute;n internas. A continuaci&oacute;n, paso a detallar los
+    aspectos m&aacute;s importantes de los sistemas cortafuegos:</p>
+<h3>&iquest;Qu&eacute; es un Cortafuegos?</h3>
+<p>Un cortafuegos es un dispositivo de seguridad de red que monitorea y controla el tr&aacute;fico de red entrante y
+    saliente seg&uacute;n pol&iacute;ticas de seguridad preestablecidas. Puede ser implementado como hardware, software
+    o una combinaci&oacute;n de ambos.</p>
+<h3>Funciones de un Cortafuegos</h3>
+<p>- Filtrado de Paquetes: Inspecciona cada paquete de datos que entra o sale de la red y decide si permitirlo o
+    bloquearlo seg&uacute;n reglas definidas.</p>
+<p>- Control de Acceso: Define qu&eacute; usuarios o dispositivos pueden acceder a la red o a ciertas partes de ella.
+</p>
+<p>- Inspecci&oacute;n de Estado: Mantiene un registro de las conexiones activas y toma decisiones basadas en el estado
+    de la conexi&oacute;n y las reglas de pol&iacute;tica.</p>
+<p>- Protecci&oacute;n contra Ataques Externos: Protege contra ataques de denegaci&oacute;n de servicio (DoS),
+    inyecciones SQL, ataques de intermediarios (man-in-the-middle), entre otros.</p>
+<p>- Registro y Auditor&iacute;a: Guarda registros de eventos y accesos para an&aacute;lisis posterior, lo que es
+    esencial para la detecci&oacute;n de intrusiones y la realizaci&oacute;n de auditor&iacute;as de seguridad.</p>
+<h3>Tipos de Cortafuegos</h3>
+<p>Cortafuegos de Filtrado de Paquetes (Packet Filtering Firewalls): Son los m&aacute;s b&aacute;sicos y antiguos.
+    Operan en la capa de red (capa 3) y la capa de transporte (capa 4) del modelo OSI, inspeccionando los paquetes y
+    tomando decisiones basadas en criterios como la direcci&oacute;n IP, puerto, protocolo, etc.</p>
+<p>Cortafuegos de Inspecci&oacute;n de Estado (Stateful Inspection Firewalls): Analizan el estado de las conexiones de
+    red, teniendo en cuenta la historia y el contexto de las conexiones, en lugar de examinar los paquetes de forma
+    aislada.</p>
+<p>Cortafuegos de Aplicaci&oacute;n (Application Firewalls o Proxy Firewalls): Operan en la capa de aplicaci&oacute;n
+    (capa 7) y pueden analizar el contenido de los datos, lo que permite bloquear o permitir tr&aacute;fico basado en
+    pol&iacute;ticas espec&iacute;ficas para aplicaciones como HTTP, FTP, DNS, etc.</p>
+<p>Cortafuegos de Pr&oacute;xima Generaci&oacute;n (Next-Generation Firewalls - NGFW): Combinan caracter&iacute;sticas
+    de los cortafuegos tradicionales con funciones adicionales, como la prevenci&oacute;n de intrusiones (IPS),
+    inspecci&oacute;n profunda de paquetes (DPI), y control de aplicaciones. Son mucho m&aacute;s avanzados y se
+    utilizan ampliamente en entornos empresariales.</p>
+<p>Cortafuegos de Hardware vs. Software: Los cortafuegos de hardware son dispositivos f&iacute;sicos que se conectan a
+    la red, mientras que los de software son aplicaciones instaladas en los sistemas operativos o servidores. Algunos
+    entornos utilizan ambos tipos en conjunto para una defensa en profundidad.</p>
+<h3>Beneficios de los Cortafuegos</h3>
+<p>- Protecci&oacute;n Contra Amenazas: Act&uacute;an como una barrera entre la red interna de una organizaci&oacute;n y
+    las amenazas externas.</p>
+<p>- Control Granular: Permiten un control detallado sobre qu&eacute; tr&aacute;fico puede entrar o salir de la red.</p>
+<p>- Cumplimiento de Normativas: Ayudan a las empresas a cumplir con las normas de seguridad de la informaci&oacute;n,
+    como GDPR, PCI DSS, entre otras.</p>
+<p>Desaf&iacute;os y Limitaciones</p>
+<p>- Administraci&oacute;n Compleja: Configurar y mantener pol&iacute;ticas de seguridad puede ser complejo y requiere
+    experiencia.</p>
+<p>- Falsos Positivos/Negativos: Pueden bloquear tr&aacute;fico leg&iacute;timo o permitir tr&aacute;fico malicioso si
+    no se configuran correctamente.</p>
+<p>- No Proporcionan Seguridad Completa: Un cortafuegos no puede proteger contra todas las amenazas. Debe ser parte de
+    una estrategia de seguridad m&aacute;s amplia que incluya sistemas de detecci&oacute;n de intrusiones (IDS),
+    sistemas de prevenci&oacute;n de intrusiones (IPS), antivirus, etc.</p>
+<h3>Mejores Pr&aacute;cticas para el Uso de Cortafuegos</h3>
+<p>Definir pol&iacute;ticas de seguridad claras y actualizarlas regularmente.<br />Monitorear y auditar registros de
+    actividad para detectar posibles intrusiones o actividades sospechosas.</p>
+<p>Mantener los cortafuegos actualizados con los &uacute;ltimos parches de seguridad.</p>
+<p>Utilizar enfoques de seguridad en capas ("defense in depth") para complementar la protecci&oacute;n del cortafuegos.
+</p>
+<h2>52.2. Sistemas IDS e IPS.</h2>
+<p>Claro, los sistemas IDS (Intrusion Detection Systems) y IPS (Intrusion Prevention Systems) son componentes clave en
+    la seguridad de la red, dise&ntilde;ados para detectar y prevenir actividades maliciosas. Ambos sistemas juegan un
+    papel crucial en la protecci&oacute;n de la infraestructura de una red frente a amenazas externas e internas. A
+    continuaci&oacute;n, te proporciono una visi&oacute;n general de ambos tipos de sistemas:</p>
+<h3>Sistemas de Detecci&oacute;n de Intrusiones (IDS)</h3>
+<p>Un Sistema de Detecci&oacute;n de Intrusiones (IDS) es una herramienta de seguridad que monitorea el tr&aacute;fico
+    de red o las actividades del sistema en busca de comportamientos sospechosos, violaciones de pol&iacute;ticas de
+    seguridad o patrones de ataque conocidos. Su funci&oacute;n principal es detectar intrusiones y alertar a los
+    administradores de seguridad, pero no puede tomar medidas por s&iacute; mismo para prevenir la intrusi&oacute;n.</p>
+<h3>Tipos de IDS</h3>
+<p>- IDS Basado en Red (NIDS - Network-based Intrusion Detection System):</p>
+<p>Monitorea el tr&aacute;fico de red en busca de patrones de ataque conocidos o comportamientos an&oacute;malos.</p>
+<p>Se implementa en puntos estrat&eacute;gicos de la red, como en los bordes de la red o en segmentos cr&iacute;ticos.
+</p>
+<p>Ideal para detectar ataques a nivel de red, como escaneos de puertos, intentos de explotaci&oacute;n de
+    vulnerabilidades, etc.</p>
+<p>- IDS Basado en Host (HIDS - Host-based Intrusion Detection System):</p>
+<p>Se instala en servidores o estaciones de trabajo individuales para monitorear la actividad en esos sistemas
+    espec&iacute;ficos.</p>
+<p>Analiza los archivos de registro (logs), el sistema operativo y otras actividades locales en busca de se&ntilde;ales
+    de ataques.</p>
+<p>Efectivo para detectar cambios en archivos cr&iacute;ticos, accesos no autorizados y manipulaciones de registros.</p>
+<h3>M&eacute;todos de Detecci&oacute;n de IDS</h3>
+<p>- Detecci&oacute;n Basada en Firmas (Signature-Based Detection):</p>
+<p>Compara el tr&aacute;fico de red o la actividad del sistema con una base de datos de firmas de ataques conocidos.</p>
+<p>R&aacute;pida y precisa para ataques conocidos, pero menos efectiva para amenazas nuevas o desconocidas (Zero-Day
+    Attacks).</p>
+<p>- Detecci&oacute;n Basada en Anomal&iacute;as (Anomaly-Based Detection):</p>
+<p>Utiliza modelos de comportamiento normal del tr&aacute;fico de red o actividad del sistema para detectar desviaciones
+    significativas que podr&iacute;an indicar un ataque.</p>
+<p>Capaz de detectar amenazas nuevas o desconocidas, pero puede generar m&aacute;s falsos positivos.</p>
+<h3>Sistemas de Prevenci&oacute;n de Intrusiones (IPS)</h3>
+<p>Un Sistema de Prevenci&oacute;n de Intrusiones (IPS) es similar a un IDS, pero no solo detecta intrusiones, sino que
+    tambi&eacute;n toma medidas para prevenirlas. Un IPS puede bloquear autom&aacute;ticamente el tr&aacute;fico
+    malicioso, desconectar sesiones de red sospechosas o aplicar reglas de seguridad para evitar que ocurra un ataque.
+</p>
+<h3>Tipos de IPS</h3>
+<p>- IPS Basado en Red (NIPS - Network-based Intrusion Prevention System):</p>
+<p>Se coloca en l&iacute;nea en la red para inspeccionar todo el tr&aacute;fico en tiempo real y tomar medidas
+    preventivas.</p>
+<p>Filtra y bloquea los paquetes de datos que coinciden con firmas de ataques o patrones de comportamiento sospechoso.
+</p>
+<p>- IPS Basado en Host (HIPS - Host-based Intrusion Prevention System):</p>
+<p>Similar al HIDS, pero con la capacidad adicional de tomar medidas preventivas como bloquear aplicaciones, detener
+    servicios sospechosos, etc.</p>
+<p>Se utiliza com&uacute;nmente en servidores cr&iacute;ticos y estaciones de trabajo.</p>
+<h3>M&eacute;todos de Prevenci&oacute;n de IPS</h3>
+<p>- Basado en Firmas: Utiliza una base de datos de firmas conocidas para detectar y bloquear ataques conocidos.</p>
+<p>- Basado en Pol&iacute;ticas: Implementa reglas y pol&iacute;ticas espec&iacute;ficas para bloquear ciertos tipos de
+    tr&aacute;fico o actividades sospechosas.</p>
+<p>- Basado en Anomal&iacute;as: Monitorea y bloquea comportamientos que se desv&iacute;an del tr&aacute;fico o
+    actividad normal predefinida.</p>
+<h3>Diferencias Clave entre IDS e IPS</h3>
+<ul>
+    <li>Caracter&iacute;stica IDS IPS</li>
+    <li>Funci&oacute;n Principal Detectar y alertar sobre intrusiones. Detectar, alertar y prevenir intrusiones.</li>
+    <li>Ubicaci&oacute;n en la Red Monitorea en tiempo real, fuera de l&iacute;nea. En l&iacute;nea, inspecciona
+        tr&aacute;fico en tiempo real.</li>
+    <li>Capacidad de Respuesta Pasiva: solo alerta. Activa: bloquea o mitiga ataques.</li>
+    <li>Riesgo de Falsos Positivos M&aacute;s bajos, pero puede no detectar Zero-Day Attacks. M&aacute;s altos, pero
+        protege contra Zero-Day Attacks.</li>
+    <li>Impacto en el Rendimiento Menor, ya que solo monitorea. Puede afectar el rendimiento de la red.</li>
+</ul>
+<h3>Beneficios de IDS e IPS</h3>
+<p>- Detecci&oacute;n Temprana: Ayudan a detectar ataques en las primeras etapas, permitiendo respuestas r&aacute;pidas.
+</p>
+<p>- Protecci&oacute;n Contra Amenazas Internas: Pueden detectar comportamientos inusuales de usuarios internos que
+    podr&iacute;an indicar amenazas internas.</p>
+<p>- Cumplimiento de Normativas: Ayudan a cumplir con las regulaciones de seguridad de la informaci&oacute;n mediante la
+    supervisi&oacute;n y el registro de actividades.</p>
+<h3>Limitaciones y Desaf&iacute;os</h3>
+<p>- Configuraci&oacute;n Compleja: Requieren una configuraci&oacute;n detallada y un mantenimiento constante para ser
+    efectivos.</p>
+<p>- Falsos Positivos/Negativos: Los IDS pueden generar falsos positivos, mientras que los IPS pueden bloquear
+    tr&aacute;fico leg&iacute;timo si no est&aacute;n bien configurados.</p>
+<p>- Consumo de Recursos: Los IPS, especialmente, pueden consumir muchos recursos y afectar el rendimiento de la red.
+</p>
+<h3>Mejores Pr&aacute;cticas para IDS e IPS</h3>
+<p>- Implementar Ambos Sistemas: Usar tanto IDS como IPS para tener un enfoque de seguridad m&aacute;s completo.</p>
+<p>- Actualizaci&oacute;n Continua: Mantener los sistemas actualizados con las &uacute;ltimas firmas y reglas de
+    seguridad.</p>
+<p>- Monitoreo y Revisi&oacute;n Constante: Revisar alertas y registros de manera continua para mejorar la
+    precisi&oacute;n y reducir falsos positivos.</p>
+<p>- Pruebas y Evaluaci&oacute;n Regular: Realizar pruebas de penetraci&oacute;n y evaluaciones de seguridad para
+    verificar la efectividad de IDS e IPS.</p>
+<h2>52.3. Sistemas anti-DDoS.</h2>
+<p>Los sistemas anti-DDoS (Distributed Denial of Service) est&aacute;n dise&ntilde;ados para proteger redes, servidores
+    y aplicaciones contra ataques DDoS, que intentan hacer que un servicio o red no est&eacute; disponible al abrumar el
+    sistema con tr&aacute;fico malicioso. Estos ataques pueden provenir de m&uacute;ltiples fuentes, lo que los hace
+    dif&iacute;ciles de mitigar sin herramientas especializadas.</p>
+<h3>&iquest;Qu&eacute; es un ataque DDoS?</h3>
+<p>Un ataque DDoS consiste en sobrecargar un servidor, aplicaci&oacute;n o red con una gran cantidad de tr&aacute;fico
+    proveniente de m&uacute;ltiples sistemas comprometidos (generalmente parte de una botnet). Los objetivos pueden ser
+    variados, como interrumpir el servicio de un sitio web, servidor de aplicaciones, o incluso una infraestructura de
+    red completa. Existen varios tipos de ataques DDoS, incluyendo:</p>
+<p>- Ataques de Volumen (Volumetric Attacks): Inundan la red con grandes cantidades de tr&aacute;fico, como en los
+    ataques de amplificaci&oacute;n UDP, ataques ICMP floods, o ataques DNS amplification.</p>
+<p>- Ataques de Protocolo: Explotan debilidades en los protocolos de red, como SYN floods y Smurf DDoS, que sobrecargan
+    los recursos de red, como los cortafuegos y balanceadores de carga.</p>
+<p>- Ataques de Capa de Aplicaci&oacute;n (Application Layer Attacks): Dirigidos espec&iacute;ficamente a las
+    aplicaciones web, como HTTP floods y ataques a servidores DNS, son m&aacute;s dif&iacute;ciles de detectar porque
+    parecen tr&aacute;fico leg&iacute;timo.</p>
+<h3>Sistemas Anti-DDoS</h3>
+<p>Los sistemas anti-DDoS est&aacute;n dise&ntilde;ados para detectar, mitigar y prevenir estos ataques. Estas
+    soluciones pueden ser implementadas en diferentes niveles de la infraestructura de red y utilizan m&uacute;ltiples
+    t&eacute;cnicas para proporcionar una defensa efectiva.</p>
+<h3>Tipos de Sistemas Anti-DDoS</h3>
+<p>- Basados en la Nube (Cloud-Based Anti-DDoS Solutions):</p>
+<p>Los servicios de mitigaci&oacute;n de DDoS basados en la nube son ofrecidos por proveedores como Cloudflare, Akamai,
+    AWS Shield, Microsoft Azure DDoS Protection, entre otros.</p>
+<p>Desv&iacute;a el tr&aacute;fico malicioso hacia sus redes de mitigaci&oacute;n, filtra el tr&aacute;fico DDoS y solo
+    permite el tr&aacute;fico limpio hacia el servidor del cliente.</p>
+<p>Ideal para empresas que no desean administrar la infraestructura anti-DDoS por s&iacute; mismas y desean una
+    escalabilidad y flexibilidad a nivel global.</p>
+<p>- Basados en la Infraestructura (On-Premises Anti-DDoS Solutions):</p>
+<p>Estas soluciones se implementan directamente en el centro de datos o en la red del cliente.<br /> <br /> Utilizan
+    hardware o software dedicado para filtrar el tr&aacute;fico malicioso en el per&iacute;metro de la red antes de que
+    alcance los servidores internos.</p>
+<p>Adecuado para grandes empresas con requisitos estrictos de cumplimiento y control de datos.</p>
+<p>- H&iacute;bridos (Hybrid Anti-DDoS Solutions):</p>
+<p>Combinan soluciones basadas en la nube y en la infraestructura para ofrecer una protecci&oacute;n integral.</p>
+<p>Utilizan sistemas locales para manejar ataques m&aacute;s peque&ntilde;os y redirigen a la nube durante los ataques
+    m&aacute;s grandes.</p>
+<h3>M&eacute;todos de Mitigaci&oacute;n de DDoS</h3>
+<p>- Filtrado de Paquetes (Packet Filtering):</p>
+<p>Inspecciona los paquetes de red y elimina aquellos que no cumplen con las pol&iacute;ticas de seguridad establecidas,
+    como aquellos con direcciones IP de origen falsificadas.</p>
+<p>- Rate Limiting (Limitaci&oacute;n de Tasa):</p>
+<p>Limita la cantidad de solicitudes o el ancho de banda que un usuario puede consumir en un per&iacute;odo de tiempo
+    determinado, lo que puede ayudar a mitigar ciertos tipos de ataques volum&eacute;tricos.</p>
+<p>- Anycast Redirection:</p>
+<p>Utiliza la red Anycast para distribuir el tr&aacute;fico de manera eficiente entre varios servidores, dispersando el
+    tr&aacute;fico de ataque en m&uacute;ltiples puntos y reduciendo su impacto.</p>
+<p>- Despliegue de Captchas o Desaf&iacute;os de Turing:</p>
+<p>Utiliza desaf&iacute;os como CAPTCHAs para diferenciar entre tr&aacute;fico humano y tr&aacute;fico automatizado,
+    especialmente &uacute;til para mitigar ataques de capa de aplicaci&oacute;n.</p>
+<p>- Scrubbing Centers (Centros de Limpieza de Tr&aacute;fico):</p>
+<p>Centros dedicados a recibir todo el tr&aacute;fico de red entrante, limpiarlo de tr&aacute;fico malicioso, y luego
+    reenviar solo el tr&aacute;fico leg&iacute;timo a la red de destino.</p>
+<p>- Monitoreo y An&aacute;lisis de Tr&aacute;fico:</p>
+<p>Utiliza tecnolog&iacute;as de aprendizaje autom&aacute;tico (Machine Learning) y an&aacute;lisis en tiempo real para
+    detectar patrones de tr&aacute;fico an&oacute;malos que podr&iacute;an indicar un ataque DDoS en curso.</p>
+<h3>Beneficios de los Sistemas Anti-DDoS</h3>
+<p>- Protecci&oacute;n Continuada: Defienden contra ataques DDoS sin interrupciones en la disponibilidad del servicio.
+</p>
+<p>- Escalabilidad: Especialmente las soluciones basadas en la nube pueden escalar autom&aacute;ticamente seg&uacute;n
+    el tama&ntilde;o del ataque.</p>
+<p>- Flexibilidad: Opciones para implementar protecci&oacute;n en diferentes niveles de la infraestructura, tanto a
+    nivel de red como de aplicaci&oacute;n.</p>
+<p>- Reducci&oacute;n del Tiempo de Inactividad: Minimiza las interrupciones del servicio, lo que es crucial para
+    empresas en l&iacute;nea y servicios cr&iacute;ticos.</p>
+<p>- Cumplimiento de Normativas: Ayuda a las empresas a cumplir con las normativas de seguridad de la informaci&oacute;n
+    y la continuidad del negocio.</p>
+<h3>Desaf&iacute;os y Consideraciones</h3>
+<p>- Costo: Las soluciones efectivas anti-DDoS, especialmente las basadas en la nube, pueden ser costosas.</p>
+<p>- Falsos Positivos: El tr&aacute;fico leg&iacute;timo puede ser bloqueado si no se ajustan correctamente las
+    pol&iacute;ticas de mitigaci&oacute;n.</p>
+<p>- Complejidad de Implementaci&oacute;n: La configuraci&oacute;n y gesti&oacute;n de soluciones h&iacute;bridas o
+    basadas en infraestructura puede ser compleja y requerir expertos en seguridad.</p>
+<p>- Ataques Evolutivos: Los ataques DDoS est&aacute;n en constante evoluci&oacute;n, y los sistemas deben actualizarse
+    continuamente para seguir siendo efectivos.</p>
+<h3>Mejores Pr&aacute;cticas para la Protecci&oacute;n Anti-DDoS</h3>
+<p>- Monitoreo Continuo del Tr&aacute;fico: Implementar herramientas de monitoreo que permitan identificar patrones
+    inusuales de tr&aacute;fico.</p>
+<p>- Implementar un Plan de Respuesta a Incidentes: Tener un plan claro sobre c&oacute;mo responder a un ataque DDoS,
+    incluyendo la comunicaci&oacute;n con proveedores de servicios, usuarios, y partes interesadas.</p>
+<p>- Uso de Servicios en la Nube: Considerar utilizar servicios basados en la nube que ofrezcan escalabilidad y
+    mitigaci&oacute;n automatizada.</p>
+<p>- Capacitaci&oacute;n del Personal: Asegurar que el equipo de TI y seguridad est&eacute; capacitado para detectar y
+    responder a los ataques DDoS.</p>
+<p>- Pruebas Regulares: Realizar pruebas de simulaci&oacute;n de ataques DDoS para evaluar la eficacia de los sistemas y
+    mejorar las respuestas.</p>
+<h2>A&ntilde;adido: IDSs e IPSs m&aacute;s populares:</h2>
+<p>Algunos de los IDS (Intrusion Detection Systems) e IPS (Intrusion Prevention Systems) m&aacute;s populares del
+    mercado, junto con una descripci&oacute;n general de sus caracter&iacute;sticas y, cuando es posible, una
+    estimaci&oacute;n de su costo. Los precios pueden variar seg&uacute;n factores como el tama&ntilde;o de la red, el
+    nivel de protecci&oacute;n requerido, la configuraci&oacute;n espec&iacute;fica, el n&uacute;mero de usuarios, y
+    otros servicios adicionales.</p>
+<h3>IDS (Sistemas de Detecci&oacute;n de Intrusiones) Populares</h3>
+<p>- Snort</p>
+<ul>
+    <li>Tipo: IDS basado en firma (open source).</li>
+    <li>Descripci&oacute;n: Snort es uno de los IDS m&aacute;s populares y es conocido por su flexibilidad,
+        personalizaci&oacute;n y comunidad activa. Ofrece detecci&oacute;n basada en firmas, detecci&oacute;n de
+        anomal&iacute;as y capacidades de monitoreo en tiempo real.</li>
+    <li>Coste: Gratuito (open source), pero el soporte y suscripciones para actualizaciones de reglas pueden tener un
+        costo. Suscripciones como "Snort Subscriber Ruleset" est&aacute;n alrededor de $30-$50 USD por a&ntilde;o.</li>
+</ul>
+<p>- Suricata</p>
+<ul>
+    <li>Tipo: IDS/IPS basado en firma y anomal&iacute;as (open source).</li>
+    <li>Descripci&oacute;n: Suricata es otro IDS/IPS open source que ofrece detecci&oacute;n de intrusiones,
+        prevenci&oacute;n, monitoreo de red y an&aacute;lisis profundo de paquetes (DPI). Compatible con las reglas de
+        Snort, pero con mejoras en rendimiento.</li>
+    <li>Coste: Gratuito (open source), pero las actualizaciones de reglas y el soporte pueden tener costos similares a
+        Snort.</li>
+</ul>
+<p>- OSSEC (Open Source Security Information and Event Management)</p>
+<ul>
+    <li>Tipo: HIDS (Host-based IDS).</li>
+    <li>Descripci&oacute;n: OSSEC es un IDS basado en host que ofrece an&aacute;lisis de logs, monitoreo de integridad
+        de archivos, detecci&oacute;n de rootkits, y alertas en tiempo real. Es altamente personalizable y es
+        ampliamente utilizado para la detecci&oacute;n de intrusiones a nivel de sistema operativo.</li>
+    <li>Coste: Gratuito (open source). Los costos pueden surgir de la integraci&oacute;n, el soporte comercial (por
+        ejemplo, Atomicorp), y servicios adicionales de gesti&oacute;n.</li>
+</ul>
+<p>- Zeek (anteriormente conocido como Bro)</p>
+<ul>
+    <li>Tipo: IDS basado en red (NIDS, open source).</li>
+    <li>Descripci&oacute;n: Zeek es un IDS avanzado que permite un an&aacute;lisis detallado del tr&aacute;fico de red,
+        proporcionando un enfoque m&aacute;s centrado en los protocolos y detecci&oacute;n de comportamientos
+        an&oacute;malos.</li>
+    <li>Coste: Gratuito (open source). Los costos adicionales pueden incluir soporte comercial, hardware y
+        administraci&oacute;n.</li>
+</ul>
+<p>- Cisco Secure Network Analytics (anteriormente Stealthwatch)</p>
+<ul>
+    <li>Tipo: NIDS/NIPS.</li>
+    <li>Descripci&oacute;n: Utiliza an&aacute;lisis de tr&aacute;fico de red para detectar amenazas, proporcionando una
+        visibilidad profunda de la red y una gran capacidad de integraci&oacute;n con otros productos de Cisco.</li>
+    <li>Coste: Var&iacute;a ampliamente seg&uacute;n la configuraci&oacute;n y el tama&ntilde;o de la red; puede oscilar
+        entre $20,000 a m&aacute;s de $100,000 USD anualmente, incluyendo soporte y actualizaciones.</li>
+</ul>
+<h3>IPS (Sistemas de Prevenci&oacute;n de Intrusiones) Populares</h3>
+<p>- Cisco Firepower Next-Generation IPS (NGIPS)</p>
+<ul>
+    <li>Tipo: NGIPS basado en red.</li>
+    <li>Descripci&oacute;n: Cisco Firepower es una soluci&oacute;n avanzada que combina IPS, filtrado de URL, antivirus,
+        control de aplicaciones, y capacidades de firewall en un solo dispositivo. Es conocido por su capacidad de
+        respuesta r&aacute;pida y visibilidad de amenazas.</li>
+    <li>Coste: Los precios var&iacute;an seg&uacute;n la licencia, la configuraci&oacute;n del hardware y el
+        tama&ntilde;o de la red, generalmente desde $15,000 a m&aacute;s de $100,000 USD por a&ntilde;o, incluyendo
+        hardware, software, y soporte.</li>
+</ul>
+<p>- Palo Alto Networks Threat Prevention (parte de la serie de firewalls de pr&oacute;xima generaci&oacute;n)</p>
+<ul>
+    <li>Tipo: NGIPS basado en red.</li>
+    <li>Descripci&oacute;n: Ofrece prevenci&oacute;n de intrusiones, antivirus, anti-spyware, y filtrado de URL como
+        parte de su serie de firewalls de pr&oacute;xima generaci&oacute;n. Es conocido por su rendimiento y
+        caracter&iacute;sticas avanzadas.</li>
+    <li>Coste: Dependiendo del tama&ntilde;o de la implementaci&oacute;n y las caracter&iacute;sticas adicionales, los
+        costos pueden oscilar entre $5,000 y $200,000 USD o m&aacute;s, incluyendo hardware, licencias, y soporte.</li>
+</ul>
+<p>- Fortinet FortiGate IPS</p>
+<ul>
+    <li>Tipo: NGIPS basado en red.</li>
+    <li>Descripci&oacute;n: Integrado en los firewalls de FortiGate, Fortinet IPS proporciona prevenci&oacute;n de
+        intrusiones, detecci&oacute;n de amenazas y capacidades de seguridad avanzadas, incluidas las firmas de ataques
+        y la detecci&oacute;n basada en anomal&iacute;as.</li>
+    <li>Coste: Var&iacute;a seg&uacute;n el modelo y la configuraci&oacute;n; t&iacute;picamente de $2,000 a m&aacute;s
+        de $50,000 USD, dependiendo del tama&ntilde;o y la escala de la red, m&aacute;s costos anuales de licencia y
+        soporte.</li>
+</ul>
+<p>- Check Point Next-Generation IPS</p>
+<ul>
+    <li>Tipo: NGIPS basado en red.</li>
+    <li>Descripci&oacute;n: Proporciona protecci&oacute;n avanzada contra amenazas, incluida la prevenci&oacute;n de
+        intrusiones, antivirus, anti-bot, filtrado de URL, y control de aplicaciones. Check Point se integra bien con
+        otras soluciones de seguridad y es conocido por su eficacia.</li>
+    <li>Coste: Similar a otros sistemas NGIPS, el precio var&iacute;a seg&uacute;n la configuraci&oacute;n; puede
+        oscilar entre $10,000 y m&aacute;s de $100,000 USD, dependiendo de la escala de la implementaci&oacute;n y el
+        soporte.</li>
+</ul>
+<p>- McAfee Network Security Platform (NSP)</p>
+<ul>
+    <li>Tipo: IPS basado en red.</li>
+    <li>Descripci&oacute;n: Ofrece protecci&oacute;n en tiempo real contra una amplia gama de amenazas mediante la
+        integraci&oacute;n de inteligencia artificial (IA) y aprendizaje autom&aacute;tico (ML) para la detecci&oacute;n
+        de amenazas y ataques.</li>
+    <li>Coste: Var&iacute;a seg&uacute;n el tama&ntilde;o de la red y las necesidades espec&iacute;ficas de la
+        organizaci&oacute;n; los precios pueden estar en el rango de $20,000 a $150,000 USD o m&aacute;s.</li>
+</ul>
+<h3>Consideraciones de Coste</h3>
+<p>Licencias y Soporte: Adem&aacute;s del costo inicial del hardware y software, muchos IDS/IPS requieren licencias
+    anuales y suscripciones de soporte para actualizaciones de firmas, an&aacute;lisis de amenazas y soporte
+    t&eacute;cnico.</p>
+<p>Implementaci&oacute;n y Mantenimiento: Los costos asociados con la implementaci&oacute;n, personalizaci&oacute;n y
+    mantenimiento tambi&eacute;n deben tenerse en cuenta, especialmente para grandes empresas que requieren una
+    integraci&oacute;n compleja.</p>
+<p>Escalabilidad: Los precios aumentan considerablemente con el tama&ntilde;o y la complejidad de la red, as&iacute;
+    como con la cantidad de nodos que deben protegerse.</p>

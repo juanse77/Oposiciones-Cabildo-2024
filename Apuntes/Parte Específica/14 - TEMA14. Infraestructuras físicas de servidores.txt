@@ -1,0 +1,232 @@
+Tema 14. Infraestructuras físicas de servidores.
+
+14.1. Arquitectura física de un servidor.
+
+	La arquitectura física de un servidor se refiere a la disposición y organización de los componentes de hardware que conforman un servidor. Un servidor es una computadora diseñada para procesar y gestionar datos y aplicaciones en una red, y su arquitectura física está diseñada para ser eficiente, escalable y confiable. Aquí te explico los principales componentes y conceptos:
+
+		1. Chasis o Carcasa
+	
+			- Tamaño y formato: Los servidores pueden venir en varios formatos, como rack (montados en un bastidor estándar), torre (similar a una computadora de escritorio) o blade (modular y compacto para montarse en un chasis específico).
+			- Gestión térmica: Incluye sistemas de ventilación y disipación de calor como ventiladores, disipadores y, en algunos casos, sistemas de refrigeración líquida.
+
+		2. Fuente de Alimentación
+
+			- Redundancia: Los servidores suelen tener fuentes de alimentación redundantes para asegurar la continuidad operativa en caso de fallo de una fuente.
+			- Eficiencia: Las fuentes de alimentación suelen ser de alta eficiencia, como certificaciones 80 PLUS, para reducir el consumo energético y el calor generado.
+
+		3. Placa Base (Motherboard)
+
+			- Socket para CPU: Es donde se alojan uno o varios procesadores (CPUs). Los servidores a menudo tienen soporte para múltiples CPUs.
+			- Ranuras de Memoria RAM: Las placas base de servidores tienen múltiples ranuras DIMM para soportar grandes cantidades de RAM, usualmente con soporte para ECC (Error-Correcting Code) para detectar y corregir errores de memoria.
+			- Ranuras de Expansión: Incluyen PCIe para tarjetas adicionales como controladoras RAID, tarjetas de red adicionales o GPUs.
+			- Conectores de Almacenamiento: Para discos duros (HDD), unidades de estado sólido (SSD) y conexiones NVMe para almacenamiento de alto rendimiento.
+
+		4. Procesador (CPU)
+
+			- Arquitectura Multinúcleo: Los procesadores de servidores suelen tener múltiples núcleos y hilos de procesamiento para manejar cargas de trabajo intensivas.
+			- Tecnología de Virtualización: Soporte para virtualización por hardware para ejecutar múltiples sistemas operativos o entornos de trabajo en una sola máquina física.
+
+		5. Memoria RAM
+
+			- Alta Capacidad: Los servidores requieren grandes cantidades de RAM para manejar múltiples usuarios y aplicaciones simultáneamente.
+			- ECC: Uso de memoria ECC para detectar y corregir errores de datos, lo cual es crítico en ambientes donde la confiabilidad es clave.
+
+		6. Almacenamiento
+			
+			- Configuración RAID: Uso de configuraciones RAID para mejorar la redundancia y el rendimiento del almacenamiento.
+			- Tipos de Unidades: Incorporación de HDDs para almacenamiento masivo y SSDs para almacenamiento de alta velocidad. Las unidades NVMe se utilizan para aplicaciones de alto rendimiento.
+
+		7. Conectividad de Red
+
+			- Tarjetas de Red (NIC): Tarjetas de red de alta velocidad, como 10GbE o incluso 40GbE, para manejar grandes volúmenes de tráfico de red.
+			- Redundancia de Conexiones: Implementación de múltiples interfaces de red para redundancia y balanceo de carga.
+
+		8. Sistemas de Almacenamiento Externo
+
+			- SAN y NAS: Muchos servidores se conectan a sistemas de almacenamiento en red, como SAN (Storage Area Network) o NAS (Network Attached Storage), para acceder a grandes cantidades de datos compartidos.
+
+		9. Sistemas de Enfriamiento
+		
+			- Ventiladores y Refrigeración Líquida: Para mantener las temperaturas operativas dentro de rangos seguros.
+			- Control de Temperatura: Sensores para monitorizar la temperatura y ajustar dinámicamente el sistema de enfriamiento.
+
+		10. Controladores y Tarjetas de Expansión
+
+			- Controladores RAID: Para gestionar arreglos de discos y mejorar la redundancia de datos.
+			- Tarjetas de Expansión: Tarjetas adicionales que pueden mejorar la funcionalidad del servidor, como aceleradoras de IA o tarjetas de red adicionales.
+
+		11. Sistema de Gestión
+			
+			- BMC (Baseboard Management Controller): Permite la administración remota del servidor, incluyendo la monitorización del hardware, la gestión del encendido/apagado y el acceso remoto a la consola.
+
+		12. Sistemas de Backup y Recuperación
+
+			- Sistemas de Copia de Seguridad: Unidades dedicadas para backup, como cintas o discos dedicados.
+			- Software de Recuperación: Implementación de sistemas que permiten la restauración de datos en caso de fallo.
+
+		13. Seguridad Física
+
+			- Cerraduras y Seguridad: Los servidores a menudo se almacenan en racks con cerraduras y se encuentran en salas con acceso controlado para prevenir accesos no autorizados.
+La arquitectura física de un servidor está diseñada para maximizar la eficiencia, confiabilidad y disponibilidad, permitiendo que las organizaciones gestionen grandes volúmenes de datos y aplicaciones de manera segura y eficaz.
+
+14.2. Elementos y componentes. Sistemas redundantes.
+
+	Cuando hablamos de servidores, nos referimos a sistemas informáticos diseñados para gestionar, almacenar, procesar y distribuir datos, aplicaciones y servicios a otros dispositivos o "clientes" en una red. Los servidores son fundamentales para la infraestructura de TI de las organizaciones, y para asegurar su funcionamiento continuo y sin interrupciones, es esencial que cuenten con elementos, componentes y sistemas redundantes.
+
+	Elementos y Componentes de un Servidor
+
+		Un servidor típico consta de varios elementos y componentes clave que determinan su rendimiento, fiabilidad y capacidad de expansión:
+
+		1.- Unidad Central de Procesamiento (CPU):
+
+			El procesador o CPU es el cerebro del servidor. Su potencia y el número de núcleos determinan la capacidad de procesamiento del servidor. Los servidores suelen utilizar procesadores de alto rendimiento como los Intel Xeon o AMD EPYC.
+
+		2.- Memoria RAM:
+
+			La memoria RAM es crucial para el rendimiento del servidor, ya que almacena los datos que el CPU necesita acceder rápidamente. Los servidores requieren una gran cantidad de RAM (a menudo 64 GB, 128 GB o más) para manejar múltiples procesos simultáneos y aplicaciones intensivas en recursos.
+
+		3.- Almacenamiento (Discos Duros y SSD):
+
+			Los servidores utilizan discos duros (HDD) y unidades de estado sólido (SSD) para almacenar datos. Las SSD son más rápidas y confiables que los HDD, por lo que se utilizan para aplicaciones que requieren acceso rápido a datos. El almacenamiento puede configurarse en arreglos RAID para mejorar el rendimiento y la redundancia.
+
+		4.- Placa Base (Motherboard):
+
+			La placa base conecta todos los componentes del servidor y permite la comunicación entre ellos. Incluye ranuras para la CPU, RAM, almacenamiento, tarjetas de expansión, etc.
+
+		5.- Fuente de Alimentación (PSU):
+
+			Los servidores requieren fuentes de alimentación potentes y confiables para garantizar un suministro continuo de energía. A menudo, los servidores utilizan fuentes de alimentación redundantes para evitar el tiempo de inactividad en caso de fallo.
+
+		6.- Tarjetas de Red (NIC):
+
+			Las tarjetas de interfaz de red (NIC) permiten la conexión del servidor a la red. Para mejorar la redundancia y el rendimiento, los servidores pueden tener múltiples NIC y soportar "bonding" o "teaming" de red.
+
+		7.- Tarjetas de Expansión:
+
+			Los servidores pueden incluir tarjetas adicionales como controladores RAID, tarjetas de interfaz de almacenamiento, aceleradores de GPU, entre otros, para mejorar el rendimiento o añadir funcionalidades.
+
+		8.- Chasis y Sistema de Enfriamiento:
+
+			El chasis del servidor alberga todos los componentes internos y está diseñado para optimizar el flujo de aire y la refrigeración. Los servidores suelen tener sistemas de enfriamiento redundantes, como ventiladores adicionales, para prevenir el sobrecalentamiento.
+
+	Sistemas Redundantes:
+
+		La redundancia en servidores es esencial para garantizar la disponibilidad continua de los servicios y minimizar el riesgo de pérdida de datos y fallos. Los sistemas redundantes se implementan para asegurar que, si uno de los componentes falla, otro pueda tomar su lugar sin causar interrupciones.
+
+		- Redundancia de Fuentes de Alimentación (PSU):
+
+			Los servidores suelen estar equipados con fuentes de alimentación redundantes que funcionan en paralelo. Si una fuente de alimentación falla, la otra continuará suministrando energía sin interrupción.
+
+		- Arreglos RAID (Redundant Array of Independent Disks):
+
+			RAID es una tecnología de almacenamiento que combina varios discos duros o SSD en una única unidad lógica para mejorar la redundancia y el rendimiento. RAID 1, RAID 5, RAID 6 y RAID 10 son configuraciones comunes que proporcionan diferentes niveles de redundancia y tolerancia a fallos.
+
+		- Redundancia de Red (NIC Teaming/Bonding):
+
+			Esta técnica utiliza múltiples tarjetas de red para proporcionar redundancia de red. Si una tarjeta de red o conexión falla, otra toma su lugar automáticamente.
+
+		- Redundancia de Enfriamiento:
+
+			Los servidores incluyen múltiples ventiladores y sistemas de enfriamiento para prevenir fallos debido a sobrecalentamiento. Los ventiladores adicionales entran en funcionamiento automáticamente si los ventiladores principales fallan.
+
+		- Redundancia de Procesadores y Memoria (N+1, N+N):
+
+			En entornos críticos, algunos servidores pueden tener configuraciones de redundancia para procesadores y módulos de memoria. Por ejemplo, un sistema "N+1" tiene un procesador o módulo de memoria adicional que permanece inactivo hasta que uno de los activos falle.
+
+		- Clusters de Servidores:
+
+			Los clusters de servidores permiten la redundancia a nivel de servidor completo. Si un servidor en el cluster falla, otro servidor toma automáticamente el relevo, minimizando el tiempo de inactividad.
+
+		- Backup y Recuperación:
+
+			Además de la redundancia en hardware, los sistemas de backup y recuperación son críticos para la redundancia de datos. Los servidores suelen estar configurados para realizar copias de seguridad automáticas de datos y configuraciones en ubicaciones locales y remotas.
+
+	Conclusión:
+
+		Los servidores son piezas críticas de infraestructura en cualquier entorno de TI, y su diseño debe enfocarse en la fiabilidad y disponibilidad. La implementación de elementos y componentes adecuados, junto con sistemas redundantes, es fundamental para asegurar un funcionamiento ininterrumpido y para proteger contra fallos de hardware y software. Esto no solo garantiza la continuidad del negocio sino también la integridad de los datos y servicios proporcionados por los servidores.
+
+14.3. Sistemas de alta disponibilidad.
+
+	Los sistemas de alta disponibilidad (High Availability Systems, HA) son infraestructuras diseñadas para garantizar el funcionamiento continuo de servicios y aplicaciones, minimizando el tiempo de inactividad no planificado. Estos sistemas son fundamentales en entornos donde la interrupción de los servicios puede tener graves consecuencias, como en bancos, hospitales, comercio electrónico, telecomunicaciones, etc.
+
+	La alta disponibilidad se logra mediante una combinación de redundancia de hardware, software robusto, configuraciones de red adecuadas y procedimientos operativos diseñados para mantener los servicios en funcionamiento de manera confiable y predecible.
+
+	Componentes Clave de un Sistema de Alta Disponibilidad
+
+		1.- Redundancia de Hardware:
+
+			Se refiere a la duplicación de componentes críticos de hardware, como servidores, fuentes de alimentación, discos de almacenamiento, tarjetas de red y sistemas de refrigeración. La idea es que si uno de estos componentes falla, otro esté listo para asumir su función sin interrumpir el servicio.
+
+		2.- Clustering de Servidores:
+
+			Un cluster es un conjunto de servidores que trabajan juntos como un solo sistema. Si un servidor en el cluster falla, otro puede tomar automáticamente su lugar. Los clusters pueden configurarse en varios modos, como:
+
+				- Active-Active: Todos los servidores en el cluster están activos y comparten la carga de trabajo. Si uno falla, los demás redistribuyen su carga.
+
+				- Active-Passive: Solo un servidor está activo en un momento dado; los servidores pasivos esperan en modo de espera y se activan si el servidor principal falla.
+
+		3.- Balanceo de Carga (Load Balancing):
+
+			El balanceo de carga distribuye el tráfico de red o la carga de trabajo entre múltiples servidores o recursos para garantizar que ninguno se sobrecargue. Esto no solo mejora el rendimiento, sino que también proporciona redundancia en caso de fallo de uno de los servidores.
+
+		4.- Arreglos RAID para Redundancia de Almacenamiento:
+
+			RAID (Redundant Array of Independent Disks) es una tecnología que permite combinar múltiples discos duros para mejorar la redundancia y la tolerancia a fallos. Los niveles de RAID como RAID 1, RAID 5, RAID 6 y RAID 10 son opciones populares en sistemas de alta disponibilidad.
+
+		5.- Replicación de Datos:
+
+			Los datos críticos se replican entre varios sistemas de almacenamiento o servidores para asegurar que siempre estén disponibles en caso de fallo. La replicación puede ser sincrónica (los datos se escriben simultáneamente en dos ubicaciones) o asincrónica (los datos se escriben en una ubicación principal y luego se replican en una secundaria).
+
+		6.- Software de Gestión de Alta Disponibilidad:
+
+			Existen herramientas de software específicas, como Pacemaker, Corosync, Keepalived, Heartbeat, entre otras, que gestionan la comunicación entre nodos del cluster, supervisan la salud de los componentes y automatizan la conmutación por error.
+
+		7.- Configuraciones de Red Redundantes:
+
+			Para asegurar la alta disponibilidad de la red, se configuran rutas redundantes y se implementan tecnologías como NIC Bonding/Teaming, VRRP (Virtual Router Redundancy Protocol), LACP (Link Aggregation Control Protocol), y Multipath I/O para asegurar que los enlaces de red no sean un punto único de fallo.
+
+		8.- Failover y Failback:
+
+			El failover es la capacidad del sistema para cambiar automáticamente a un servidor o componente de respaldo en caso de fallo. El failback es el proceso de volver a la configuración original una vez que el problema se ha resuelto. Estos mecanismos son críticos para mantener la continuidad del servicio.
+
+		9.- Monitoreo y Alertas:
+
+			Los sistemas de alta disponibilidad deben estar constantemente monitoreados para detectar cualquier anomalía o fallo. Herramientas de monitoreo como Nagios, Zabbix, Prometheus, Grafana, y SolarWinds son ampliamente utilizadas para supervisar la salud del sistema y enviar alertas en tiempo real al equipo de TI.
+
+		10.- Backups y Recuperación ante Desastres:
+
+			Además de la redundancia y replicación en tiempo real, es fundamental tener sistemas de respaldo y procedimientos de recuperación ante desastres (DRP) bien definidos. Esto incluye copias de seguridad periódicas, tanto locales como remotas, y un plan para restaurar servicios en caso de un desastre mayor.
+
+	Estrategias de Alta Disponibilidad
+
+		1.- Redundancia de Componentes:
+
+			Usar múltiples componentes redundantes para asegurar que no haya un único punto de fallo. Esto puede incluir servidores, discos, conexiones de red, fuentes de alimentación, etc.
+
+		2.- Distribución Geográfica:
+
+			Colocar componentes redundantes en diferentes ubicaciones geográficas para mitigar el riesgo de desastres localizados (terremotos, inundaciones, fallos eléctricos, etc.). Esto puede incluir replicación de datos entre centros de datos ubicados en diferentes lugares.
+
+		3.- Automatización de Recuperación ante Fallos:
+
+			Implementar scripts automatizados y procedimientos para gestionar la conmutación por error (failover) y la recuperación (failback). Esto minimiza el tiempo de reacción y reduce la posibilidad de errores humanos.
+
+		4.- Mantenimiento Preventivo y Pruebas Regulares:
+
+			Realizar mantenimientos preventivos y pruebas periódicas de los sistemas de alta disponibilidad para asegurar que los procedimientos de failover/failback funcionen correctamente y que todos los componentes estén en buen estado.
+
+	Tecnologías y Herramientas Comunes para Alta Disponibilidad
+
+		- Pacemaker y Corosync: Utilizados para clustering y gestión de recursos en sistemas Linux.
+
+		- HAProxy: Un balanceador de carga de código abierto que distribuye tráfico entre servidores de backend.
+
+		- Keepalived: Utilizado para proporcionar alta disponibilidad en la capa de red utilizando VRRP.
+
+		- MySQL/MariaDB Galera Cluster: Un motor de replicación sincrónica de base de datos que permite que todos los nodos del cluster contengan la misma información.
+
+		- PostgreSQL con Patroni: Solución para alta disponibilidad y failover automático para PostgreSQL.
+
+	Conclusión:
+
+		Los sistemas de alta disponibilidad son esenciales para garantizar la continuidad de los servicios en entornos críticos. Implementar alta disponibilidad requiere una planificación cuidadosa, incluyendo la selección de hardware y software adecuados, estrategias de replicación y redundancia, y el uso de herramientas de monitoreo y gestión. Con estos componentes y estrategias, las organizaciones pueden minimizar el tiempo de inactividad y garantizar que sus servicios y aplicaciones estén disponibles de manera confiable y continua.

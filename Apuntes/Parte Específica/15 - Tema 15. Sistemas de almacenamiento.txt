@@ -1,0 +1,288 @@
+Tema 15. Sistemas de almacenamiento.
+
+15.1. Definición. Tipos. Replicación. Redundancia. Técnicas de ahorro de espacio.
+
+	Sistemas de Almacenamiento: Definición
+
+		Los sistemas de almacenamiento son soluciones tecnológicas diseñadas para guardar, organizar y gestionar datos de manera eficiente, permitiendo su acceso, manipulación y recuperación cuando sea necesario. Estos sistemas pueden variar desde simples unidades de disco duro hasta complejas infraestructuras en la nube que emplean múltiples niveles de almacenamiento y técnicas avanzadas para garantizar la seguridad, disponibilidad y eficiencia de los datos.
+
+	Tipos de Sistemas de Almacenamiento
+
+		- Almacenamiento Local:
+
+			- Discos Duros (HDD): Unidades de almacenamiento magnético que ofrecen gran capacidad a bajo costo, pero con velocidades de acceso relativamente lentas en comparación con tecnologías más recientes.
+			- Unidades de Estado Sólido (SSD): Dispositivos de almacenamiento que utilizan memoria flash para almacenar datos, ofreciendo velocidades de lectura/escritura significativamente superiores a los HDD.
+			- Almacenamiento Óptico: Utiliza discos como CD, DVD o Blu-ray para almacenar datos. Es menos común en entornos empresariales, pero útil para el almacenamiento a largo plazo y la distribución de medios.
+
+		- Almacenamiento en Red (NAS y SAN):
+
+			- NAS (Network Attached Storage): Unidades de almacenamiento conectadas a una red que permiten el acceso a múltiples usuarios y dispositivos. Ideal para entornos domésticos y pequeñas empresas.
+			- SAN (Storage Area Network): Redes especializadas de alta velocidad que conectan múltiples dispositivos de almacenamiento a servidores específicos. Es común en entornos empresariales donde se requiere un acceso rápido y redundante a grandes volúmenes de datos.
+
+		- Almacenamiento en la Nube:
+
+			- Público: Servicios ofrecidos por proveedores como Amazon S3, Google Cloud Storage y Microsoft Azure, donde los datos se almacenan en servidores remotos y son accesibles a través de Internet.
+			- Privado: Infraestructuras de nube implementadas dentro de una organización para garantizar un mayor control y seguridad sobre los datos.
+			- Híbrido: Combina características de nubes públicas y privadas, permitiendo a las organizaciones gestionar qué datos almacenar en cada una según sus necesidades de seguridad, costo y rendimiento.
+
+	Replicación y Redundancia
+
+		Replicación de Datos: Es el proceso de copiar datos de un sistema de almacenamiento a otro, garantizando que existan múltiples copias en diferentes ubicaciones. Esto mejora la disponibilidad y la fiabilidad de los datos, permitiendo su recuperación en caso de fallos o desastres.
+
+		Replicación Sincrónica: Las copias se mantienen idénticas en tiempo real, asegurando que cada transacción esté replicada en todos los sistemas antes de ser confirmada.
+
+		Replicación Asincrónica: Las copias se actualizan con un retraso, lo que puede ser más eficiente en términos de recursos, pero introduce un riesgo de pérdida de datos en caso de fallo antes de que la replicación se complete.
+
+		Redundancia de Datos: Es una técnica para asegurar la disponibilidad continua de los datos mediante la duplicación de información. Ejemplos incluyen RAID (Redundant Array of Independent Disks), donde los datos se distribuyen o replican a través de múltiples discos duros para prevenir la pérdida de información en caso de fallo de uno o más discos.
+
+	Técnicas de Ahorro de Espacio
+
+		Compresión de Datos: Reduce el tamaño de los archivos para optimizar el uso del espacio de almacenamiento. Puede ser con o sin pérdida, dependiendo de la necesidad de preservar la calidad original de los datos.
+
+		Deduplicación de Datos: Identifica y elimina duplicados de datos almacenados, manteniendo solo una copia de los bloques de datos idénticos y utilizando referencias para reconstruir los archivos completos.
+
+		Thin Provisioning: Permite asignar espacio de almacenamiento de manera flexible y dinámica, sólo utilizando la cantidad necesaria de almacenamiento físico en el momento, y permitiendo la expansión según sea necesario.
+
+		Almacenamiento Jerárquico (HSM): Gestiona los datos almacenándolos en diferentes niveles según su uso, velocidad de acceso y costo. Los datos menos utilizados se mueven a medios de almacenamiento más económicos y lentos, mientras que los datos de acceso frecuente se mantienen en almacenamiento de alta velocidad.
+
+	Estos conceptos forman la base para comprender cómo se estructuran y gestionan los sistemas de almacenamiento modernos, garantizando la integridad, disponibilidad y eficiencia en la gestión de datos.
+
+15.2. Tipos de discos y unidades: características y comparativa.
+
+15.2.a - Tipos de Discos y Unidades de Almacenamiento: Características y Comparativa
+
+	Los discos y unidades de almacenamiento son componentes esenciales para cualquier sistema informático, ya que determinan la capacidad de almacenamiento, la velocidad de acceso a los datos, y la fiabilidad del sistema en su conjunto. A continuación, se describen los principales tipos de discos y unidades, junto con una comparativa de sus características.
+
+	1. Discos Duros Mecánicos (HDD - Hard Disk Drive)
+
+		Características:
+
+			- Tecnología: Utilizan platos magnéticos giratorios y cabezales de lectura/escritura para almacenar y recuperar datos.
+			- Capacidad: Ofrecen grandes capacidades de almacenamiento, típicamente desde 500 GB hasta varios terabytes (TB).
+			- Velocidad: Velocidades de rotación comunes son 5400 RPM (revoluciones por minuto) y 7200 RPM. Unidades de alta gama pueden alcanzar 10,000 o 15,000 RPM, aunque son menos comunes.
+			- Durabilidad: Más susceptibles a daños físicos debido a las partes móviles.
+			- Costo: Generalmente, son la opción más económica en términos de costo por gigabyte.
+			
+		Ventajas:
+
+			- Alta capacidad de almacenamiento a bajo costo.
+			- Adecuados para almacenamiento masivo y archivos grandes, como videos y copias de seguridad.
+
+		Desventajas:
+
+			- Menor velocidad de lectura/escritura comparado con otras tecnologías más modernas.
+			- Mayor riesgo de fallos mecánicos debido a las partes móviles.
+
+	2. Unidades de Estado Sólido (SSD - Solid State Drive)
+
+		Características:
+
+			- Tecnología: Utilizan memoria flash para almacenar datos, sin partes móviles.
+			- Capacidad: Desde 120 GB hasta varios terabytes, aunque a un costo mayor por GB comparado con los HDD.
+			- Velocidad: Ofrecen velocidades de lectura/escritura mucho más altas que los HDD, típicamente entre 500 MB/s y 3500 MB/s en los modelos más avanzados.
+			- Durabilidad: Más resistentes a golpes y vibraciones debido a la ausencia de partes móviles.
+			- Costo: Más caros que los HDD, pero los precios han disminuido significativamente en los últimos años.
+
+		Ventajas:
+
+			- Velocidades de acceso y transferencia de datos mucho más rápidas.
+			- Mayor durabilidad y fiabilidad, con menos riesgo de daños físicos.
+			- Menor consumo de energía y generación de calor.
+
+		Desventajas:
+
+			- Menor capacidad por costo comparado con los HDD.
+			- La memoria flash tiene un número finito de ciclos de escritura, aunque esto no es un problema significativo para la mayoría de los usuarios.
+
+	3. Unidades Híbridas (SSHD - Solid State Hybrid Drive)
+
+		Características:
+
+			- Tecnología: Combinan la tecnología de HDD (platos magnéticos) con una pequeña cantidad de memoria flash para mejorar la velocidad.
+			- Capacidad: Generalmente ofrecen capacidades similares a los HDD, con la ventaja adicional de un pequeño caché SSD (típicamente entre 8 GB y 32 GB).
+			- Velocidad: Ofrecen un rendimiento intermedio entre HDD y SSD, con tiempos de arranque y acceso a datos mejorados gracias al caché SSD.
+			- Durabilidad: Comparable a la de los HDD, dado que todavía poseen partes móviles.
+			- Costo: Más baratos que los SSD pero más caros que los HDD puros.
+
+		Ventajas:
+
+			- Mejor rendimiento que un HDD tradicional gracias al caché SSD.
+			- Buena opción para quienes necesitan gran capacidad a un costo menor pero con algunas mejoras de velocidad.
+
+		Desventajas:
+
+			- No ofrecen la misma velocidad que un SSD puro.
+			- La memoria flash incorporada es limitada y puede no acelerar todas las operaciones.
+
+	4. Unidades de Almacenamiento Externas (HDD/SSD Externos)
+
+		Características:
+
+			- Tecnología: Pueden ser HDD o SSD montados en carcasas externas conectadas a través de USB, Thunderbolt u otras interfaces.
+			- Capacidad: Varía desde 500 GB hasta varios terabytes, tanto en HDD como en SSD.
+			- Velocidad: Depende del tipo de unidad interna (HDD o SSD) y de la interfaz de conexión (USB 2.0, 3.0, 3.1, Thunderbolt).
+			- Durabilidad: Las SSD externas son más duraderas que las HDD externas debido a la ausencia de partes móviles.
+			- Costo: Similar al de sus contrapartes internas, aunque pueden ser un poco más caros debido a la carcasa y la interfaz.
+
+		Ventajas:
+
+			- Portabilidad y facilidad para mover grandes volúmenes de datos entre diferentes dispositivos.
+			- No requieren instalación interna, lo que facilita su uso.
+
+		Desventajas:
+
+			- Generalmente, tienen velocidades de acceso más lentas que las unidades internas debido a la interfaz de conexión.
+			- Las HDD externas son vulnerables a daños físicos por caídas o golpes.
+
+	5. Unidades Optane (Intel Optane Memory)
+
+		Características:
+
+			- Tecnología: Basadas en la tecnología 3D XPoint, ofrecen una combinación de alta velocidad y persistencia de datos.
+			- Capacidad: Generalmente más pequeñas en términos de capacidad (16 GB a 64 GB) y se utilizan principalmente como memoria caché en sistemas de almacenamiento.
+			- Velocidad: Muy rápidas en términos de latencia y tiempos de acceso, superando a los SSD tradicionales en ciertas aplicaciones.
+			- Durabilidad: Extremadamente duraderas y con alta resistencia a la escritura, comparable o superior a la de los SSD.
+
+		Ventajas:
+
+			- Aceleran significativamente el rendimiento de sistemas con HDD o SSD.
+			- Ideales para aplicaciones que requieren acceso rápido a datos, como bases de datos y aplicaciones empresariales.
+
+		Desventajas:
+
+			- Costosas y generalmente no se usan como almacenamiento principal debido a su capacidad limitada.
+			- Requieren hardware compatible, lo que puede limitar su adopción.
+
+Comparativa General
+Tipo de Unidad		Capacidad		Velocidad	Durabilidad	Costo		Aplicaciones Típicas
+HDD			Alta (hasta 20 TB)	Baja		Moderada	Bajo		Almacenamiento masivo, backups
+SSD			Moderada (hasta 8 TB)	Muy alta	Alta		Moderado a alto	Sistemas operativos, aplicaciones
+SSHD			Alta (hasta 2 TB)	Moderada	Moderada	Moderado	Equipos que requieren capacidad y velocidad
+Externos (HDD/SSD)	Variable		Variable	Variable	Variable	Almacenamiento portátil, backups
+Optane			Baja (16-64 GB)		Muy alta	Muy alta	Alto		Aceleración de sistemas
+
+	Cada tipo de unidad tiene su propio nicho de aplicación, y la elección entre ellas depende de las necesidades específicas de capacidad, velocidad, durabilidad y costo. Por ejemplo, un SSD es ideal para aquellos que buscan un rendimiento rápido, mientras que un HDD sigue siendo relevante para quienes necesitan grandes capacidades a bajo costo. Las unidades híbridas ofrecen un equilibrio, y las tecnologías como Intel Optane proporcionan soluciones de aceleración especializadas para usuarios avanzados.
+
+15.3. Sistemas NAS y SAN. Características. Protocolos utilizados en estas tecnologías.
+
+15.3.a - Sistemas NAS y SAN: Características y Protocolos Utilizados
+
+	Los sistemas de almacenamiento NAS (Network Attached Storage) y SAN (Storage Area Network) son dos enfoques diferentes para la gestión y distribución del almacenamiento en redes empresariales, cada uno con sus propias características y casos de uso específicos.
+
+	1. NAS (Network Attached Storage)
+
+		Características:
+
+			- Arquitectura:
+
+				El NAS es un dispositivo de almacenamiento conectado a una red local (LAN) que proporciona acceso a los archivos a través de un sistema de archivos compartido. Se comporta como un servidor de archivos dedicado que permite a múltiples usuarios y dispositivos acceder a los datos de manera centralizada.
+				Generalmente, el NAS se configura con varios discos duros en una configuración RAID para mejorar la redundancia y la protección de datos.
+
+			- Facilidad de Uso:
+
+				Es fácil de instalar y gestionar. No requiere conocimientos técnicos avanzados para configurar y operar.
+				Los usuarios pueden acceder a los archivos a través de protocolos de red comunes como SMB/CIFS (usado en Windows), NFS (usado en Unix/Linux), y AFP (utilizado por sistemas macOS).
+
+			- Escalabilidad:
+
+				El NAS es escalable, pero generalmente limitado al número de discos que se pueden agregar al dispositivo. Para grandes expansiones de almacenamiento, puede ser necesario agregar más dispositivos NAS o cambiar a un sistema SAN.
+
+			- Costo:
+
+				Comparado con SAN, un NAS es generalmente más económico y está orientado tanto a pequeñas y medianas empresas como a usuarios domésticos avanzados.
+
+			- Rendimiento:
+
+				El rendimiento está limitado por la velocidad de la red local y la capacidad del NAS. Si la red está saturada, el acceso a los archivos puede ser más lento.
+				Ideal para compartir archivos, realizar copias de seguridad y acceder a medios como videos y música.
+
+		- Protocolos Utilizados en NAS:
+
+			- SMB/CIFS (Server Message Block/Common Internet File System):
+				
+				Protocolo ampliamente utilizado en redes Windows para compartir archivos e impresoras.
+				Permite que diferentes usuarios accedan y gestionen archivos en servidores NAS de manera colaborativa.
+		
+			- NFS (Network File System):
+
+				Utilizado principalmente en sistemas Unix/Linux.
+				Permite que los clientes monten directorios remotos desde un servidor NAS como si fueran locales.
+
+			- AFP (Apple Filing Protocol):
+
+				Utilizado en sistemas macOS, aunque ha sido reemplazado en gran medida por SMB en versiones más recientes de macOS.
+				Optimizado para compartir archivos en redes Apple.
+
+			- FTP/SFTP (File Transfer Protocol/Secure File Transfer Protocol):
+
+				Utilizado para transferir archivos entre clientes y servidores de forma remota.
+				SFTP añade una capa de seguridad a las transferencias de archivos.
+
+	2. SAN (Storage Area Network)
+
+		- Características:
+
+			- Arquitectura:
+
+				SAN es una red de alta velocidad dedicada que conecta múltiples dispositivos de almacenamiento (como discos duros o matrices de discos) a servidores. Está diseñada para gestionar grandes volúmenes de datos y proporciona un acceso muy rápido al almacenamiento.
+				En una SAN, el almacenamiento aparece a los servidores como si fuera almacenamiento local, lo que permite un acceso más rápido y eficiente.
+
+			- Rendimiento:
+
+				Las SANs ofrecen un rendimiento mucho más alto que los NAS, gracias a la red dedicada de alta velocidad (normalmente basada en Fibre Channel o iSCSI). Esto permite un acceso muy rápido a los datos, esencial para aplicaciones críticas que requieren alta disponibilidad y baja latencia, como bases de datos empresariales, virtualización y aplicaciones de gran volumen de datos.
+
+			- Escalabilidad:
+
+				Las SANs son altamente escalables y pueden manejar un crecimiento significativo de almacenamiento sin comprometer el rendimiento. Permiten agregar y configurar dispositivos de almacenamiento adicionales sin interrupciones.
+
+			- Complejidad y Costo:
+
+				Las SANs son más complejas de configurar y administrar en comparación con los NAS. Requieren conocimientos técnicos especializados.
+				Son más costosas debido a la necesidad de infraestructura dedicada (como switches Fibre Channel, cables especializados, y adaptadores de bus de host).
+
+		- Protocolos Utilizados en SAN:
+
+			- Fibre Channel (FC):
+
+				Protocolo de alta velocidad y baja latencia que es el estándar de facto para la comunicación en redes SAN.
+				Permite velocidades de transferencia de datos muy altas, comúnmente entre 8 Gbps y 32 Gbps.
+				Fibre Channel es un protocolo muy confiable y escalable, aunque también es costoso debido a la necesidad de infraestructura específica.
+
+			- iSCSI (Internet Small Computer System Interface):
+
+				Permite que los comandos SCSI se transporten sobre redes IP, lo que facilita la implementación de SANs utilizando infraestructuras de red Ethernet estándar.
+				Aunque iSCSI puede no ofrecer la misma baja latencia que Fibre Channel, es más flexible y menos costoso, lo que lo hace popular en empresas que buscan una solución SAN menos costosa.
+
+			- FCoE (Fibre Channel over Ethernet):
+
+				Combina las ventajas de Fibre Channel y Ethernet, permitiendo que las tramas Fibre Channel se transporten sobre redes Ethernet.
+				Permite consolidar las redes de datos y de almacenamiento en una sola infraestructura, lo que reduce costos y simplifica la administración.
+
+			- InfiniBand:
+
+				Otro protocolo utilizado en entornos SAN de alta velocidad, especialmente en aplicaciones de computación de alto rendimiento (HPC).
+				Ofrece latencias extremadamente bajas y tasas de transferencia muy altas, lo que lo hace ideal para entornos que requieren un rendimiento extremo.
+
+		- Comparativa General
+
+Característica		NAS (Network Attached Storage)						SAN (Storage Area Network)
+
+Arquitectura		Almacenamiento basado en archivos, conectado a la red local.		Red dedicada de alta velocidad para almacenamiento basado en bloques.
+
+Rendimiento		Limitado por la red local (LAN); adecuado para compartir archivos.	Alto rendimiento con baja latencia; adecuado para aplicaciones críticas.
+
+Escalabilidad		Escalabilidad limitada, generalmente dentro del dispositivo NAS.	Altamente escalable, puede expandirse sin interrupciones.
+
+Facilidad de Uso	Fácil de configurar y administrar; no requiere conocimientos avanzados.	Complejo de configurar y administrar; requiere conocimientos especializados.
+
+Costo			Más económico; ideal para pequeñas y medianas empresas.			Más costoso debido a la infraestructura dedicada.
+
+Protocolos		SMB/CIFS, NFS, AFP, FTP/SFTP.						Fibre Channel, iSCSI, FCoE, InfiniBand.
+
+Aplicaciones Típicas	Compartición de archivos, backups, almacenamiento multimedia.		Bases de datos empresariales, virtualización, almacenamiento de alto rendimiento.
+
+	Resumen
+
+		NAS es ideal para entornos donde se necesita compartir archivos de manera centralizada con varios usuarios y dispositivos, ofreciendo una solución económica y fácil de gestionar.
+		SAN, por otro lado, es la elección adecuada para empresas que requieren un rendimiento superior y alta disponibilidad, especialmente en aplicaciones críticas que demandan un acceso rápido y confiable a grandes volúmenes de datos.
+		Ambos sistemas juegan un papel crucial en la gestión de datos, pero su elección depende del tamaño de la organización, las necesidades de rendimiento y la capacidad de inversión.

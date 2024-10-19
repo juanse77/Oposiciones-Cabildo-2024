@@ -1,0 +1,221 @@
+Tema 21. Sistemas operativos Windows Server.
+
+21.1. Configuración y tareas básicas de administración.
+
+Las tareas básicas de configuración y administración de Windows Server, destacando las áreas más relevantes:
+
+	1. Instalación y Configuración Inicial:
+
+		- Selección de la Edición y Tipo de Instalación: Determinar la edición de Windows Server (Standard, Datacenter, Essentials, etc.) adecuada para los requisitos del entorno y elegir entre una instalación con GUI o en modo Core (sin interfaz gráfica).
+
+		- Configuración del Nombre del Servidor y el Grupo de Trabajo o Dominio: Definir un nombre único para el servidor y configurarlo para que se una a un dominio existente o a un grupo de trabajo.
+
+		- Configuración de la Red: Asignar direcciones IP estáticas, configurar servidores DNS y puertas de enlace predeterminadas para asegurar una correcta conectividad de red.
+
+	2. Gestión de Usuarios y Grupos:
+
+		- Creación y Administración de Usuarios y Grupos: Utilizar las herramientas de administración como "Usuarios y Equipos de Active Directory" para crear y gestionar usuarios y grupos, asignando roles y permisos adecuados.
+		
+		- Políticas de Contraseña y Seguridad: Configurar políticas de seguridad para contraseñas, bloqueos de cuenta y privilegios de acceso para asegurar el entorno.
+
+	3. Administración de Active Directory:
+
+		- Instalación y Configuración de Active Directory Domain Services (AD DS): Configurar el servidor como un controlador de dominio, promover el servidor y administrar el esquema de AD DS.
+
+		- Mantenimiento de Active Directory: Realizar tareas de mantenimiento como la creación y administración de unidades organizativas (OU), la implementación de políticas de grupo (GPO) y la replicación de AD entre controladores de dominio.
+
+	4. Gestión de Almacenamiento y Sistema de Archivos:
+
+		- Configuración de Discos y Volúmenes: Utilizar "Administrador de discos" para configurar discos duros, crear particiones y volúmenes, y asignarles sistemas de archivos como NTFS o ReFS.
+
+		- Administración de Espacios de Almacenamiento: Configurar y gestionar Espacios de Almacenamiento (Storage Spaces) y compartir recursos mediante Carpetas Compartidas y Sistemas de Archivos Distribuidos (DFS).
+
+	5. Servicios de Red y Gestión de Roles:
+
+		- Instalación y Configuración de Roles y Características: Usar "Administrador del Servidor" para instalar y configurar roles como DHCP, DNS, Servicios de Escritorio Remoto (RDS), Servidor Web (IIS), etc.
+
+		- Configuración de Servicios de Red: Gestionar servicios de red críticos como DNS, DHCP, y NPS (Network Policy Server) para mantener una red eficiente y segura.
+
+	6. Seguridad y Actualizaciones del Sistema:
+
+		- Configuración de Firewall de Windows y Directivas de Seguridad: Administrar reglas del Firewall de Windows y configurar directivas de seguridad para controlar el tráfico entrante y saliente.
+
+		- Gestión de Actualizaciones: Configurar y gestionar las actualizaciones del sistema operativo y las aplicaciones mediante Windows Server Update Services (WSUS).
+
+	7. Monitorización y Mantenimiento:
+
+		- Monitorización del Rendimiento: Utilizar herramientas como el Monitor de Rendimiento, Visor de Eventos y Administrador de Tareas para supervisar el rendimiento del servidor y diagnosticar problemas.
+
+		- Mantenimiento Regular: Realizar tareas de mantenimiento como copias de seguridad y restauración de datos (Windows Server Backup), comprobación de integridad de discos, y gestión de registros y auditorías.
+
+	8. Configuración de Virtualización:
+
+		- Implementación y Administración de Hyper-V: Configurar y administrar entornos de virtualización utilizando Hyper-V para crear y gestionar máquinas virtuales y redes virtuales.
+
+	Estas tareas básicas de configuración y administración proporcionan una base sólida para gestionar de manera eficiente un entorno de Windows Server, asegurando el rendimiento, la seguridad, y la disponibilidad de los servicios proporcionados.
+
+21.2. Directorio Activo de Windows: Objetos del dominio.
+
+	En Active Directory (AD), un "dominio" es una unidad administrativa central en la que se almacenan y gestionan diversos recursos, incluyendo usuarios, equipos, grupos, impresoras, entre otros. Cada dominio se estructura mediante objetos, que representan entidades físicas o lógicas en una red de Windows Server. Los objetos del dominio de Active Directory son elementos fundamentales que permiten organizar, gestionar y administrar los recursos dentro de un entorno de red. A continuación, se presentan los principales tipos de objetos de un dominio en Active Directory:
+
+	1. Usuarios (User Objects):
+
+		- Representan cuentas de usuario que permiten a las personas autenticarse y acceder a los recursos del dominio.
+
+		- Los objetos de usuario contienen atributos como nombre, apellido, dirección de correo electrónico, nombre de inicio de sesión (SAMAccountName), identificador de seguridad (SID), entre otros.
+
+		- Los administradores pueden definir políticas de contraseñas, permisos de acceso, y propiedades de usuario para controlar el acceso a los recursos y la seguridad de la red.
+
+	2. Equipos (Computer Objects):
+
+		- Representan dispositivos de computación, como estaciones de trabajo y servidores, que forman parte del dominio.
+
+		- Permiten a los administradores gestionar las políticas de seguridad, acceso remoto, actualizaciones de software y otras configuraciones de red para cada equipo.
+
+		- Los objetos de equipo tienen atributos como nombre del equipo (CN), sistema operativo, última fecha de inicio de sesión, entre otros.
+
+	3. Grupos (Group Objects):
+
+		- Permiten agrupar varios objetos de usuarios, equipos u otros grupos para facilitar la administración de permisos y el acceso a recursos.
+
+		- Existen dos tipos de grupos: Grupos de Seguridad (Security Groups) y Grupos de Distribución (Distribution Groups):
+
+			- Grupos de Seguridad: Utilizados para asignar permisos de acceso a recursos y para la aplicación de políticas de grupo (GPO).
+
+			- Grupos de Distribución: Utilizados principalmente para distribuir correos electrónicos a múltiples usuarios mediante listas de distribución.
+
+		- También se pueden clasificar según su alcance: Global, Local de Dominio y Universal, dependiendo de la escala en la que se necesiten los permisos y el ámbito de aplicación.
+
+	4. Unidades Organizativas (Organizational Units - OUs):
+
+		- Son contenedores lógicos que permiten organizar objetos como usuarios, equipos, y grupos dentro de un dominio.
+		- Facilitan la delegación de autoridad, ya que los administradores pueden asignar permisos a otros usuarios para gestionar objetos dentro de una OU específica sin otorgar acceso completo al dominio.
+
+		- Las OUs también se utilizan para aplicar Políticas de Grupo (Group Policy Objects - GPOs) a subconjuntos específicos de usuarios o equipos, permitiendo una gestión más granular.
+
+	5. Contactos (Contact Objects):
+
+		- Representan personas que no son usuarios del dominio pero para las cuales se necesita mantener información de contacto.
+
+		- No pueden autenticarse en el dominio y no tienen cuentas de inicio de sesión, pero son útiles para listas de distribución de correo electrónico o para gestión de información de contacto.
+
+	6. Impresoras (Printer Objects):
+
+		- Representan impresoras disponibles en la red que pueden ser compartidas y administradas a través de Active Directory.
+
+		- Permiten a los administradores gestionar la configuración de la impresora, asignar permisos de acceso y monitorizar el uso de impresoras en toda la red.
+
+	7. Unidades Compartidas (Shared Folder Objects):
+
+		- Representan carpetas compartidas en la red que se pueden acceder a través de Active Directory.
+
+		- Facilitan la localización y administración de recursos compartidos en la red, asignando permisos de acceso adecuados a los usuarios o grupos.
+
+	8. Políticas de Grupo (Group Policy Objects - GPOs):
+
+		- Aunque técnicamente no son "objetos" de Active Directory en sí mismos, las GPOs son entidades que se utilizan para definir y gestionar configuraciones de política de seguridad y permisos.
+
+		- Se aplican a nivel de dominio, sitio o unidad organizativa, y permiten una gestión centralizada de las configuraciones de seguridad, scripts de inicio/cierre de sesión, redirección de carpetas, y mucho más.
+
+	9. Sitios (Site Objects):
+
+		- Representan la topología física de la red dentro de un dominio de Active Directory.
+
+		- Utilizados para optimizar la replicación del Directorio Activo y para la autenticación eficiente de los usuarios en ubicaciones geográficamente dispersas.
+
+	10. Otros Objetos Especiales:
+
+		- Subredes (Subnet Objects): Asociados a sitios para definir los límites de replicación y autenticación de Active Directory.
+
+		- Enlaces de Replicación (Connection Objects): Definen cómo se replica la información entre controladores de dominio.
+
+	Resumen
+		
+		Los objetos del dominio de Active Directory son esenciales para la gestión de un entorno de red de Windows Server. Permiten organizar, administrar y asegurar los recursos, proporcionando una infraestructura de red eficiente y escalable. Entender cómo funcionan y cómo se interrelacionan es fundamental para cualquier administrador de sistemas que desee maximizar la eficiencia y seguridad de su red.
+
+21.3. Directorio Activo de Windows: Objeto de Directiva de Grupo (GPO).
+
+	Los Objetos de Directiva de Grupo (Group Policy Objects, GPOs) son una característica fundamental de Active Directory que permite a los administradores gestionar de manera centralizada la configuración y seguridad de los sistemas y usuarios dentro de un dominio de Windows Server. Las GPOs proporcionan un mecanismo poderoso para definir configuraciones de política que afectan a usuarios y equipos en toda la red, permitiendo establecer normas y mantener la coherencia de configuración en un entorno empresarial.
+
+	1. Definición de GPO (Objeto de Directiva de Grupo):
+
+		Un Objeto de Directiva de Grupo (GPO) es un conjunto de configuraciones que definen cómo se comportan los sistemas y los usuarios en un entorno de Active Directory. Las GPOs se pueden aplicar a sitios, dominios o unidades organizativas (OUs) y permiten a los administradores controlar aspectos como políticas de seguridad, configuraciones de software, scripts, opciones de escritorio, entre otros.
+
+	2. Componentes de una GPO:
+
+		Las GPOs están compuestas por dos partes principales:
+
+			- Configuración del Equipo (Computer Configuration): Contiene configuraciones que se aplican a nivel de equipo, independientemente de quién inicie sesión en ese equipo. Las configuraciones típicas incluyen:
+
+				* Políticas de seguridad del equipo.
+				* Configuración del sistema operativo.
+				* Instalación de software a nivel de equipo.
+				* Scripts de inicio y apagado.
+
+			- Configuración del Usuario (User Configuration): Contiene configuraciones que se aplican a nivel de usuario, independientemente del equipo en el que el usuario inicie sesión. Las configuraciones típicas incluyen:
+
+				* Políticas de seguridad del usuario.
+				* Configuración de escritorio y menú de inicio.
+				* Instalación de software a nivel de usuario.
+				* Scripts de inicio y cierre de sesión.
+
+			- Cada una de estas configuraciones se subdivide en categorías adicionales como Políticas y Preferencias, permitiendo una administración detallada y flexible.
+
+	3. Ámbitos de Aplicación de las GPOs:
+
+		Las GPOs se pueden aplicar en tres niveles jerárquicos dentro de Active Directory, y su aplicación se hereda de niveles superiores a niveles inferiores:
+
+			- Sitios: Una GPO vinculada a un sitio se aplica a todos los dominios y unidades organizativas que contienen equipos y usuarios dentro de ese sitio específico. Un sitio en Active Directory está relacionado con la topología física de la red.
+
+			- Dominios: Las GPOs vinculadas a un dominio se aplican a todos los objetos de usuario y equipo dentro del dominio, a menos que sean reemplazadas por configuraciones más específicas en niveles inferiores (como en OUs).
+
+			- Unidades Organizativas (OUs): Las GPOs pueden ser vinculadas a OUs específicas para proporcionar configuraciones de política más granulares. Las OUs son contenedores lógicos que pueden tener otras OUs anidadas dentro de ellas, y las políticas pueden aplicarse de manera jerárquica.
+
+	4. Orden de Aplicación de las GPOs:
+
+		Las GPOs se aplican en un orden específico conocido como LSDOU:
+
+			- Local: Políticas locales que se aplican primero.
+			- Sitio: Las GPOs vinculadas a un sitio se aplican en segundo lugar.
+			- Dominio: Las GPOs vinculadas al dominio se aplican a continuación.
+			- OU (Unidad Organizativa): Las GPOs vinculadas a las OUs se aplican en orden desde la OU principal hasta la OU específica donde reside el objeto.
+
+		La política aplicada más recientemente tiene precedencia, lo que significa que puede sobrescribir configuraciones anteriores.
+
+	5. Filtros de Seguridad y Filtrado WMI:
+
+		Las GPOs también permiten el uso de filtros de seguridad y filtros WMI (Windows Management Instrumentation) para controlar aún más qué usuarios y equipos se ven afectados por una GPO:
+
+			- Filtros de Seguridad: Permiten especificar qué grupos de usuarios, equipos o cuentas de seguridad se verán afectados por una GPO determinada. Por ejemplo, una GPO puede estar vinculada a una OU, pero puede configurarse para que solo se aplique a ciertos usuarios dentro de esa OU.
+
+			- Filtrado WMI: Proporciona un nivel adicional de control basado en consultas WMI, permitiendo que una GPO solo se aplique si se cumplen ciertas condiciones. Por ejemplo, una GPO puede aplicarse solo a equipos con un sistema operativo específico o a equipos con más de 4 GB de RAM.
+
+	6. Herramientas para la Gestión de GPOs:
+
+		- Consola de Administración de Directivas de Grupo (Group Policy Management Console - GPMC): Es la herramienta principal para crear, editar, vincular y gestionar GPOs. Permite la visualización de todas las GPOs aplicadas en el dominio y proporciona herramientas para la resolución de problemas, como la Modelización de Directiva de Grupo y Resultados de la Directiva de Grupo (Gpresult).
+
+		- Editor de Directivas de Grupo (Group Policy Editor - GPEDIT.MSC): Utilizado para editar la configuración específica dentro de una GPO.
+
+	7. Configuraciones Comunes en GPOs:
+
+		Algunas configuraciones comunes que se pueden definir a través de GPOs incluyen:
+
+			- Políticas de Contraseña y Bloqueo de Cuenta: Configuración de longitud mínima de contraseña, complejidad, caducidad y número de intentos de inicio de sesión fallidos antes del bloqueo de cuenta.
+			- Restricciones de Software: Políticas para controlar qué software puede o no ejecutarse en los equipos del dominio.
+			- Mapeo de Unidades de Red: Configurar el mapeo automático de unidades de red para los usuarios al iniciar sesión.
+			- Configuración de Escritorio y Menú de Inicio: Controlar el acceso a configuraciones del sistema y personalización del escritorio.
+			- Instalación de Software Centralizada: Distribuir e instalar aplicaciones automáticamente en usuarios o equipos del dominio.
+
+	8. Resolución de Problemas y Diagnóstico de GPOs:
+
+		La administración de GPOs incluye la necesidad de diagnosticar y resolver problemas, como conflictos entre políticas o GPOs que no se aplican correctamente. Las herramientas como GPRESULT, RSOP (Resultant Set of Policy), y los registros de eventos pueden ayudar a identificar y corregir estos problemas.
+
+	9. Plantillas Administrativas y Preferencias de Directiva de Grupo:
+
+		- Plantillas Administrativas (Administrative Templates): Son archivos que proporcionan configuraciones adicionales dentro de las GPOs. Están en formato ADMX/ADML y se pueden personalizar para crear configuraciones de políticas más detalladas.
+
+		- Preferencias de Directiva de Grupo: Proporcionan configuraciones adicionales que permiten la administración de opciones de configuración que no están cubiertas por las políticas de grupo estándar, como la configuración de impresoras, el mapeo de unidades, la creación de accesos directos, etc.
+
+	Conclusión
+
+		Las GPOs son una herramienta esencial en la administración de entornos de Windows Server, permitiendo a los administradores definir y aplicar configuraciones de manera centralizada. Una comprensión profunda de su estructura, orden de aplicación, y capacidades de filtrado es fundamental para maximizar la eficiencia, seguridad y control dentro de una red empresarial.

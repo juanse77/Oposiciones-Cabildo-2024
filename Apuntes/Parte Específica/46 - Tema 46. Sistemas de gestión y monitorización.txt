@@ -1,0 +1,247 @@
+Tema 46. Sistemas de gestión y monitorización.
+
+46.1. Protocolo simple de administración de red (SNMP).
+
+	El Protocolo Simple de Administración de Red (SNMP, por sus siglas en inglés: Simple Network Management Protocol) es un protocolo estándar de Internet utilizado para la gestión y monitoreo de dispositivos en redes de computadoras. Estos dispositivos pueden ser routers, switches, servidores, estaciones de trabajo, impresoras, y otros equipos conectados a una red IP.
+
+	Conceptos Clave de SNMP
+
+		- Componentes Principales de SNMP:
+
+			Agente: Es un software que se ejecuta en el dispositivo gestionado (como un router o servidor) y proporciona información de monitoreo. El agente recopila datos sobre la actividad del dispositivo y responde a las solicitudes del sistema de gestión de red (NMS).
+
+			Sistema de Gestión de Red (NMS): Es una aplicación que monitorea y gestiona los dispositivos de red mediante la comunicación con los agentes. Un NMS envía solicitudes y recibe respuestas de los agentes para conocer el estado de los dispositivos gestionados.
+
+			MIB (Management Information Base): Es una base de datos que contiene la descripción de los objetos gestionados en la red y la información que puede ser monitoreada y controlada. Cada objeto en la MIB tiene un identificador único conocido como OID (Object Identifier).
+
+		- Funcionamiento de SNMP:
+
+			SNMP funciona principalmente sobre el protocolo UDP (User Datagram Protocol). Utiliza los puertos 161 para la comunicación del agente con el NMS y 162 para los mensajes de notificación llamados "traps" (trampas).
+
+			El NMS envía una solicitud SNMP al agente en un dispositivo gestionado. El agente responde con los datos solicitados o toma las acciones especificadas.
+
+			SNMP permite no solo la monitorización (lectura de datos) sino también la configuración y control de los dispositivos (escritura de datos).
+
+		- Versiones de SNMP:
+
+			SNMPv1: La primera versión, simple y con características básicas de monitoreo y gestión. Usa texto plano para las contraseñas ("community strings"), lo que puede representar un problema de seguridad.
+
+			SNMPv2c: Mejora algunas limitaciones de SNMPv1, ofrece un mejor rendimiento y mayor flexibilidad. Sin embargo, la seguridad sigue siendo básica con el uso de cadenas de comunidad para autenticación.
+
+			SNMPv3: Introduce mejoras significativas en seguridad, incluyendo autenticación basada en usuarios (USM, User-based Security Model) y privacidad (encriptación). Esta versión aborda los problemas de seguridad presentes en SNMPv1 y v2c.
+
+		- Operaciones de SNMP:
+
+			Get: Solicita información de un objeto específico en el dispositivo gestionado.
+			GetNext: Solicita el siguiente objeto en la MIB. Esto es útil para recorrer todas las entradas de una tabla.
+			Set: Establece un valor para un objeto en el dispositivo gestionado.
+			Trap: Mensaje enviado por un agente SNMP al NMS para notificar un evento significativo, como una alerta o falla.
+			Inform: Similar a una trap, pero con confirmación. El NMS envía una respuesta de confirmación al agente que envió el mensaje.
+			GetBulk: Optimiza la obtención de grandes cantidades de datos, permitiendo múltiples valores con una sola solicitud.
+
+		- Aplicaciones de SNMP:
+
+			Monitorización del estado de la red y dispositivos.
+			Detección y diagnóstico de fallos.
+			Configuración de dispositivos de red.
+			Recolección de estadísticas de rendimiento para análisis.
+
+		- Ventajas y Desventajas de SNMP
+
+			Ventajas:
+
+				Amplio soporte en la mayoría de los dispositivos de red.
+				Estándar abierto y ampliamente utilizado.
+				Flexibilidad y facilidad de implementación.
+				Capacidades de monitoreo remoto.
+
+			Desventajas:
+
+				Las primeras versiones (SNMPv1 y SNMPv2c) carecen de mecanismos de seguridad robustos.
+				Puede ser complejo configurar y administrar en redes grandes y heterogéneas.
+				La recolección masiva de datos puede generar un tráfico significativo en la red.
+
+	Conclusión
+
+		SNMP sigue siendo uno de los protocolos más utilizados para la gestión de redes debido a su simplicidad y compatibilidad con una amplia variedad de dispositivos. Sin embargo, es fundamental elegir la versión adecuada (como SNMPv3) para garantizar la seguridad en entornos modernos y críticos.
+
+46.2. Base de Información de Administración (MIB).
+
+	La Base de Información de Administración (MIB, Management Information Base) es un componente fundamental en el protocolo SNMP (Protocolo Simple de Administración de Red) que define la estructura de los datos que pueden ser gestionados o monitoreados en una red. La MIB es esencialmente una base de datos jerárquica que contiene una colección de objetos que representan varios aspectos de los dispositivos de red (como routers, switches, servidores, impresoras, etc.) que pueden ser controlados o monitorizados a través de SNMP.
+
+	Conceptos Clave de MIB
+
+		- Definición de MIB:
+
+			Una MIB es una colección de definiciones de objetos que describe las propiedades de los diferentes componentes de una red gestionada. Cada objeto en la MIB tiene un nombre, un identificador único (OID, Object Identifier), y un tipo de dato asociado que define el tipo de información que puede contener.
+
+		- Estructura de la MIB:
+
+			La MIB sigue una estructura jerárquica similar a un árbol, en la que cada objeto tiene un identificador único llamado OID (Object Identifier). Este identificador es una secuencia de números que representan la posición del objeto dentro de la jerarquía de la MIB.
+
+			La jerarquía de la MIB está organizada de manera que los objetos más generales están cerca de la raíz y los objetos más específicos están en las ramas. Por ejemplo, la jerarquía de la MIB comienza con la raíz (1), que se divide en subniveles como ISO (1.3), Internet (1.3.6), y más abajo se encuentran ramas específicas para cada tipo de dispositivo o aplicación.
+
+			- Object Identifier (OID):
+
+				Un OID es una secuencia de números separados por puntos que identifican de manera única a un objeto en la MIB. Por ejemplo, 1.3.6.1.2.1.1.1 es un OID que representa el objeto sysDescr, que es una descripción del sistema operativo del dispositivo.
+
+				Los OIDs son cruciales para que los sistemas de gestión de red (NMS) puedan acceder a información específica de los agentes SNMP en los dispositivos gestionados.
+
+		- Componentes de una MIB:
+
+			* Objetos Escalares: Representan información única. Por ejemplo, el nombre del sistema (sysName) es un objeto escalar que tiene un único valor.
+
+			* Tablas (Objetos Tabulares): Conjunto de objetos relacionados organizados en filas y columnas, similar a una tabla en una base de datos. Por ejemplo, la tabla ifTable en la MIB contiene información sobre las interfaces de red en un dispositivo.
+
+		- Tipos de Datos en MIB:
+
+			Los objetos en la MIB pueden ser de varios tipos de datos, como Integer, OctetString, Gauge, Counter, TimeTicks, IpAddress, entre otros. Estos tipos de datos definen la naturaleza y el formato de la información que puede ser almacenada y transmitida.
+
+		- Archivos MIB:
+
+			Los archivos MIB están escritos en un formato llamado SMI (Structure of Management Information), que es un subconjunto del estándar ASN.1 (Abstract Syntax Notation One). Estos archivos describen los objetos que pueden ser gestionados o monitoreados en un dispositivo y se utilizan para interpretar las respuestas SNMP en un formato legible y comprensible.
+
+		- Tipos de MIB:
+
+			Existen diferentes tipos de MIBs:
+
+				* MIBs Estándar: Definidas por organismos de estandarización como IETF (Internet Engineering Task Force) y que cubren objetos comunes para cualquier dispositivo de red. Ejemplo: RFC1213-MIB (también conocido como MIB-II).
+
+				* MIBs Propietarias: Definidas por fabricantes específicos de hardware o software para soportar características y funcionalidades específicas de sus dispositivos. Ejemplo: CISCO-MIB para dispositivos de Cisco.
+
+		- Aplicaciones de la MIB
+
+			Monitorización del Estado de los Dispositivos: Los sistemas de gestión de red pueden acceder a los objetos en la MIB para obtener información sobre el estado de los dispositivos, como la carga de la CPU, la utilización de la memoria, el tráfico de red, etc.
+
+			Configuración Remota: A través de la manipulación de objetos en la MIB, es posible configurar dispositivos de red de manera remota.
+
+			Alertas y Notificaciones: Los agentes SNMP pueden enviar traps (notificaciones) al NMS cuando ocurren ciertos eventos o cuando los valores de los objetos en la MIB alcanzan umbrales predefinidos.
+
+	Ejemplo de Uso de MIB:
+
+		Supongamos que queremos conocer el nombre del sistema operativo de un router mediante SNMP:
+
+			- Utilizamos el OID 1.3.6.1.2.1.1.1 que corresponde al objeto sysDescr en el archivo MIB estándar.
+			- El NMS envía una solicitud SNMP Get al agente SNMP en el router, pidiendo el valor de sysDescr.
+			- El agente responde con el valor correspondiente (por ejemplo, "Cisco IOS Software, C2960 Software...").
+
+	Ventajas de las MIB:
+
+		Estandarización: Las MIBs estándar permiten interoperabilidad entre diferentes sistemas de gestión de red y dispositivos de diversos fabricantes.
+
+		Flexibilidad: Soporte tanto para MIBs estándar como propietarias, permitiendo la gestión de funciones específicas del fabricante.
+
+		Compatibilidad: Utilizadas en prácticamente todos los dispositivos de red modernos, lo que facilita la integración y gestión centralizada.
+
+	Conclusión
+
+		La Base de Información de Administración (MIB) es un componente clave del protocolo SNMP que permite a los administradores de red monitorear y gestionar dispositivos de red de manera eficiente. Las MIBs, con su estructura jerárquica de objetos y uso de OIDs únicos, proporcionan un lenguaje común para la gestión de red en entornos heterogéneos.
+
+46.3. Sistemas de monitorización Zabbix.
+
+	Zabbix es una solución de software de código abierto para el monitoreo de redes, sistemas, aplicaciones, y servicios IT. Es ampliamente utilizado por administradores de sistemas y equipos de DevOps para supervisar la infraestructura de TI y garantizar que los sistemas operen de manera eficiente, segura y sin interrupciones. Zabbix permite la recopilación de datos, visualización, análisis de rendimiento, y alertas sobre cualquier infraestructura de red, servidores, servicios en la nube, y aplicaciones personalizadas.
+
+	Características Principales de Zabbix
+
+		- Monitoreo Integral:
+
+			Zabbix ofrece capacidades de monitoreo para diferentes componentes de la infraestructura de TI:
+				* Monitoreo de Servidores y Hardware: CPU, memoria, espacio en disco, interfaces de red, etc.
+				* Monitoreo de Redes: Routers, switches, firewalls, y otros dispositivos de red mediante protocolos como SNMP, ICMP, y otros.
+				* Monitoreo de Aplicaciones: Bases de datos, servidores web, servidores de correo, aplicaciones empresariales.
+				* Monitoreo en la Nube y Virtualización: AWS, Azure, VMware, Docker, etc.
+				* Monitoreo de Bases de Datos: MySQL, PostgreSQL, Oracle, SQL Server, entre otros.
+
+		- Recopilación de Datos Flexible:
+		
+			Zabbix permite la recopilación de datos mediante diferentes métodos como:
+
+				- Agentes Zabbix: Software que se instala en los hosts supervisados para recopilar métricas de sistema y enviar los datos al servidor Zabbix.
+				- SNMP (Simple Network Management Protocol): Monitoreo de dispositivos de red como switches y routers.
+				- IPMI (Intelligent Platform Management Interface): Monitoreo de hardware y su estado.
+				- JMX (Java Management Extensions): Monitoreo de aplicaciones Java.
+				- HTTP y Scripts Personalizados: Permite la integración con APIs y servicios personalizados.
+
+		- Alertas y Notificaciones:
+
+			Zabbix permite la configuración de disparadores (triggers) basados en umbrales definidos. Cuando se alcanza un umbral, se genera una alerta que puede ser enviada por correo electrónico, SMS, Slack, Microsoft Teams, o cualquier otro canal de comunicación.
+
+			Soporta la creación de flujos de trabajo personalizados para la gestión de alertas y notificaciones.
+
+		- Visualización de Datos:
+
+			Zabbix proporciona múltiples opciones para la visualización de datos:
+
+				* Paneles de Control (Dashboards): Visualización en tiempo real del estado del sistema y su rendimiento.
+				* Gráficos y Mapas de Red: Para la representación gráfica de datos históricos y topologías de red.
+				* Pantallas de Información Personalizadas: Permiten a los usuarios crear vistas específicas según sus necesidades.
+				* Reportes: Generación de informes automáticos sobre el estado y el rendimiento de los sistemas monitorizados.
+
+		- Escalabilidad y Alta Disponibilidad:
+
+			Zabbix está diseñado para ser escalable, capaz de manejar desde pequeñas infraestructuras hasta grandes entornos empresariales con miles de dispositivos y millones de métricas.
+
+			Soporta configuraciones distribuidas y de alta disponibilidad para asegurar que el sistema de monitoreo permanezca operativo y eficiente.
+
+		- Automatización y Gestión Remota:
+
+			Zabbix incluye capacidades para la automatización de tareas mediante plantillas, scripts personalizados, y la API de Zabbix.
+
+			La API REST de Zabbix permite la integración con otros sistemas y herramientas, así como la automatización de tareas de monitoreo, aprovisionamiento, y gestión de alertas.
+
+		- Seguridad:
+
+			Soporta autenticación basada en usuarios y permisos basados en roles (RBAC, Role-Based Access Control).
+			La comunicación entre los agentes Zabbix y el servidor puede ser cifrada mediante TLS/SSL.
+
+	Componentes de Zabbix
+
+		- Zabbix Server:
+
+			El núcleo de Zabbix. Es el componente que centraliza la recopilación de datos de todos los agentes y fuentes de monitoreo, almacena los datos en la base de datos, procesa disparadores y genera alertas.
+
+		- Agente Zabbix:
+
+			Un pequeño programa que se instala en los hosts para recopilar datos sobre la utilización del sistema operativo y la aplicación, y los envía al servidor o proxy Zabbix.
+
+		- Base de Datos:
+
+			Zabbix utiliza una base de datos para almacenar la configuración, los datos históricos de monitoreo, y los eventos. Es compatible con bases de datos como MySQL, PostgreSQL, Oracle, y SQLite.
+
+		- Interfaz Web:
+
+			Una interfaz basada en web para la configuración, visualización y administración de todos los elementos monitoreados en Zabbix. Ofrece paneles de control, mapas, gráficos, y administración de usuarios.
+
+		- Zabbix Proxy:
+
+			Permite la monitorización distribuida y ayuda a reducir la carga en el servidor Zabbix. 			Los proxies recopilan datos de los agentes Zabbix y los transmiten al servidor.
+
+	Ventajas y Desventajas de Zabbix
+
+		Ventajas:
+
+			- Código Abierto: Sin costos de licencia, con una comunidad activa de usuarios y desarrolladores.
+			- Altamente Personalizable: Flexibilidad para configurar casi cualquier aspecto del monitoreo.
+			- Escalabilidad: Puede manejar grandes cantidades de dispositivos y datos.
+			- Alertas y Notificaciones Avanzadas: Capacidad de personalizar condiciones de alerta, métodos de notificación y automatización de respuestas.
+			- Soporte Multi-Plataforma: Compatible con diversas plataformas de hardware, sistemas operativos, y aplicaciones.
+
+		Desventajas:
+
+			- Curva de Aprendizaje Pronunciada: Puede ser complicado de configurar y administrar para usuarios sin experiencia previa.
+			- Requiere Recursos Significativos: En entornos grandes, puede requerir hardware robusto para manejar el volumen de datos.
+			- Interfaz Web Puede Ser Compleja: Aunque es poderosa, la interfaz de usuario puede resultar intimidante y complicada para los nuevos usuarios.
+
+	Casos de Uso Comunes
+
+		Monitorización de Infraestructura de Red: Monitorear routers, switches, firewalls, y otros dispositivos de red para identificar problemas de conectividad, fallos, o cuellos de botella.
+
+		Monitorización de Servidores y Aplicaciones: Supervisión de la salud de los servidores, incluyendo métricas de CPU, memoria, disco, y servicios en ejecución. Utilizado para detectar fallos de hardware o cuellos de botella de recursos.
+
+		Gestión de Servicios en la Nube: Integración con plataformas de nube como AWS, Azure, o Google Cloud para monitorear recursos virtuales y servicios gestionados.
+
+		Seguridad y Auditoría de TI: Configuración de alertas y triggers para detectar intentos de intrusión, uso indebido de recursos, o actividades sospechosas en la red.
+
+	Conclusión
+
+		Zabbix es una solución robusta y altamente configurable para el monitoreo de redes, sistemas y aplicaciones en infraestructuras de TI de cualquier tamaño. Ofrece una amplia gama de características que permiten a los administradores de sistemas y equipos de DevOps mantener la infraestructura bajo control, reducir los tiempos de inactividad, y garantizar un rendimiento óptimo. Con su modelo de código abierto y comunidad activa, es una opción popular tanto para empresas como para entornos de TI de misión crítica.

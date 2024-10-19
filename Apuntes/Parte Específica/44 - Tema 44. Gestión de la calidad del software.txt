@@ -1,0 +1,244 @@
+Tema 44. Gestión de la calidad del software.
+
+44.1. Métricas y evaluación de la calidad de software.
+
+	La evaluación de la calidad de software es un proceso crítico en el desarrollo de software, ya que asegura que un producto cumple con los estándares y requisitos especificados. Las métricas de calidad de software son herramientas fundamentales para medir diferentes aspectos de un software y asegurar su robustez, eficiencia, mantenimiento, y cumplimiento de objetivos.
+
+	Métricas de Calidad de Software
+
+		Las métricas de calidad de software pueden clasificarse en diferentes categorías, cada una enfocada en medir aspectos específicos del software:
+
+		- Métricas de Tamaño:
+
+			* Líneas de Código (LOC): Cuenta el número de líneas de código en el programa. Es una métrica básica que puede dar una idea del tamaño del proyecto.
+
+			* Puntos de Función (FP): Mide la funcionalidad entregada por el sistema en términos de entradas, salidas, consultas, archivos internos y archivos externos. Es más abstracta que LOC y no depende del lenguaje de programación.
+
+		- Métricas de Complejidad:
+
+			* Complejidad Ciclomática (CC): Mide la complejidad del control de flujo de un programa, indicando el número de caminos independientes a través del código. Una alta complejidad puede indicar dificultades para realizar pruebas y mantenimiento.
+
+			* Índice de Halstead: Calcula la dificultad y el esfuerzo necesario para entender el código basándose en operadores y operandos.
+
+		- Métricas de Calidad del Código:
+
+			* Cobertura de Pruebas: Mide el porcentaje de código que es cubierto por las pruebas automatizadas. Un alto porcentaje de cobertura puede ser un indicio de buena calidad, pero no siempre garantiza que todas las rutas críticas del código hayan sido probadas.
+
+			* Densidad de Defectos: Calcula el número de defectos encontrados en una porción específica del código (por ejemplo, por cada 1,000 líneas de código).
+
+		- Métricas de Mantenibilidad:
+
+			* Tiempo de Reparación Media (MTTR): Tiempo promedio que lleva reparar un defecto o fallo.
+			* Índice de Mantenibilidad: Combina diversas métricas, como la complejidad ciclomática, el tamaño del código, y la cohesión de los módulos para determinar lo fácil que es mantener el software.
+
+		- Métricas de Rendimiento:
+
+			* Tiempo de Respuesta: Tiempo que toma para que el sistema responda a una solicitud.
+			* Uso de Recursos: Mide la cantidad de recursos del sistema, como CPU y memoria, que utiliza la aplicación.
+
+		- Métricas de Fiabilidad:
+
+			* Tiempo Medio Entre Fallos (MTBF): Tiempo promedio que un sistema funciona sin fallar.
+			* Tasa de Fallos (Failure Rate): Número de fallos por unidad de tiempo.
+
+	Evaluación de la Calidad de Software
+
+		La evaluación de la calidad de software se realiza utilizando modelos de calidad que describen los atributos deseados del software y proporcionan un marco para su medición. Algunos de los modelos más conocidos incluyen:
+
+		- Modelo de Calidad de McCall: Propone factores de calidad como corrección, fiabilidad, eficiencia, integridad, usabilidad, mantenibilidad, flexibilidad, portabilidad, reutilización, y capacidad de pruebas.
+
+		- ISO/IEC 9126 (ahora reemplazada por ISO/IEC 25010): Define un modelo de calidad estructurado en seis características principales: funcionalidad, fiabilidad, usabilidad, eficiencia, mantenibilidad y portabilidad, cada una con subcaracterísticas específicas.
+
+		- Modelo CMMI (Capability Maturity Model Integration): Utilizado para evaluar y mejorar los procesos de desarrollo de software. Tiene niveles de madurez que reflejan el grado de optimización de los procesos de una organización.
+
+		- Modelo de Calidad FURPS+ (Funcionalidad, Usabilidad, Fiabilidad, Rendimiento, Soportabilidad +): Considera tanto atributos funcionales como no funcionales del software.
+
+	Herramientas para la Evaluación de la Calidad de Software:
+
+		Existen varias herramientas que ayudan a evaluar y medir la calidad del software mediante la aplicación de métricas, como:
+
+		- SonarQube: Herramienta de análisis de código que evalúa la calidad en términos de mantenibilidad, seguridad, y fiabilidad.
+
+		- Jira y Confluence: Herramientas de gestión de proyectos que permiten rastrear defectos, mejoras y calidad de software.
+
+		- Jenkins: Herramienta de integración continua que puede medir la cobertura de pruebas y otros aspectos de la calidad del software.
+
+	Conclusión:
+
+		Las métricas de calidad de software proporcionan información cuantitativa que ayuda a los equipos de desarrollo a mejorar la calidad del producto final. La evaluación de la calidad no solo implica la medición, sino también la interpretación de estas métricas para tomar decisiones informadas y realizar mejoras continuas en el software.
+
+44.2. Metodologías de calidad de software (CMMI).
+
+	El Capability Maturity Model Integration (CMMI) es un modelo de mejora de procesos que proporciona a las organizaciones elementos esenciales para la gestión eficaz de proyectos y el desarrollo de productos y servicios. CMMI ayuda a las organizaciones a identificar sus capacidades de proceso, mejorar la calidad del software y, en última instancia, aumentar la eficiencia y la satisfacción del cliente.
+
+	¿Qué es CMMI?
+
+		El CMMI es un marco de referencia que se utiliza para evaluar y mejorar los procesos de desarrollo de software dentro de una organización. Fue desarrollado por el Software Engineering Institute (SEI) de la Universidad Carnegie Mellon y actualmente está mantenido por el CMMI Institute. CMMI es aplicable no solo al desarrollo de software, sino también a otras áreas como servicios y adquisición.
+
+	Estructura de CMMI
+
+		CMMI se estructura en niveles de madurez que representan diferentes grados de optimización de los procesos de una organización. Estos niveles ayudan a las organizaciones a identificar sus fortalezas y debilidades en cuanto a la calidad del software y la eficiencia de los procesos.
+
+	Niveles de Madurez de CMMI
+
+		CMMI define cinco niveles de madurez, que van desde procesos inmaduros y caóticos hasta procesos gestionados y optimizados:
+
+		- Nivel 1: Inicial (Initial)
+
+			En este nivel, los procesos son impredecibles, reactivos y a menudo caóticos. El éxito depende en gran medida de los esfuerzos individuales y no hay un entorno de gestión de procesos organizado. Las organizaciones en este nivel a menudo no tienen procesos documentados o repetibles.
+
+		- Nivel 2: Gestionado (Managed)
+
+			Los procesos se gestionan a nivel de proyecto y existen políticas y procedimientos establecidos para la planificación y la gestión. Hay control sobre los requisitos, los plazos y los recursos, pero la gestión de procesos no es necesariamente uniforme en toda la organización.
+
+		- Nivel 3: Definido (Defined)
+
+			Los procesos están bien definidos, documentados y estandarizados en toda la organización. Existe un marco de procesos que se adapta a cada proyecto, y la organización se centra en la reutilización de las mejores prácticas y la integración de procesos de gestión.
+
+		- Nivel 4: Gestionado Cuantitativamente (Quantitatively Managed)
+
+			Los procesos se gestionan utilizando métricas y análisis cuantitativos. Se realizan mediciones y análisis sistemáticos para controlar los procesos y productos. Las organizaciones en este nivel son capaces de predecir el rendimiento de los procesos en función de los datos.
+
+		- Nivel 5: Optimizado (Optimizing)
+
+			Este es el nivel más alto de madurez. Las organizaciones se centran en la mejora continua de los procesos mediante la identificación de debilidades y el uso de nuevas tecnologías e innovaciones. Se utilizan técnicas avanzadas de análisis de procesos para prevenir defectos y mejorar la calidad.
+
+	Áreas de Proceso en CMMI
+
+		CMMI también está organizado en áreas de proceso, que son categorías clave que deben gestionarse para alcanzar los objetivos de cada nivel de madurez. Estas áreas incluyen:
+
+			- Gestión de Proyectos (Project Management):
+
+				* Planificación de Proyectos
+				* Monitoreo y Control de Proyectos
+				* Gestión de Riesgos
+				* Gestión de la Configuración
+
+			- Gestión de Procesos (Process Management):
+
+				* Definición del Proceso Organizacional
+				* Capacitación Organizacional
+				* Gestión del Rendimiento Organizacional
+			
+			- Ingeniería (Engineering):
+
+				* Desarrollo de Requisitos
+				* Diseño de Soluciones Técnicas
+				* Verificación y Validación
+
+			- Soporte (Support):
+
+				* Garantía de la Calidad del Proceso y del Producto
+				* Análisis de Causas y Resolución de Problemas
+				* Gestión de Decisiones
+
+	Beneficios de Implementar CMMI
+
+		Implementar CMMI puede aportar una serie de beneficios a las organizaciones de desarrollo de software, tales como:
+
+			- Mejora en la Calidad del Software: Procesos definidos y estandarizados ayudan a reducir defectos y mejorar la calidad del producto final.
+
+			- Mayor Eficiencia Operativa: La estandarización de procesos reduce los desperdicios y permite un uso más efectivo de los recursos.
+
+			- Capacidad de Gestión Mejorada: Ayuda a las organizaciones a gestionar proyectos complejos con más eficacia, reduciendo riesgos y optimizando los resultados.
+
+			- Mejora Continua: Fomenta una cultura de mejora continua, donde se busca siempre la optimización de procesos y resultados.
+
+			- Mayor Satisfacción del Cliente: La entrega consistente de productos de alta calidad mejora la relación con los clientes y la reputación del negocio.
+
+	Modelos de Representación en CMMI
+
+		CMMI ofrece dos modelos de representación:
+
+			- Representación por Etapas (Staged Representation): Es la representación clásica de CMMI, que utiliza niveles de madurez para medir el progreso de la organización. Cada nivel de madurez tiene un conjunto de prácticas específicas y áreas de proceso que deben implementarse.
+
+			- Representación Continua (Continuous Representation): Este enfoque permite a las organizaciones mejorar en áreas de proceso específicas sin tener que seguir una progresión estricta de niveles. Se centra en el nivel de capacidad de cada área de proceso.
+
+	Conclusión
+
+		El modelo CMMI es una metodología integral que ayuda a las organizaciones a mejorar sus procesos de desarrollo de software, gestión de proyectos y entrega de servicios. Ofrece un enfoque sistemático para evaluar la madurez de los procesos y establecer un camino claro hacia la mejora continua. Implementar CMMI puede ser un esfuerzo significativo, pero los beneficios de mejorar la calidad, la eficiencia y la satisfacción del cliente son muy valiosos.
+
+44.3. Herramientas de control de la calidad de software.
+
+	Las herramientas de control de la calidad de software son esenciales para garantizar que el software desarrollado cumpla con los requisitos especificados y mantenga un nivel alto de calidad. Estas herramientas ayudan a automatizar procesos de prueba, analizar el código, identificar defectos y problemas de seguridad, y realizar una gestión efectiva de la calidad a lo largo del ciclo de vida del software.
+
+	A continuación, te presento una lista de herramientas utilizadas comúnmente para el control de calidad de software, clasificadas por sus funcionalidades:
+
+		1. Herramientas de Análisis de Código Estático
+
+			Las herramientas de análisis de código estático examinan el código fuente sin ejecutarlo para identificar posibles problemas de calidad, como errores de sintaxis, vulnerabilidades de seguridad, malas prácticas de codificación y violaciones de estándares de codificación.
+
+			- SonarQube: Una de las herramientas más populares para análisis de código estático, soporta múltiples lenguajes de programación y proporciona informes detallados sobre la calidad del código, detecta bugs, vulnerabilidades y problemas de seguridad.
+
+			- Checkmarx: Focalizada en la seguridad del software, permite detectar vulnerabilidades en el código fuente mediante análisis estático. Es ideal para la integración en entornos de desarrollo continuo.
+
+			- PMD: Es una herramienta de análisis estático para Java que encuentra errores comunes de programación como código duplicado, estructuras de control ineficientes, entre otros.
+
+			- FindBugs/SpotBugs: Herramienta de análisis estático de código que se centra principalmente en encontrar posibles errores en el código Java.
+
+		2. Herramientas de Análisis de Código Dinámico
+
+			Estas herramientas ejecutan el software y analizan su comportamiento en tiempo de ejecución para identificar problemas como pérdidas de memoria, errores de rendimiento, y problemas de seguridad.
+
+			- JProfiler: Herramienta de perfilado que se utiliza para analizar aplicaciones Java en tiempo de ejecución, enfocándose en la optimización del rendimiento y la gestión de memoria.
+
+			- Dynatrace: Proporciona monitoreo de rendimiento en tiempo real para aplicaciones, servicios y contenedores, identificando problemas de rendimiento en sistemas de producción.
+
+			- AppDynamics: Similar a Dynatrace, ofrece una visibilidad profunda del rendimiento de las aplicaciones, detección de cuellos de botella y monitoreo de transacciones.
+
+		3. Herramientas de Gestión de Pruebas
+
+			Las herramientas de gestión de pruebas ayudan a planificar, diseñar, ejecutar y rastrear pruebas para garantizar la cobertura de pruebas y la gestión de defectos.
+
+			- Jira con Zephyr: Jira es una herramienta de gestión de proyectos ampliamente utilizada, y Zephyr es un complemento que permite la gestión de pruebas. Juntos, proporcionan una solución completa para el rastreo de defectos, ejecución de pruebas, y generación de informes.
+
+			- TestRail: Herramienta de gestión de pruebas que permite planificar y ejecutar pruebas, gestionar casos de prueba, y rastrear resultados de pruebas.
+
+			- Quality Center (HP ALM): Una solución robusta de gestión de pruebas y calidad que permite la planificación, el seguimiento y la ejecución de pruebas, así como la gestión de requisitos y defectos.
+
+
+		4. Herramientas de Automatización de Pruebas
+
+			Estas herramientas se utilizan para automatizar pruebas funcionales y de regresión para asegurar que los cambios en el código no introduzcan nuevos errores.
+
+			- Selenium: Una de las herramientas de automatización más utilizadas para pruebas de aplicaciones web. Proporciona un marco de trabajo robusto para escribir scripts de prueba en diferentes lenguajes de programación como Java, Python, C#, entre otros.
+
+			- TestNG y JUnit: Marcos de pruebas para Java que se utilizan para la automatización de pruebas unitarias y de integración. TestNG es más avanzado que JUnit, con soporte para pruebas en paralelo, dependencias de métodos, y configuración flexible.
+
+			- Appium: Herramienta de automatización para pruebas de aplicaciones móviles, compatible con aplicaciones nativas, híbridas y móviles-web.
+
+			- Katalon Studio: Plataforma de pruebas de automatización que soporta pruebas para aplicaciones web, móviles y de API. Ofrece capacidades de scripting fáciles de usar, junto con integraciones con herramientas CI/CD.
+
+		5. Herramientas de Pruebas de Rendimiento
+
+			Las herramientas de pruebas de rendimiento miden cómo el software responde bajo cargas específicas, identificando cuellos de botella y asegurando que la aplicación funcione bien en condiciones extremas.
+
+			- Apache JMeter: Herramienta de código abierto para pruebas de rendimiento y carga de aplicaciones web. Es ampliamente utilizada para evaluar la carga de trabajo y generar informes detallados de rendimiento.
+
+			- LoadRunner: Proporciona capacidades avanzadas para pruebas de rendimiento y carga, siendo capaz de simular miles de usuarios y analizar los resultados para encontrar cuellos de botella.
+
+			- Gatling: Herramienta de prueba de carga moderna para aplicaciones web que ofrece un enfoque basado en programación para definir escenarios de prueba, generando informes claros y detallados.
+
+		6. Herramientas de Integración Continua y Control de Calidad
+
+			Estas herramientas ayudan a integrar el control de calidad dentro del proceso de integración continua (CI/CD), facilitando la detección temprana de defectos y problemas de calidad.
+
+			- Jenkins: Herramienta de integración continua de código abierto que facilita la automatización de pruebas, el análisis de código y la entrega continua. Se integra fácilmente con SonarQube, Selenium, JUnit, y otras herramientas.
+
+			- GitLab CI/CD: Proporciona una plataforma de CI/CD integrada con GitLab, permitiendo la automatización de pruebas, construcción y despliegue de aplicaciones.
+
+			- Travis CI: Servicio de CI que se integra bien con GitHub, permitiendo construir y probar proyectos automáticamente cuando se hacen cambios en el código.
+
+		7. Herramientas de Pruebas de Seguridad
+
+			- Las herramientas de pruebas de seguridad están diseñadas para detectar vulnerabilidades en el software que podrían ser explotadas por atacantes.
+
+			- OWASP ZAP (Zed Attack Proxy): Herramienta de código abierto que permite realizar pruebas de penetración y análisis de seguridad en aplicaciones web.
+
+			- Burp Suite: Plataforma integrada para pruebas de seguridad de aplicaciones web. Ofrece una amplia gama de herramientas para identificar vulnerabilidades y mejorar la seguridad de las aplicaciones.
+
+			- Netsparker: Herramienta automatizada para pruebas de seguridad que detecta vulnerabilidades en aplicaciones web y APIs.
+
+	Conclusión
+
+		Las herramientas de control de la calidad de software juegan un papel crucial en el aseguramiento de la calidad en el desarrollo de software. La selección de la herramienta adecuada depende del tipo de software, los requisitos del proyecto, el entorno de desarrollo y el presupuesto disponible. La combinación de herramientas de análisis de código estático, dinámico, automatización de pruebas, gestión de pruebas, y pruebas de seguridad es fundamental para lograr un enfoque integral hacia la calidad del software.

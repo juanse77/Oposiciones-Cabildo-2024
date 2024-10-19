@@ -1,0 +1,293 @@
+<h1>Tema 48. Sistemas de encriptaci&oacute;n.</h1>
+<h2>48.1. Cifrado sim&eacute;trico.</h2>
+<p>El cifrado sim&eacute;trico es un m&eacute;todo de encriptaci&oacute;n en el cual la misma clave se utiliza tanto
+    para cifrar como para descifrar la informaci&oacute;n. Este tipo de cifrado es uno de los m&aacute;s antiguos y ha
+    sido utilizado durante siglos para proteger la confidencialidad de la informaci&oacute;n. A continuaci&oacute;n,
+    explico sus conceptos clave y doy varios ejemplos:</p>
+<h3>Caracter&iacute;sticas del Cifrado Sim&eacute;trico</h3>
+<p>Clave &Uacute;nica para Cifrado y Descifrado: En el cifrado sim&eacute;trico, tanto el remitente como el receptor
+    deben poseer la misma clave secreta. Esta clave es utilizada para convertir el texto plano (la informaci&oacute;n
+    original) en texto cifrado (informaci&oacute;n encriptada) y viceversa.</p>
+<p>Rapidez y Eficiencia: Este tipo de cifrado es generalmente m&aacute;s r&aacute;pido y eficiente que el cifrado
+    asim&eacute;trico, ya que implica operaciones matem&aacute;ticas menos complejas. Por ello, es ideal para encriptar
+    grandes vol&uacute;menes de datos.</p>
+<p>Seguridad Basada en la Clave Secreta: La seguridad del cifrado sim&eacute;trico depende en gran medida de la clave.
+    Si un atacante obtiene acceso a la clave, puede tanto cifrar como descifrar los mensajes. Por lo tanto, la clave
+    debe mantenerse en secreto.</p>
+<p>Dificultad para el Intercambio Seguro de Claves: Uno de los principales desaf&iacute;os del cifrado sim&eacute;trico
+    es c&oacute;mo intercambiar la clave de manera segura entre las partes involucradas. Este problema se conoce como el
+    "problema de distribuci&oacute;n de claves".</p>
+<h3>Tipos de Cifrado Sim&eacute;trico</h3>
+<p>El cifrado sim&eacute;trico puede ser clasificado en dos tipos principales:</p>
+<p><strong>- Cifrado por Bloques:</strong></p>
+<p>Funcionamiento: Divide el texto en bloques de longitud fija y cifra cada bloque por separado.<br /> <br /> Ejemplos:
+</p>
+<p>* <strong>AES (Advanced Encryption Standard)</strong>: Uno de los est&aacute;ndares m&aacute;s utilizados en la
+    actualidad. AES soporta claves de 128, 192, y 256 bits.</p>
+<p>* <strong>DES (Data Encryption Standard)</strong>: Un est&aacute;ndar antiguo que ha sido en gran medida reemplazado
+    por AES debido a sus vulnerabilidades.</p>
+<p>* <strong>Triple DES (3DES)</strong>: Una versi&oacute;n m&aacute;s segura de DES que aplica el algoritmo DES tres
+    veces con diferentes claves.</p>
+<p><strong>- Cifrado de Flujo:</strong></p>
+<p>Funcionamiento: Cifra los datos bit a bit o byte a byte. Es m&aacute;s adecuado para flujos de datos continuos, como
+    la transmisi&oacute;n de datos en tiempo real.</p>
+<p>Ejemplos:</p>
+<p>* <strong>RC4</strong>: Un algoritmo de cifrado de flujo ampliamente utilizado en el pasado, aunque ya no se
+    considera seguro debido a sus vulnerabilidades.</p>
+<h3>Aplicaciones del Cifrado Sim&eacute;trico</h3>
+<p>Transmisi&oacute;n Segura de Datos: Utilizado en protocolos de seguridad como SSL/TLS para proteger las
+    comunicaciones en Internet.</p>
+<p>Protecci&oacute;n de Datos Almacenados: Utilizado para cifrar archivos, discos duros, bases de datos y otros
+    almacenamientos de datos.</p>
+<p>Autenticaci&oacute;n y Firmas Digitales: Aunque el cifrado sim&eacute;trico no se usa directamente para
+    autenticaci&oacute;n o firmas digitales, puede combinarse con t&eacute;cnicas de cifrado asim&eacute;trico para
+    proporcionar estas funcionalidades.</p>
+<h3>Desaf&iacute;os y Consideraciones</h3>
+<p>Distribuci&oacute;n Segura de Claves: Es fundamental establecer un canal seguro para el intercambio de claves, lo
+    cual puede ser un reto en sistemas abiertos o en redes distribuidas.</p>
+<p>Escalabilidad: A medida que el n&uacute;mero de participantes en el sistema crece, tambi&eacute;n aumenta el
+    n&uacute;mero de claves que deben ser gestionadas de manera segura.</p>
+<p>Actualizaci&oacute;n de Claves: Es necesario cambiar las claves de forma peri&oacute;dica para mantener la seguridad.
+</p>
+<h3>Conclusi&oacute;n</h3>
+<p>El cifrado sim&eacute;trico sigue siendo un componente vital en muchos sistemas de seguridad modernos debido a su
+    rapidez y eficiencia. Sin embargo, su uso debe ser cuidadosamente considerado, especialmente en lo que respecta a la
+    gesti&oacute;n y distribuci&oacute;n de claves.</p>
+<h2>48.2. Cifrado asim&eacute;trico.</h2>
+<p>El cifrado asim&eacute;trico, tambi&eacute;n conocido como criptograf&iacute;a de clave p&uacute;blica, es un tipo de
+    criptograf&iacute;a que utiliza un par de claves: una clave p&uacute;blica para cifrar la informaci&oacute;n y una
+    clave privada para descifrarla. A diferencia del cifrado sim&eacute;trico, donde se usa la misma clave para cifrar y
+    descifrar, en el cifrado asim&eacute;trico las claves son diferentes pero est&aacute;n matem&aacute;ticamente
+    relacionadas.</p>
+<h3>Caracter&iacute;sticas del Cifrado Asim&eacute;trico</h3>
+<p><strong>Par de Claves</strong>: Cada usuario en un sistema de cifrado asim&eacute;trico posee un par de claves:</p>
+<p><strong>- Clave P&uacute;blica</strong>: Se comparte abiertamente y puede ser conocida por cualquier persona. Esta
+    clave se utiliza para cifrar los mensajes dirigidos al propietario de la clave.</p>
+<p><strong>- Clave Privada</strong>: Se mantiene en secreto y solo es conocida por su propietario. Esta clave se utiliza
+    para descifrar los mensajes que fueron cifrados con la clave p&uacute;blica correspondiente.</p>
+<p>Seguridad Basada en Problemas Matem&aacute;ticos Complejos: La seguridad del cifrado asim&eacute;trico se basa en la
+    dificultad de resolver ciertos problemas matem&aacute;ticos, como la factorizaci&oacute;n de n&uacute;meros grandes
+    (usada en RSA) o el logaritmo discreto (usado en Diffie-Hellman y DSA).</p>
+<p>No Requiere Intercambio de Claves Secreto: A diferencia del cifrado sim&eacute;trico, donde ambas partes deben tener
+    la misma clave secreta, en el cifrado asim&eacute;trico solo se intercambia la clave p&uacute;blica. Esto elimina el
+    problema de distribuci&oacute;n de claves de manera segura.</p>
+<p>Lento en Comparaci&oacute;n con el Cifrado Sim&eacute;trico: El cifrado asim&eacute;trico es computacionalmente
+    m&aacute;s costoso y m&aacute;s lento que el cifrado sim&eacute;trico. Por esta raz&oacute;n, a menudo se utiliza
+    para cifrar peque&ntilde;as cantidades de datos o para intercambiar claves que luego se usan en un esquema de
+    cifrado sim&eacute;trico.</p>
+<h3>Principales Algoritmos de Cifrado Asim&eacute;trico</h3>
+<p><strong>- RSA (Rivest-Shamir-Adleman)</strong>:</p>
+<p>Es uno de los algoritmos de cifrado asim&eacute;trico m&aacute;s conocidos y ampliamente utilizados. Su seguridad se
+    basa en la dificultad de factorizar n&uacute;meros grandes en sus factores primos. RSA se utiliza en diversas
+    aplicaciones como SSL/TLS para comunicaciones seguras, PGP para correo electr&oacute;nico seguro, y en sistemas de
+    firmas digitales.</p>
+<p><strong>- ECC (Criptograf&iacute;a de Curva El&iacute;ptica)</strong>:</p>
+<p>Utiliza las propiedades de las curvas el&iacute;pticas sobre cuerpos finitos para proporcionar seguridad. Ofrece el
+    mismo nivel de seguridad que RSA pero con claves mucho m&aacute;s cortas, lo que mejora la eficiencia y el
+    rendimiento. Es utilizado en dispositivos con recursos limitados, como dispositivos m&oacute;viles y tarjetas
+    inteligentes.</p>
+<p><strong>- ElGamal</strong>:</p>
+<p>Basado en el problema del logaritmo discreto, similar a Diffie-Hellman. Utilizado principalmente para cifrado de
+    datos y firma digital. <br /> <br /> <strong>- DSA (Digital Signature Algorithm)</strong>:</p>
+<p>Especificado como parte del Est&aacute;ndar Digital de Firma (DSS). Se utiliza principalmente para la
+    autenticaci&oacute;n y la verificaci&oacute;n de la integridad de los mensajes.</p>
+<p><strong>- Diffie-Hellman</strong>:</p>
+<p>Utilizado principalmente para el intercambio de claves de manera segura a trav&eacute;s de un canal inseguro. No es
+    un m&eacute;todo de cifrado en s&iacute; mismo, pero se usa para establecer una clave compartida segura que luego se
+    puede usar con algoritmos de cifrado sim&eacute;trico.</p>
+<h3>Aplicaciones del Cifrado Asim&eacute;trico</h3>
+<p><strong>Intercambio Seguro de Claves</strong>: Se utiliza para intercambiar claves sim&eacute;tricas de manera
+    segura. Esto es com&uacute;n en protocolos como SSL/TLS, que se utilizan para establecer conexiones seguras en
+    Internet.</p>
+<p><strong>Autenticaci&oacute;n y Firmas Digitales</strong>: El cifrado asim&eacute;trico permite la
+    autenticaci&oacute;n de la identidad de las partes en una comunicaci&oacute;n y la firma digital de documentos. Las
+    firmas digitales garantizan la integridad del mensaje y autentican al remitente.</p>
+<p><strong>Cifrado de Correos Electr&oacute;nicos</strong>: Tecnolog&iacute;as como PGP (Pretty Good Privacy) y GPG (GNU
+    Privacy Guard) utilizan cifrado asim&eacute;trico para proteger la privacidad de los correos electr&oacute;nicos.
+</p>
+<p><strong>Seguridad de Redes y Sistemas</strong>: Utilizado en diversas aplicaciones para proteger sistemas de redes,
+    como VPNs (Redes Privadas Virtuales), SSH (Secure Shell), y otros protocolos de comunicaci&oacute;n seguros.</p>
+<h3>Ventajas del Cifrado Asim&eacute;trico</h3>
+<p><strong>- Alta Seguridad</strong>: No es necesario compartir la clave privada, lo que reduce significativamente el
+    riesgo de comprometer la clave.</p>
+<p><strong>- Escalabilidad</strong>: Es m&aacute;s f&aacute;cil de gestionar en sistemas grandes, ya que no se requiere
+    una clave secreta compartida entre cada par de usuarios.</p>
+<p><strong>- Autenticaci&oacute;n y No Repudio</strong>: Proporciona mecanismos para la autenticaci&oacute;n de las
+    partes y el no repudio (una vez que se firma un mensaje, el remitente no puede negar haberlo firmado).</p>
+<p>Desaf&iacute;os del Cifrado Asim&eacute;trico</p>
+<p><strong>- Lentitud</strong>: Es m&aacute;s lento que el cifrado sim&eacute;trico, lo que lo hace menos
+    pr&aacute;ctico para cifrar grandes vol&uacute;menes de datos.<br /> <br /> <strong>- Gesti&oacute;n de
+        Claves</strong>: Aunque elimina el problema de la distribuci&oacute;n de claves, introduce la necesidad de una
+    infraestructura de gesti&oacute;n de claves p&uacute;blica (PKI), que puede ser compleja de administrar.</p>
+<h3>Conclusi&oacute;n</h3>
+<p>El cifrado asim&eacute;trico es una herramienta poderosa en la criptograf&iacute;a moderna, esencial para la
+    seguridad de las comunicaciones y la integridad de los datos. Si bien es m&aacute;s complejo y computacionalmente
+    intensivo que el cifrado sim&eacute;trico, ofrece ventajas significativas en t&eacute;rminos de seguridad y
+    gesti&oacute;n de claves. En la pr&aacute;ctica, ambos tipos de cifrado se combinan a menudo para aprovechar sus
+    respectivas fortalezas en sistemas criptogr&aacute;ficos h&iacute;bridos.</p>
+<h2>48.3. La funci&oacute;n hash.</h2>
+<p>Las funciones hash son un componente fundamental de la criptograf&iacute;a y la seguridad inform&aacute;tica. Se
+    utilizan para transformar datos de entrada de cualquier tama&ntilde;o en una salida de tama&ntilde;o fijo,
+    generalmente una cadena de caracteres, que representa una especie de "huella digital" &uacute;nica del conjunto de
+    datos de entrada. Las funciones hash juegan un papel clave en la integridad de los datos, la autenticaci&oacute;n, y
+    muchos otros aspectos de la seguridad digital. A continuaci&oacute;n, te explicar&eacute; en detalle qu&eacute; son,
+    c&oacute;mo funcionan, y sus aplicaciones.</p>
+<h3>&iquest;Qu&eacute; es una Funci&oacute;n Hash?</h3>
+<p>Una funci&oacute;n hash es un algoritmo que toma una entrada (o "mensaje") y devuelve una cadena de longitud fija,
+    que generalmente se denomina "valor hash" o "digest". Independientemente del tama&ntilde;o de la entrada, la salida
+    siempre tiene una longitud fija. Las funciones hash se utilizan ampliamente en criptograf&iacute;a, aunque
+    tambi&eacute;n tienen aplicaciones en otras &aacute;reas de la inform&aacute;tica, como la b&uacute;squeda de datos
+    y la integridad de la informaci&oacute;n.</p>
+<h3>Propiedades de una Buena Funci&oacute;n Hash Criptogr&aacute;fica</h3>
+<p><strong>Determin&iacute;stica</strong>: Para un mismo dato de entrada, la funci&oacute;n hash siempre generar&aacute;
+    el mismo valor de salida.</p>
+<p><strong>Salida de Longitud Fija</strong>: Independientemente del tama&ntilde;o del dato de entrada, la salida del
+    hash tendr&aacute; una longitud fija (por ejemplo, 256 bits para SHA-256).</p>
+<p><strong>R&aacute;pida de Calcular</strong>: La funci&oacute;n hash debe ser capaz de generar el hash
+    r&aacute;pidamente para que pueda utilizarse en sistemas en tiempo real y aplicaciones de alto rendimiento.</p>
+<p><strong>Preimagen Resistente</strong>: Dado un valor hash ℎ, debe ser computacionalmente inviable encontrar cualquier
+    entrada 𝑥 tal que ℎ𝑎𝑠ℎ(𝑥)=ℎ.</p>
+<p><strong>Resistencia a Colisiones</strong>: Es computacionalmente inviable encontrar dos entradas distintas 𝑥 y 𝑦
+    tales que ℎ𝑎𝑠ℎ(𝑥) = ℎ𝑎𝑠ℎ(𝑦). Esto asegura la unicidad de la "huella digital".</p>
+<p><strong>Efecto Avalanche (Avalancha)</strong>: Un peque&ntilde;o cambio en la entrada debe producir un cambio
+    significativo e impredecible en el hash resultante. Por ejemplo, cambiar una sola letra en una entrada
+    deber&iacute;a cambiar la mayor&iacute;a de los bits en el hash.</p>
+<h3>Principales Algoritmos de Funciones Hash Criptogr&aacute;ficas</h3>
+<h4>MD5 (Message Digest Algorithm 5):</h4>
+<p>- Genera un valor hash de 128 bits.<br /> - Muy popular en el pasado, pero ahora considerado inseguro debido a la
+    capacidad de encontrar colisiones (diferentes entradas que generan el mismo hash).<br /> - A&uacute;n se utiliza en
+    aplicaciones no cr&iacute;ticas donde la seguridad no es un factor determinante, como la verificaci&oacute;n de
+    integridad de archivos.</p>
+<h4>SHA-1 (Secure Hash Algorithm 1):</h4>
+<p>- Produce un valor hash de 160 bits.<br /> - Como MD5, SHA-1 ha sido ampliamente utilizado, pero se considera
+    obsoleto debido a las vulnerabilidades encontradas que permiten colisiones.<br /> - Ha sido reemplazado en la
+    mayor&iacute;a de los sistemas modernos por algoritmos m&aacute;s seguros como SHA-256.</p>
+<h4>SHA-2 (Secure Hash Algorithm 2):</h4>
+<p>- Incluye varias variantes como SHA-224, SHA-256, SHA-384, y SHA-512, que generan valores hash de diferentes
+    tama&ntilde;os (224, 256, 384, y 512 bits respectivamente).<br /> - SHA-256 y SHA-512 son los m&aacute;s utilizados
+    en sistemas de seguridad actuales, como blockchain (Bitcoin), SSL/TLS, y m&aacute;s.<br /> - Proporcionan una mayor
+    seguridad en comparaci&oacute;n con sus predecesores.</p>
+<h4>SHA-3 (Secure Hash Algorithm 3):</h4>
+<p>- Tambi&eacute;n conocido como Keccak, es el &uacute;ltimo est&aacute;ndar de la familia SHA.<br /> - Fue
+    seleccionado como ganador de una competici&oacute;n organizada por NIST (National Institute of Standards and
+    Technology) para encontrar una nueva funci&oacute;n hash.<br /> - Dise&ntilde;ado para ser m&aacute;s resistente a
+    diferentes tipos de ataques en comparaci&oacute;n con SHA-2.</p>
+<h4>RIPEMD (RACE Integrity Primitives Evaluation Message Digest):</h4>
+<p>- Parte de una familia de funciones hash desarrolladas en Europa.<br /> - RIPEMD-160 es una versi&oacute;n mejorada
+    que ofrece una seguridad similar a SHA-1.<br /> - Aplicaciones de las Funciones Hash</p>
+<h3>Verificaci&oacute;n de Integridad de Datos:</h3>
+<p>Las funciones hash se utilizan para asegurar que los datos no han sido alterados. Por ejemplo, al descargar un
+    archivo, su valor hash se puede comparar con el valor original proporcionado por el remitente para verificar la
+    integridad.</p>
+<h3>Firmas Digitales y Certificados Digitales:</h3>
+<p>Las funciones hash son fundamentales para crear firmas digitales. Se utiliza un hash del mensaje para crear la firma
+    digital, lo que permite verificar la autenticidad y la integridad del mensaje sin necesidad de revelar la clave
+    privada.</p>
+<h3>Almacenamiento Seguro de Contrase&ntilde;as:</h3>
+<p>En lugar de almacenar contrase&ntilde;as en texto claro, se almacena su hash. Al verificar la contrase&ntilde;a, se
+    compara el hash de la entrada con el hash almacenado.</p>
+<h3>Algoritmos de Prueba de Trabajo (Proof of Work):</h3>
+<p>En criptomonedas como Bitcoin, los algoritmos hash (como SHA-256) se utilizan en el proceso de miner&iacute;a para
+    validar transacciones y asegurar la red.</p>
+<h3>Funciones de Derivaci&oacute;n de Clave:</h3>
+<p>Se utilizan funciones hash junto con t&eacute;cnicas como HMAC (Hash-based Message Authentication Code) para derivar
+    claves criptogr&aacute;ficas seguras a partir de contrase&ntilde;as.</p>
+<h3>Desaf&iacute;os y Consideraciones en el Uso de Funciones Hash</h3>
+<p><strong>Colisiones</strong>: A pesar de la resistencia a colisiones que deben tener las funciones hash
+    criptogr&aacute;ficas, no es imposible que ocurran. Los ataques de colisi&oacute;n (encontrar dos entradas que
+    resultan en el mismo hash) son una preocupaci&oacute;n para algoritmos m&aacute;s antiguos como MD5 y SHA-1.</p>
+<p><strong>Ataques de Preimagen e Inversi&oacute;n</strong>: A medida que la potencia de procesamiento aumenta, ciertos
+    algoritmos de hash pueden volverse vulnerables a ataques de fuerza bruta que intenten invertir el hash para
+    recuperar la entrada original.</p>
+<p><strong>Tama&ntilde;o del Hash</strong>: Cuanto mayor sea el tama&ntilde;o del hash, m&aacute;s dif&iacute;cil es
+    encontrar colisiones, pero tambi&eacute;n aumenta el espacio de almacenamiento y los recursos de procesamiento
+    requeridos.</p>
+<h3>Conclusi&oacute;n</h3>
+<p>Las funciones hash son herramientas poderosas y vers&aacute;tiles en la criptograf&iacute;a y la seguridad
+    inform&aacute;tica. Se utilizan para garantizar la integridad de los datos, proteger contrase&ntilde;as, autenticar
+    identidades y asegurar transacciones. A medida que evoluciona la tecnolog&iacute;a y aumentan las capacidades de los
+    atacantes, tambi&eacute;n lo hacen las funciones hash y los est&aacute;ndares criptogr&aacute;ficos asociados. Los
+    algoritmos como SHA-256 y SHA-3 ofrecen una seguridad s&oacute;lida para la mayor&iacute;a de las aplicaciones
+    actuales, aunque es crucial mantenerse actualizado con los est&aacute;ndares y pr&aacute;cticas recomendadas.</p>
+<h2>A&ntilde;adido: Algoritmos bcrypt y scrypt:</h2>
+<p>bcrypt y scrypt son algoritmos de hash dise&ntilde;ados espec&iacute;ficamente para el almacenamiento seguro de
+    contrase&ntilde;as. A diferencia de los algoritmos de hash tradicionales como MD5 o SHA-256, que est&aacute;n
+    dise&ntilde;ados principalmente para la velocidad y la integridad de los datos, bcrypt y scrypt se centran en ser
+    lentos y seguros para evitar ataques de fuerza bruta y ataques de diccionario.</p>
+<p><strong>bcrypt</strong>:</p>
+<p>bcrypt es un algoritmo de hash dise&ntilde;ado para proteger contrase&ntilde;as, desarrollado por Niels Provos y
+    David Mazi&egrave;res en 1999. Se basa en el cifrado Blowfish y est&aacute; dise&ntilde;ado espec&iacute;ficamente
+    para ser computacionalmente costoso, lo que lo hace resistente a los ataques de fuerza bruta.</p>
+<h3>Caracter&iacute;sticas de bcrypt</h3>
+<h4>Funci&oacute;n de Derivaci&oacute;n de Clave Lenta:</h4>
+<p>bcrypt est&aacute; dise&ntilde;ado para ser lento. Utiliza un factor de costo ajustable que controla la complejidad
+    del c&aacute;lculo, lo que significa que el tiempo necesario para calcular el hash puede aumentarse a medida que
+    mejora la potencia de c&oacute;mputo de los atacantes.</p>
+<h4>Sal (Salt) Aleatoria:</h4>
+<p>bcrypt incluye una sal de 128 bits generada aleatoriamente que se combina con la contrase&ntilde;a antes de aplicar
+    el algoritmo de hash. Esto significa que dos contrase&ntilde;as id&eacute;nticas tendr&aacute;n hashes diferentes,
+    lo que protege contra ataques de tablas de b&uacute;squeda precomputadas (tablas Rainbow).</p>
+<h4>Resistente a Ataques de Fuerza Bruta y Diccionario:</h4>
+<p>Debido a su lentitud y al uso de sal, bcrypt es muy resistente a ataques de fuerza bruta y diccionario, ya que cada
+    intento requiere un tiempo significativo.</p>
+<h4>Factores de Costo Configurables:</h4>
+<p>bcrypt permite ajustar la dificultad del c&aacute;lculo mediante un par&aacute;metro llamado "cost factor" o "work
+    factor". Cuanto mayor sea este factor, m&aacute;s tiempo se tarda en calcular un hash, lo que aumenta la seguridad.
+</p>
+<h4>Amplia Adopci&oacute;n y Soporte:</h4>
+<p>bcrypt es ampliamente utilizado y compatible con muchos lenguajes de programaci&oacute;n y frameworks. Es el
+    est&aacute;ndar de facto para almacenar contrase&ntilde;as de manera segura en aplicaciones web y bases de datos.
+</p>
+<h4>Uso de bcrypt:</h4>
+<p>bcrypt se utiliza principalmente en sistemas de autenticaci&oacute;n para proteger las contrase&ntilde;as de los
+    usuarios. Es una opci&oacute;n recomendada para desarrolladores y administradores de sistemas que buscan una manera
+    segura de almacenar contrase&ntilde;as, especialmente cuando se usa con un factor de costo apropiado.</p>
+<h3>scrypt:</h3>
+<p>scrypt es otro algoritmo de hash seguro dise&ntilde;ado espec&iacute;ficamente para proteger contrase&ntilde;as. Fue
+    desarrollado en 2009 por Colin Percival para ser utilizado en el sistema de respaldo Tarsnap. scrypt fue
+    dise&ntilde;ado para ser intensivo en memoria y computacionalmente costoso, lo que lo hace a&uacute;n m&aacute;s
+    resistente a ataques de fuerza bruta que bcrypt.</p>
+<h3>Caracter&iacute;sticas de scrypt:</h3>
+<h4>Funci&oacute;n de Derivaci&oacute;n de Clave Intensiva en Memoria:</h4>
+<p>scrypt est&aacute; dise&ntilde;ado para ser intensivo tanto en CPU como en memoria, lo que dificulta su
+    implementaci&oacute;n en hardware especializado (como ASICs o GPUs). Esto lo hace m&aacute;s resistente a ataques a
+    gran escala, donde se intentan muchas combinaciones posibles simult&aacute;neamente.</p>
+<h4>Sal (Salt) Aleatoria y Factores de Costo:</h4>
+<p>Al igual que bcrypt, scrypt utiliza una sal aleatoria para asegurar que dos contrase&ntilde;as iguales tengan hashes
+    diferentes. Tambi&eacute;n permite ajustar el tiempo de c&aacute;lculo y la cantidad de memoria utilizada a
+    trav&eacute;s de par&aacute;metros de costo, llamados N, r, y p.</p>
+<h4>Resistencia a Ataques de Fuerza Bruta y Hardware Especializado:</h4>
+<p>Dado que scrypt requiere una gran cantidad de memoria, es m&aacute;s dif&iacute;cil de paralelizar en hardware
+    especializado, como GPUs o FPGAs, que son eficientes en realizar m&uacute;ltiples c&aacute;lculos en paralelo pero
+    tienen limitaciones de memoria.</p>
+<h4>Configuraci&oacute;n Flexible para la Memoria y el Tiempo de C&aacute;lculo:</h4>
+<p>Los par&aacute;metros de scrypt (N, r, p) permiten ajustar la cantidad de memoria y el tiempo de c&aacute;lculo
+    necesario para generar el hash. Esto lo hace adaptable a diferentes niveles de seguridad y permite aumentar la
+    resistencia contra ataques a medida que las capacidades computacionales de los atacantes aumentan.</p>
+<h4>Adopci&oacute;n en Aplicaciones de Alta Seguridad:</h4>
+<p>Aunque es m&aacute;s reciente que bcrypt, scrypt ha sido adoptado por aplicaciones que requieren un nivel m&aacute;s
+    alto de seguridad, como criptomonedas (por ejemplo, Litecoin) y sistemas de almacenamiento de datos seguros.</p>
+<h4>Uso de scrypt:</h4>
+<p>scrypt es ideal para aplicaciones que requieren un almacenamiento seguro de contrase&ntilde;as donde la memoria y la
+    seguridad son consideraciones clave. Se utiliza en sistemas de autenticaci&oacute;n de usuarios, protecci&oacute;n
+    de contrase&ntilde;as y en ciertas criptomonedas y sistemas de almacenamiento de datos donde se necesita una
+    derivaci&oacute;n de clave intensiva en memoria.</p>
+<h2>Comparaci&oacute;n entre bcrypt y scrypt:</h2>
+<p>Caracter&iacute;stica - bcrypt - scrypt<br /> A&ntilde;o de Creaci&oacute;n - 1999 - 2009<br /> Resistencia a Ataques
+    - Resistente a ataques de fuerza bruta y diccionario debido a la lentitud y la sal aleatoria. -&nbsp; M&aacute;s
+    resistente a ataques debido a su uso intensivo de memoria y CPU.<br /> Sal Aleatoria - S&iacute;, de 128 bits -
+    S&iacute;, configurable<br /> Factores de Costo - S&iacute;, configurables (cost factor) - S&iacute;, configurables
+    (N, r, p)<br /> Intensivo en Memoria - No - S&iacute;<br /> Resistencia a Hardware Especializado - Moderada -
+    Alta<br /> Velocidad - M&aacute;s r&aacute;pido que scrypt - M&aacute;s lento pero m&aacute;s seguro contra ataques
+    paralelos<br /> Adopci&oacute;n - Amplia, est&aacute;ndar de facto - Menos com&uacute;n, pero creciente</p>
+<h2>Conclusi&oacute;n</h2>
+<p>Tanto bcrypt como scrypt son algoritmos excelentes para el almacenamiento seguro de contrase&ntilde;as, pero ofrecen
+    diferentes niveles de protecci&oacute;n:</p>
+<p>bcrypt: Es ampliamente utilizado y proporciona una excelente seguridad ajustable con un factor de costo configurable.
+    Es m&aacute;s adecuado para la mayor&iacute;a de las aplicaciones web y sistemas de autenticaci&oacute;n donde la
+    velocidad es una consideraci&oacute;n, pero se requiere seguridad.</p>
+<p>scrypt: Es m&aacute;s seguro contra ataques con hardware especializado debido a su consumo intensivo de memoria. Es
+    ideal para aplicaciones donde se espera un atacante con recursos significativos, como en ciertas criptomonedas o
+    sistemas cr&iacute;ticos.</p>
+<p>Ambos son opciones recomendadas para proteger contrase&ntilde;as, pero la elecci&oacute;n entre uno y otro depende
+    del contexto de seguridad y los recursos de hardware del sistema donde se implementar&aacute;n.</p>

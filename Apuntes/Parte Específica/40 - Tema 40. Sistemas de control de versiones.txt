@@ -1,0 +1,244 @@
+Tema 40. Sistemas de control de versiones.
+
+40.1. Sistema de control de versiones Git. Características y ventajas.
+
+	Git es un sistema de control de versiones distribuido ampliamente utilizado en el desarrollo de software para gestionar y realizar un seguimiento de los cambios en el código fuente. Fue creado por Linus Torvalds en 2005 para el desarrollo del kernel de Linux y, desde entonces, ha crecido hasta convertirse en el sistema de control de versiones más popular.
+
+	Características de Git
+
+		Control de versiones distribuido: Git es un sistema de control de versiones distribuido, lo que significa que cada desarrollador tiene una copia completa del repositorio, incluyendo toda la historia de cambios. No depende de un servidor central, lo que permite trabajar offline.
+
+		Eficiencia y rapidez: Git es conocido por ser muy rápido en comparación con otros sistemas de control de versiones. Las operaciones comunes como commit, diff y merge son extremadamente rápidas debido a cómo Git maneja sus datos.
+
+		Ramas (branches) ligeras: Git permite la creación y el manejo de ramas de manera eficiente. Las ramas son ligeras y baratas, lo que facilita la experimentación y el desarrollo de nuevas características sin afectar el código estable.
+
+		Integridad de los datos: Git asegura la integridad de los datos mediante el uso de una estructura de datos basada en el algoritmo SHA-1. Cada commit o versión está protegida por un hash criptográfico, lo que hace que sea prácticamente imposible alterar el historial sin ser detectado.
+
+		Control total sobre el historial: Git permite reescribir el historial de commits con comandos como rebase y reset. Esto proporciona flexibilidad para limpiar o reorganizar el historial antes de compartir cambios con otros.
+
+		Sistema de seguimiento de cambios eficaz: Git realiza un seguimiento de cada cambio realizado en el código a nivel de línea, lo que permite a los desarrolladores revisar fácilmente qué cambios se realizaron, por quién y cuándo.
+
+		Soporte para flujos de trabajo no lineales: Debido a su capacidad para manejar ramas y fusiones (merges), Git soporta varios flujos de trabajo no lineales, como Git Flow, GitHub Flow, y más. Esto es útil para equipos de desarrollo que adoptan diferentes metodologías.
+
+		Colaboración eficiente: Git permite la colaboración entre equipos de desarrollo, facilitando la integración de código de diferentes desarrolladores. Con plataformas como GitHub, GitLab y Bitbucket, es posible colaborar de manera remota mediante pull requests, revisiones de código y otras herramientas.
+
+	Ventajas de Git
+
+		Desarrollo rápido y colaborativo: Git permite que varios desarrolladores trabajen simultáneamente en diferentes características sin interferir en el trabajo de los demás, facilitando una integración continua.
+
+		Recuperación ante errores: Dado que cada clon de un repositorio es una copia completa, es fácil recuperar datos si un servidor falla o se corrompe. Además, el historial detallado facilita la reversión de cambios indeseados.
+
+		Control sobre el historial: Los desarrolladores pueden manipular el historial (como reordenar commits, combinar commits pequeños en uno solo, etc.) antes de compartir sus cambios, proporcionando un historial más limpio y manejable.
+
+		Mayor seguridad: La integridad de los datos está garantizada gracias a los hashes SHA-1. Cualquier alteración en el historial de versiones es fácilmente detectable.
+
+		Compatible con herramientas de CI/CD: Git es altamente compatible con herramientas de integración y entrega continua (CI/CD), lo que facilita la automatización de la compilación, pruebas y despliegue del código.
+
+		Amplia adopción y comunidad de soporte: Git es el sistema de control de versiones más utilizado en el mundo del desarrollo de software. Esto significa que hay una gran cantidad de recursos, tutoriales y herramientas disponibles, además de una comunidad activa que contribuye a su mejora continua.
+
+		Flexibilidad en flujos de trabajo: Git se adapta a diferentes tipos de flujos de trabajo, desde los más simples hasta los más complejos, permitiendo que los equipos personalicen sus procesos según sus necesidades.
+
+	En resumen, Git es una herramienta poderosa, flexible y segura que ha revolucionado la forma en que los equipos de desarrollo de software colaboran y gestionan los cambios en el código. Su eficiencia, capacidad de manejo de ramas y el soporte para un desarrollo distribuido son algunas de las razones por las que se ha convertido en el estándar en la industria.
+
+40.2. Funcionamiento. Concepto y uso del “Staging área”.
+
+	Funcionamiento de Git
+
+		Git funciona como un sistema de control de versiones distribuido que permite a los desarrolladores rastrear los cambios en el código fuente, colaborar con otros desarrolladores y mantener un historial completo de todos los cambios realizados en un proyecto.
+
+	En Git, el flujo de trabajo típico sigue estos pasos:
+
+		Repositorio: Un proyecto en Git se almacena en un repositorio (repo). Hay dos tipos de repositorios: el repositorio local (en el sistema de archivos de un usuario) y el repositorio remoto (como en GitHub, GitLab o Bitbucket). El repositorio local contiene la copia completa del proyecto, incluyendo su historial de cambios.
+
+		Árbol de trabajo (Working Directory): El directorio de trabajo es donde los desarrolladores realizan cambios en los archivos del proyecto. Este es el directorio real en el sistema de archivos donde se encuentran los archivos editables.
+
+		Área de preparación (Staging Area): También conocida como "índice", esta área es un espacio intermedio donde se guardan los cambios que se desean incluir en el próximo commit. Permite a los desarrolladores seleccionar exactamente qué cambios se deben hacer en el commit, permitiendo un control fino.
+
+		Commit: Un commit es una instantánea del estado del repositorio en un punto en el tiempo. Cuando los cambios en el área de preparación son confirmados (committed), se crea un nuevo punto de referencia en la historia del proyecto. Cada commit es único y está identificado por un hash SHA-1.
+
+		Ramas (Branches): Las ramas en Git permiten a los desarrolladores trabajar en diferentes versiones de un repositorio simultáneamente. La rama principal suele ser main o master, pero es común que los desarrolladores creen ramas nuevas para trabajar en características específicas o corregir errores. Una vez que el trabajo en una rama está completo, se puede fusionar de nuevo a la rama principal usando un "merge".
+
+		Merge y Rebase: Cuando se trabaja con ramas, es necesario combinarlas con la rama principal o con otras ramas. Git permite fusionar (merge) los cambios o realizar un rebase para reordenar y limpiar la historia.
+
+		Repositorio remoto y sincronización: Los desarrolladores a menudo colaboran utilizando un repositorio remoto. Git permite sincronizar los cambios entre el repositorio local y el remoto mediante comandos como push, pull, y fetch.
+
+	Concepto y uso del "Staging Area" (Área de preparación)
+
+		- Concepto:
+
+			El Staging Area (también conocido como "Index" o "Cache") es una de las áreas más importantes y características de Git. Es un área intermedia entre el directorio de trabajo (Working Directory) y el historial de commits. Cuando haces cambios en tus archivos, esos cambios no se registran automáticamente en el historial de commits. En cambio, primero necesitas añadir esos cambios al área de preparación. Esta área permite a los usuarios tener un control preciso sobre lo que será incluido en el próximo commit.
+
+		- Uso del "Staging Area":
+
+			El uso del área de preparación sigue un proceso sencillo:
+
+				- Realizar cambios en los archivos del directorio de trabajo: Cuando editas o agregas nuevos archivos a tu proyecto, estos cambios ocurren en el Working Directory.
+
+				- Agregar cambios al área de preparación: Para preparar los cambios que deseas incluir en tu próximo commit, utilizas el comando git add. Puedes especificar un archivo específico o un grupo de archivos. Por ejemplo:
+
+					|git add archivo1.txt
+					|git add directorio/
+					|git add .
+
+					El comando git add mueve los cambios al área de preparación. Los cambios no se confirman (commit) automáticamente; simplemente están "preparados" para ser confirmados.
+
+				- Crear un commit: Una vez que los cambios están en el área de preparación, puedes crear un commit utilizando git commit. Por ejemplo:
+		
+					|git commit -m "Descripción del commit"
+
+					Este comando toma todos los cambios que están en el área de preparación y los registra como un nuevo commit en el repositorio local.
+
+		Ventajas del "Staging Area"
+
+			- Control Fino sobre los Commits: Permite a los desarrolladores seleccionar exactamente qué cambios incluir en cada commit, incluso si los cambios están en el mismo archivo.
+
+			- Agrupación de Cambios: Puedes agrupar cambios relacionados en un solo commit, lo que facilita la revisión de código y la navegación por el historial del proyecto.
+
+			- Revisión de Cambios: Antes de realizar un commit, puedes revisar los cambios que se han preparado con git diff --staged para asegurarte de que solo los cambios deseados se incluirán.
+
+			- Flexibilidad y Seguridad: El área de preparación funciona como una capa de seguridad que permite revisar y modificar los cambios antes de hacer un commit.
+
+		Ejemplo Práctico del Uso del "Staging Area"
+
+			Supongamos que tienes un archivo llamado archivo1.txt y haces algunos cambios en él. Para añadir esos cambios al área de preparación y luego confirmarlos, harías lo siguiente:
+
+				|# Ver el estado del repositorio
+				|git status
+				|
+				|# Agregar los cambios al área de preparación
+				|git add archivo1.txt
+				|
+				|# Verificar qué cambios están en el área de preparación
+				|git diff --staged
+				|
+				|# Hacer el commit de los cambios
+				|git commit -m "Actualización de archivo1.txt"
+
+			Con estos comandos, los cambios en archivo1.txt se agregan al área de preparación y luego se confirman, quedando registrados en el historial del repositorio.
+
+	En resumen, el Staging Area en Git es un concepto esencial que proporciona un control detallado sobre los cambios que se deben confirmar y permite un flujo de trabajo más limpio y manejable al trabajar en proyectos de desarrollo de software.
+
+40.3. Comandos Git.
+
+	Git ofrece una amplia variedad de comandos que permiten gestionar y manipular repositorios, ramas, commits, y mucho más. A continuación, te proporcionaré una lista de los comandos más utilizados en Git junto con una breve descripción de cada uno de ellos:
+
+	Comandos Básicos de Git
+		
+		Inicialización y Configuración
+
+			- git init: Inicializa un nuevo repositorio de Git en el directorio actual. Este comando crea un subdirectorio .git donde se almacenan los archivos de control de versiones.
+
+			- git clone <url>: Clona un repositorio remoto en el directorio local. Este comando crea una copia completa del repositorio incluyendo todo su historial.
+
+			- git config: Configura las opciones de Git, como el nombre de usuario y el correo electrónico que se utilizarán para los commits.
+
+				|git config --global user.name "Tu Nombre"
+				|git config --global user.email "tuemail@example.com"
+
+		Comandos para Gestión de Cambios
+
+			- git status: Muestra el estado actual del directorio de trabajo y el área de preparación. Indica qué archivos han sido modificados, cuáles están en el área de preparación y cuáles no están bajo control de versiones.
+
+			- git add <archivo>: Añade un archivo al área de preparación (staging area). Puedes utilizar git add . para añadir todos los cambios en el directorio actual.
+
+			- git commit -m "mensaje": Crea un nuevo commit con los cambios que están en el área de preparación y añade un mensaje descriptivo sobre los cambios realizados.
+
+			- git diff: Muestra las diferencias entre los archivos modificados pero no preparados para el commit. Utiliza git diff --staged para ver las diferencias entre los archivos preparados y el último commit.
+
+		Ramas y Fusión
+
+			- git branch: Lista todas las ramas locales en el repositorio actual. Puedes utilizar git branch <nombre_rama> para crear una nueva rama.
+
+			- git checkout <nombre_rama>: Cambia a la rama especificada. A partir de Git 2.23, se recomienda usar git switch <nombre_rama> para cambiar de rama.
+
+			- git checkout -b <nombre_rama>: Crea y cambia a una nueva rama.
+
+			- git merge <nombre_rama>: Fusiona la rama especificada con la rama actual.
+
+			- git branch -d <nombre_rama>: Elimina la rama especificada.
+
+		Sincronización con Repositorios Remotos
+
+			- git remote add <nombre> <url>: Añade un repositorio remoto con el nombre especificado (generalmente origin).
+
+			- git fetch <nombre_remoto>: Descarga todos los cambios de las ramas del repositorio remoto pero no los fusiona con la rama local.
+
+			- git pull <nombre_remoto> <nombre_rama>: Descarga los cambios del repositorio remoto y los fusiona con la rama actual. Es un atajo para git fetch seguido de git merge.
+
+			- git push <nombre_remoto> <nombre_rama>: Sube (sube) los commits locales a la rama remota correspondiente.
+
+		Reescritura del Historial
+
+			- git reset: Restaura el repositorio a un estado anterior. Puede utilizarse con diferentes opciones para modificar el estado del árbol de trabajo, del área de preparación o de ambos.
+
+			- git reset --soft <commit>: Restaura al commit especificado y mantiene los cambios en el área de preparación.
+
+			- git reset --hard <commit>: Restaura al commit especificado y elimina todos los cambios en el área de preparación y el directorio de trabajo.
+
+			- git revert <commit>: Crea un nuevo commit que deshace los cambios realizados por un commit anterior. Es útil para revertir cambios en un historial compartido.
+
+			- git rebase <nombre_rama>: Reaplica los commits de la rama actual sobre otra rama. Esto puede ser útil para mantener un historial de commits más limpio.
+
+		Inspección y Comparación
+
+			- git log: Muestra el historial de commits del repositorio actual. Utiliza git log --oneline para ver un resumen más corto de los commits.
+
+			- git show <commit>: Muestra información detallada sobre un commit específico, incluyendo los cambios realizados y el mensaje del commit.
+
+			- git blame <archivo>: Muestra los cambios línea por línea de un archivo, indicando quién hizo cada cambio.
+
+		Guardar y Recuperar Trabajos Temporales
+
+			- git stash: Guarda temporalmente los cambios no confirmados del área de trabajo, permitiendo trabajar en otra cosa sin perder los cambios no confirmados.
+
+			- git stash apply: Recupera los cambios guardados en la pila de stash sin eliminarlos.
+
+			- git stash pop: Recupera los cambios guardados y los elimina de la pila de stash.
+
+	Ejemplo de Flujo de Trabajo Básico con Git
+
+		Imagina que estás trabajando en un proyecto y necesitas realizar algunos cambios:
+
+			- Inicializar un nuevo repositorio de Git:
+
+				|git init
+
+			- Configurar nombre de usuario y correo electrónico:
+
+				|git config --global user.name "Tu Nombre"
+				|git config --global user.email "tuemail@example.com"
+
+			- Crear un archivo y añadirlo al área de preparación:
+
+				|echo "Hola, Git!" > archivo.txt
+				|git add archivo.txt
+
+			- Hacer un commit con un mensaje descriptivo:
+
+				|git commit -m "Añadir archivo de saludo"
+				
+			- Crear una nueva rama y cambiar a ella:
+
+				|git branch nueva-rama
+				|git checkout nueva-rama
+				|# O usa directamente:
+				|git checkout -b nueva-rama
+
+			- Realizar cambios, añadir al área de preparación y hacer commit:
+
+				|echo "Otro cambio" >> archivo.txt
+				|git add archivo.txt
+				|git commit -m "Añadir otro cambio en nueva-rama"
+
+			- Fusionar los cambios de nueva-rama a main:
+
+				|git checkout main
+				|git merge nueva-rama
+
+			- Subir los cambios al repositorio remoto:
+
+				|git push origin main
+
+	Resumen
+
+		Git proporciona un conjunto de comandos poderosos que permiten a los desarrolladores manejar eficazmente el historial de versiones, colaborar con otros y trabajar en diferentes ramas de desarrollo de manera simultánea. Estos comandos cubren la mayor parte de las necesidades cotidianas de gestión de versiones y ofrecen flexibilidad y control en el desarrollo de software.

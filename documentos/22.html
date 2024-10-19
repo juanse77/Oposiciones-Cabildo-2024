@@ -1,0 +1,261 @@
+<h1>Tema 22. Sistemas operativos de Linux Server.</h1>
+<h2>22.1. Red Hat Enterprise Linux: Configuraci&oacute;n y tareas b&aacute;sicas de administraci&oacute;n.</h2>
+<p>Red Hat Enterprise Linux (RHEL) es una distribuci&oacute;n de Linux orientada a empresas, conocida por su
+    estabilidad, seguridad y soporte comercial. Es ampliamente utilizada en entornos empresariales para servidores y
+    estaciones de trabajo. A continuaci&oacute;n, te hablar&eacute; sobre la configuraci&oacute;n inicial y las tareas
+    b&aacute;sicas de administraci&oacute;n que son esenciales para trabajar con RHEL.</p>
+<h3>Configuraci&oacute;n Inicial de Red Hat Enterprise Linux (RHEL)</h3>
+<h4>1. Instalaci&oacute;n del Sistema Operativo</h4>
+<p>La instalaci&oacute;n de RHEL puede realizarse mediante varios m&eacute;todos, como un DVD, una unidad USB o una
+    instalaci&oacute;n en red. Los pasos b&aacute;sicos incluyen:</p>
+<p>- Seleccionar Idioma y Teclado: Escoge el idioma del sistema y la distribuci&oacute;n del teclado.<br /> -
+    Configuraci&oacute;n de Red y Hostname: Configura la red (DHCP o est&aacute;tica) y asigna un nombre de host al
+    sistema.<br /> - Particionamiento del Disco: Decide si utilizar el particionamiento autom&aacute;tico o
+    personalizado. El particionamiento personalizado permite crear particiones espec&iacute;ficas como /boot, swap, /,
+    etc.<br /> - Selecci&oacute;n de Software: Puedes seleccionar paquetes b&aacute;sicos o instalar grupos de software
+    espec&iacute;ficos (como servidores web, bases de datos, etc.) durante la instalaci&oacute;n.<br /> -
+    Configuraci&oacute;n de Usuarios: Configura la cuenta de root (administrador) y crea usuarios adicionales si es
+    necesario.</p>
+<h4>2. Actualizaci&oacute;n del Sistema</h4>
+<p>Despu&eacute;s de la instalaci&oacute;n, es esencial actualizar el sistema para asegurar que todos los paquetes
+    tengan las &uacute;ltimas correcciones de seguridad y mejoras:<br /> <br /> #&gt; sudo yum update -y</p>
+<p>yum es el gestor de paquetes utilizado en RHEL para manejar la instalaci&oacute;n, actualizaci&oacute;n y
+    eliminaci&oacute;n de paquetes.</p>
+<h3>Tareas B&aacute;sicas de Administraci&oacute;n en RHEL</h3>
+<h4>1. Gesti&oacute;n de Usuarios y Grupos</h4>
+<p>La administraci&oacute;n de usuarios y grupos es fundamental para manejar la seguridad y los permisos en el sistema.
+</p>
+<p>Crear un Usuario:<br /> sudo useradd nombre_usuario<br /> <br /> Establecer la Contrase&ntilde;a para el
+    Usuario:<br /> sudo passwd nombre_usuario</p>
+<p>Crear un Grupo:<br /> sudo groupadd nombre_grupo</p>
+<p>A&ntilde;adir un Usuario a un Grupo:<br /> sudo usermod -aG nombre_grupo nombre_usuario</p>
+<h4>2. Gesti&oacute;n de Paquetes</h4>
+<p>RHEL utiliza yum o dnf (a partir de RHEL 8) como gestor de paquetes para la instalaci&oacute;n, actualizaci&oacute;n
+    y eliminaci&oacute;n de software.</p>
+<p>Instalar un Paquete: <br /> sudo yum install nombre_paquete</p>
+<p>Eliminar un Paquete:<br /> sudo yum remove nombre_paquete</p>
+<p>Buscar un Paquete:<br /> sudo yum search nombre_paquete</p>
+<h4>3. Gesti&oacute;n de Servicios</h4>
+<p>RHEL utiliza systemd para la gesti&oacute;n de servicios. Algunas de las operaciones b&aacute;sicas incluyen:</p>
+<p>Iniciar un Servicio:<br /> sudo systemctl start nombre_servicio</p>
+<p>Detener un Servicio:<br /> sudo systemctl stop nombre_servicio</p>
+<p>Habilitar un Servicio al Inicio del Sistema:<br /> sudo systemctl enable nombre_servicio</p>
+<p>Deshabilitar un Servicio:<br /> sudo systemctl disable nombre_servicio</p>
+<p>Ver el Estado de un Servicio:<br /> sudo systemctl status nombre_servicio</p>
+<h4>4. Configuraci&oacute;n de Red</h4>
+<p>La configuraci&oacute;n de red en RHEL puede manejarse a trav&eacute;s de herramientas como nmtui (Network Manager
+    Text User Interface) o editando archivos de configuraci&oacute;n en /etc/sysconfig/network-scripts/.</p>
+<p>Reiniciar el Servicio de Red:<br /> sudo systemctl restart network</p>
+<p>Configurar una Direcci&oacute;n IP Est&aacute;tica: Edita el archivo de configuraci&oacute;n de red correspondiente,
+    como /etc/sysconfig/network-scripts/ifcfg-eth0, y agrega:<br /> <br /> BOOTPROTO=static<br />
+    IPADDR=192.168.1.100<br /> NETMASK=255.255.255.0<br /> GATEWAY=192.168.1.1</p>
+<h4>5. Gesti&oacute;n de Firewall</h4>
+<p>RHEL utiliza firewalld como interfaz para manejar iptables y configurar reglas de firewall de manera din&aacute;mica.
+</p>
+<p>Habilitar el Servicio de Firewall:<br /> sudo systemctl enable firewalld</p>
+<p>Agregar una Regla de Firewall:<br /> sudo firewall-cmd --permanent --add-port=80/tcp<br /> sudo firewall-cmd --reload
+</p>
+<h4>6. Monitoreo del Sistema</h4>
+<p>Para monitorear el uso de recursos y el rendimiento del sistema:</p>
+<p>Ver Uso de CPU y Memoria:<br /> htop</p>
+<p>Ver Espacio en Disco:<br /> df -h</p>
+<p>Ver Conexiones de Red Activas:<br /> netstat -tuln</p>
+<h4>7. Automatizaci&oacute;n con Cron Jobs</h4>
+<p>RHEL permite la programaci&oacute;n de tareas usando cron.</p>
+<p>Editar el Archivo Crontab:<br /> crontab -e</p>
+<p>Ejemplo de Cron Job: Ejecutar un script cada d&iacute;a a las 3:00 AM.<br /> 0 3 * * * /ruta/al/script.sh</p>
+<h3>Conclusi&oacute;n</h3>
+<p>Red Hat Enterprise Linux proporciona un conjunto robusto de herramientas para la configuraci&oacute;n y
+    administraci&oacute;n del sistema, permitiendo a los administradores de sistemas gestionar de manera eficiente
+    servidores y estaciones de trabajo en entornos empresariales. Las tareas b&aacute;sicas incluyen la gesti&oacute;n
+    de usuarios, servicios, red, seguridad y automatizaci&oacute;n de tareas, que son fundamentales para mantener un
+    entorno seguro y bien administrado.</p>
+<h2>22.2. Linux Ubuntu Server: Configuraci&oacute;n y tareas b&aacute;sicas de administraci&oacute;n.</h2>
+<p>Ubuntu, aunque tambi&eacute;n es una distribuci&oacute;n de Linux, tiene algunas diferencias importantes en
+    comparaci&oacute;n con Red Hat Enterprise Linux (RHEL). Estas diferencias afectan tanto la administraci&oacute;n del
+    sistema como la gesti&oacute;n de paquetes, servicios, seguridad y otros aspectos del sistema operativo. Aqu&iacute;
+    te explico las medidas adicionales o diferentes que deber&iacute;as tener en cuenta al utilizar Ubuntu en lugar de
+    RHEL:</p>
+<h3>Diferencias Claves entre Red Hat (RHEL) y Ubuntu</h3>
+<h4>Gestor de Paquetes:</h4>
+<p>RHEL: Utiliza yum o dnf (a partir de RHEL 8) para la gesti&oacute;n de paquetes. Los paquetes est&aacute;n en formato
+    RPM (Red Hat Package Manager).<br /> Ubuntu: Utiliza apt (Advanced Package Tool) para la gesti&oacute;n de paquetes.
+    Los paquetes est&aacute;n en formato DEB (Debian).</p>
+<p>Sistema de Init y Gesti&oacute;n de Servicios:</p>
+<p>Ambos utilizan systemd para la gesti&oacute;n de servicios y arranque, por lo que la administraci&oacute;n de
+    servicios es similar en ambos.</p>
+<h4>Gesti&oacute;n de Seguridad:</h4>
+<p>RHEL: Usa SELinux (Security-Enhanced Linux) para la gesti&oacute;n de pol&iacute;ticas de seguridad.<br /> Ubuntu:
+    Usa AppArmor por defecto para la seguridad a nivel de aplicaciones, aunque tambi&eacute;n se puede instalar SELinux.
+</p>
+<p>Medidas Adicionales o Diferentes para Configurar y Administrar Ubuntu</p>
+<h4>1. Gesti&oacute;n de Paquetes con APT</h4>
+<p>La gesti&oacute;n de paquetes en Ubuntu se realiza con apt. Algunos comandos b&aacute;sicos incluyen:</p>
+<p>Actualizar el Sistema:<br /> sudo apt update<br /> sudo apt upgrade -y</p>
+<p>El comando apt update actualiza la lista de paquetes disponibles, mientras que apt upgrade instala las
+    actualizaciones disponibles.</p>
+<p>Instalar un Paquete:<br /> sudo apt install nombre_paquete</p>
+<p>Eliminar un Paquete:<br /> sudo apt remove nombre_paquete</p>
+<p>Buscar un Paquete:<br /> sudo apt search nombre_paquete</p>
+<p>Limpiar Paquetes No Necesarios:<br /> sudo apt autoremove</p>
+<h4>2. Gesti&oacute;n de Seguridad con AppArmor</h4>
+<p>En Ubuntu, AppArmor es la herramienta de seguridad por defecto. Debes asegurarte de que est&eacute; habilitado y
+    configurado correctamente.</p>
+<p>Ver el Estado de AppArmor:<br /> sudo aa-status</p>
+<p>Habilitar o Deshabilitar AppArmor:<br /> sudo systemctl enable apparmor<br /> sudo systemctl start apparmor</p>
+<p>Cargar un Perfil de AppArmor:</p>
+<p>Los perfiles de AppArmor definen permisos para aplicaciones espec&iacute;ficas. Puedes crear y ajustar estos perfiles
+    seg&uacute;n sea necesario.<br /> sudo aa-enforce /etc/apparmor.d/nombre_perfil</p>
+<p>Instalar SELinux en Ubuntu (Opcional):<br /> Aunque Ubuntu usa AppArmor por defecto, puedes instalar SELinux si
+    prefieres usarlo:<br /> sudo apt install selinux</p>
+<h4>3. Configuraci&oacute;n de Red</h4>
+<p>La configuraci&oacute;n de red en Ubuntu se maneja generalmente con Netplan, a partir de Ubuntu 18.04, en lugar de
+    los scripts de red utilizados en RHEL.</p>
+<p>Editar Configuraci&oacute;n de Red con Netplan:</p>
+<p>Los archivos de configuraci&oacute;n se encuentran en /etc/netplan/. Un archivo de configuraci&oacute;n t&iacute;pico
+    podr&iacute;a verse as&iacute;:<br />-----------------------------------------------<br />|network:<br />| version:
+    2<br />| ethernets:<br />| enp0s3:<br />| dhcp4: no<br />| addresses: [192.168.1.100/24]<br />| gateway4:
+    192.168.1.1<br />| nameservers:<br />| addresses: [8.8.8.8,
+    8.8.4.4]<br />----------------------------------------------</p>
+<p>Luego, aplica los cambios con:<br /> sudo netplan apply</p>
+<h4>4. Gesti&oacute;n de Firewall con UFW</h4>
+<p>Ubuntu utiliza UFW (Uncomplicated Firewall) como interfaz para iptables, que es m&aacute;s amigable para los usuarios
+    en comparaci&oacute;n con firewalld de RHEL.</p>
+<p>Habilitar UFW:<br /> sudo ufw enable</p>
+<p>Permitir un Puerto Espec&iacute;fico:<br /> sudo ufw allow 80/tcp</p>
+<p>Ver el Estado del Firewall:<br /> sudo ufw status</p>
+<h4>5. Automatizaci&oacute;n de Tareas con Cron Jobs</h4>
+<p>La gesti&oacute;n de cron jobs es similar en Ubuntu, pero con algunas diferencias en la ubicaci&oacute;n de archivos
+    y el uso de systemd timers como alternativa m&aacute;s moderna.</p>
+<p>Editar Crontab:<br /> crontab -e</p>
+<p>Utilizar Systemd Timers: Son una alternativa m&aacute;s robusta y flexible a cron. Puedes crear archivos de unidades
+    de temporizador para servicios espec&iacute;ficos en /etc/systemd/system/.</p>
+<h4>6. Gesti&oacute;n de Usuarios y Grupos</h4>
+<p>La administraci&oacute;n de usuarios y grupos es similar, pero Ubuntu tiene una filosof&iacute;a ligeramente
+    diferente en cuanto a permisos de superusuario:</p>
+<p>Agregar Usuario a Sudoers:</p>
+<p>Al crear un usuario en Ubuntu, normalmente se le agrega al grupo sudo para darle privilegios de administrador.<br />
+    <br /> sudo usermod -aG sudo nombre_usuario</p>
+<h4>7. Monitoreo del Sistema</h4>
+<p>Las herramientas de monitoreo son similares entre RHEL y Ubuntu. Puedes usar herramientas como top, htop, vmstat, y
+    iostat. Adem&aacute;s, Ubuntu tambi&eacute;n soporta el uso de herramientas como Landscape (de Canonical) para la
+    gesti&oacute;n centralizada y monitoreo de m&uacute;ltiples servidores Ubuntu.</p>
+<h4>8. Soporte y Mantenimiento</h4>
+<p>Ubuntu tiene un modelo de soporte diferente:</p>
+<p>- LTS (Long Term Support): Ubuntu ofrece versiones LTS que tienen 5 a&ntilde;os de soporte y son ideales para
+    entornos de servidor.<br /> - PPAs (Personal Package Archives): Ubuntu permite usar PPAs para instalar software
+    adicional no disponible en los repositorios oficiales, pero debes tener cuidado con las actualizaciones y
+    compatibilidad.</p>
+<h3>Conclusi&oacute;n</h3>
+<p>Si cambias de RHEL a Ubuntu, hay varias diferencias y medidas adicionales que debes tener en cuenta, principalmente
+    en la gesti&oacute;n de paquetes, seguridad, configuraci&oacute;n de red, firewall y automatizaci&oacute;n de
+    tareas. Cada sistema tiene sus propias herramientas y filosof&iacute;as de administraci&oacute;n, por lo que es
+    importante adaptarse a las mejores pr&aacute;cticas de cada distribuci&oacute;n para garantizar un entorno seguro y
+    eficiente.</p>
+<h2>22.3. Herramientas de bastionado de sistemas Linux Red Hat EL y Ubuntu Server.</h2>
+<p>El bastionado de sistemas en servidores Linux, ya sea en Red Hat Enterprise Linux (RHEL) o Ubuntu Server, implica la
+    implementaci&oacute;n de medidas de seguridad para fortalecer el sistema contra ataques. Estas medidas incluyen la
+    configuraci&oacute;n de permisos, la gesti&oacute;n de servicios, la protecci&oacute;n contra vulnerabilidades y la
+    implementaci&oacute;n de pol&iacute;ticas de seguridad.</p>
+<p>Existen herramientas espec&iacute;ficas para el bastionado de sistemas en ambos entornos, y algunas herramientas
+    pueden usarse en ambos sistemas operativos. A continuaci&oacute;n, te hablar&eacute; de las herramientas y
+    m&eacute;todos m&aacute;s comunes de bastionado en RHEL y Ubuntu Server.</p>
+<h3>Herramientas de Bastionado en Red Hat Enterprise Linux (RHEL)</h3>
+<p>RHEL tiene una serie de herramientas y utilidades espec&iacute;ficas dise&ntilde;adas para la administraci&oacute;n y
+    el bastionado de sistemas, algunas de las cuales se describen a continuaci&oacute;n:</p>
+<h4>1. SELinux (Security-Enhanced Linux)</h4>
+<p>Descripci&oacute;n: SELinux es una implementaci&oacute;n de control de acceso obligatorio (MAC) que permite a los
+    administradores definir pol&iacute;ticas de seguridad que restringen el acceso a procesos y usuarios del sistema.
+</p>
+<p>Funcionalidad: Proporciona pol&iacute;ticas de seguridad predefinidas y personalizables que pueden ser aplicadas a
+    archivos, procesos, usuarios y servicios.</p>
+<p>Uso B&aacute;sico:<br /> <br /> Ver el estado de SELinux:<br /> sestatus</p>
+<p>Cambiar el modo de SELinux (enforcing, permissive, disabled):<br /> sudo setenforce 1 # 1 para enforcing, 0 para
+    permissive</p>
+<p>Configuraci&oacute;n persistente a trav&eacute;s del archivo /etc/selinux/config.</p>
+<h4>2. OpenSCAP</h4>
+<p>Descripci&oacute;n: OpenSCAP es un conjunto de herramientas de seguridad para la automatizaci&oacute;n del
+    cumplimiento de pol&iacute;ticas de seguridad, auditor&iacute;as y escaneo de vulnerabilidades en sistemas RHEL.</p>
+<p>Funcionalidad: Permite realizar evaluaciones de seguridad basadas en est&aacute;ndares como SCAP (Security Content
+    Automation Protocol), CIS Benchmarks, y STIGs (Security Technical Implementation Guides).</p>
+<p>Uso B&aacute;sico:</p>
+<p>Instalar OpenSCAP:<br /> sudo yum install scap-security-guide</p>
+<p>Ejecutar un escaneo con el perfil CIS:<br /> sudo oscap xccdf eval --profile xccdf_org.ssgproject.content_profile_cis
+    /usr/share/xml/scap/ssg/content/ssg-rhel7-ds.xml</p>
+<h4>3. FirewallD</h4>
+<p>Descripci&oacute;n: FirewallD es una interfaz din&aacute;mica para gestionar iptables que permite a los
+    administradores configurar reglas de firewall y zonas de red.</p>
+<p>Funcionalidad: Define zonas de red que aplican reglas diferentes basadas en la confianza del entorno.</p>
+<p>Uso B&aacute;sico:<br /> <br /> Activar el firewall y verificar su estado:<br /> sudo systemctl enable
+    firewalld<br /> sudo systemctl start firewalld<br /> sudo firewall-cmd --state</p>
+<p>Agregar reglas de firewall:<br /> sudo firewall-cmd --permanent --add-port=80/tcp<br /> sudo firewall-cmd --reload
+</p>
+<h4>4. AIDE (Advanced Intrusion Detection Environment)</h4>
+<p>Descripci&oacute;n: AIDE es una herramienta de detecci&oacute;n de intrusiones basada en host (HIDS) que verifica la
+    integridad de archivos y directorios en el sistema.</p>
+<p>Funcionalidad: Crea una base de datos de las sumas de verificaci&oacute;n de los archivos y las compara con los
+    valores actuales para detectar cualquier modificaci&oacute;n.</p>
+<p>Uso B&aacute;sico:</p>
+<p>Instalar y configurar AIDE:<br /> sudo yum install aide<br /> sudo aide --init</p>
+<h4>5. Red Hat Insights</h4>
+<p>Descripci&oacute;n: Red Hat Insights es una herramienta de monitoreo y an&aacute;lisis proactivo que ayuda a
+    identificar problemas de configuraci&oacute;n, vulnerabilidades y recomendaciones de seguridad.</p>
+<p>Funcionalidad: Ofrece alertas y sugerencias basadas en reglas para mejorar la seguridad del sistema.</p>
+<p>Uso B&aacute;sico:</p>
+<p>Requiere suscripci&oacute;n a Red Hat y configuraci&oacute;n del cliente Insights.</p>
+<h3>Herramientas de Bastionado en Ubuntu Server</h3>
+<p>Ubuntu Server tambi&eacute;n ofrece una serie de herramientas para el bastionado de sistemas. Algunas de estas
+    herramientas son espec&iacute;ficas de Ubuntu, mientras que otras son comunes en sistemas Linux en general.</p>
+<h4>1. AppArmor</h4>
+<p>Descripci&oacute;n: AppArmor es una soluci&oacute;n de seguridad que proporciona control de acceso obligatorio (MAC)
+    basado en perfiles de aplicaci&oacute;n.</p>
+<p>Funcionalidad: Restringe las capacidades de las aplicaciones al nivel m&iacute;nimo necesario para funcionar,
+    limitando as&iacute; el impacto de un compromiso.</p>
+<p>Uso B&aacute;sico:</p>
+<p>Ver el estado de AppArmor: <br /> sudo aa-status</p>
+<p>Habilitar o deshabilitar AppArmor:<br /> sudo systemctl enable apparmor<br /> sudo systemctl start apparmor</p>
+<p>Cargar un perfil de AppArmor:<br /> sudo aa-enforce /etc/apparmor.d/nombre_perfil</p>
+<h4>2. UFW (Uncomplicated Firewall)</h4>
+<p>Descripci&oacute;n: UFW es una interfaz simplificada para iptables dise&ntilde;ada para facilitar la
+    configuraci&oacute;n del firewall en sistemas Ubuntu.</p>
+<p>Funcionalidad: Proporciona comandos f&aacute;ciles de usar para configurar reglas de firewall y controlar el
+    tr&aacute;fico de red.</p>
+<p>Uso B&aacute;sico:</p>
+<p>Habilitar el firewall:<br /> sudo ufw enable</p>
+<p>Permitir un puerto espec&iacute;fico:<br /> sudo ufw allow 22/tcp</p>
+<p>Ver el estado de UFW:<br /> sudo ufw status</p>
+<h4>3. Lynis</h4>
+<p>Descripci&oacute;n: Lynis es una herramienta de auditor&iacute;a de seguridad y escaneo de vulnerabilidades para
+    sistemas basados en Unix.</p>
+<p>Funcionalidad: Realiza auditor&iacute;as del sistema, chequeos de configuraci&oacute;n, y recomendaciones de
+    seguridad.</p>
+<p>Uso B&aacute;sico:</p>
+<p>Instalar y ejecutar Lynis:<br /> sudo apt install lynis<br /> sudo lynis audit system</p>
+<h4>4. Fail2ban</h4>
+<p>Descripci&oacute;n: Fail2ban es una herramienta de prevenci&oacute;n de intrusiones que analiza archivos de registro
+    y bloquea direcciones IP que muestren comportamientos sospechosos, como intentos fallidos de autenticaci&oacute;n.
+</p>
+<p>Funcionalidad: Configurable para diferentes servicios como SSH, Apache, etc.</p>
+<p>Uso B&aacute;sico:</p>
+<p>Instalar y configurar Fail2ban:</p>
+<p>sudo apt install fail2ban<br /> sudo systemctl enable fail2ban<br /> sudo systemctl start fail2ban</p>
+<h4>5. Chkrootkit y Rootkit Hunter (rkhunter)</h4>
+<p>Descripci&oacute;n: Son herramientas de detecci&oacute;n de rootkits y otros tipos de malware en sistemas Linux.</p>
+<p>Funcionalidad: Escanean el sistema en busca de rootkits conocidos y otros indicadores de compromiso.</p>
+<p>Uso B&aacute;sico:</p>
+<p>Instalar y ejecutar chkrootkit:</p>
+<p>sudo apt install chkrootkit<br /> sudo chkrootkit</p>
+<p>Instalar y ejecutar rkhunter:</p>
+<p>sudo apt install rkhunter<br /> sudo rkhunter --check</p>
+<h4>6. OpenSCAP</h4>
+<p>Descripci&oacute;n: Al igual que en RHEL, Ubuntu tambi&eacute;n puede usar OpenSCAP para evaluaciones de seguridad
+    basadas en est&aacute;ndares y auditor&iacute;as.</p>
+<p>Uso B&aacute;sico:</p>
+<p>Instalar OpenSCAP:<br /> sudo apt install libopenscap8</p>
+<h3>Conclusi&oacute;n</h3>
+<p>Tanto RHEL como Ubuntu Server tienen herramientas robustas y espec&iacute;ficas para el bastionado de sistemas,
+    aunque algunas herramientas son exclusivas de una u otra distribuci&oacute;n. Las diferencias clave incluyen SELinux
+    vs. AppArmor para el control de acceso obligatorio y FirewallD vs. UFW para la gesti&oacute;n del firewall. Ambos
+    sistemas pueden usar herramientas comunes como OpenSCAP, Lynis, Fail2ban, y AIDE para mejorar la seguridad del
+    sistema. La elecci&oacute;n de herramientas depender&aacute; del entorno espec&iacute;fico y los requisitos de
+    seguridad de cada organizaci&oacute;n.</p>

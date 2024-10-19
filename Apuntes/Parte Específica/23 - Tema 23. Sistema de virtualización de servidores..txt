@@ -1,0 +1,231 @@
+Tema 23. Sistema de virtualización de servidores.
+
+23.1. Sistemas Oracle Linux KVM: arquitectura y componentes. Características.
+
+	Sistemas Oracle Linux KVM: Arquitectura y Componentes
+
+		Oracle Linux KVM (Kernel-based Virtual Machine) es una tecnología de virtualización que utiliza el kernel de Linux como un hipervisor para crear y gestionar máquinas virtuales (VMs). KVM permite que Oracle Linux funcione como un hipervisor tipo 1, permitiendo que varias VMs funcionen en un solo servidor físico, cada una con su propio sistema operativo y recursos dedicados.
+
+		1. Arquitectura de Oracle Linux KVM
+			
+			La arquitectura de Oracle Linux KVM se basa en el kernel de Linux y se integra profundamente en él. Esto hace que KVM sea eficiente en términos de rendimiento y gestión de recursos. A continuación se detallan los principales componentes de la arquitectura de Oracle Linux KVM:
+
+				- KVM (Kernel-based Virtual Machine): Es un módulo del kernel de Linux que convierte a este en un hipervisor. KVM crea un entorno virtualizado en el que se pueden ejecutar múltiples sistemas operativos.
+
+				- QEMU (Quick Emulator): Es un emulador de hardware que, cuando se combina con KVM, proporciona la emulación de hardware necesario para las máquinas virtuales. QEMU funciona como el gestor de máquinas virtuales (VMM), gestionando el ciclo de vida de las VMs y proporcionando acceso a dispositivos virtualizados como discos duros, redes, gráficos, etc.
+
+				- Libvirt: Es una biblioteca de administración de máquinas virtuales que proporciona una API uniforme para interactuar con KVM. También incluye herramientas de línea de comandos como virsh y virt-manager para gestionar VMs.
+
+				- Virtio: Es un conjunto de controladores paravirtualizados que mejoran el rendimiento de los dispositivos virtuales (como red, almacenamiento, etc.) en entornos virtualizados. Virtio es utilizado por QEMU/KVM para optimizar la E/S y reducir la sobrecarga de emulación.
+
+				- Oracle Linux Virtualization Manager (OLVM): Es una plataforma de gestión para entornos de virtualización basada en KVM. OLVM proporciona una interfaz gráfica para la administración de hipervisores, máquinas virtuales, redes, almacenamiento, y políticas de alta disponibilidad.
+
+		2. Componentes Principales de Oracle Linux KVM
+
+			- Host KVM: Es el servidor físico que ejecuta el hipervisor KVM y hospeda varias VMs. El host de KVM ejecuta el kernel de Linux modificado para soportar la virtualización.
+
+			- Máquina Virtual (VM): Es un entorno aislado que funciona como una computadora independiente. Cada VM tiene su propio sistema operativo (invitado) y aplicaciones.
+
+			- Almacenamiento de VM: Oracle Linux KVM soporta diversos tipos de almacenamiento, incluyendo almacenamiento local, almacenamiento en red (NFS, iSCSI, etc.), y almacenamiento basado en Oracle Cloud.
+
+			- Red de VM: KVM permite configurar varias redes virtuales usando bridges, switches virtuales, VLANs, y otras tecnologías de red. Las VMs pueden comunicarse entre sí y con el exterior a través de configuraciones de red virtuales.
+
+		3. Características de Oracle Linux KVM
+
+			Oracle Linux KVM ofrece una serie de características que lo hacen ideal para entornos empresariales. Algunas de las características clave son:
+
+				- Rendimiento y Eficiencia: Al ser parte del kernel de Linux, KVM tiene un rendimiento cercano al nativo para las máquinas virtuales.
+
+				- Alta Disponibilidad (HA) y Recuperación ante Desastres: Con el soporte de Oracle Linux Virtualization Manager, KVM puede ofrecer alta disponibilidad, migración en vivo, y equilibrio de carga.
+
+				- Seguridad: Oracle Linux KVM ofrece características avanzadas de seguridad como la integración con SELinux (Security-Enhanced Linux), aislamiento de VMs, y mecanismos de autenticación robustos.
+
+				- Escalabilidad y Flexibilidad: KVM es altamente escalable, soportando miles de máquinas virtuales en un solo host. También puede integrar almacenamiento y redes avanzadas para satisfacer las necesidades de diferentes cargas de trabajo.
+
+				- Soporte de Oracle Cloud: Las instancias de Oracle Linux KVM pueden integrarse fácilmente con Oracle Cloud Infrastructure, proporcionando una infraestructura híbrida perfecta.
+
+				- Compatibilidad con Múltiples Sistemas Operativos Invitados: Oracle Linux KVM soporta múltiples sistemas operativos invitados como Oracle Linux, Red Hat Enterprise Linux (RHEL), CentOS, Ubuntu, Windows, etc.
+
+				- Gestión Centralizada: Oracle Linux Virtualization Manager proporciona una interfaz unificada para la gestión de toda la infraestructura virtualizada, lo que facilita la administración de múltiples hosts y VMs.
+
+				- Paravirtualización Virtio: Oracle Linux KVM utiliza controladores Virtio para proporcionar una mayor eficiencia y rendimiento en comparación con la emulación de hardware completa.
+
+	En resumen, Oracle Linux KVM es una solución de virtualización robusta, flexible y de alto rendimiento que es adecuada para organizaciones que buscan una plataforma de virtualización segura y escalable compatible con sus entornos de nube y locales.
+
+23.2. Sistemas VMware vSphere: arquitectura y componentes. Características.
+
+	Sistemas VMware vSphere: Arquitectura y Componentes
+
+		VMware vSphere es una plataforma de virtualización de servidores desarrollada por VMware que permite la creación y administración de entornos virtualizados en centros de datos. vSphere es ampliamente utilizado en entornos empresariales debido a su robustez, escalabilidad y características avanzadas de administración.
+
+		1. Arquitectura de VMware vSphere
+
+			La arquitectura de VMware vSphere se compone de varios componentes interrelacionados que trabajan juntos para proporcionar un entorno de virtualización completo. A continuación se detallan los componentes principales:
+
+				- ESXi (Elastic Sky X Integrated): ESXi es el hipervisor de tipo 1 (bare-metal) de VMware que se instala directamente en el hardware físico del servidor. ESXi permite la creación y administración de máquinas virtuales (VMs) con un rendimiento cercano al hardware nativo. ESXi es un hipervisor extremadamente ligero y seguro, con una huella mínima en el hardware.
+
+				- vCenter Server: vCenter Server es el componente central de gestión de VMware vSphere. Proporciona una interfaz unificada para la administración de múltiples hosts ESXi y sus máquinas virtuales. vCenter Server permite tareas como la provisión de VMs, migración en vivo, equilibrio de carga, alta disponibilidad, recuperación ante desastres, y gestión de almacenamiento y red.
+
+				- VMFS (VMware Virtual Machine File System): VMFS es un sistema de archivos en clúster desarrollado por VMware que permite que varios hosts ESXi accedan de manera concurrente al almacenamiento compartido. VMFS es fundamental para funciones avanzadas como la migración en vivo (vMotion), almacenamiento dinámico y alta disponibilidad.
+
+				- vSphere Client: Es la interfaz de usuario que permite a los administradores gestionar el entorno vSphere. Hay dos versiones: vSphere Web Client (basado en navegador) y vSphere Client (HTML5), que ofrecen acceso a todas las funciones de gestión proporcionadas por vCenter Server.
+
+				- vSphere Distributed Switch (vDS): Es una tecnología de red virtual que proporciona una interfaz centralizada para gestionar el tráfico de red de múltiples hosts ESXi. vDS ofrece características avanzadas como la monitorización de red, el tráfico de red y la calidad de servicio (QoS).
+
+				- vMotion: Es una tecnología que permite la migración en vivo de máquinas virtuales de un host ESXi a otro sin tiempo de inactividad, proporcionando flexibilidad para el mantenimiento del hardware y la optimización de la carga de trabajo.
+
+				- Storage vMotion: Permite la migración en vivo del almacenamiento de las máquinas virtuales sin tiempo de inactividad. Esto es útil para equilibrar el rendimiento del almacenamiento o para realizar tareas de mantenimiento en los sistemas de almacenamiento.
+
+				- High Availability (HA): vSphere HA proporciona alta disponibilidad para las máquinas virtuales al reiniciar automáticamente las VMs en otros hosts en caso de que un host ESXi falle. Utiliza un mecanismo de clustering para la gestión de fallos.
+
+				- Fault Tolerance (FT): vSphere Fault Tolerance ofrece disponibilidad continua para VMs al mantener una copia en tiempo real de la VM primaria en otro host ESXi. Si el host primario falla, la VM secundaria asume inmediatamente la carga, sin pérdida de datos o tiempo de inactividad.
+
+	2. Componentes Principales de VMware vSphere
+
+		- Host ESXi: Es el servidor físico que ejecuta el hipervisor VMware ESXi. Cada host ESXi puede soportar múltiples máquinas virtuales.
+
+		- Máquina Virtual (VM): Cada VM es un entorno aislado que funciona como un sistema operativo independiente con sus propias aplicaciones y recursos. Las VMs pueden ser gestionadas y administradas de forma centralizada a través de vCenter Server.
+
+		- vSphere Storage: Incluye varias opciones de almacenamiento, como VMFS, NFS, iSCSI, y Fibre Channel. VMware vSphere también soporta VMware vSAN, que es una solución de almacenamiento definido por software integrada en el hipervisor.
+
+		- vSphere Networking: Proporciona infraestructura de red virtual mediante el uso de vSwitches estándar y distribuidos para conectar VMs con el mundo exterior y entre ellas.
+
+		- vSphere DRS (Distributed Resource Scheduler): DRS equilibra automáticamente la carga de trabajo en los hosts ESXi dentro de un clúster para optimizar el rendimiento y la eficiencia. Puede migrar automáticamente las VMs utilizando vMotion en función del uso de recursos.
+
+	3. Características de VMware vSphere
+
+		VMware vSphere ofrece una amplia gama de características que lo convierten en la opción preferida para entornos empresariales:
+
+			- Rendimiento y Eficiencia: ESXi proporciona una virtualización eficiente con una sobrecarga mínima del hipervisor, ofreciendo un rendimiento cercano al hardware nativo.
+
+			- Alta Disponibilidad y Tolerancia a Fallos: vSphere HA y FT proporcionan mecanismos robustos para minimizar el tiempo de inactividad y la pérdida de datos, garantizando la continuidad del negocio.
+
+			- Migración en Vivo (vMotion y Storage vMotion): Estas tecnologías permiten la migración en vivo de VMs y su almacenamiento, asegurando la flexibilidad de la infraestructura y el mantenimiento sin tiempo de inactividad.
+
+			- Seguridad: vSphere ofrece varias características de seguridad como VMware vSphere Trust Authority, encriptación de VM, autenticación multifactor, y políticas de seguridad centralizadas.
+
+			- Escalabilidad y Flexibilidad: vSphere soporta miles de VMs y clústeres grandes de hosts ESXi, facilitando la escalabilidad horizontal. También ofrece soporte para las últimas tecnologías de hardware.
+
+			- Gestión Centralizada con vCenter Server: vCenter proporciona una consola centralizada para gestionar toda la infraestructura virtualizada, permitiendo la automatización de tareas, la supervisión del rendimiento y la administración de recursos.
+
+			- Automatización y Orquestación: vSphere permite la automatización de operaciones con VMware vRealize Suite, que facilita la gestión automatizada de la infraestructura, el aprovisionamiento de recursos y el monitoreo.
+
+			- Compatibilidad con Múltiples Sistemas Operativos Invitados: VMware vSphere es compatible con una amplia gama de sistemas operativos invitados, incluyendo varias versiones de Windows, Linux, y otros sistemas operativos.
+
+			- Integración con la Nube: vSphere puede integrarse con VMware Cloud en AWS, Azure VMware Solution, y otras soluciones de nube híbrida, lo que facilita la movilidad de aplicaciones y la gestión de infraestructuras híbridas.
+
+	En resumen, VMware vSphere es una plataforma de virtualización de servidores líder en la industria que proporciona un conjunto completo de características y funcionalidades avanzadas para crear, gestionar y optimizar entornos virtualizados en centros de datos. Es ideal para organizaciones que buscan alta disponibilidad, seguridad, rendimiento, y capacidad de gestión centralizada en su infraestructura de TI.
+
+23.3. Ventajas y desventajas de estos sistemas de virtualización.
+
+	Vamos a analizar las ventajas y desventajas de los dos sistemas de virtualización discutidos anteriormente: Oracle Linux KVM y VMware vSphere. Ambos sistemas son líderes en el ámbito de la virtualización, pero tienen características, beneficios y limitaciones únicas que pueden influir en la decisión de una organización para su implementación.
+
+	1. Oracle Linux KVM
+
+		Ventajas:
+			
+			- Código Abierto y Sin Costos de Licencia:
+
+				Oracle Linux KVM es una solución de virtualización basada en KVM, que es de código abierto. Esto significa que no hay costos de licencia asociados con el hipervisor, lo que puede resultar en una reducción significativa de costos para las organizaciones.
+
+			- Integración Profunda con el Kernel de Linux:
+
+				Al estar integrado directamente en el kernel de Linux, KVM ofrece un rendimiento cercano al nativo y una baja sobrecarga de virtualización. Además, se beneficia de todas las características de seguridad y optimización del kernel de Linux.
+
+			- Flexibilidad y Personalización:
+
+				Al ser una solución de código abierto, los administradores pueden personalizar y optimizar KVM según sus necesidades específicas. Esto permite un mayor control sobre el entorno de virtualización.
+
+			- Compatibilidad con la Nube y Contenedores:
+
+				KVM puede integrarse fácilmente con soluciones de nube, como Oracle Cloud Infrastructure, y también es compatible con la ejecución de contenedores a través de herramientas como Docker y Kubernetes, facilitando la creación de entornos híbridos.
+
+			- Soporte de Paravirtualización Virtio:
+
+				KVM utiliza Virtio para mejorar el rendimiento de las operaciones de E/S, lo que reduce la sobrecarga de la emulación de hardware y optimiza el rendimiento de las máquinas virtuales.
+
+			- Ecosistema de Gestión Robusto con OLVM:
+
+				Oracle Linux Virtualization Manager (OLVM) proporciona una interfaz gráfica intuitiva para la gestión de VMs, almacenamiento, red y otros componentes.
+
+		Desventajas:
+
+			- Curva de Aprendizaje:
+
+				KVM puede requerir un nivel de conocimiento más profundo de Linux y administración de sistemas para su configuración y gestión. Esto puede aumentar la curva de aprendizaje para equipos no familiarizados con Linux.
+
+			- Menor Ecosistema de Soporte y Herramientas de Terceros:
+
+				Aunque KVM es un hipervisor robusto, no tiene el mismo nivel de soporte de terceros y herramientas que VMware vSphere, lo que puede limitar las opciones de integración.
+
+			- Menor Estabilidad de las Interfaces de Gestión:
+
+				OLVM, aunque es una solución robusta, no es tan madura como VMware vCenter y puede carecer de algunas características avanzadas y estabilidad en comparación.
+
+			- Menos Características Empresariales Avanzadas:
+				
+				Aunque KVM ofrece alta disponibilidad y recuperación ante desastres, algunas características avanzadas como la tolerancia a fallos en tiempo real (como VMware FT) son más limitadas.
+
+	2. VMware vSphere
+
+		Ventajas:
+
+			- Madurez y Confiabilidad del Producto:
+
+				VMware vSphere es una de las soluciones de virtualización más maduras del mercado, con un historial probado de estabilidad, rendimiento y confiabilidad. Es una elección común para centros de datos de misión crítica.
+
+			- Gestión Centralizada y Fácil de Usar:
+
+				vCenter Server proporciona una consola de administración centralizada altamente intuitiva que simplifica la gestión de entornos virtualizados grandes y complejos.
+
+			- Características Avanzadas de Alta Disponibilidad y Recuperación ante Desastres:
+
+				VMware vSphere ofrece características como vMotion, Storage vMotion, High Availability (HA), Distributed Resource Scheduler (DRS) y Fault Tolerance (FT) que permiten la migración en vivo, la alta disponibilidad y la continuidad del negocio sin tiempo de inactividad.
+
+			- Compatibilidad Extensa con Hardware y Software:
+
+				VMware es compatible con una amplia variedad de hardware y sistemas operativos invitados, lo que facilita la implementación en entornos heterogéneos.
+
+			- Amplio Ecosistema de Soporte y Herramientas de Terceros:
+
+				VMware tiene un extenso ecosistema de socios tecnológicos, herramientas de terceros y proveedores de soporte, lo que permite una integración más fácil con otras soluciones de TI.
+
+			- Capacidades de Automatización y Orquestación:
+
+				Con herramientas como vRealize Suite, VMware permite la automatización avanzada de la infraestructura, la gestión de recursos y la optimización del rendimiento.
+
+			- Seguridad Avanzada:
+
+				VMware ofrece características de seguridad robustas, como VMware Trust Authority, encriptación de VM, y autenticación multifactor, asegurando un entorno seguro.
+
+		Desventajas:
+
+			- Costos Elevados de Licencia y Soporte:
+
+				Una de las principales desventajas de VMware vSphere es el costo elevado de las licencias y el soporte. Esto puede ser prohibitivo para pequeñas y medianas empresas o proyectos con presupuesto limitado.
+
+			- Dependencia de un Solo Proveedor:
+
+				VMware es una solución propietaria, lo que significa que las organizaciones dependen de VMware para soporte, actualizaciones y parches. Esto puede limitar la flexibilidad y las opciones de integración.
+
+			- Requerimientos de Hardware Específicos:
+
+				Aunque VMware es compatible con muchos tipos de hardware, algunas características avanzadas pueden requerir hardware específico certificado por VMware, lo que puede aumentar los costos.
+
+			- Complejidad en la Implementación de Funciones Avanzadas:
+
+				Aunque vSphere ofrece características avanzadas, su configuración y gestión pueden ser complejas y requerir conocimientos especializados, especialmente para funciones como DRS y FT.
+
+			- Mayor Huella de Recursos en Comparación con Soluciones Más Ligeras:
+
+				Aunque ESXi es relativamente ligero, el ecosistema completo de vSphere, incluido vCenter y las herramientas relacionadas, puede consumir más recursos que soluciones más ligeras como KVM.
+
+	Resumen
+
+		Ambas plataformas, Oracle Linux KVM y VMware vSphere, tienen sus ventajas y desventajas, dependiendo del tamaño, presupuesto, experiencia del equipo y requisitos de la organización:
+
+		Oracle Linux KVM es ideal para organizaciones que buscan una solución de código abierto, rentable y flexible, y que están dispuestas a invertir en capacitación técnica.
+
+		VMware vSphere es adecuado para organizaciones que requieren una solución robusta, con características avanzadas de gestión, alta disponibilidad, y soporte extensivo, aunque a un costo mayor.
+
+		La elección entre ambos dependerá de las necesidades específicas de cada entorno y de los objetivos de la infraestructura de TI.

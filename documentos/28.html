@@ -1,0 +1,236 @@
+<h1>Tema 28. El lenguaje SQL I.</h1>
+<h2>28.1. Caracter&iacute;sticas generales. Estructura.</h2>
+<p>SQL (Structured Query Language) es un lenguaje de programaci&oacute;n dise&ntilde;ado para gestionar y manipular
+    bases de datos relacionales. Es utilizado para realizar consultas, actualizar registros, crear y modificar la
+    estructura de las bases de datos, y controlar el acceso a los datos. Aqu&iacute; tienes una descripci&oacute;n de
+    las caracter&iacute;sticas generales y la estructura del lenguaje SQL:</p>
+<h3>Caracter&iacute;sticas Generales de SQL</h3>
+<p>- Lenguaje Declarativo: SQL es un lenguaje declarativo, lo que significa que los usuarios especifican qu&eacute;
+    desean obtener sin tener que preocuparse por c&oacute;mo se va a realizar esa tarea. La base de datos decide la
+    mejor manera de ejecutar la consulta.</p>
+<p>- Independencia de Plataforma: SQL es un est&aacute;ndar que se utiliza en muchos sistemas de gesti&oacute;n de bases
+    de datos (DBMS) como MySQL, PostgreSQL, Oracle, Microsoft SQL Server, etc. Aunque hay algunas diferencias
+    espec&iacute;ficas entre los sistemas, el n&uacute;cleo de SQL es consistente.</p>
+<p>- Manipulaci&oacute;n de Datos: Permite realizar operaciones de manipulaci&oacute;n de datos, como consultas para
+    seleccionar datos (SELECT), inserciones (INSERT), actualizaciones (UPDATE) y eliminaciones (DELETE).</p>
+<p>- Definici&oacute;n de Datos: SQL permite definir la estructura de la base de datos, incluyendo la creaci&oacute;n de
+    tablas, &iacute;ndices, vistas y otras estructuras de datos con comandos como CREATE, ALTER, y DROP.</p>
+<p>- Control de Acceso a Datos: Permite gestionar permisos y seguridad en la base de datos a trav&eacute;s de comandos
+    como GRANT y REVOKE, que controlan el acceso de los usuarios a diferentes partes de la base de datos.</p>
+<p>- Gesti&oacute;n de Transacciones: SQL proporciona un control robusto sobre las transacciones de la base de datos,
+    asegurando la integridad de los datos con comandos como COMMIT, ROLLBACK y SAVEPOINT.</p>
+<p>- Soporte para Funciones Agregadas y Operaciones de Agrupaci&oacute;n: SQL permite realizar operaciones agregadas
+    (SUM, AVG, COUNT, etc.) y agrupar resultados con GROUP BY, adem&aacute;s de filtrar estos grupos con HAVING.</p>
+<p>- Funciones Integradas: SQL incluye funciones integradas para realizar operaciones sobre datos, como funciones
+    matem&aacute;ticas, de cadena, de fecha y hora, entre otras.</p>
+<h3>Estructura del Lenguaje SQL</h3>
+<p>SQL se divide en varias subcategor&iacute;as, cada una dise&ntilde;ada para un prop&oacute;sito espec&iacute;fico:
+</p>
+<h4>1. DDL (Data Definition Language) - Lenguaje de Definici&oacute;n de Datos:</h4>
+<p>Utilizado para definir la estructura de la base de datos.</p>
+<p>- CREATE: Crea una nueva base de datos, tabla, &iacute;ndice, o vista.<br />|CREATE TABLE empleados (<br />| id INT
+    PRIMARY KEY,<br />| nombre VARCHAR(50),<br />| salario DECIMAL(10, 2)<br />|);</p>
+<p>- ALTER: Modifica una base de datos o tabla existente.<br />|ALTER TABLE empleados ADD columna_nueva VARCHAR(50);</p>
+<p>- DROP: Elimina una tabla, vista, o base de datos.<br />|DROP TABLE empleados;</p>
+<h4>2. DML (Data Manipulation Language) - Lenguaje de Manipulaci&oacute;n de Datos</h4>
+<p>Utilizado para realizar operaciones en los datos de la base de datos.</p>
+<p>- SELECT: Recupera datos de una o m&aacute;s tablas.<br />|SELECT nombre, salario FROM empleados WHERE salario &gt;
+    50000;</p>
+<p>- INSERT: Inserta datos en una tabla.<br />|INSERT INTO empleados (id, nombre, salario) VALUES (1, 'Juan', 60000);
+</p>
+<p>- UPDATE: Modifica datos existentes en una tabla.<br />|UPDATE empleados SET salario = 70000 WHERE id = 1;</p>
+<p>- DELETE: Elimina datos de una tabla.<br />|DELETE FROM empleados WHERE id = 1;</p>
+<h4>3. DCL (Data Control Language) - Lenguaje de Control de Datos</h4>
+<p>Utilizado para el control de permisos y acceso a la base de datos.</p>
+<p>- GRANT: Otorga permisos a los usuarios.<br />|GRANT SELECT, INSERT ON empleados TO usuario;</p>
+<p>- REVOKE: Revoca permisos otorgados previamente a los usuarios.<br />|REVOKE SELECT ON empleados FROM usuario;</p>
+<h4>4. TCL (Transaction Control Language) - Lenguaje de Control de Transacciones</h4>
+<p>Utilizado para gestionar las transacciones dentro de la base de datos.</p>
+<p>- COMMIT: Guarda permanentemente todas las transacciones realizadas.<br />|COMMIT;</p>
+<p>- ROLLBACK: Revierte las transacciones realizadas desde el &uacute;ltimo COMMIT.<br />|ROLLBACK;</p>
+<p>- SAVEPOINT: Crea un punto de guardado dentro de una transacci&oacute;n que se puede utilizar para deshacer parte de
+    la transacci&oacute;n.<br />|SAVEPOINT nombre_punto;</p>
+<h4>5. Funciones y Procedimientos Almacenados</h4>
+<p>SQL permite definir funciones y procedimientos almacenados que pueden ser reutilizados y ejecutados como bloques de
+    c&oacute;digo.</p>
+<p>- Funciones: Realizan una operaci&oacute;n espec&iacute;fica y devuelven un resultado.</p>
+<p>|CREATE FUNCTION calcular_salario_total() RETURNS DECIMAL(10, 2) AS<br />|BEGIN<br />| DECLARE total DECIMAL(10,
+    2);<br />| SELECT SUM(salario) INTO total FROM empleados;<br />| RETURN total;<br />|END;</p>
+<p>- Procedimientos almacenados: Son m&aacute;s complejos y pueden realizar operaciones m&uacute;ltiples.</p>
+<p>|CREATE PROCEDURE actualizar_salario(id_empleado INT, nuevo_salario DECIMAL(10, 2))<br />|BEGIN<br />| UPDATE
+    empleados SET salario = nuevo_salario WHERE id = id_empleado;<br />|END;</p>
+<h4>6. Consultas Avanzadas</h4>
+<p>SQL soporta consultas avanzadas, incluyendo:</p>
+<p>- JOINS: Permiten combinar datos de dos o m&aacute;s tablas basadas en una condici&oacute;n.<br /> - Subconsultas
+    (Subqueries): Consultas dentro de otras consultas.<br /> - Funciones de Ventana (Window Functions): Realizan
+    c&aacute;lculos sobre un conjunto de filas relacionadas sin colapsarlas en una sola fila.<br /> <br /> Estas
+    caracter&iacute;sticas hacen de SQL un lenguaje poderoso y flexible para la gesti&oacute;n de bases de datos
+    relacionales.</p>
+<h2>28.2. Lenguaje de definici&oacute;n de datos.</h2>
+<p>El Lenguaje de Definici&oacute;n de Datos (DDL - Data Definition Language) es una subcategor&iacute;a del lenguaje
+    SQL que se utiliza para definir y gestionar la estructura de una base de datos. Los comandos DDL permiten a los
+    administradores de bases de datos y a los desarrolladores crear, modificar y eliminar bases de datos y sus objetos
+    asociados como tablas, &iacute;ndices, vistas, esquemas y restricciones. A diferencia de los comandos de
+    manipulaci&oacute;n de datos (DML), que operan sobre los datos dentro de las tablas, los comandos DDL operan sobre
+    la estructura de la base de datos en s&iacute;.</p>
+<h3>Principales Comandos de DDL</h3>
+<p>Los comandos m&aacute;s comunes del Lenguaje de Definici&oacute;n de Datos son:</p>
+<p>- CREATE: Utilizado para crear bases de datos, tablas, vistas, &iacute;ndices y otros objetos dentro de la base de
+    datos.</p>
+<p>- ALTER: Utilizado para modificar la estructura de una tabla o cualquier otro objeto de la base de datos.</p>
+<p>- DROP: Utilizado para eliminar tablas, vistas, &iacute;ndices u otros objetos de la base de datos.</p>
+<p>- TRUNCATE: Utilizado para eliminar todos los registros de una tabla de manera r&aacute;pida y eficiente sin afectar
+    la estructura de la tabla.</p>
+<h3>Descripci&oacute;n Detallada de los Comandos DDL</h3>
+<h4>1. CREATE</h4>
+<p>El comando CREATE se utiliza para crear nuevos objetos en la base de datos. A continuaci&oacute;n se presentan
+    algunos usos comunes:</p>
+<p>Crear una Base de Datos:</p>
+<p>|CREATE DATABASE nombre_base_datos;<br />|Crea una nueva base de datos con el nombre especificado.</p>
+<p>Crear una Tabla:</p>
+<p>|CREATE TABLE empleados (<br />| id INT PRIMARY KEY,<br />| nombre VARCHAR(50),<br />| puesto VARCHAR(50),<br />|
+    salario DECIMAL(10, 2),<br />| fecha_contratacion DATE<br />|);<br />|Este comando crea una tabla llamada empleados
+    con varias columnas, especificando el tipo de datos y las restricciones.</p>
+<p>Crear un &Iacute;ndice:</p>
+<p>|CREATE INDEX idx_nombre_empleados ON empleados(nombre);<br />|Crea un &iacute;ndice llamado idx_nombre_empleados en
+    la columna nombre de la tabla empleados para mejorar la eficiencia de las consultas.</p>
+<p>Crear una Vista:</p>
+<p>|CREATE VIEW vista_empleados_activos AS<br />|SELECT nombre, puesto FROM empleados WHERE estado =
+    'activo';<br />|Crea una vista llamada vista_empleados_activos que muestra solo a los empleados activos.</p>
+<h4>2. ALTER</h4>
+<p>El comando ALTER se utiliza para modificar la estructura de una tabla existente. Esto puede incluir la adici&oacute;n
+    de nuevas columnas, la modificaci&oacute;n de columnas existentes, o la eliminaci&oacute;n de columnas.</p>
+<p>Agregar una Nueva Columna:</p>
+<p>|ALTER TABLE empleados ADD direccion VARCHAR(100);<br />|Agrega una nueva columna direccion a la tabla empleados.</p>
+<p>Modificar una Columna Existente:</p>
+<p>|ALTER TABLE empleados MODIFY salario DECIMAL(12, 2);<br />|Modifica la columna salario para que sea de tipo DECIMAL
+    con mayor precisi&oacute;n.</p>
+<p>Eliminar una Columna:</p>
+<p>|ALTER TABLE empleados DROP COLUMN direccion;<br />|Elimina la columna direccion de la tabla empleados.</p>
+<p>Renombrar una Tabla:</p>
+<p>|ALTER TABLE empleados RENAME TO empleados_nuevos;<br />|Cambia el nombre de la tabla empleados a empleados_nuevos.
+</p>
+<h4>3. DROP</h4>
+<p>El comando DROP se utiliza para eliminar objetos existentes de la base de datos, como tablas, vistas, &iacute;ndices,
+    o bases de datos completas.</p>
+<p>Eliminar una Tabla:</p>
+<p>|DROP TABLE empleados;<br />|Elimina completamente la tabla empleados y todos sus datos.</p>
+<p>Eliminar una Vista:</p>
+<p>|DROP VIEW vista_empleados_activos;<br />|Elimina la vista vista_empleados_activos.</p>
+<p>Eliminar una Base de Datos:</p>
+<p>|DROP DATABASE nombre_base_datos;<br />|Elimina la base de datos especificada y todos los objetos contenidos en ella.
+</p>
+<p>Eliminar un &Iacute;ndice:</p>
+<p>|DROP INDEX idx_nombre_empleados ON empleados;<br />|Elimina el &iacute;ndice idx_nombre_empleados de la tabla
+    empleados.</p>
+<h4>4. TRUNCATE</h4>
+<p>El comando TRUNCATE se utiliza para eliminar todos los registros de una tabla de manera r&aacute;pida y eficiente,
+    pero no elimina la tabla en s&iacute;.</p>
+<p>Eliminar Todos los Registros de una Tabla:</p>
+<p>|TRUNCATE TABLE empleados;<br />|Elimina todos los registros de la tabla empleados, pero mantiene la estructura de la
+    tabla.</p>
+<p>A diferencia de DELETE, TRUNCATE no se puede deshacer con ROLLBACK en la mayor&iacute;a de los sistemas de bases de
+    datos.</p>
+<p>Caracter&iacute;sticas Importantes del DDL<br /> <br /> Transacciones Autom&aacute;ticas: Las operaciones DDL son
+    transacciones autom&aacute;ticas; esto significa que una vez ejecutadas, no se pueden deshacer. Por ejemplo, una vez
+    que se ejecuta un comando DROP TABLE, la tabla y sus datos se eliminan permanentemente.</p>
+<p>Afecta la Estructura y No los Datos: Los comandos DDL afectan la estructura de la base de datos (esquema) en lugar de
+    los datos en s&iacute;. No se utilizan para consultar, insertar, actualizar o eliminar datos dentro de las tablas.
+</p>
+<p>Integridad Referencial: Al definir la estructura de las tablas y las relaciones entre ellas, el DDL juega un papel
+    clave en la definici&oacute;n de claves primarias, claves for&aacute;neas y otras restricciones para asegurar la
+    integridad de los datos.</p>
+<p>Ejemplos de Uso en la Pr&aacute;ctica</p>
+<p>Creaci&oacute;n de un esquema de base de datos completo, con todas las tablas necesarias, relaciones y restricciones.
+</p>
+<p>Modificaci&oacute;n de tablas existentes para adaptarlas a nuevas necesidades del negocio, como agregar nuevas
+    columnas o cambiar tipos de datos.</p>
+<p>Eliminaci&oacute;n de objetos de la base de datos que ya no son necesarios para mantener la base de datos limpia y
+    eficiente.</p>
+<p>El DDL es esencial para la administraci&oacute;n y el dise&ntilde;o de bases de datos, proporcionando las
+    herramientas necesarias para definir y mantener la estructura subyacente de una base de datos.</p>
+<h2>28.3. Lenguaje de control de datos.</h2>
+<p>El Lenguaje de Control de Datos (DCL - Data Control Language) es una subcategor&iacute;a del lenguaje SQL que se
+    utiliza para gestionar los permisos y el control de acceso a los datos en un sistema de gesti&oacute;n de bases de
+    datos (DBMS). Los comandos DCL permiten a los administradores de bases de datos definir qui&eacute;n puede acceder a
+    las bases de datos y qu&eacute; operaciones est&aacute;n autorizados a realizar. El objetivo principal del DCL es
+    asegurar que solo los usuarios autorizados puedan realizar determinadas acciones sobre los objetos de la base de
+    datos.</p>
+<h3>Principales Comandos de DCL</h3>
+<p>Los dos comandos m&aacute;s utilizados en DCL son:</p>
+<p>- GRANT: Otorga permisos a los usuarios para realizar acciones espec&iacute;ficas sobre los objetos de la base de
+    datos.<br /> - REVOKE: Revoca o elimina permisos previamente otorgados a los usuarios sobre los objetos de la base
+    de datos.</p>
+<p>Descripci&oacute;n Detallada de los Comandos DCL</p>
+<h4>1. GRANT</h4>
+<p>El comando GRANT se utiliza para otorgar permisos a los usuarios para realizar operaciones espec&iacute;ficas en la
+    base de datos. Los permisos se pueden otorgar a usuarios individuales, roles, o grupos de usuarios. Se pueden
+    asignar diferentes tipos de permisos dependiendo de las necesidades de la aplicaci&oacute;n y de los requisitos de
+    seguridad.</p>
+<p>Sintaxis B&aacute;sica:</p>
+<p>|GRANT privilegio1, privilegio2 ON objeto TO usuario;</p>
+<p>Aqu&iacute;, privilegio1, privilegio2, etc., son los permisos que se est&aacute;n otorgando, objeto es el objeto de
+    la base de datos (como una tabla o vista) sobre el cual se otorgan los permisos, y usuario es el nombre del usuario
+    o rol que recibir&aacute; los permisos.</p>
+<p>Ejemplos Comunes:</p>
+<p>- Otorgar Permiso de SELECT en una Tabla:</p>
+<p>|GRANT SELECT ON empleados TO usuario1;<br /> Otorga al usuario usuario1 el permiso para realizar la operaci&oacute;n
+    SELECT (consultar datos) en la tabla empleados.</p>
+<p>- Otorgar Permisos M&uacute;ltiples en una Tabla:</p>
+<p>|GRANT SELECT, INSERT, UPDATE ON empleados TO usuario2;<br /> Otorga al usuario usuario2 permisos para realizar las
+    operaciones SELECT, INSERT, y UPDATE en la tabla empleados.</p>
+<p>- Otorgar Permisos a Todos los Usuarios:</p>
+<p>|GRANT SELECT ON empleados TO PUBLIC;<br /> Otorga a todos los usuarios el permiso de SELECT en la tabla empleados.
+    PUBLIC es una palabra clave que representa a todos los usuarios.</p>
+<p>- Otorgar Permisos con la Opci&oacute;n de CONCEDER (GRANT OPTION):</p>
+<p>|GRANT SELECT ON empleados TO usuario3 WITH GRANT OPTION;<br /> Otorga al usuario usuario3 el permiso para realizar
+    SELECT en la tabla empleados y, adem&aacute;s, le permite otorgar este mismo permiso a otros usuarios.</p>
+<h4>2. REVOKE</h4>
+<p>El comando REVOKE se utiliza para eliminar o revocar permisos previamente otorgados a los usuarios. Este comando es
+    esencial para la gesti&oacute;n de seguridad, ya que permite restringir el acceso a los datos cuando un usuario ya
+    no necesita ciertos permisos o cuando hay un cambio en la pol&iacute;tica de seguridad.</p>
+<p>Sintaxis B&aacute;sica:</p>
+<p>| REVOKE privilegio1, privilegio2 ON objeto FROM usuario;<br /> Aqu&iacute;, privilegio1, privilegio2, etc., son los
+    permisos que se est&aacute;n revocando, objeto es el objeto de la base de datos del cual se revocan los permisos, y
+    usuario es el nombre del usuario o rol al que se le revocan los permisos.</p>
+<p>Ejemplos Comunes:</p>
+<p>- Revocar Permiso de SELECT en una Tabla:</p>
+<p>|REVOKE SELECT ON empleados FROM usuario1;<br /> Revoca al usuario usuario1 el permiso de SELECT en la tabla
+    empleados.</p>
+<p>- Revocar Permisos M&uacute;ltiples en una Tabla:</p>
+<p>|REVOKE SELECT, INSERT, UPDATE ON empleados FROM usuario2;<br /> Revoca al usuario usuario2 los permisos de SELECT,
+    INSERT, y UPDATE en la tabla empleados.</p>
+<p>- Revocar Permisos de Todos los Usuarios:</p>
+<p>|REVOKE SELECT ON empleados FROM PUBLIC;<br /> Revoca el permiso de SELECT de todos los usuarios en la tabla
+    empleados.</p>
+<p>- Revocar Permisos Otorgados con la Opci&oacute;n de CONCEDER (GRANT OPTION):<br /> |REVOKE GRANT OPTION FOR SELECT
+    ON empleados FROM usuario3;<br /> Revoca al usuario usuario3 la capacidad de otorgar a otros usuarios el permiso de
+    SELECT en la tabla empleados.</p>
+<h3>Caracter&iacute;sticas Importantes del DCL</h3>
+<p>Seguridad y Control de Acceso: DCL es fundamental para la seguridad en la gesti&oacute;n de bases de datos. Permite a
+    los administradores de bases de datos gestionar de manera granular qui&eacute;n tiene acceso a qu&eacute; datos y
+    qu&eacute; operaciones pueden realizar en esos datos.</p>
+<p>Permisos Granulares: Los permisos pueden ser muy espec&iacute;ficos, controlando acciones como SELECT, INSERT,
+    UPDATE, DELETE, ALTER, y DROP, entre otros. Esto permite un control detallado sobre las operaciones que los usuarios
+    pueden realizar.</p>
+<p>Roles y Grupos de Usuarios: En muchos sistemas de bases de datos, los permisos pueden ser asignados no solo a
+    usuarios individuales, sino tambi&eacute;n a roles o grupos de usuarios. Esto facilita la administraci&oacute;n de
+    permisos cuando hay m&uacute;ltiples usuarios que requieren los mismos accesos.</p>
+<p>Auditor&iacute;a y Cumplimiento: El uso adecuado de DCL ayuda a mantener un entorno de base de datos seguro y en
+    cumplimiento con regulaciones y pol&iacute;ticas de seguridad, al limitar el acceso a los datos sensibles y
+    asegurarse de que solo los usuarios autorizados pueden realizar operaciones cr&iacute;ticas.</p>
+<p>Deshacer Cambios de Permisos: Es posible ajustar r&aacute;pidamente los permisos utilizando REVOKE, lo que permite
+    una gesti&oacute;n &aacute;gil y din&aacute;mica de los privilegios de los usuarios.</p>
+<h3>Ejemplos de Uso en la Pr&aacute;ctica</h3>
+<p>Gesti&oacute;n de Acceso a Datos Sensibles: Una empresa puede usar DCL para asegurarse de que solo ciertos roles,
+    como los de administraci&oacute;n o finanzas, tengan acceso a datos sensibles como salarios, cuentas bancarias o
+    informaci&oacute;n personal de empleados.</p>
+<p>Mantenimiento de la Base de Datos: Los administradores de bases de datos pueden usar DCL para otorgar permisos
+    temporales a desarrolladores o consultores para realizar tareas espec&iacute;ficas de mantenimiento o
+    auditor&iacute;a y luego revocar esos permisos cuando ya no sean necesarios.</p>
+<p>Control de Acceso en Aplicaciones Web: En aplicaciones web basadas en bases de datos, DCL puede utilizarse para
+    definir diferentes niveles de acceso para usuarios administradores, usuarios registrados y visitantes, asegurando
+    que cada grupo solo pueda realizar operaciones autorizadas.</p>
+<p>El Lenguaje de Control de Datos es esencial para la administraci&oacute;n de bases de datos seguras, permitiendo a
+    los administradores gestionar de manera efectiva qui&eacute;n tiene acceso a los datos y qu&eacute; operaciones
+    pueden realizar, ayudando a proteger la integridad y confidencialidad de la informaci&oacute;n almacenada.</p>

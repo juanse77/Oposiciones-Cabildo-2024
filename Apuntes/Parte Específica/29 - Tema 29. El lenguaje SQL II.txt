@@ -1,0 +1,472 @@
+Tema 29. El lenguaje SQL II.
+
+29.1. El lenguaje de manipulación de datos.
+
+	El Lenguaje de Manipulación de Datos (DML - Data Manipulation Language) es una subcategoría del lenguaje SQL que se utiliza para realizar operaciones de manipulación de datos en una base de datos. Los comandos DML permiten a los usuarios insertar, actualizar, eliminar y consultar datos en las tablas de una base de datos relacional. A diferencia del Lenguaje de Definición de Datos (DDL), que se utiliza para definir la estructura de la base de datos, el DML se centra en la manipulación de los datos existentes dentro de esa estructura.
+
+	Principales Comandos de DML
+		Los comandos más comunes del Lenguaje de Manipulación de Datos son:
+
+		- SELECT: Recupera datos de una o más tablas.
+		- INSERT: Inserta nuevos registros en una tabla.
+		- UPDATE: Modifica los datos existentes en una tabla.
+		- DELETE: Elimina registros existentes de una tabla.
+
+	Descripción Detallada de los Comandos DML
+
+		1. SELECT
+
+			El comando SELECT se utiliza para consultar y recuperar datos de una o más tablas de una base de datos. Es el comando más utilizado en SQL y permite obtener datos de una manera flexible, utilizando diferentes filtros, uniones, agrupaciones, y ordenamientos.
+
+			Sintaxis Básica:
+
+				|SELECT columnas FROM tabla WHERE condición;
+				Aquí, columnas es la lista de columnas que se desean recuperar, tabla es la tabla de la cual se recuperan los datos, y condición es un filtro opcional para limitar los resultados.
+
+			Ejemplos Comunes:
+
+				- Seleccionar Todas las Columnas de una Tabla:
+					|SELECT * FROM empleados;
+
+				- Seleccionar Columnas Específicas:
+					|SELECT nombre, salario FROM empleados;
+
+				- Usar la Cláusula WHERE para Filtrar Resultados:
+					|SELECT nombre, salario FROM empleados WHERE salario > 50000;
+
+				- Ordenar Resultados:
+					|SELECT nombre, salario FROM empleados ORDER BY salario DESC;
+
+				- Agrupar Resultados con GROUP BY:
+					|SELECT departamento, AVG(salario) FROM empleados GROUP BY departamento;
+
+				- Usar Funciones Agregadas:
+					|SELECT COUNT(*) FROM empleados WHERE estado = 'activo';
+
+		2. INSERT
+		
+			El comando INSERT se utiliza para agregar nuevos registros (filas) a una tabla. Puede insertar datos en todas las columnas de la tabla o solo en un subconjunto de ellas.
+
+			Sintaxis Básica:
+
+				|INSERT INTO tabla (columna1, columna2, ...) VALUES (valor1, valor2, ...);
+				Aquí, tabla es la tabla en la que se insertarán los datos, columna1, columna2, ... son las columnas en las que se insertarán los valores, y valor1, valor2, ... son los valores que se insertarán en esas columnas.
+
+			Ejemplos Comunes:
+
+				- Insertar un Registro Completo:
+					|INSERT INTO empleados (id, nombre, puesto, salario) VALUES (1, 'Juan Pérez', 'Desarrollador', 60000);	
+
+				- Insertar un Registro sin Especificar Todas las Columnas:
+					|INSERT INTO empleados (nombre, puesto) VALUES ('Ana Gómez', 'Analista');
+					Inserta un nuevo registro con solo los valores para las columnas nombre y puesto; las demás columnas deben tener valores predeterminados o permitir valores nulos.
+
+				- Insertar Varios Registros al Mismo Tiempo:
+
+					|INSERT INTO empleados (nombre, puesto, salario) VALUES 
+					|('Carlos Ruiz', 'Gerente', 80000),
+					|('María López', 'Contadora', 55000);
+
+					Inserta varios registros en la tabla empleados en una sola operación.
+
+		3. UPDATE
+
+			El comando UPDATE se utiliza para modificar los datos existentes en una tabla. Se puede usar para actualizar uno o varios registros que cumplen con ciertas condiciones.
+
+				Sintaxis Básica:
+					|UPDATE tabla SET columna1 = valor1, columna2 = valor2, ... WHERE condición;
+					Aquí, tabla es la tabla que contiene los registros a actualizar, columna1 = valor1, columna2 = valor2, ... son las asignaciones de las nuevas columnas y valores, y condición es un filtro para limitar los registros que se deben actualizar.
+
+				Ejemplos Comunes:
+
+					- Actualizar un Registro Específico:
+
+						|UPDATE empleados SET salario = 70000 WHERE id = 1;
+	
+					- Actualizar Varios Registros:
+
+						|UPDATE empleados SET salario = salario * 1.1 WHERE puesto = 'Desarrollador';
+
+					- Actualizar Todos los Registros de una Tabla:
+
+						|UPDATE empleados SET estado = 'activo';
+
+		4. DELETE
+
+			El comando DELETE se utiliza para eliminar uno o más registros de una tabla. A diferencia del comando TRUNCATE (que es un comando DDL), DELETE permite eliminar registros específicos basados en una condición.
+
+			Sintaxis Básica:
+
+				|DELETE FROM tabla WHERE condición;
+
+				Aquí, tabla es la tabla de la cual se eliminarán los registros, y condición es un filtro opcional que define qué registros se deben eliminar.
+
+			Ejemplos Comunes:
+
+				- Eliminar un Registro Específico:
+
+					|DELETE FROM empleados WHERE id = 1;
+
+				- Eliminar Varios Registros:
+
+					|DELETE FROM empleados WHERE puesto = 'Desarrollador';
+
+				- Eliminar Todos los Registros de una Tabla:
+
+					|DELETE FROM empleados;
+					Elimina todos los registros de la tabla empleados pero mantiene la estructura de la tabla. Esta operación se puede deshacer con ROLLBACK si se utiliza dentro de una transacción.
+
+	Características Importantes del DML
+
+		Operaciones Transaccionales: Las operaciones DML son parte de las transacciones de la base de datos, lo que significa que pueden ser deshechas (ROLLBACK) o confirmadas (COMMIT) según sea necesario, asegurando la consistencia de los datos.
+
+		Manipulación Directa de Datos: DML proporciona las herramientas necesarias para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) en los datos, lo que lo convierte en una parte fundamental del desarrollo de aplicaciones basadas en bases de datos.
+
+		Condiciones y Filtros Flexibles: Los comandos DML permiten utilizar filtros y condiciones complejas para manipular datos de manera específica, lo que proporciona un control detallado sobre qué datos se manipulan y cómo.
+
+		Funciones y Operaciones Integradas: SQL soporta una variedad de funciones integradas (como funciones matemáticas, de cadena, de fecha y hora, y agregadas) que pueden ser utilizadas en las consultas DML para manipular y analizar los datos.
+
+	Ejemplos de Uso en la Práctica
+
+		Gestión de Inventarios: Usar INSERT, UPDATE, y DELETE para gestionar productos en un sistema de inventarios, agregando nuevos productos, actualizando precios y eliminando productos descontinuados.
+
+		Aplicaciones de Gestión de Clientes: Utilizar SELECT para generar informes de clientes, INSERT para agregar nuevos clientes, UPDATE para modificar la información de contacto y DELETE para eliminar clientes inactivos.
+
+		Análisis de Datos: Emplear consultas SELECT avanzadas con funciones agregadas para analizar tendencias de ventas, rendimiento financiero o comportamiento del cliente en tiempo real.
+
+		El DML es fundamental para la manipulación y consulta de datos en sistemas de bases de datos relacionales, proporcionando un conjunto robusto de herramientas para interactuar con los datos de manera eficiente y flexible.
+
+29.2. Lenguaje de consulta de datos.
+
+	El Lenguaje de Consulta de Datos (DQL - Data Query Language), comúnmente conocido como parte del DML (Data Manipulation Language) en SQL, se centra principalmente en la consulta de datos almacenados en una base de datos relacional. El comando principal en DQL es SELECT, que se utiliza para recuperar datos de una o más tablas en una base de datos. Este lenguaje permite realizar búsquedas y análisis de datos, combinando diversas tablas, aplicando filtros, agrupaciones, funciones agregadas, y ordenamientos para obtener la información deseada de manera precisa y eficiente.
+
+	Comando Principal: SELECT
+
+		El comando SELECT es el núcleo del Lenguaje de Consulta de Datos en SQL y se utiliza para extraer información de las tablas de una base de datos. La flexibilidad y potencia del comando SELECT provienen de su capacidad para combinar múltiples cláusulas y funciones para realizar consultas avanzadas.
+
+		Sintaxis Básica del Comando SELECT
+
+			SELECT [DISTINCT] columna1, columna2, ...
+			FROM tabla
+			[WHERE condición]
+			[GROUP BY columna1, columna2, ...]
+			[HAVING condición]
+			[ORDER BY columna1 [ASC|DESC], ...]
+			[LIMIT número];
+
+			SELECT: Inicia la consulta y especifica las columnas que se desean recuperar.
+			DISTINCT: (Opcional) Elimina los duplicados de los resultados.
+			FROM: Especifica la tabla de la que se obtendrán los datos.
+			WHERE: (Opcional) Filtra los resultados según una condición.
+			GROUP BY: (Opcional) Agrupa los resultados por una o más columnas.
+			HAVING: (Opcional) Filtra los resultados agrupados.
+			ORDER BY: (Opcional) Ordena los resultados por una o más columnas en orden ascendente (ASC) o descendente (DESC).
+			LIMIT: (Opcional) Restringe el número de filas devueltas por la consulta.
+
+	Cláusulas y Funcionalidades del Comando SELECT
+
+		1. Cláusula WHERE
+			
+			La cláusula WHERE se utiliza para filtrar registros que cumplen con una condición específica. Permite usar operadores de comparación como =, !=, <, >, <=, >=, y operadores lógicos como AND, OR, y NOT.
+
+|SELECT nombre, salario FROM empleados WHERE salario > 50000;
+Recupera los nombres y salarios de los empleados cuyo salario es mayor a 50,000.
+
+		2. Cláusula DISTINCT
+
+			La cláusula DISTINCT se utiliza para eliminar filas duplicadas en los resultados.
+				|SELECT DISTINCT departamento FROM empleados;
+				Recupera una lista única de departamentos en la tabla empleados.
+
+		3. Cláusula ORDER BY
+
+			La cláusula ORDER BY se utiliza para ordenar los resultados de una consulta según una o más columnas, de forma ascendente (ASC) o descendente (DESC).
+
+				|SELECT nombre, salario FROM empleados ORDER BY salario DESC;
+				Recupera los nombres y salarios de los empleados ordenados por salario de mayor a menor.
+
+		4. Cláusula GROUP BY
+
+			La cláusula GROUP BY se utiliza para agrupar filas que tienen valores iguales en columnas especificadas. Se suele utilizar en combinación con funciones agregadas como COUNT(), SUM(), AVG(), MAX(), y MIN() para realizar cálculos sobre grupos de datos.
+
+				|SELECT departamento, AVG(salario) AS salario_promedio
+				|FROM empleados
+				|GROUP BY departamento;
+
+				Calcula el salario promedio por departamento.
+
+		5. Cláusula HAVING
+
+			La cláusula HAVING se utiliza para filtrar los resultados después de que se hayan agrupado con GROUP BY. A diferencia de WHERE, que filtra filas antes de la agrupación, HAVING filtra grupos después de la agrupación.
+
+				|SELECT departamento, COUNT(*) AS num_empleados
+				|FROM empleados
+				|GROUP BY departamento
+				|HAVING COUNT(*) > 5;
+
+				Recupera los departamentos que tienen más de 5 empleados.
+
+		6. Cláusula JOIN
+
+			La cláusula JOIN se utiliza para combinar filas de dos o más tablas basadas en una condición relacionada entre ellas. Existen varios tipos de uniones (JOIN), que incluyen:
+
+			- INNER JOIN: Devuelve solo las filas que tienen coincidencias en ambas tablas.
+
+			- LEFT JOIN (o LEFT OUTER JOIN): Devuelve todas las filas de la tabla de la izquierda y las filas coincidentes de la tabla de la derecha. Si no hay coincidencia, las filas de la derecha contienen NULL.
+
+			- RIGHT JOIN (o RIGHT OUTER JOIN): Similar a LEFT JOIN, pero devuelve todas las filas de la tabla de la derecha.
+
+			- FULL OUTER JOIN: Devuelve filas cuando hay coincidencia en una de las tablas. Si no hay coincidencia, las filas contarán con NULL en las columnas de la tabla faltante.
+
+			- CROSS JOIN: Devuelve el producto cartesiano de ambas tablas (todas las combinaciones posibles de filas).
+
+		Ejemplo de INNER JOIN:
+
+			|SELECT empleados.nombre, departamentos.nombre
+			|FROM empleados
+			|INNER JOIN departamentos ON empleados.departamento_id = departamentos.id;
+
+			Recupera los nombres de los empleados junto con el nombre de su departamento.
+
+	7. Subconsultas (Subqueries)
+
+		Una subconsulta es una consulta dentro de otra consulta SQL. Puede usarse en varias cláusulas, como SELECT, FROM, WHERE, y HAVING. Las subconsultas permiten crear consultas complejas y detalladas.
+
+		Ejemplo de Subconsulta en WHERE:
+
+			|SELECT nombre, salario
+			|FROM empleados
+			|WHERE salario > (SELECT AVG(salario) FROM empleados);
+
+			Recupera los nombres y salarios de los empleados cuyo salario es superior al salario promedio de todos los empleados.
+
+	8. Funciones de Ventana (Window Functions)
+
+		Las funciones de ventana realizan cálculos sobre un conjunto de filas relacionadas, pero no colapsan esas filas en una sola como lo hacen las funciones agregadas tradicionales. Esto permite agregar estadísticas como sumas acumulativas, promedios, clasificaciones, etc.
+
+		Ejemplo con ROW_NUMBER:
+
+			|SELECT nombre, salario,
+       			|	ROW_NUMBER() OVER (ORDER BY salario DESC) AS rango
+			|FROM empleados;
+
+			Recupera los nombres y salarios de los empleados y asigna un número de rango basado en el salario de mayor a menor.
+
+		Consultas Compuestas: UNION, INTERSECT, EXCEPT
+			SQL proporciona operadores para combinar resultados de múltiples consultas.
+
+			- UNION: Combina los resultados de dos o más consultas y elimina los duplicados.
+			- UNION ALL: Combina los resultados de dos o más consultas y permite duplicados.
+			- INTERSECT: Devuelve las filas que son comunes a ambas consultas.
+			- EXCEPT: Devuelve las filas de la primera consulta que no están en la segunda consulta.
+
+			Ejemplo con UNION:
+
+				|SELECT nombre FROM empleados_ventas
+				|UNION
+				|SELECT nombre FROM empleados_marketing;
+
+				Recupera una lista de nombres de empleados de los departamentos de ventas y marketing, eliminando duplicados.
+
+	Características Importantes del Lenguaje de Consulta de Datos (DQL)
+
+		- Recuperación Flexible de Datos: SELECT permite a los usuarios definir consultas complejas con múltiples condiciones, agrupamientos y uniones para extraer datos precisos y relevantes.
+
+		- Consultas Anidadas y Complejas: El soporte para subconsultas y combinaciones de múltiples tablas permite consultas detalladas que pueden ser optimizadas para el rendimiento.
+
+		- Funciones Agregadas y de Ventana: Las funciones agregadas (SUM, AVG, COUNT, etc.) y las funciones de ventana (ROW_NUMBER, RANK, NTILE, etc.) permiten realizar análisis de datos avanzados directamente dentro de SQL.
+
+		- Seguridad y Control de Acceso: El acceso a los datos y las consultas pueden ser controlados mediante privilegios y roles definidos en el DBMS, asegurando que solo los usuarios autorizados puedan consultar información sensible.
+
+		- Optimización de Consultas: Las consultas SELECT pueden ser optimizadas utilizando índices, claves primarias y claves foráneas, así como analizando y ajustando los planes de ejecución de consultas proporcionados por el optimizador de consultas del DBMS.
+
+	Ejemplos de Uso en la Práctica
+
+		- Análisis de Datos Empresariales: Generación de informes financieros, análisis de ventas, seguimiento del rendimiento de empleados y equipos utilizando consultas avanzadas con SELECT, JOIN, GROUP BY, y funciones agregadas.
+
+		- Aplicaciones Web y Móviles: Recuperación de datos dinámicos para la presentación en aplicaciones web y móviles, como mostrar productos, gestionar usuarios o generar informes personalizados en tiempo real.
+
+		- Inteligencia de Negocios y Ciencia de Datos: Realizar análisis exploratorio de datos (EDA), transformar datos y generar conjuntos de datos limpios para su posterior análisis y modelado.
+
+	El Lenguaje de Consulta de Datos (DQL) es fundamental para extraer, analizar y presentar datos en sistemas de bases de datos relacionales. Proporciona un conjunto poderoso de herramientas para consultas eficientes, detalladas y flexibles, lo que lo convierte en una parte esencial del trabajo diario de los analistas de datos, desarrolladores y administradores de bases de datos.
+
+29.3. Operaciones sobre conjuntos. Funciones de agregación.
+
+	Operaciones sobre Conjuntos
+
+		En SQL, las operaciones sobre conjuntos permiten combinar los resultados de dos o más consultas SQL en una sola. Estas operaciones son útiles cuando necesitas unir resultados de varias consultas o realizar comparaciones entre conjuntos de datos. Las principales operaciones de conjuntos en SQL son UNION, UNION ALL, INTERSECT, y EXCEPT (o MINUS, dependiendo del sistema de gestión de bases de datos).
+
+	1. UNION
+
+		La operación UNION combina los resultados de dos o más consultas y elimina los duplicados. Cada consulta debe tener el mismo número de columnas en el conjunto de resultados y las columnas correspondientes deben tener tipos de datos compatibles.
+
+		Sintaxis:
+
+			|SELECT columna1, columna2 FROM tabla1
+			|UNION
+			|SELECT columna1, columna2 FROM tabla2;
+
+		Ejemplo:
+
+			|SELECT nombre FROM empleados_ventas
+			|UNION
+			|SELECT nombre FROM empleados_marketing;
+
+			Este ejemplo recupera una lista única de nombres de empleados de los departamentos de ventas y marketing.
+
+	2. UNION ALL
+
+		La operación UNION ALL es similar a UNION, pero no elimina los duplicados. Devuelve todas las filas de ambas consultas, incluyendo las filas duplicadas.
+
+		Sintaxis:
+			|SELECT columna1, columna2 FROM tabla1
+			|UNION ALL
+			|SELECT columna1, columna2 FROM tabla2;
+
+		Ejemplo:
+
+			|SELECT nombre FROM empleados_ventas
+			|UNION ALL
+			|SELECT nombre FROM empleados_marketing;
+
+			Este ejemplo recupera todos los nombres de empleados de los departamentos de ventas y marketing, incluyendo los duplicados.
+
+	3. INTERSECT
+
+		La operación INTERSECT devuelve solo las filas que son comunes a ambas consultas. Esta operación elimina los duplicados del resultado final.
+
+		Sintaxis:
+
+			|SELECT columna1, columna2 FROM tabla1
+			|INTERSECT
+			|SELECT columna1, columna2 FROM tabla2;
+
+		Ejemplo:
+
+			|SELECT nombre FROM empleados_ventas
+			|INTERSECT
+			|SELECT nombre FROM empleados_marketing;
+
+			Este ejemplo recupera los nombres de los empleados que están tanto en el departamento de ventas como en el de marketing.
+
+	4. EXCEPT (o MINUS)
+
+		La operación EXCEPT (o MINUS en algunos sistemas como Oracle) devuelve las filas de la primera consulta que no están presentes en la segunda consulta. También elimina los duplicados del resultado final.
+
+		Sintaxis:
+
+			|SELECT columna1, columna2 FROM tabla1
+			|EXCEPT
+			|SELECT columna1, columna2 FROM tabla2;
+
+		Ejemplo:
+
+			|SELECT nombre FROM empleados_ventas
+			|EXCEPT
+			|SELECT nombre FROM empleados_marketing;
+
+			Este ejemplo recupera los nombres de los empleados que están en el departamento de ventas pero no en el de marketing.
+
+	Consideraciones Importantes para las Operaciones sobre Conjuntos
+
+		- Compatibilidad de Tipos de Datos: Las columnas de las consultas combinadas deben tener tipos de datos compatibles.
+
+		- Número de Columnas: El número de columnas en el conjunto de resultados debe ser el mismo en todas las consultas.
+
+		- Orden de los Resultados: Solo se puede usar la cláusula ORDER BY en la última consulta combinada.
+
+	Funciones de Agregación	
+
+		Las funciones de agregación en SQL se utilizan para realizar cálculos sobre un conjunto de valores y devolver un solo valor. Son especialmente útiles en combinación con la cláusula GROUP BY para realizar cálculos en grupos de filas. Las funciones de agregación más comunes en SQL son COUNT, SUM, AVG, MAX, y MIN.
+
+		1. COUNT()
+
+			La función COUNT() devuelve el número de filas que coinciden con una condición específica. Puede contar todas las filas o solo las filas que no son nulas en una columna específica.
+
+			Sintaxis:
+
+				|SELECT COUNT(columna) FROM tabla WHERE condición;
+
+			Ejemplos:
+
+				- Contar Todas las Filas:
+					|SELECT COUNT(*) FROM empleados;
+
+				- Contar Filas con Condición:
+					|SELECT COUNT(*) FROM empleados WHERE salario > 50000;
+
+		2. SUM()
+
+			La función SUM() devuelve la suma de todos los valores de una columna numérica.
+
+			Sintaxis:
+				|SELECT SUM(columna) FROM tabla WHERE condición;
+
+			Ejemplo:
+				|SELECT SUM(salario) FROM empleados WHERE departamento = 'Ventas';
+
+		3. AVG()
+
+			La función AVG() devuelve el promedio de los valores de una columna numérica.
+
+			Sintaxis:
+				|SELECT AVG(columna) FROM tabla WHERE condición;
+
+			Ejemplo:
+				|SELECT AVG(salario) FROM empleados WHERE departamento = 'Marketing';
+
+		4. MAX()
+
+			La función MAX() devuelve el valor máximo de una columna, ya sea numérica o alfabética.
+
+			Sintaxis:
+				|SELECT MAX(columna) FROM tabla WHERE condición;
+
+			Ejemplo:
+				|SELECT MAX(salario) FROM empleados;
+
+		5. MIN()
+
+			La función MIN() devuelve el valor mínimo de una columna, ya sea numérica o alfabética.
+
+			Sintaxis:
+				|SELECT MIN(columna) FROM tabla WHERE condición;
+
+			Ejemplo:
+				|SELECT MIN(salario) FROM empleados;
+
+	Uso de Funciones de Agregación con GROUP BY
+
+		Las funciones de agregación son particularmente poderosas cuando se utilizan con la cláusula GROUP BY, que permite agrupar filas que tienen el mismo valor en una o más columnas y luego realizar cálculos agregados en esos grupos.
+
+		Ejemplo de Uso de GROUP BY con Funciones de Agregación:
+			|SELECT departamento, COUNT(*) AS num_empleados, AVG(salario) AS salario_promedio
+			|FROM empleados
+			|GROUP BY departamento;
+
+			Este ejemplo agrupa a los empleados por departamento y calcula el número de empleados y el salario promedio para cada departamento.
+
+	Uso de Funciones de Agregación con HAVING
+
+		La cláusula HAVING se utiliza para filtrar grupos de resultados creados por GROUP BY utilizando una condición con una función de agregación.
+
+		Ejemplo de Uso de HAVING:
+			|SELECT departamento, COUNT(*) AS num_empleados
+			|FROM empleados
+			|GROUP BY departamento
+			|HAVING COUNT(*) > 5;
+
+			Este ejemplo agrupa a los empleados por departamento y luego muestra solo los departamentos que tienen más de 5 empleados.
+
+	Consideraciones Importantes para las Funciones de Agregación
+
+		Valores NULL: Las funciones de agregación generalmente ignoran los valores NULL en las columnas sobre las que se realiza la agregación.
+
+		Combinación con Cláusulas: Las funciones de agregación se pueden combinar con JOIN, WHERE, GROUP BY, HAVING, y ORDER BY para crear consultas complejas y detalladas.
+
+		Optimización de Consultas: Las funciones de agregación pueden ser costosas en términos de rendimiento, especialmente en grandes conjuntos de datos. El uso de índices y la optimización del plan de ejecución de la consulta puede mejorar significativamente el rendimiento.
+
+	Conclusión
+
+		Las operaciones sobre conjuntos y las funciones de agregación son herramientas poderosas en SQL que permiten realizar análisis complejos y detallados sobre los datos. Mientras que las operaciones sobre conjuntos permiten combinar, comparar y contrastar diferentes conjuntos de datos, las funciones de agregación permiten resumir y analizar esos datos. Combinadas con otras características avanzadas de SQL, como JOIN, GROUP BY, y subconsultas, proporcionan un medio robusto para el análisis de datos y la inteligencia empresarial.
+
